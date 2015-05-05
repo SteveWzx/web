@@ -1,0 +1,25 @@
+<script>console.log("我是html根节点之外的内部脚本");</script>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Javascript脚本的加载顺序</title>
+    <script>console.log("我是头部header里的内部脚本");</script>
+    <script src="defer.js" defer></script>
+    <script src="async.js" async="async"></script>
+    <script src="async_defer.js" async defer></script>
+    <script src="header.js"></script>
+    <script src="outer2.js"></script>
+</head>
+<body>
+    <script>console.log("我是页面body里的内部脚本");</script>
+    <h1>渲染吧页面~~~</h1>
+    <img src="http://www.baidu.com/img/bdlogo.gif" />
+    <script src="body.js"></script>
+    <script src="onload.js"></script>
+    <script src="ready.js"></script>
+    <script src="jquery-1.8.3.js"></script>
+    <script src="jqready.js"></script>
+    <script src="require.js" data-main="main" async defer></script>
+</body>
+</html>
