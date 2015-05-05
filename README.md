@@ -1,3 +1,4 @@
 # web前端随笔
-##文件夹独立访问
-===
+
+####文件夹独立访问
+* script—javascript load order
