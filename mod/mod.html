@@ -9,11 +9,14 @@
 <script src="mod1.js"></script>
 <script src="code.js"></script>
 <script>
-    module.increment();
-    module.increment();
-    module.get();
-    module.reset();
-    module.get();
+    //模块的加载
+    (function(window, steve, undefined){
+        steve.increment();
+        steve.increment();
+        steve.get();
+        steve.reset();
+        steve.get();
+    })(window, module);
 </script>
 </body>
 </html>
