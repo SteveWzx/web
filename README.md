@@ -6,3 +6,4 @@
 * requirejs—requirejs / r.js 工程目录构建
 * Backbone及Underscore源码分析—Backbone及Underscore源码分析
 * jQuery-plugin—How-to-write-jQuery-plugin
+* window—面向对象组件的形式模拟window
