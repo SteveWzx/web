@@ -29,14 +29,8 @@
 
         // private method
 		_init: function () {
-
-            var self = this;
-
-            self.$element.each(function(){
-                $(this).css("color", self.settings.fcolor);
-                $(this).css("backgroundColor", self.settings.bcolor);
-            })
-
+            this.$element.css("color", this.settings.fcolor);
+            this.$element.css("backgroundColor", this.settings.bcolor);
         },
 
 		// public method

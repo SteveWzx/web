@@ -8,3 +8,4 @@
 * jQuery-plugin—How-to-write-jQuery-plugin
 * window—面向对象组件的形式模拟window
 * vticker—jQuery垂直滚动插件vTicker
+* ckslide—jQuery幻灯片插件ck-slide

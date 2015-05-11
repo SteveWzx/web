@@ -1,0 +1,76 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>jQuery幻灯片插件ck-slide演示-左右滚动</title>
+</head>
+
+<body>
+<div class="menu">
+	<p class="menuc">
+		<span></span>
+		<a href="index.html">1、默认(淡入淡出)</a>
+		<a class="cur" href="index2.html">2、左右滚动</a>
+		<a href="index3.html">3、自动播放</a>
+	</p>
+</div>
+<div class="main">
+	<div class="mianc">
+		<h1>左右滚动</h1>
+
+		<!-- Demo start -->
+		<!-- css -->
+		<link rel="stylesheet" href="css/slide.css">
+		<style>
+		.ck-slide { width: 700px; height: 320px; margin: 0 auto;}
+		.ck-slide ul.ck-slide-wrapper { height: 320px;}
+		</style>
+		
+		<!-- html -->
+		<div class="ck-slide">
+			<ul class="ck-slide-wrapper">
+				<li>
+					<a href="javascript:"><img src="images/1.jpg" alt=""></a>
+				</li>
+				<li style="display:none">
+					<a href="javascript:"><img src="images/2.jpg" alt=""></a>
+				</li>
+				<li style="display:none">
+					<a href="javascript:"><img src="images/3.jpg" alt=""></a>
+				</li>
+				<li style="display:none">
+					<a href="javascript:"><img src="images/4.jpg" alt=""></a>
+				</li>
+				<li style="display:none">
+					<a href="javascript:"><img src="images/5.jpg" alt=""></a>
+				</li>
+			</ul>
+			<a href="javascript:;" class="ctrl-slide ck-prev">上一张</a> <a href="javascript:;" class="ctrl-slide ck-next">下一张</a>
+			<div class="ck-slidebox">
+				<div class="slideWrap">
+					<ul class="dot-wrap">
+						<li class="current"><em>1</em></li>
+						<li><em>2</em></li>
+						<li><em>3</em></li>
+						<li><em>4</em></li>
+						<li><em>5</em></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		
+		<!-- js -->
+		<script src="js/jquery-1.8.3.min.js"></script>
+		<script src="js/slide.pro.js"></script>
+		<script>
+			$('.ck-slide').ckSlide({
+				dir: 'x'
+			});
+		</script>
+		<!-- Demo end -->
+
+	</div>
+</div>
+
+</body>
+</html>

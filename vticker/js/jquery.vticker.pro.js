@@ -36,45 +36,41 @@
         init: function () {
 
             var self = this;
+            var maxHeight = 0;
 
-            self.$element.each(function(){
-                var obj = $(this);
-                var maxHeight = 0;
+            this.$element.css({ overflow: 'hidden', position: 'relative' })
+                .children('ul').css({ position: 'absolute', margin: 0, padding: 0 })
+                .children('li').css({ margin: 0, padding: 0 });
 
-                obj.css({ overflow: 'hidden', position: 'relative' })
-                    .children('ul').css({ position: 'absolute', margin: 0, padding: 0 })
-                    .children('li').css({ margin: 0, padding: 0 });
-
-                if (self.settings.height == 0) {
-                    obj.children('ul').children('li').each(function () {
-                        if ($(this).height() > maxHeight) {
-                            maxHeight = $(this).height();
-                        }
-                    });
-                    obj.children('ul').children('li').each(function () {
-                        $(this).height(maxHeight);
-                    });
-                    obj.height(maxHeight * self.settings.showItems);
-                }else {
-                    obj.height(self.settings.height);
-                }
-
-                var interval = setInterval(function () {
-                    if (self.settings.direction == 'up') {
-                        self._moveUp(obj, maxHeight, self.settings);
-                    }else {
-                        self._moveDown(obj, maxHeight, self.settings);
+            if (this.settings.height == 0) {
+                this.$element.children('ul').children('li').each(function () {
+                    if ($(this).height() > maxHeight) {
+                        maxHeight = $(this).height();
                     }
-                }, self.settings.pause);
+                });
+                this.$element.children('ul').children('li').each(function () {
+                    $(this).height(maxHeight);
+                });
+                this.$element.height(maxHeight * this.settings.showItems);
+            }else {
+                this.$element.height(this.settings.height);
+            }
 
-                if (self.settings.mousePause) {
-                    obj.bind("mouseenter", function () {
-                        self.settings.isPaused = true;
-                    }).bind("mouseleave", function () {
-                        self.settings.isPaused = false;
-                    });
+            var interval = setInterval(function () {
+                if (self.settings.direction == 'up') {
+                    self._moveUp(self.$element, maxHeight, self.settings);
+                }else {
+                    self._moveDown(self.$element, maxHeight, self.settings);
                 }
-            })
+            }, self.settings.pause);
+
+            if (this.settings.mousePause) {
+                this.$element.bind("mouseenter", function () {
+                    this.settings.isPaused = true;
+                }).bind("mouseleave", function () {
+                    this.settings.isPaused = false;
+                });
+            }
 
         },
 
