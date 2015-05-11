@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>jQuery垂直滚动插件vTicker演示-热门电影</title>
+<style>
+.wrap { margin-top: 50px; padding: 15px 0; border: 1px solid #ddd; background: #f5f5f5;}
+.dowebok { width: 320px; margin: 0 auto;}
+.dowebok li { width: 320px; overflow: hidden; zoom: 1;}
+.dowebok .item { padding: 15px 0; border-bottom: 1px solid #ccc; overflow: hidden; zoom: 1;}
+.dowebok li em { float: left; width: 24px; height: 24px; line-height: 24px; font-size: 12px; font-style: normal; text-align: center; color: #fff; background-color: #f60;}
+.dowebok li img { float: left; height: 150px; margin: 0 15px; vertical-align: top;}
+.dowebok dl { font-size: 12px;}
+.dowebok dt { padding-bottom: 5px; font-size: 14px; font-weight: 700;}
+.dowebok dd { margin-top: 8px; color: #666;}
+.dowebok a { color: #333; text-decoration: none;}
+.dowebok a:hover { color: #000;}
+</style>
+</head>
+
+<body>
+<h1>jQuery垂直滚动插件vTicker演示-热门电影</h1>
+
+<div class="wrap">
+	<div class="dowebok">
+		<ul>
+			<li>
+				<div class="item">
+					<em>1</em><img src="images/1.jpg" alt="">
+					<dl>
+						<dt>亲爱的</dt>
+						<dd>类型：动作 / 科幻 / 冒险</dd>
+						<dd>地区：中国大陆 / 香港</dd>
+					</dl>
+				</div>
+			</li>
+			<li>
+				<div class="item">
+					<em>2</em><img src="images/2.jpg" alt="">
+					<dl>
+						<dt>银河护卫队</dt>
+						<dd>类型：动作 / 科幻 / 冒险</dd>
+						<dd>地区：中国大陆 / 香港</dd>
+					</dl>
+				</div>
+			</li>
+			<li>
+				<div class="item">
+					<em>3</em><img src="images/3.jpg" alt="">
+					<dl>
+						<dt>猩球崛起2：黎明之战</dt>
+						<dd>类型：动作 / 科幻 / 冒险</dd>
+						<dd>地区：中国大陆 / 香港</dd>
+					</dl>
+				</div>
+			</li>
+			<li>
+				<div class="item">
+					<em>4</em><img src="images/4.jpg" alt="">
+					<dl>
+						<dt>空中营救</dt>
+						<dd>类型：动作 / 科幻 / 冒险</dd>
+						<dd>地区：中国大陆 / 香港</dd>
+					</dl>
+				</div>
+			</li>
+			<li>
+				<div class="item">
+					<em>5</em><img src="images/5.jpg" alt="">
+					<dl>
+						<dt>魁拔3：战神崛起</dt>
+						<dd>类型：动作 / 科幻 / 冒险</dd>
+						<dd>地区：中国大陆 / 香港</dd>
+					</dl>
+				</div>
+			</li>
+			<li>
+				<div class="item">
+					<em>6</em><img src="images/6.jpg" alt="">
+					<dl>
+						<dt>心花路放</dt>
+						<dd>类型：动作 / 科幻 / 冒险</dd>
+						<dd>地区：中国大陆 / 香港</dd>
+					</dl>
+				</div>
+			</li>
+			<li>
+				<div class="item">
+					<em>7</em><img src="images/7.jpg" alt="">
+					<dl>
+						<dt>绝密跟踪</dt>
+						<dd>类型：动作 / 科幻 / 冒险</dd>
+						<dd>地区：中国大陆 / 香港</dd>
+					</dl>
+				</div>
+			</li>
+			<li>
+				<div class="item">
+					<em>8</em><img src="images/8.jpg" alt="">
+					<dl>
+						<dt>黄金时代</dt>
+						<dd>类型：动作 / 科幻 / 冒险</dd>
+						<dd>地区：中国大陆 / 香港</dd>
+					</dl>
+				</div>
+			</li>
+			<li>
+				<div class="item">
+					<em>9</em><img src="images/9.jpg" alt="">
+					<dl>
+						<dt>触不可及</dt>
+						<dd>类型：动作 / 科幻 / 冒险</dd>
+						<dd>地区：中国大陆 / 香港</dd>
+					</dl>
+				</div>
+			</li>
+			<li>
+				<div class="item">
+					<em>10</em><img src="images/10.jpg" alt="">
+					<dl>
+						<dt>麦兜我和我妈妈</dt>
+						<dd>类型：动作 / 科幻 / 冒险</dd>
+						<dd>地区：中国大陆 / 香港</dd>
+					</dl>
+				</div>
+			</li>
+		</ul>
+	</div>
+</div>
+
+<script src="js/jquery-1.8.3.min.js"></script>
+<script src="js/jquery.vticker.pro.js"></script>
+<script>
+$(function(){
+	$('.dowebok').vTicker({
+		showItems: 3
+	});
+});
+</script>
+
+</body>
+</html>

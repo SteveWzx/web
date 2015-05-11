@@ -7,3 +7,4 @@
 * Backbone及Underscore源码分析—Backbone及Underscore源码分析
 * jQuery-plugin—How-to-write-jQuery-plugin
 * window—面向对象组件的形式模拟window
+* vticker—jQuery垂直滚动插件vTicker
