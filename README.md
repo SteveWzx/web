@@ -10,3 +10,4 @@
 * vticker -> jQuery plugin vTicker
 * ckslide -> jQuery plugin ck-slide
 * gallery -> jQuery plugin gallery
+* todomvc-jquery -> jQuery TodoMVC Example
