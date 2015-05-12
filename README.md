@@ -9,3 +9,4 @@
 * window -> Object oriented simulation component window
 * vticker -> jQuery plugin vTicker
 * ckslide -> jQuery plugin ck-slide
+* gallery -> jQuery plugin gallery
