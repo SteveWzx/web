@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="887488bb-414b-4cec-a2df-5d57efed4047" name="Default" comment="" />
+    <list default="true" id="887488bb-414b-4cec-a2df-5d57efed4047" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+    </list>
     <ignored path="web.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -51,6 +53,7 @@
         <option value="$PROJECT_DIR$/gallery/gallery.js" />
         <option value="$PROJECT_DIR$/gallery/jquery.gallery.js" />
         <option value="$PROJECT_DIR$/gallery/gallery.html" />
+        <option value="$PROJECT_DIR$/todomvc-jquery/index.html" />
       </list>
     </option>
   </component>
@@ -114,7 +117,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="gallery" />
+              <option name="myItemId" value="todomvc-jquery" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -229,7 +232,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="1" />
+      <option name="time" value="2" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
@@ -344,7 +347,7 @@
         <state vertical-scroll-proportion="-5.24" vertical-offset="5229" max-vertical-offset="6129">
           <caret line="19" column="16" selection-start-line="19" selection-start-column="16" selection-end-line="19" selection-end-column="16" />
           <folding>
-            <element signature="n#!!doc" expanded="true" />
+            <element signature="n#!!doc" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -354,7 +357,7 @@
         <state vertical-scroll-proportion="6.96" vertical-offset="0" max-vertical-offset="6561">
           <caret line="230" column="7" selection-start-line="230" selection-start-column="7" selection-end-line="230" selection-end-column="7" />
           <folding>
-            <element signature="n#!!doc" expanded="true" />
+            <element signature="n#!!doc" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -367,14 +370,92 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/todomvc-jquery/css/index.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.12" vertical-offset="405" max-vertical-offset="10368">
+          <caret line="11" column="20" selection-start-line="11" selection-start-column="20" selection-end-line="11" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/gallery/gallery.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.30645162" vertical-offset="1265" max-vertical-offset="2700">
-          <caret line="38" column="14" selection-start-line="38" selection-start-column="14" selection-end-line="38" selection-end-column="14" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2754">
+          <caret line="0" column="9" selection-start-line="0" selection-start-column="2" selection-end-line="0" selection-end-column="9" />
           <folding>
             <element signature="n#style#0;n#span#0;n#span#1;n#span#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <marker date="1431401596260" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1431401596260" expanded="true" signature="-1:-1" placeholder="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/todomvc-jquery/js/jquery/dist/jquery.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="248886">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/todomvc-jquery/js/handlebars/dist/handlebars.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.42" vertical-offset="648" max-vertical-offset="85077">
+          <caret line="10" column="26" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/todomvc-jquery/js/director/build/director.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.39" vertical-offset="729" max-vertical-offset="19764">
+          <caret line="14" column="2" selection-start-line="14" selection-start-column="2" selection-end-line="14" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/lib/JavaScriptLanguage.jar!/com/intellij/lang/javascript/index/predefined/EcmaScript5.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33333334" vertical-offset="3993" max-vertical-offset="5157">
+          <caret line="159" column="19" selection-start-line="159" selection-start-column="19" selection-end-line="159" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/todomvc-jquery/js/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6" vertical-offset="162" max-vertical-offset="1161">
+          <caret line="135" column="13" selection-start-line="135" selection-start-column="13" selection-end-line="135" selection-end-column="13" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="e#251#936#0" expanded="false" />
+            <element signature="e#972#1201#0" expanded="false" />
+            <element signature="e#1232#1825#0" expanded="false" />
+            <element signature="e#1853#2369#0" expanded="false" />
+            <element signature="e#2393#2693#0" expanded="false" />
+            <element signature="e#2723#3095#0" expanded="false" />
+            <element signature="e#3123#3275#0" expanded="false" />
+            <element signature="e#3307#3393#0" expanded="false" />
+            <element signature="e#3428#3513#0" expanded="false" />
+            <element signature="e#3547#3730#0" expanded="false" />
+            <element signature="e#3764#3850#0" expanded="false" />
+            <element signature="e#3995#4170#0" expanded="false" />
+            <element signature="e#4195#4447#0" expanded="false" />
+            <element signature="e#4472#4589#0" expanded="false" />
+            <element signature="e#4612#4731#0" expanded="false" />
+            <element signature="e#4759#4905#0" expanded="false" />
+            <element signature="e#4930#5248#0" expanded="false" />
+            <element signature="e#5274#5350#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/todomvc-jquery/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.6175115" vertical-offset="0" max-vertical-offset="1755">
+          <caret line="52" column="17" selection-start-line="52" selection-start-column="17" selection-end-line="52" selection-end-column="17" />
+          <folding />
         </state>
       </provider>
     </entry>
