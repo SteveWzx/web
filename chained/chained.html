@@ -1,0 +1,394 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>Chained Select</title>
+</head>
+
+<body>
+  <div id="wrap"> 
+    <div id="content">
+      
+    <div class="entry">
+      <h1>jquery.chained.js</h1>
+      <form>
+        <select id="mark">
+          <option value="">--</option>
+          <option value="bmw">BMW</option>
+          <option value="audi">Audi</option>
+        </select>
+        <select id="series">
+          <option value="">--</option>
+          
+          <option value="series-1" class="bmw">1 series</option>
+          <option value="series-3" class="bmw">3 series</option>
+          <option value="series-5" class="bmw">5 series</option>
+          <option value="series-6" class="bmw">6 series</option>
+          <option value="series-7" class="bmw">7 series</option>
+          
+          <option value="a1" class="audi">A1</option>
+          <option value="a3" class="audi">A3</option>
+          <option value="s3" class="audi">S3</option>
+          <option value="a4" class="audi">A4</option>
+          <option value="s4" class="audi">S4</option>
+          <option value="a5" class="audi">A5</option>
+          <option value="s5" class="audi">S5</option>
+          <option value="a6" class="audi">A6</option>
+          <option value="s6" class="audi">S6</option>
+          <option value="rs6" class="audi">RS6</option>
+          <option value="a8" class="audi">A8</option>
+        </select>
+        <select id="model">
+          <option value="">--</option>
+          
+          <option value="3-doors"       class="series-1">3 doors</option>
+          <option value="5-doors"       class="series-1">5 doors</option>
+          <option value="coupe"         class="series-1 series-3 series-6">Coupe</option>
+          <option value="cabrio"        class="series-1 series-3 series-6">Cabrio</option>
+          <option value="sedan"         class="series-3 series-5 series-7">Sedan</option>
+          <option value="touring"       class="series-3 series-5">Touring</option>
+          <option value="gran-tourismo" class="series-5">Gran Tourismo</option>
+          
+          <option value="sedan"        class="a1 a3 s3 a4 s4 a6 s6 rs6">Sedan</option>
+          <option value="sportback"    class="a3 s3 a5 s5">Sportback</option>
+          <option value="cabriolet"    class="a3 a5 s5">Cabriolet</option>
+          <option value="avant"        class="a4 s4 a6 s6 rs6">Avant</option>
+          <option value="allroad"      class="a4 a6">Allroad</option>
+          <option value="coupe"        class="a5 s5">Coupe</option>    
+        </select>
+        
+        <select id="engine">
+          <option value="">--</option>   
+          <option value="25-petrol" class="series-3 a3 a4">2.5 petrol</option>
+          <option value="30-petrol" class="series-3 series-5 series-6 a3 a4 a5">3.0 petrol</option>
+          <option value="30-diesel" class="series-3\sedan series-5\sedan a5">3.0 diesel</option>
+        </select>
+        
+        <button id="button" type="submit">Button</button>
+        
+      </form>
+      
+      <form>
+        <select id="a">
+          <option value="a1">a1</option>
+          <option value="a2">a2</option>
+          <option value="a3">a3</option>
+        </select>
+        <select id="b">
+          <option value="b1">b1</option>
+          <option value="b2">b2</option>
+          <option value="b3">b3</option>
+        </select>
+        <select id="c">
+          <option value="">--</option>
+          <option value="a1" class="a1">anything starting a1</option>
+          <option value="a1b1" class="a1\b1">a1b1</option>
+          <option value="a1b1_a1b2" class="a1\b1 a1\b2">a1b1 or a1b2</option>
+          <option value="a2b2" class="a2\b2">a2b2</option>
+          <option value="a2b3" class="a2\b3">a2b3</option>
+        </select>
+      </form>
+            
+    </div>
+    
+    <div class="entry">
+      <h3>jquery.chained.remote.js</h3>
+      <form>
+        <select id="mark-remote">
+          <option value="">--</option>
+          <option value="bmw">BMW</option>
+          <option value="audi">Audi</option>
+        </select>
+        <select id="series-remote">
+          <option value="">--</option>
+        </select>
+        <select id="model-remote">
+          <option value="">--</option>   
+        </select>
+        <select id="engine-remote">
+          <option value="">--</option>   
+        </select>
+        
+        <button id="button-remote" type="submit">Button</button>
+        
+      </form>
+      
+      <form>
+        <select id="a-remote">
+          <option value="a1">a1</option>
+          <option value="a2">a2</option>
+          <option value="a3">a3</option>
+        </select>
+        <select id="b-remote">
+          <option value="b1">b1</option>
+          <option value="b2">b2</option>
+          <option value="b3">b3</option>
+        </select>
+        <select id="c-remote">
+          <option value="">--</option>
+        </select>
+      </form>
+            
+    </div>
+    
+    <div id="about">
+        <div class="article">
+            <h2>简介</h2>
+            <p>Chained 是一款简单易用的级联下拉框插件，提供了 jQuery 和 Zepto 两个版本。Chained 支持无限级、支持 json 数据。</p>
+            <h2>基本使用</h2>
+            <p>1、引入文件</p>
+<pre>&lt;script src="js/jquery.min.js"&gt;&lt;/script&gt;
+&lt;script src="js/jquery.chained.js"&gt;&lt;/script&gt;</pre>
+            <p>如果你使用 zepto，除了引入 zepto 之外，还需要引入 zepto-selector，如</p>
+<pre>&lt;script src="js/zepto.js"&gt;&lt;/script&gt;
+&lt;script src="js/zepto-selector.js"&gt;&lt;/script&gt;
+&lt;script src="js/jquery.chained.js"&gt;&lt;/script&gt;</pre>
+            <p>2、HTML</p>
+<pre>&lt;select id="mark" name="mark"&gt;
+&nbsp;&nbsp; &nbsp;&lt;option value=""&gt;品牌&lt;/option&gt;
+&nbsp;&nbsp; &nbsp;&lt;option value="audi"&gt;奥迪&lt;/option&gt;
+&nbsp;&nbsp; &nbsp;&lt;option value="bmw"&gt;宝马&lt;/option&gt;
+&lt;/select&gt;
+
+&lt;select id="series" name="series"&gt;
+&nbsp;&nbsp; &nbsp;&lt;option value=""&gt;系列&lt;/option&gt;
+&nbsp;&nbsp; &nbsp;&lt;option value="a3" class="audi"&gt;A3&lt;/option&gt;
+&nbsp;&nbsp; &nbsp;&lt;option value="a4" class="audi"&gt;A4&lt;/option&gt;
+&nbsp;&nbsp; &nbsp;&lt;option value="a5" class="audi"&gt;A5&lt;/option&gt;
+
+&nbsp;&nbsp; &nbsp;&lt;option value="series-3" class="bmw"&gt;3系&lt;/option&gt;
+&nbsp;&nbsp; &nbsp;&lt;option value="series-5" class="bmw"&gt;5系&lt;/option&gt;
+&nbsp;&nbsp; &nbsp;&lt;option value="series-6" class="bmw"&gt;6系&lt;/option&gt;
+&lt;/select&gt;</pre>
+            <p>注意 value 和 class 的对应关系。</p>
+            <p>3、JavaScript</p>
+<pre>$(function() {
+&nbsp;&nbsp; &nbsp;$("#series").chained("#mark");
+});</pre>
+            <h2>更多级</h2>
+            <p>Chained 支持无限级，只需要后面添加即可，我们再在上面的 HTML 代码后面添加一个 select：</p>
+<pre>&lt;select id="model" name="model"&gt;
+&nbsp;&nbsp; &nbsp;&lt;option value=""&gt;类型&lt;/option&gt;
+&nbsp;&nbsp; &nbsp;&lt;option value="coupe" class="series-3 series-6 a5"&gt;双门跑车&lt;/option&gt;
+&nbsp;&nbsp; &nbsp;&lt;option value="cabrio" class="series-3 series-6 a3 a5"&gt;敞篷车&lt;/option&gt;
+&nbsp;&nbsp; &nbsp;&lt;option value="sedan" class="series-3 series-5 a3 a4"&gt;四门轿车&lt;/option&gt;
+&nbsp;&nbsp; &nbsp;&lt;option value="sportback" class="a3 a5"&gt;跑车&lt;/option&gt;
+&lt;/select&gt;</pre>
+            <p>对应的 JavaScript：</p>
+<pre>$(function() {
+&nbsp;&nbsp; &nbsp;$('#series').chained('#mark');
+&nbsp;&nbsp; &nbsp;$('#model').chained('#series');
+});</pre>
+            <h2>关联多个下拉框</h2>
+            <p>Chained 还可以关联多个父级下拉框，你需要在 class 中指定，以 “\” 分割，当多个父级的值满足条件后才会显示，如：</p>
+<pre>&lt;select id="engine" name="engine"&gt;
+&nbsp;&nbsp; &nbsp;&lt;option value=""&gt;排量&lt;/option&gt;
+&nbsp;&nbsp; &nbsp;&lt;option value="25-petrol" class="series-3 a3 a4"&gt;2.5 汽油&lt;/option&gt;
+&nbsp;&nbsp; &nbsp;&lt;option value="30-petrol" class="series-3 series-5 series-6 a3 a4 a5"&gt;3.0 汽油&lt;/option&gt;
+&nbsp;&nbsp; &nbsp;&lt;option value="30-diesel" class="series-3\sedan series-5\sedan a5"&gt;3.0 柴油&lt;/option&gt;
+&lt;/select&gt;</pre>
+            <p>对应的 JavaScript：</p>
+<pre>$(function() {
+&nbsp;&nbsp; &nbsp;$('#series').chained('#mark');
+&nbsp;&nbsp; &nbsp;$('#model').chained('#series');
+&nbsp;&nbsp; &nbsp;$('#engine').chained('#series, #model');
+});</pre>
+            <p>上面的代码表示 3.0 汽油版只有 3 系四门轿车、5 系四门轿车和 A5 才有。</p>
+            <h2>Remote 版本</h2>
+            <p>级联下拉框的数据一般不会直接写到页面，可能需要另外获取，如从 json 文件中获取等，这时候需要用到另一个版本，所以引入的文件就变成：</p>
+<pre>&lt;script src="js/jquery.min.js"&gt;&lt;/script&gt;
+&lt;script src="js/jquery.chained.remote.js"&gt;&lt;/script&gt;</pre>
+            <p>我们把 HTML 的数据删除，改成从 json 文件中获取：</p>
+<pre>&lt;select id="mark" name="mark"&gt;
+&nbsp;&nbsp; &nbsp;&lt;option value=""&gt;品牌&lt;/option&gt;
+&nbsp;&nbsp; &nbsp;&lt;option value="audi"&gt;奥迪&lt;/option&gt;
+&nbsp;&nbsp; &nbsp;&lt;option value="bmw"&gt;宝马&lt;/option&gt;
+&lt;/select&gt;
+
+&lt;select id="series" name="series"&gt;
+&nbsp;&nbsp; &nbsp;&lt;option value=""&gt;系列&lt;/option&gt;
+&lt;/select&gt;
+
+&lt;select id="model" name="model"&gt;
+&nbsp;&nbsp; &nbsp;&lt;option value=""&gt;类型&lt;/option&gt;
+&lt;/select&gt;
+
+&lt;select id="engine" name="engine"&gt;
+&nbsp;&nbsp; &nbsp;&lt;option value=""&gt;排量&lt;/option&gt;
+&lt;/select&gt;</pre>
+            <p>对应的 JavaScript：</p>
+<pre>$(function() {
+&nbsp;&nbsp; &nbsp;$('#series').remoteChained({
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;parents: '#mark',
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;url: '/api/series.json'
+&nbsp;&nbsp; &nbsp;});
+
+&nbsp;&nbsp; &nbsp;$('#model').remoteChained({
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;parents: '#series',
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;url: '/api/model.json'
+&nbsp;&nbsp; &nbsp;});
+
+&nbsp;&nbsp; &nbsp;$('#engine').remoteChained({
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;parents: '#series, #model',
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;url: '/api/engine.json'
+&nbsp;&nbsp; &nbsp;});
+});</pre>
+            <p>Json 可以的格式如下，第一个是 value，第二个是文本：</p>
+<pre>{
+&nbsp;&nbsp; &nbsp;"" : "--",
+&nbsp;&nbsp; &nbsp;"series-1" : "1 series",
+&nbsp;&nbsp; &nbsp;"series-3" : "3 series",
+&nbsp;&nbsp; &nbsp;"series-5" : "5 series",
+&nbsp;&nbsp; &nbsp;"series-6" : "6 series",
+&nbsp;&nbsp; &nbsp;"series-7" : "7 series"
+}</pre>
+            <h2>引导选择</h2>
+            <p>页面初始化的时候，你可以指定一个默认的值，如：</p>
+<pre>&lt;select id="mark" name="mark"&gt;
+&nbsp;&nbsp; &nbsp;&lt;option value=""&gt;--&lt;/option&gt;
+&nbsp;&nbsp; &nbsp;&lt;option value="bmw" selected&gt;BMW&lt;/option&gt;
+&nbsp;&nbsp; &nbsp;&lt;option value="audi"&gt;Audi&lt;/option&gt;n
+&lt;/select&gt;
+
+&lt;select id="series" name="series"&gt;
+&nbsp;&nbsp; &nbsp;&lt;option value="--"&gt;--&lt;/option&gt;
+&lt;/select&gt;</pre>
+            <p>对应的 JavaScript：</p>
+<pre>$(function() {
+&nbsp;&nbsp; &nbsp;$('#series').remoteChained({
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;parents: '#mark',
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;url: '/api/series.json',
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;bootstrap : {
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;'': '--',
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;'series-3': '3系',
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;'series-5': '5系',
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;'series-6': '6系',
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;'selected': 'series-3'
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;}
+&nbsp;&nbsp; &nbsp;});
+});</pre>
+            <p>当页面加载的时候，会默认选择“3系”。</p>
+            <h2>显示 loading</h2>
+            <p>当数据较多时，加载可能需要花费一些时间，为了更好的体验，可以在加载数据时显示 loading：</p>
+<pre>$(function() {
+&nbsp;&nbsp; &nbsp;$('#engine').remoteChained({
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;parents: '#engine, #model',
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;url: '/api/series.json',
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;loading: 'Loading...'
+&nbsp;&nbsp; &nbsp;});
+});</pre>
+        </div>
+    </div>
+
+  </div>
+  </div>
+
+  <script type="text/javascript" src="jquery-1.8.3.js"></script>
+  <script src="jquery.chained.js" type="text/javascript"></script>
+  <script src="jquery.chained.remote.js" type="text/javascript"></script>
+  <script type="text/javascript" charset="utf-8">
+      $(function() {
+
+          /* For jquery.chained.js */
+          $("#series").chained("#mark");
+          $("#model").chained("#series");
+          $("#engine").chained("#series, #model");
+
+          /* Show button after each pulldown has a value. */
+          $("#engine").bind("change", function(event) {
+              if ("" != $("option:selected", this).val() && "" != $("option:selected", $("#model")).val()) {
+                  $("#button").fadeIn();
+              } else {
+                  $("#button").hide();
+              }
+          });
+
+          $("#c").chained("#a,#b");
+
+          /* For jquery.chained.remote.js */
+          $("#series-remote").remoteChained({
+              parents : "#mark-remote",
+              url : "json.php?sleep=1",
+              loading : "--"
+          });
+          $("#model-remote").remoteChained({
+              parents : "#series-remote",
+              url : "json.php?sleep=1",
+              loading : "--"
+          });
+          $("#engine-remote").remoteChained({
+              parents : "#series-remote, #model-remote",
+              url : "json.php?sleep=1",
+              loading : "--",
+              clear : true
+          });
+
+          /* Show button after each pulldown has a value. */
+          $("#engine-remote").bind("change", function(event) {
+              if ("" != $("option:selected", this).val() && "" != $("option:selected", $("#model-remote")).val()) {
+                  $("#button-remote").fadeIn();
+              } else {
+                  $("#button-remote").hide();
+              }
+          });
+
+          $("#c-remote").remoteChained("#a-remote,#b-remote", "json.php");
+
+          /* For multiple jquery.chained.remote.js */
+          $(".series-remote").each(function() {
+              $(this).remoteChained($(".mark-remote", $(this).parent()), "json.php");
+          });
+          $(".model-remote").each(function() {
+              $(this).remoteChained($(".series-remote", $(this).parent()), "json.php");
+          });
+          $(".engine-remote").each(function() {
+              $(this).remoteChained([
+                  $(".series-remote", $(this).parent()),
+                  $(".model-remote", $(this).parent())
+              ], "json.php");
+          });
+
+          /* For multiple jquery.chained.js */
+          $(".series").each(function() {
+              $(this).chained($(".mark", $(this).parent()));
+          });
+          $(".model").each(function() {
+              $(this).chained($(".series", $(this).parent()));
+          });
+          $(".engine").each(function() {
+              $(this).chained([
+                  $(".series", $(this).parent()),
+                  $(".model", $(this).parent())
+              ]);
+          });
+
+          /* For normal input and jquery.chained.remote.js */
+          $("#series-remote-2").remoteChained({
+              parents : "#mark-remote-2",
+              url : "json.php",
+          });
+          $("#model-remote-2").remoteChained({
+              parents : "#series-remote-2",
+              url : "json.php"
+          });
+          $("#engine-remote-2").remoteChained({
+              parents : "#series-remote-2, #model-remote-2",
+              url : "json.php"
+          });
+
+          /* Show button after each pulldown has a value. */
+          $("#engine-remote-2").bind("change", function(event) {
+              if ("" != $("option:selected", this).val() && "" != $("option:selected", $("#model-remote-2")).val()) {
+                  $("#button-remote-2").fadeIn();
+              } else {
+                  $("#button-remote-2").hide();
+              }
+          });
+
+      });
+  </script>
+
+
+</body>
+</html>
