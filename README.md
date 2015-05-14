@@ -11,3 +11,4 @@
 * ckslide -> jQuery plugin ck-slide
 * gallery -> jQuery plugin gallery
 * todomvc-jquery -> jQuery TodoMVC Example
+* chained -> jQuery plugin chained

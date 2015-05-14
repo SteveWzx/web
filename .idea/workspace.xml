@@ -1,17 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="887488bb-414b-4cec-a2df-5d57efed4047" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/chained/chained.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/chained/jquery-1.8.3.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/chained/jquery.chained.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/chained/jquery.chained.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/chained/jquery.chained.remote.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/chained/jquery.chained.remote.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/chained/json.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="887488bb-414b-4cec-a2df-5d57efed4047" name="Default" comment="" />
     <ignored path="web.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -48,8 +38,8 @@
       <file leaf-file-name="jquery.chained.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/chained/jquery.chained.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.33333334" vertical-offset="996" max-vertical-offset="1944">
-              <caret line="87" column="79" selection-start-line="87" selection-start-column="79" selection-end-line="87" selection-end-column="79" />
+            <state vertical-scroll-proportion="0.60333335" vertical-offset="996" max-vertical-offset="1944">
+              <caret line="96" column="11" selection-start-line="96" selection-start-column="11" selection-end-line="96" selection-end-column="11" />
               <folding>
                 <element signature="e#691#1191#0" expanded="false" />
                 <element signature="e#1566#2156#0" expanded="false" />
@@ -578,8 +568,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/chained/jquery.chained.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33333334" vertical-offset="996" max-vertical-offset="1944">
-          <caret line="87" column="79" selection-start-line="87" selection-start-column="79" selection-end-line="87" selection-end-column="79" />
+        <state vertical-scroll-proportion="0.60333335" vertical-offset="996" max-vertical-offset="1944">
+          <caret line="96" column="11" selection-start-line="96" selection-start-column="11" selection-end-line="96" selection-end-column="11" />
           <folding>
             <element signature="e#691#1191#0" expanded="false" />
             <element signature="e#1566#2156#0" expanded="false" />
