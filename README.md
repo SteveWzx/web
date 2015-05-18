@@ -12,3 +12,4 @@
 * gallery -> jQuery plugin gallery
 * todomvc-jquery -> jQuery TodoMVC Example
 * chained -> jQuery plugin chained
+* scrollfollow -> jQuery plugin scrollfollow
