@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="ui/css/tab.css"/>
+    <script src="jquery-1.8.3.js"></script>
+    <script src="jquery.tab.pro.js"></script>
+    <title>UED_XYWY</title>
+</head>
+<body>
+<br><br>
+<div class="gird-1000">
+    <div class="ant-common-item tab-box tab-box2">
+        <div class="ant-common-item-hd ant-tab">
+            <ul>
+                <li><a href="javascript:;">皮肤科</a></li>
+                <li class="current"><a href="javascript:;">神经内科</a></li>
+                <li><a href="javascript:;">神经外科</a></li>
+                <li><a href="javascript:;">血液科</a></li>
+            </ul>
+        </div>
+        <div class="ant-common-item-bd tab-panel tab_temp">
+            <div class="panel" style="display: none;">panel1</div>
+            <div class="panel">panel2</div>
+            <div class="panel" style="display: none;">panel3</div>
+            <div class="panel" style="display: none;">panel4</div>
+        </div>
+    </div>
+    <br><br>
+    <div class="ant-common-item tab-box tab-box1">
+        <div class="ant-common-item-hd">
+            <div class="ant-tab-slider">
+                <ul>
+                    <li class="current">内分泌科</li>
+                    <li>神经内科</li>
+                    <li>神经外科</li>
+                    <li>血液科</li>
+                </ul>
+                <span class="ant-sliding"></span>
+            </div>
+        </div>
+        <div class="ant-common-item-bd tab-panel tab_temp">
+            <div class="panel">panel1</div>
+            <div class="panel" style="display: none;">panel2</div>
+            <div class="panel" style="display: none;">panel3</div>
+            <div class="panel" style="display: none;">panel4</div>
+        </div>
+    </div>
+</div>
+<script>
+    $(function(){
+        $('.tab-box2').tab();
+        $('.tab-box1').tab({
+            slideTab: {
+                sliding: true,
+                trigger: '.ant-sliding'
+            }
+        });
+
+    });
+</script>
+</body>
+</html>
