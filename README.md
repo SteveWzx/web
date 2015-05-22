@@ -14,4 +14,5 @@
 * chained -> jQuery plugin chained
 * scrollfollow -> jQuery plugin scrollfollow
 * tab-> jQuery plugin tab
-* slider> jQuery plugin slider
+* slider -> jQuery plugin slider
+* carousel -> jquery ratated slider
