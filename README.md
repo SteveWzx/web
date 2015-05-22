@@ -16,3 +16,4 @@
 * tab-> jQuery plugin tab
 * slider -> jQuery plugin slider
 * carousel -> jquery ratated slider
+* thin -> Write your own JavaScript framework from scratch

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Simple binding demo</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script type="text/javascript" src="lodash.min.js"></script>
+	<script type="text/javascript" src="thin.js"></script>
+</head>
+<body>
+<div vm-model="test.Person">
+	<input type="text" vm-value="name"/>
+	<input type="text" vm-value="age"/>
+	<input type="text" vm-value="age"/>
+	<input type="button" vm-click="growUp" value="Grow Up"/>
+</div>
+
+<div vm-model="test.Person" vm-init="init">
+	<input type="text" vm-value="name"/>
+	<input type="text" vm-value="age"/>
+	<input type="button" value="Grow Up" vm-click="growUp"/>
+	<input type="button" value="Adult" vm-enable="isAdult" vm-click="greet"/>
+	<input type="button" value="Drink" vm-visible="isAdult" vm-click="drink"/>
+</div>
+<script type="text/javascript">
+	thin.define("test.Person", [], function () {
+		function Person() {
+			this.name = "Tom";
+			this.age = 5;
+		}
+
+		Person.prototype = {
+			init: function () {
+				this.name = "Jerry";
+				this.age = 3;
+			},
+
+			growUp: function () {
+				this.age++;
+			},
+
+			isAdult: function() {
+				return this.age >= 18;
+			},
+
+			greet: function() {
+				alert("I am " + this.age + " years old");
+			},
+
+			drink: function() {
+				alert("A bottle of wine!");
+			}
+		};
+
+		return Person;
+	});
+
+	thin.fire({type: "ready"});
+</script>
+</body>
+</html>
