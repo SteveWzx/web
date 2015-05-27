@@ -13,12 +13,10 @@ $(function(){
   var Todo = Backbone.Model.extend({
 
     // Default attributes for the todo item.
-    defaults: function() {
-      return {
+    defaults: {
         title: "empty todo...",
         order: Todos.nextOrder(),
         done: false
-      };
     },
 
     // Toggle the `done` state of this todo item.
@@ -31,8 +29,7 @@ $(function(){
   // Todo Collection
   // ---------------
 
-  // The collection of todos is backed by *localStorage* instead of a remote
-  // server.
+  // The collection of todos is backed by *localStorage* instead of a remote server.
   var TodoList = Backbone.Collection.extend({
 
     // Reference to this collection's model.
@@ -175,8 +172,7 @@ $(function(){
       Todos.fetch();
     },
 
-    // Re-rendering the App just means refreshing the statistics -- the rest
-    // of the app doesn't change.
+    // Re-rendering the App just means refreshing the statistics -- the rest of the app doesn't change.
     render: function() {
       var done = Todos.done().length;
       var remaining = Todos.remaining().length;
@@ -193,8 +189,7 @@ $(function(){
       this.allCheckbox.checked = !remaining;
     },
 
-    // Add a single todo item to the list by creating a view for it, and
-    // appending its element to the `<ul>`.
+    // Add a single todo item to the list by creating a view for it, and appending its element to the `<ul>`.
     addOne: function(todo) {
       var view = new TodoView({model: todo});
       this.$("#todo-list").append(view.render().el);
@@ -205,8 +200,7 @@ $(function(){
       Todos.each(this.addOne, this);
     },
 
-    // If you hit return in the main input field, create new **Todo** model,
-    // persisting it to *localStorage*.
+    // If you hit return in the main input field, create new **Todo** model, persisting it to *localStorage*.
     createOnEnter: function(e) {
       if (e.keyCode != 13) return;
       if (!this.input.val()) return;
