@@ -18,3 +18,4 @@
 * carousel -> jquery ratated slider
 * thin -> Write your own JavaScript framework from scratch
 * backbone-branch-wzx -> backbonejs study
+* backbone_* -> backbonejs todu mvc
