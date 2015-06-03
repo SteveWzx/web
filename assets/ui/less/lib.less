@@ -15,7 +15,7 @@
   textarea{resize:none}
   table{border-collapse:collapse;border-spacing:0}
   legend{display:none}
-  a, a:visited {text-decoration:none;outline: none}
+  a, a:visited {text-decoration:none;outline:none}
   a:hover {text-decoration:underline}
 }
 // layout
@@ -196,17 +196,6 @@
 .lightblue() {
   background:#e6fbfc;
 }
-.deepgray() {
-  color:#333;
-  text-decoration:none;
-}
-.gray(){
-  color:#666;
-  text-decoration:none;
-}
-.lightgray(){
-  color:#999;
-}
 .hover() {
   color:#0dc3ce;
   text-decoration:underline;
@@ -217,17 +206,45 @@
 .green() {
   color:#62bd42;
 }
-.fa3() {
+.c3() {
+  color: #333;
+}
+.c6() {
+  color: #666;
+}
+.c9() {
+  color: #999;
+}
+.cf() {
+  color: #fff;
+}
+.bgfa() {
   background:#fafafa;
 }
-.fd3() {
-  background:#fdfdfd;
+.bgf() {
+  background:#fff;
 }
-.fe3() {
-  background:#fefefe;
+.poi() {
+  cursor: pointer;
 }
-.f23() {
-  background:#f2f2f2;
+//btn
+.btn_blue() {
+  display:inline-block;
+  padding:0 20px;
+  height:30px;
+  border:1px solid #0dc3ce;
+  border-radius:2px;
+  line-height:30px;
+  text-align:center;
+  font-size:12px;
+  color:#f9f9f9;
+  background:#0dc3ce;
+  outline: none;
+  transition:background .2s ease-in, border .2s ease-in;
+  &:hover{
+    border:1px solid #04b9c4;
+    background:#04b9c4;
+  }
 }
 
 
