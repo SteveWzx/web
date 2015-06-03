@@ -19,3 +19,5 @@
 * thin -> Write your own JavaScript framework from scratch
 * backbone-branch-wzx -> backbonejs study
 * backbone_* -> backbonejs todu mvc
+* assets -> xywy assets management system
+* dop -> data-oriented-programme

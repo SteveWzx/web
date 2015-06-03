@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>DOP</title>
+    <link rel="stylesheet" href="../css/css/lib.css">
+    <link rel="stylesheet" href="../css/css/demo.css">
+</head>
+<body>
+<div id="main">
+    <div id="body" class="light">
+        <div id="content" class="show">
+            <div class="demo">
+                <div class="mt10 cho_box z">
+                    <div class="fix">
+                        <!-- 左边的选菜项 -->
+                        <div class="cho_left">
+                            <div class="equal_height cho_equal_height"></div>
+                            <ul class="rel cho_menu">
+                                <li><a href="javascript:" name="choLink" class="cho_link" data-id="fruits">我爱水果<span class="ml20" id="fruits"></span></a></li>
+                                <li><a href="javascript:" name="choLink" class="cho_link cho_link_on" data-id="vegetables">我爱蔬菜<span class="ml20" id="vegetables"></span></a></li>
+                            </ul>
+                        </div>
+
+                        <!-- 右侧主列表 -->
+                        <div id="listOut" class="cell">
+                            <ul class="fix cho_list_title">
+                                <li class="cho_list_li">名称</li>
+                                <li class="cho_list_li tc">价格(元)</li>
+                                <li class="cho_list_li tc">数量/操作</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../lib/require.js" data-main="../src/main" async defer></script>
+</body>
+</html>
