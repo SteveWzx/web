@@ -1,6 +1,6 @@
 define(function(){
     return {
-        source:'<div class="{{typeId}}">'
+        /*source:'<div class="{{typeId}}">'
                 +'{{each goods as value index}}'
                 +   '<ul {{if value.num == 0}} class="fix cho_list" {{else}} class="fix cho_list cho_list_on" {{/if}}>'
                 +   '<li class="cho_list_li">{{value.name}}</li>'
@@ -15,6 +15,11 @@ define(function(){
                 +    '</li>'
                 +    '</ul>'
                 +'{{/each}}'
-                +'</div>'
+                +'</div>',*/
+        source2:'<ul class="rel cho_menu">'
+                +'{{each json as value index}}'
+                +    '<li><a href="javascript:" name="choLink" class="cho_link">{{value.typeId}}<span class="ml20" id="{{value.typeId}}"></span></a></li>'
+                +'{{/each}}'
+                +'</ul>'
     };
 });

@@ -1,6 +1,6 @@
 define(function(){
     return {
-        vegetables : {
+        json: [{
             typeId : "vegetables",
             goods : [
                 { id: "000010", name: "白萝卜", price: 0.4, units: "/斤", num: 0 },
@@ -15,7 +15,7 @@ define(function(){
                 { id: "000019", name: "扁豆  ", price: 1.7, units: "/斤", num: 0 }
             ]
         },
-        fruits : {
+        {
             typeId : "fruits",
             goods : [
                 { id: "000010", name: "苹果", price: 0.4, units: "/斤", num: 0 },
@@ -28,6 +28,6 @@ define(function(){
                 { id: "000018", name: "葡萄", price: 0.32, units: "/斤", num: 0 },
                 { id: "000019", name: "香蕉", price: 1.7, units: "/斤", num: 0 }
             ]
-        }
+        }]
     };
 });

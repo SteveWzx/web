@@ -1,29 +1,33 @@
 define(['jquery','artpl','src/temp','src/data'],function($, template, temp, data){
 
-    var Calculate = function(goods) {
-        this.goods = goods;
+    var Calculate = function(json) {
+        this.json = json;
         if (!(this instanceof Calculate)) {
-            return new Calculate(goods);
+            return new Calculate(json);
         }
         this.init();
     };
 
     Calculate.prototype = {
         init : function() {
-            this.render(this.goods);
+            this.render(this.json);
         },
         render: function(json){
-            var render = template.compile(temp.source);
-            var html = render(json);
+            /*var render = template.compile(temp.source);
+            var html = render(data);
             this.layout = $('#listOut');
-            this.layout.append(html);
+            this.layout.append(html);*/
+            console.log(json);
+            var renderLeft = template.compile(temp.source2);
+            var htmlLeft = renderLeft(json);
+            this.left = $('.cho_left');
+            this.left.append(htmlLeft);
         }
     };
 
-    new Calculate(data.fruits);
-    new Calculate(data.vegetables);
+    new Calculate(data.json);
 
-    $('.fruits').hide();
+    /*$('.fruits').hide();
     $('.cho_menu>li>a').click(function(){
         $(this).addClass('cho_link_on').parent('li').siblings().find('a').removeClass('cho_link_on');
         var goods = $(this).data('id');
@@ -74,7 +78,7 @@ define(['jquery','artpl','src/temp','src/data'],function($, template, temp, data
         num++;
         $tex.val(num);
         return false;
-    });
+    });*/
 
     return {
         calculate : Calculate
