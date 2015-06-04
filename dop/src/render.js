@@ -25,7 +25,7 @@ define(['jquery','artpl','src/temp','src/data'],function($, template, temp, data
         }
     };
 
-    new Calculate(data.json);
+    new Calculate(data);
 
     /*$('.fruits').hide();
     $('.cho_menu>li>a').click(function(){
