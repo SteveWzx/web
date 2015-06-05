@@ -1,6 +1,7 @@
 define(function(){
     return {
-        json: [{
+        json: [
+        {
             typeId : "vegetables",
             goods : [
                 { id: "000010", name: "白萝卜", price: 0.4, units: "/斤", num: 0 },

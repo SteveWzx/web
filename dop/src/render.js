@@ -1,6 +1,6 @@
 define(['jquery','artpl','src/temp','src/data'],function($, template, temp, data){
 
-    var Calculate = function(json) {
+    /*var Calculate = function(json) {
         this.json = json;
         if (!(this instanceof Calculate)) {
             return new Calculate(json);
@@ -13,13 +13,12 @@ define(['jquery','artpl','src/temp','src/data'],function($, template, temp, data
             this.render(this.json);
         },
         render: function(json){
-            /*var render = template.compile(temp.source);
-            var html = render(data);
+            var render = template.compile(temp.source),
+                renderLeft = template.compile(temp.source2),
+                html = render(json),
+                htmlLeft = renderLeft(json);
             this.layout = $('#listOut');
-            this.layout.append(html);*/
-            console.log(json);
-            var renderLeft = template.compile(temp.source2);
-            var htmlLeft = renderLeft(json);
+            this.layout.append(html);
             this.left = $('.cho_left');
             this.left.append(htmlLeft);
         }
@@ -27,7 +26,7 @@ define(['jquery','artpl','src/temp','src/data'],function($, template, temp, data
 
     new Calculate(data);
 
-    /*$('.fruits').hide();
+    $('.fruits').hide();
     $('.cho_menu>li>a').click(function(){
         $(this).addClass('cho_link_on').parent('li').siblings().find('a').removeClass('cho_link_on');
         var goods = $(this).data('id');
@@ -78,10 +77,63 @@ define(['jquery','artpl','src/temp','src/data'],function($, template, temp, data
         num++;
         $tex.val(num);
         return false;
-    });*/
+    });
 
     return {
         calculate : Calculate
-    }
+    }*/
+
+    var object = {
+
+        init: function() {
+            this.data = data;
+            this.layout = $('#listOut');
+            this.left = $('.cho_left');
+            this.htmlTil = this.layout.html();
+            this.htmlLine = this.left.html();
+            this.render(this.data);
+            this.bind();
+        },
+        render: function(json){
+            this.layout.empty();
+            this.left.empty();
+            var render = template.compile(temp.source),
+                renderLeft = template.compile(temp.source2),
+                html = render(json),
+                htmlLeft = renderLeft(json);
+            this.layout.html(this.htmlTil+html);
+            this.left.html(this.htmlLine+htmlLeft);
+            this.event();
+        },
+        event: function() {
+            $('#listOut>div:gt(0)').hide();
+            $('.cho_menu>li>a').click(function(){
+                $(this).addClass('cho_link_on').parent('li').siblings().find('a').removeClass('cho_link_on');
+                var til = $(this).data('id');
+                $('#listOut>.'+til).show().siblings('div').hide();
+            });
+        },
+        bind: function() {
+            var self = this;
+
+            $(document).on('click','.btn',function(){
+                var id = $(this).data('id'),
+                    num = Number($(this).data('rel')) || 0,
+                    index = $('#listOut>div').index($(this).parents('div')),
+                    index2 = $(this).parents('ul').index(),
+                    name = $(this).parents('div').attr('class');
+
+                console.log(index,index2);
+                self.data.json[index].goods[index2].num = num;
+                self.render(self.data);
+                return false;
+
+            });
+
+        }
+
+    };
+
+    object.init();
 
 });
