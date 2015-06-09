@@ -23,7 +23,7 @@
         <p class="zc_snav"><a href="#" class="zc_snava">IDC管理</a><a href="#" class="zc_snava zc_snavon">服务类型</a><a href="#" class="zc_snava ">部门业务</a></p>
         <div class="zc_layout zc_layout_nobg">
             <span class="zc_tj zc_tj02"></span>
-            <p class="zc_til02"><a href="#" class="zc_btn">添加</a>业务描述</p>
+            <p class="zc_til02"><a href="#" class="zc_btn zc_btn01">添加</a>业务描述</p>
             <ul class="zc_sul">
                 <li><span class="zc_sp">服务名称</span><em>|</em><span class="zc_sp">类型简介</span></li>
                 <li><span class="zc_sp">服务名称</span><em>|</em><span class="zc_sp">类型简介</span></li>
@@ -42,6 +42,22 @@
     <p>Copyright 2002-2015 All rights reserved</p>
     <p>版权所有：世纪闻康科技发展有限公司</p>
 </div>
-<script src="../lib/require.js" data-main="../src/assets" async defer></script>
+<div class="dn ant-popover">
+    <div class="ant-popover-hd">
+        <span class="ant-popover-tip">提示信息</span>
+        <a href="javascript:;" class="ant-popover-close">关闭</a>
+    </div>
+    <div  class="dialog_con">
+        <form method="get" action="#">
+            <p><label>名称：</label><input type="text" class="zc_in" value=""></p>
+            <p><label>右对齐：</label><input type="text" class="zc_in" value=""></p>
+            <p><label>暂定最大宽度：</label><input type="text" class="zc_in" value=""></p>
+        </form>
+    </div>
+    <div class="ant-popover-extra">
+        <a href="javascript:;" class="ant-btn ant-btn-main-blue">确定</a> 　<a href="javascript:;" class="ant-btn ant-btn-main-gray">取消</a>
+    </div>
+</div>
+<script src="../lib/require.js" data-main="../src/system_main" async defer></script>
 </body>
 </html>

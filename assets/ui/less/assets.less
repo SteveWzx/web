@@ -7,6 +7,7 @@
 .reset();
 .fix{.clearfix}
 .bdea{border:1px solid #eaeaea}
+.dn{.dn}
 .zc_header{width: 1200px; margin: 0 auto; height: 68px; .o}
 .zc_logo{.fl;.pt(19px)}
 .zc_nav{.fr}
@@ -56,7 +57,7 @@
 .zc_btn{.fr;.lh(22px);.fs(12px);background: #0dc3ce;.cf;.pl(10px);.pr(10px);border-radius: 10px;.mt(15px);&:hover{text-decoration: none}}
 .zc_list li{.lh(48px);border-bottom: 1px solid #eaeaea}
 .zc_list a{.lh(48px);.fs(14px);.c6;.pl(20px);.db;&:hover{text-decoration: none}}
-.zc_list .zc_liston{background: #fff}
+.zc_list .zc_liston a{background: #fff}
 .zc_outright{.fr;.p(20px);width: 980px;.clearfix}
 .zc_inleft{width: 520px;.fl}
 .zc_inright{width: 440px; .fr}
@@ -75,7 +76,7 @@
 .zc_list2{.fl;width: 179px}
 .zc_list2 li{.lh(38px)}
 .zc_list2 a{.lh(38px);.fs(12px);.c6;.pl(20px);.db;&:hover{text-decoration: none; color: #0dc3ce}}
-.zc_list2 .zc_liston{background: #fff;color: #0dc3ce;border-bottom: 1px solid #eaeaea;border-top: 1px solid #eaeaea}
+.zc_list2 .zc_liston a{background: #fff;color: #0dc3ce;border-bottom: 1px solid #eaeaea;border-top: 1px solid #eaeaea}
 .zc_bom_r{width: 309px; .fl;.pl(30px);.pb(10px)}
 .zc_bom_rtil,.zc_bom_r li,.zc_lp li{.lh(40px)}
 .zc_bom_r .zc_bom_rtil span{.c3}
@@ -135,7 +136,7 @@
 .zc_inrtabs{.fl}
 .zc_inrtabs a{.dib;.lh(54px);.c3;.fs(14px);.pl(35px);.pr(35px);background: url("../images/bg_line2.png") no-repeat 100% 45%;&:hover{text-decoration: none}}
 .zc_inrtabs .nobg{background-image: none}
-.zc_inrtabs .zc_inrtabon{color: #0dc3ce;.bgf;.ml(-2px)}
+.zc_inrtabs .zc_inrtabon{color: #0dc3ce;.bgf}
 .zc_fp li{.lh(48px);border-bottom: 1px solid #eaeaea; .bgf;.vt}
 .zc_fp em,.zc_dlp em{color: #eaeaea; .dib;.ml(20px);.mr(20px); .vm}
 .zc_fp span{.c6;.dib; .vm;.tc;width:300px; .lh(14px);.o;}
@@ -154,7 +155,7 @@
 .zc_navlog{.pt(30px);.pb(20px);.clearfix}
 .zc_zhi{.fl;.lh(32px);.cf;.pl(10px);.pr(10px)}
 .ant-select {position:relative;width:120px;z-index: 2;.fl}
-.ant-select .ant-selected-text { display:block; position:relative;text-indent:0.8em;height:30px;  line-height:30px;  border:1px solid #eaeaea;  color:#666;  font-size:12px;  background:#fcfcfc;}
+.ant-select .ant-selected-text { display:block; position:relative;text-indent:0.8em;height:30px;  line-height:30px;  border:1px solid #eaeaea;  color:#666;  font-size:12px;  background:#fcfcfc;.poi}
 .ant-select-less .ant-selected-text {  height:28px;  line-height:28px;}
 .ant-select em {  float:left;}
 .ant-select i {  position:absolute;  width:7px;  height:4px;  top:50%;  right:10px;  margin-top:-2px;  overflow:hidden;  background:url(http://static.wkimg.com/common/ui/ant_icons/ant_sprite.png) -50px 0 no-repeat;  _background:url(http://static.wkimg.com/common/ui/ant_icons/ant_sprite.gif) -50px 0 no-repeat;}
@@ -169,7 +170,7 @@
 .zc_abtn{.vm;.lh(38px);width: 68px; .tc; background: #0dc3ce;border-radius:0 2px 2px 0; border: none; .cf; .poi}
 .zc_aout{.clearfix;.bgf}
 .zc_aoutl{width: 240px;border-right: 1px solid #eaeaea;.fl}
-.zc_aoutl dt{.lh(48px);border-bottom: 1px solid #eaeaea;.fs(14px);.c6;background:#f2f2f2 url("../images/icon.gif") no-repeat 92% 50%;.pl(20px);.pr(20px)}
+.zc_aoutl dt{.lh(48px);border-bottom: 1px solid #eaeaea;.fs(14px);.c6;background:#f2f2f2 url("../images/icon.gif") no-repeat 92% 50%;.pl(20px);.pr(20px);.poi}
 .zc_dlup dd{display: none}
 .zc_aoutl .zc_dldown dt{background:#f2f2f2 url("../images/icon2.gif") no-repeat 92% 50%}
 .zc_aoutl dd{.bgfa;.lh(48px);.fs(14px);.c6;border-bottom:1px dashed #eaeaea}
@@ -180,3 +181,59 @@
 .zc_spa{.fl;.lh(52px);}
 .ant-select2{width: 200px;margin-top:10px; margin-right: 10px}
 .zc_in2{width: 188px; margin-right: 10px}
+
+.ant-popover {  position:absolute;  z-index:210000000;  width:400px;  box-shadow:1px 1px 4px 0 rgba(0,0,0,.1);  border-radius:2px;
+  font-size:14px;  border:1px solid #dedede;  background:#fff;}
+.ant-popover-hd {  position:relative;  height:50px;  line-height:50px;  border-bottom:1px solid #dbdbdb;  cursor:move;
+  background:#fcfcfc;}
+.ant-popover-tip {  margin-left:10px;  color:#999;  text-shadow:0 0 0 #fff;}
+.ant-popover-bd {  padding:30px 10px;  text-align:center;}
+.ant-popover-extra {  padding:10px 0;  margin:0 10px;  border-top:1px solid #efefef;  text-align:center;}
+.ant-popover-close {  position:absolute;  top:50%;  right:16px;  margin-top:-6px;  width:12px;  height:12px;  overflow:hidden; text-indent:-9999px;
+  background:url(http://static.wkimg.com/common/ui/ant_icons/ant_sprite.png) -75px 0 no-repeat;
+  _background:url(http://static.wkimg.com/common/ui/ant_icons/ant_sprite.gif) -75px 0 no-repeat;
+}
+.ant-btn {
+  display:inline-block;
+  padding:0 20px;
+  height:26px;
+  border:1px solid #eaeaea;
+  border-radius:2px;
+  line-height:26px;
+  text-align:center;
+  font-size:12px;
+  color:#999;
+  background:#fff;
+  -webkit-transition:border .2s ease-in, color .2s ease-in;
+  transition:border .2s ease-in, color .2s ease-in;
+}
+.ant-btn-main-blue {
+  border:1px solid #0dc3ce;
+  color:#f9f9f9;
+  background:#0dc3ce;
+  -webkit-transition:background .2s ease-in, border .2s ease-in;
+  transition:background .2s ease-in, border .2s ease-in;
+}
+.ant-btn-main-blue:hover {
+  border:1px solid #04b9c4;
+  color:#f9f9f9;
+  background:#04b9c4;
+  -webkit-transition:background .2s ease-in, border .2s ease-in;
+  transition:background .2s ease-in, border .2s ease-in;
+  text-decoration: none;
+}
+.ant-btn-main-gray {
+  background:#fff;
+  -webkit-transition:background .2s ease-in;
+  transition:background .2s ease-in;
+}
+.ant-btn-main-gray:hover {
+  border:1px solid #eaeaea;
+  color:#999;
+  background:#f2f2f2;
+  text-decoration: none;
+}
+.dialog_con{width: 300px; margin: 0 auto;.pt(15px)}
+.dialog_con .zc_in{margin-right: 0}
+.dialog_con label{width: 100px;.dib;.lh(32px);.vm;.tr}
+.dialog_con p{margin-bottom: 15px}
