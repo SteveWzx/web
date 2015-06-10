@@ -21,3 +21,4 @@
 * backbone_* -> backbonejs todu mvc
 * assets -> xywy assets management system
 * dop -> data-oriented-programme
+* winpop -> How to develop a complete JavaScript component
