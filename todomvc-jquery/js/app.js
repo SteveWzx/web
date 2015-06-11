@@ -79,7 +79,12 @@ jQuery(function ($) {
 			var todos = this.getFilteredTodos();
 			this.$todoList.html(this.todoTemplate(todos));
 			this.$main.toggle(todos.length > 0);
-			this.$toggleAll.prop('checked', this.getActiveTodos().length === 0);
+            /*if (todos.length > 0) {
+                this.$main.show();
+            } else {
+                this.$main.hide();
+            }*/
+            this.$toggleAll.prop('checked', this.getActiveTodos().length === 0);
 			this.renderFooter();
 			this.$newTodo.focus();
 			util.store('todos-jquery', this.todos);
@@ -157,6 +162,8 @@ jQuery(function ($) {
 				title: val,
 				completed: false
 			});
+
+            console.log(this.todos);
 
 			$input.val('');
 

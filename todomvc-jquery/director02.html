@@ -1,0 +1,43 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>A Gentle Introduction 2</title>
+    <script src="js/jquery/dist/jquery.js"></script>
+    <script src="js/director/build/director.js"></script>
+    <script>
+        $('document').ready(function(){
+            var showAuthorInfo = function () { console.log("showAuthorInfo"); },
+                listBooks = function () { console.log("listBooks"); },
+                allroutes = function() {
+                    var route = window.location.hash.slice(2),
+                        sections = $('section'),
+                        section;
+                    if ((section = sections.filter('[data-route=' + route + ']')).length) {
+                        sections.hide(250);
+                        section.show(250);
+                    }
+                };
+
+            var routes = {
+                '/author': showAuthorInfo,
+                '/books': listBooks
+            };
+
+            var router = Router(routes);
+
+            router.configure({
+                on: allroutes
+            });
+            router.init();
+        });
+    </script>
+</head>
+<body>
+<section data-route="author">Author Name</section>
+<section data-route="books">Book1, Book2, Book3</section>
+<ul>
+    <li><a href="#/author">#/author</a></li>
+    <li><a href="#/books">#/books</a></li>
+</ul>
+</body>
+</html>
