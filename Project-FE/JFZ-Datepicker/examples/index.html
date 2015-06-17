@@ -1,0 +1,280 @@
+<!doctype html>
+
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <title>日期示例</title>
+        <link rel="stylesheet" href="public/css/reset.css" type="text/css">
+        <link rel="stylesheet" href="public/css/style.css" type="text/css">
+        <!--默认主题-->
+        <link rel="stylesheet" href="../public/css/default.css" type="text/css">
+        <!--默认主题-->
+        <link type="text/css" rel="stylesheet" href="libraries/syntaxhighlighter/public/css/shCoreDefault.css">
+        <script type="text/javascript" src="libraries/syntaxhighlighter/public/javascript/XRegExp.js"></script>
+        <script type="text/javascript" src="libraries/syntaxhighlighter/public/javascript/shCore.js"></script>
+        <script type="text/javascript" src="libraries/syntaxhighlighter/public/javascript/shLegacy.js"></script>
+        <script type="text/javascript" src="libraries/syntaxhighlighter/public/javascript/shBrushJScript.js"></script>
+        <script type="text/javascript" src="libraries/syntaxhighlighter/public/javascript/shBrushXML.js"></script>
+        <script type="text/javascript">
+            SyntaxHighlighter.defaults['toolbar'] = false;
+            SyntaxHighlighter.all();
+        </script>
+
+    </head>
+
+    <body>
+
+        <div class="main-wrapper">
+
+            <h3>日期插件示例</h3>
+            <strong>1.</strong> 使用默认设置.
+
+            <pre class="brush:js">
+            $('#datepicker-example1').DatePicker();
+            </pre>
+
+            <form action="javascript:void(0)" method="post">
+            <div>
+                <input id="datepicker-example1" type="text">
+            </div>
+            </form>
+
+            <p>&nbsp;</p>
+
+            <strong>2.</strong> 选择今天之后的日期
+
+            <pre class="brush:js">
+            $('#datepicker-example2').DatePicker({
+                direction: 1
+
+            });
+            </pre>
+
+            <form action="javascript:void(0)" method="post">
+            <div><input id="datepicker-example2" type="text"></div>
+            </form>
+
+            <p>&nbsp;</p>
+
+            <p><strong>3.</strong> 选择明天，同时包括今天的日期，并且过滤掉周六和周日</p>
+
+            <pre class="brush:js">
+            $('#datepicker-example3').DatePicker({
+                direction: true,
+                disabled_dates: ['* * * 0,6']
+
+            });
+            </pre>
+
+            <form action="javascript:void(0)" method="post">
+            <div><input id="datepicker-example3" type="text"></div>
+            </form>
+
+            <p>&nbsp;</p>
+
+            <p><strong>4.</strong> 选择明天和之后的10天</p>
+
+            <pre class="brush:js">
+            $('#datepicker-example4').DatePicker({
+                direction: [1, 10]
+            });
+            </pre>
+
+            <form action="javascript:void(0)" method="post">
+            <div><input id="datepicker-example4" type="text"></div>
+            </form>
+
+            <p>&nbsp;</p>
+
+            <p><strong>5.</strong> 选择参数指定的日期</p>
+
+            <pre class="brush:js">
+            $('#datepicker-example5').DatePicker({
+                direction: ['2012-08-01', '2012-08-12']
+            });
+            </pre>
+
+            <form action="javascript:void(0)" method="post">
+            <div><input id="datepicker-example5" type="text"></div>
+            </form>
+
+            <p>&nbsp;</p>
+
+            <p><strong>6.</strong> 选择2012-08-01之后的日期</p>
+
+            <pre class="brush:js">
+            $('#datepicker-example6').DatePicker({
+                direction: ['2012-08-01', false]
+            });
+            </pre>
+
+            <form action="javascript:void(0)" method="post">
+            <div><input id="datepicker-example6" type="text"></div>
+            </form>
+
+            <p>&nbsp;</p>
+
+            <p><strong>7.</strong> 第二个日期的时间以第一个时间的值为开头</p>
+
+            <pre class="brush:js">
+            $('#datepicker-example7-start').DatePicker({
+                direction: true,
+                pair: $('#datepicker-example7-end')
+            });
+
+            $('#datepicker-example7-end').DatePicker({
+                direction: 1
+            });
+            </pre>
+
+            <form action="javascript:void(0)" method="post">
+            <div>
+            <input id="datepicker-example7-start" type="text">
+            <input id="datepicker-example7-end" type="text">
+            </div>
+            </form>
+
+            <p>&nbsp;</p>
+
+            <p><strong>8.</strong> 设置返回值的格式:</p>
+
+            <pre class="brush:js">
+            $('#datepicker-example8').DatePicker({
+                format: 'M d, Y'
+            });
+            </pre>
+
+            <form action="javascript:void(0)" method="post">
+            <div><input id="datepicker-example8" type="text"></div>
+            </form>
+
+            <p>&nbsp;</p>
+
+            <p><strong>9.</strong> 显示周的总数</p>
+
+            <pre class="brush:js">
+            $('#datepicker-example9').DatePicker({
+                show_week_number: 'Wk'
+            });
+            </pre>
+
+            <form action="javascript:void(0)" method="post">
+            <div><input id="datepicker-example9" type="text"></div>
+            </form>
+
+            <p>&nbsp;</p>
+
+            <p><strong>10.</strong> 显示年的视图</p>
+
+            <pre class="brush:js">
+            $('#datepicker-example10').DatePicker({
+                view: 'years'
+            });
+            </pre>
+
+            <form action="javascript:void(0)" method="post">
+            <div><input id="datepicker-example10" type="text"></div>
+            </form>
+
+            <p>&nbsp;</p>
+
+            <p><strong>11.</strong> 选择月的视图后，关闭</p>
+
+            <pre class="brush:js">
+            $('#datepicker-example11').DatePicker({
+                format: 'm Y'
+
+            });
+            </pre>
+
+            <form action="javascript:void(0)" method="post">
+            <div><input id="datepicker-example11" type="text"></div>
+            </form>
+
+            <p>&nbsp;</p>
+
+            <p><strong>12.</strong> onChange的回调事件</p>
+
+            <pre class="brush:js">
+            $('#datepicker-example12').DatePicker({
+
+                onChange: function(view, elements) {
+
+
+                    if (view == 'days') {
+
+
+                        elements.each(function() {
+
+
+                            if ($(this).data('date').match(/\-24$/))
+
+
+                                $(this).css({
+                                    background: '#C40000',
+                                    color:      '#FFF'
+                                });
+
+                        });
+
+                    }
+
+                }
+            });
+            </pre>
+
+            <form action="javascript:void(0)" method="post">
+            <div><input id="datepicker-example12" type="text"></div>
+            </form>
+
+            <p>&nbsp;</p>
+
+            <p><strong>13.</strong> 总是显示可见</p>
+
+            <pre class="brush:js">
+            $('#datepicker-example13').DatePicker({
+                always_visible: $('#container')
+            });
+            </pre>
+
+            <form action="javascript:void(0)" method="post">
+            <div>
+            <input id="datepicker-example13" type="text">
+            <div id="container" style="margin: 10px 0 0 0; height: 250px"></div>
+            </div>
+
+            </form>
+
+            <p>&nbsp;</p>
+
+            <p><strong>14.</strong> 使用data-attributes属性</p>
+
+
+
+            <pre class="brush:xml">
+            &lt;input type="text" id="datepicker-example14" data-zdp_direction="1" data-zdp_disabled_dates='["* * * 0,6"]'>
+            </pre>
+
+            <pre class="brush:js">
+            $('#datepicker-example14').DatePicker();
+            </pre>
+
+            <form action="javascript:void(0)" method="post">
+            <div>
+            <input id="datepicker-example14" type="text" data-zdp_direction="1" data-zdp_disabled_dates='["* * * 0,6"]'>
+            </div>
+
+            </form>
+
+            <br><br><br>
+
+        </div>
+
+        <script type="text/javascript" src="public/javascript/jquery-1.11.1.js"></script>
+        <script type="text/javascript" src="../public/javascript/datepicker.src.js"></script>
+        <script type="text/javascript" src="public/javascript/core.js"></script>
+
+    </body>
+
+</html>
