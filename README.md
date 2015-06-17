@@ -22,3 +22,4 @@
 * assets -> xywy assets management system
 * dop -> data-oriented-programme
 * winpop -> How to develop a complete JavaScript component
+* Datejs -> [Datejs](http://datejs.com/) is an open source JavaScript Date library for parsing, formatting and processing
