@@ -26,3 +26,4 @@
 * Project-FE -> [From here copied, and pay tribute to the great open source](https://github.com/hehongwei44/Project-FE)
 * jikeytang.github.io -> Own re-write it again
 * postMessage -> The window.postMessage method safely enables cross-origin communication.
+* ajax2 -> XMLHttpRequest Level2 && ProgressEvent interface

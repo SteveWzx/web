@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>无标题文档</title>
+<script>
+window.onload = function() {
+	
+	var oBtn = document.getElementById('btn');
+	
+	oBtn.onclick = function() {
+		
+		//var xhr = new XMLHttpRequest();
+		var xhr = null;
+		
+		if (window.XDomainRequest) {
+			xhr = new XDomainRequest();
+		} else {
+			xhr = new XMLHttpRequest();
+		}
+		
+		//onreadystatechange
+		//推荐onload
+		
+		xhr.onload = function() {
+			
+			alert(this.responseText);
+			
+		};
+		
+		//xhr.open('get','1.txt', true);
+		//xhr.open('get','http://www.b.com/1.txt', true);
+		xhr.open('get','http://www.b.com/1.php', true);
+		xhr.send();
+		
+	}
+	
+}
+</script>
+</head>
+
+<body>
+	<input type="button" value="获取数据" id="btn" />
+</body>
+</html>

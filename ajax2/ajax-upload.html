@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>无标题文档</title>
+<script>
+window.onload = function() {
+	
+	var oFile = document.getElementById('file1');
+	var oBtn = document.getElementById('btn');
+	
+	oBtn.onclick = function() {
+		
+		console.log(oFile.files);
+		//FormData
+		
+		var fd = new FormData();
+		//fd.append('username', 'leo');
+		fd.append('file', oFile.files[0]);	//name=value
+
+        console.log(fd);
+		
+		//return ;
+		
+		var xhr = new XMLHttpRequest();
+		
+		xhr.open('post', 'post_file.php', true);
+		//申明发送头信息，通过ajax提交二进制数据
+		xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+		xhr.send(fd);	//发送的数据放在send方法中作为参数
+		
+	}
+	
+}
+</script>
+</head>
+
+<body>
+	<input type="file" id="file1" />
+    <input type="button" id="btn" value="上传" />
+</body>
+</html>

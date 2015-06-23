@@ -1,0 +1,80 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>无标题文档</title>
+<style>
+#div1 {margin-top: 10px; width: 500px; height: 50px; border: 1px solid #000; position: relative;}
+#div2 {width: 0px; height: 50px; background: #ccc;}
+#div3 {position: absolute; left: 0; top: 0; width: 500px; height: 50px; line-height: 50px; text-align: center; font-size: 40px;}
+</style>
+<script>
+window.onload = function() {
+	
+	var oFile = document.getElementById('file1');
+	var oBtn = document.getElementById('btn');
+	var oDiv1 = document.getElementById('div1');
+	var oDiv2 = document.getElementById('div2');
+	var oDiv3 = document.getElementById('div3');
+	
+	/*
+	总值
+	当前值
+	*/
+	
+	oBtn.onclick = function() {
+		
+		//alert(oFile.files[0]);
+		//FormData
+		
+		var fd = new FormData();
+		//fd.append('username', 'leo');
+		fd.append('file', oFile.files[0]);	//name=value
+		
+		//return ;
+		
+		var xhr = new XMLHttpRequest();
+		
+		/*
+		xhr.upload ajax上传对象
+			object XMLHttpRequestUpload
+		*/
+		
+		//alert(xhr.upload);
+		//return ;
+		//onprogress : 发送中
+		//ajax对象本身也有这些相关的事件
+		//xhr.onload xhr.onprogress ...
+		xhr.upload.onprogress = function(ev) {
+			//console.log('发送中');
+			console.log( ev.loaded + ' / ' + ev.total );
+			
+			var sacle = ev.loaded / ev.total;
+			oDiv2.style.width = 500 * sacle + 'px';
+			oDiv3.innerHTML = parseInt(sacle * 100) + '%';
+		};
+		//发送完成
+		xhr.upload.onload = function() {
+			console.log('发送完成');
+		};
+		
+		xhr.open('post', 'post_file.php', true);
+		//申明发送头信息，通过ajax提交二进制数据
+		xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+		xhr.send(fd);	//发送的数据放在send方法中作为参数
+		
+	}
+	
+}
+</script>
+</head>
+
+<body>
+	<input type="file" id="file1" />
+    <input type="button" id="btn" value="上传" />
+    <div id="div1">
+    	<div id="div2"></div>
+        <div id="div3">0%</div>
+    </div>
+</body>
+</html>
