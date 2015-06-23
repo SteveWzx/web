@@ -28,3 +28,4 @@
 * postMessage -> The window.postMessage method safely enables cross-origin communication.
 * ajax2 -> XMLHttpRequest Level2 && ProgressEvent interface
 * history -> H5 history && hash
+* storage-> localStorage && geolocation
