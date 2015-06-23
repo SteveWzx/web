@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>无标题文档</title>
+<script>
+window.onload = function() {
+	
+	var oBtn = document.getElementById('btn');
+	
+	//opener : 打开当前页面的window对象
+	
+	oBtn.onclick = function() {
+		
+		opener.document.body.style.background = 'green';
+		
+	}
+	
+}
+</script>
+</head>
+
+<body>
+	这是4.open.html页面
+    <input type="button" id="btn" value="操作主页面改变背景色" />
+</body>
+</html>

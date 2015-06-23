@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>无标题文档</title>
+<script>
+window.onload = function() {
+	
+	var oBtn = document.getElementById('btn');
+	
+	//子级引用父级：parent
+	oBtn.onclick = function() {
+		//alert(parent);
+		parent.document.body.style.background = 'green';
+		
+		document.body.style.height = '2000px';
+		var oMyFrame = parent.document.getElementById('myframe');
+		oMyFrame.style.height = '2000px';
+		
+	}
+	
+}
+</script>
+</head>
+
+<body>
+	这是www.a.com下的2.iframe.html页面
+    <input type="button" value="改变1.iframe.html页面的背景色" id="btn" />
+</body>
+</html>

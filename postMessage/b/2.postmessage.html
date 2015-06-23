@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>无标题文档</title>
+<script>
+window.onload = function() {
+	
+	//message事件 : 当当前窗口接收到另外一个窗口通过postMessage方法发送内容的触发
+	window.onmessage = function(ev) {
+		//console.log(1);
+		//alert(1);
+		//console.log(ev.data);
+		
+		//ev.origin : 发送消息的域
+		
+		//alert(ev.origin);
+		
+		if (ev.origin != 'http://www.a.com') {
+			return ;
+		}
+		
+		document.body.style.background = ev.data;
+		
+		parent.postMessage('我已经把自己给改变了', 'http://www.a.com');
+		
+	}
+	
+}
+</script>
+</head>
+
+<body>
+	这是http://www.b.com下的2.postmessage.html页面
+    <input type="button" value="改变http://www.a.com/6.postmessage.html页面的背景色" id="btn" />
+</body>
+</html>
