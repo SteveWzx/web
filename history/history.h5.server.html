@@ -1,0 +1,73 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>无标题文档</title>
+<style>
+ul{ overflow:hidden;}
+li{ float:left; margin:10px; list-style:none;}
+div{ display:none;}
+</style>
+<script>
+window.onload = function(){
+	var aLi = document.getElementsByTagName('li');
+	var aDiv = document.getElementsByTagName('div');
+	var iNow = 0;
+	for(var i=0;i<aLi.length;i++){
+		aLi[i].onclick = function(){
+			var hash = this.dataset.hash;
+			//window.location.hash = hash;
+			
+			history.pushState(hash,'',iNow++);
+			
+			for(var i=0;i<aDiv.length;i++){
+				if( aDiv[i].dataset.content == hash ){
+					aDiv[i].style.display = 'block';
+				}else{
+					aDiv[i].style.display = 'none';
+				}
+			}
+			
+		};
+	}
+	
+	/*window.onhashchange = function(){  //监听hash值的
+
+		showHash();
+	
+	};*/
+	window.onpopstate = function(ev){
+		
+		showHash(ev.state);
+	};
+	//showHash();
+	
+	function showHash(state){
+		
+		for(var i=0;i<aDiv.length;i++){
+			if( aDiv[i].dataset.content == state ){
+				aDiv[i].style.display = 'block';
+			}else{
+				aDiv[i].style.display = 'none';
+			}
+		}
+	}
+	
+	
+};
+</script>
+</head>
+
+<body>
+<ul>
+	<li data-hash="index">首页</li>
+    <li data-hash="bbs">论坛</li>
+    <li data-hash="video">视频</li>
+    <li data-hash="message">留言</li>
+</ul>
+<div data-content="index">首页11111111</div>
+<div data-content="bbs">论坛11111111</div>
+<div data-content="video">视频11111111</div>
+<div data-content="message">留言11111111</div>
+</body>
+</html>

@@ -27,3 +27,4 @@
 * jikeytang.github.io -> Own re-write it again
 * postMessage -> The window.postMessage method safely enables cross-origin communication.
 * ajax2 -> XMLHttpRequest Level2 && ProgressEvent interface
+* history -> H5 history && hash

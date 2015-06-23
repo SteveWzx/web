@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>无标题文档</title>
+<script>
+window.onload = function(){
+	var aInput = document.getElementsByTagName('input');
+	
+	for(var i=0;i<aInput.length;i++){
+		aInput[i].onclick = function(){
+			if(this.checked){
+				window.localStorage.setItem('sel',this.value);
+			}
+			else{
+				window.localStorage.setItem('noSel',this.value);
+			}
+		};
+	}
+	
+	window.addEventListener('storage',function(ev){
+		
+		if(ev.key == 'sel'){
+			for(var i=0;i<aInput.length;i++){
+				if( aInput[i].value == ev.newValue ){
+					aInput[i].checked = true;
+				}
+			}
+		}
+		else if(ev.key == 'noSel'){
+			for(var i=0;i<aInput.length;i++){
+				if( aInput[i].value == ev.newValue ){
+					aInput[i].checked = false;
+				}
+			}
+		}
+		
+	},false);
+	
+};
+</script>
+</head>
+
+<body>
+<input type="checkbox" value="香蕉">香蕉<br>
+<input type="checkbox" value="苹果">苹果<br>
+<input type="checkbox" value="西瓜">西瓜<br>
+<input type="checkbox" value="哈密瓜">哈密瓜<br>
+</body>
+</html>
