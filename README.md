@@ -29,3 +29,4 @@
 * ajax2 -> XMLHttpRequest Level2 && ProgressEvent interface
 * history -> H5 history && hash
 * storage-> localStorage && geolocation
+* fullpageswitch -> 75team one page scroll
