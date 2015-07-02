@@ -30,3 +30,4 @@
 * history -> H5 history && hash
 * storage-> localStorage && geolocation
 * fullpageswitch -> 75team one page scroll
+* ElasticSlideshow -> ElasticSlideshow
