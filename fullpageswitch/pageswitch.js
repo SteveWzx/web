@@ -11,8 +11,7 @@
 		'onpageSwitch' : function(pagenum){}
 	};
 
-	var win = $(window),
-		container,sections;
+	var win = $(window),container,sections;
 
 	var opts = {},
 		canScroll = true;
@@ -22,9 +21,9 @@
 	var arrElement = [];
 
 	var SP = $.fn.switchPage = function(options){
-		opts = $.extend({}, defaults , options||{});
 
-		container = $(opts.container),
+		opts = $.extend({}, defaults , options||{});
+		container = $(opts.container);
 		sections = container.find(opts.sections);
 
 		sections.each(function(){
@@ -44,7 +43,7 @@
 				keyDown();
 			}
 		});
-	}
+	};
 
 	//滚轮向上滑动事件
 	SP.moveSectionUp = function(){
