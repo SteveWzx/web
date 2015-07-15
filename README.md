@@ -32,3 +32,4 @@
 * fullpageswitch -> 75team one page scroll
 * ElasticSlideshow -> ElasticSlideshow
 * sidebar -> Three kinds of methods to achieve the sidebar
+* mobi -> Examples of mobile end page development
