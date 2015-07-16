@@ -50,12 +50,11 @@
         var form = document.getElementById('form');
         var input = form.getElementsByTagName('input');
         var textarea = form.getElementsByTagName('textarea');
-        var btn1 = document.getElementById('btn1');
         var btn = document.getElementById('btn');
         btn.onclick = function(){
             checkNull();
             return false;
-        }
+        };
         function init(){
             for(var i = 0; i < input.length; i++){
                 input[i].onfocus = function(){
@@ -98,7 +97,7 @@
             if(!tag){
                 tag = cls;
             }
-            var d = document.createElement('div' || tag);
+            var d = document.createElement(tag || 'div');
             d.className = cls;
             txt && (d.innerHTML = txt);
             return d;
