@@ -24,7 +24,7 @@
 * winpop -> How to develop a complete JavaScript component
 * Datejs -> [Datejs](http://datejs.com/) is an open source JavaScript Date library for parsing, formatting and processing
 * Project-FE -> [From here copied, and pay tribute to the great open source](https://github.com/hehongwei44/Project-FE)
-* jikeytang.github.io -> Own re-write it again
+* jikeytang.github.io -> Take the essence, to its dregs
 * postMessage -> The window.postMessage method safely enables cross-origin communication.
 * ajax2 -> XMLHttpRequest Level2 && ProgressEvent interface
 * history -> H5 history && hash

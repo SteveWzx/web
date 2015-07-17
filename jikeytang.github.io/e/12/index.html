@@ -32,13 +32,14 @@
         var len = check.length - 1;
         all.onclick = function(){
             choose(this.checked);
-        }
+        };
         function each(arr, callback){
             var len = arr.length;
             for(var i = 1; i < len; i++){
-                if(callback.call(arr[i], i, arr[i]) === false){
+                /*if(callback.call(arr[i], i, arr[i]) === false){
                     break;
-                }
+                }*/
+                callback.call(arr[i],i);
             }
             return arr;
         }

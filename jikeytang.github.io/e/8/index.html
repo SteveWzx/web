@@ -52,7 +52,7 @@
             }
         }
         function len(s){
-            return String(s).replace('^\x00-\xff','aa').length;
+            return String(s).replace('^\x00-\xff','aa').length;  //匹配双字节字符(包括汉字在内)
         }
         function max(o){
             var m = o.getAttribute('maxlength');

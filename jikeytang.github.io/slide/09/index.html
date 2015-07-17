@@ -43,7 +43,6 @@
         var img = ul.getElementsByTagName('img');
         var l = li.length;
         var len = li.length / 2;
-        var half = len / 2;
         var ico = document.getElementById('ico').getElementsByTagName('a');
         var prev = document.getElementById('prev');
         var next = document.getElementById('next');
@@ -137,7 +136,7 @@
             img.onload = function () { //图片下载完毕时异步调用callback函数。
                 callback.call(img);//将回调函数的this替换为Image对象
             };
-        };
+        }
     }());
 </script>
 </body>
