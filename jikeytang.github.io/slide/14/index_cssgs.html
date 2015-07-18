@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <!--[if lte IE 9 ]> <html class="ie9" lang="zh-CN"> <![endif]-->
 <!--[if (gt IE 9)|!(IE)]><!--> <html lang="zh-CN"> <!--<![endif]-->
@@ -20,7 +19,6 @@
         </div>
     </div>
 </div>
-<script type="text/javascript" src="focus.js"></script>
 <script>
     /**
      *
@@ -64,7 +62,7 @@
                 i == 0 && (_li.className = 'active');
                 _li.innerHTML = '<a href="' + this.data[i].url + '" title="' + this.data[i].title + '" target="_blank" style="background-image:url(' + this.data[i].pic + ')"></a>';
                 _frag.appendChild(_li);
-            };
+            }
             this.Main.appendChild(_frag);
             this.MainLi = this.Main.getElementsByTagName('li');
         },
@@ -80,7 +78,7 @@
                 _li.onmouseenter = function() {
                     _self.overList(this);
                 };
-            };
+            }
             this.List.appendChild(_frag);
         },
         drawTitle: function(index) {
@@ -128,7 +126,7 @@
             Class: function(o, ClassName, tag) {
                 if (!o) {
                     return [];
-                };
+                }
                 if (document.getElementsByClassName) {
                     return o.getElementsByClassName(ClassName);
                 } else {
@@ -139,13 +137,13 @@
                     for (i = 0; i < t.length; i++) {
                         if (r.test(t[i].className)) {
                             a.push(t[i]);
-                        };
-                    };
+                        }
+                    }
                     return a;
-                };
+                }
             }
         }
-    };
+    }
 
 
     var data = [{
