@@ -1,18 +1,155 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <title></title>
-    <link rel="stylesheet" type="text/css" href="css/main.css" media="all"/>
+    <meta charset="utf-8"/>
+    <title>随便看看</title>
+    <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.3.min.js"></script>
+    <style type="text/css">
+        *{ margin:0; padding:0;}
+        body{font:12px/1 arial;background:#fff;}
+        a{color:#666; text-decoration:none;}
+        .look-demo{ width:635px;margin:0 auto; padding-top:120px;}
+        .clearfix{*zoom:1}
+        .clearfix:after{content:".";height:0;visibility:hidden;display:block;clear:both}
+        .mm-slider-wrap{ width:635px;}
+        .mm-topic-title{height:31px;line-height:31px;color:#ff6ab4;border:1px solid #000;border-bottom:0;background:#000;}
+        .mm-topic-title h1{float:left;text-indent:16px;color:#fff;font-size:14px}
+        .mm-topic-cont{border:1px solid #ccc;border-top:0;background:#fff;border-bottom-left-radius:5px;border-bottom-right-radius:5px}
+        .mm-focus-wrap{height:148px;padding:10px 20px}
+        .hotmm-change{float:right; height:18px; line-height:18px;border-radius:2px; margin:5px 5px 0 0; padding:0 5px;overflow:hidden;background:#fff;}
+        .hotmm-change:hover{background:#f1f1f1;}
+        .bbshot-more:hover{background-position:0 -11px}
+        .mm-bbshot-cont{border:3px solid #ff6ab4;border-top:0;background:#fff}
+        .mm-bold-link{position:relative;height:75px;padding:10px 15px}
+        .mm-bold-link a:hover{font-weight:bold;color:#ff6fb7}
+        .mm-hotmm-inner{width:633px; line-height:18px;overflow:hidden}
+        .mm-hotmm-list{width:10000px;padding:10px 0 0 9px}
+        .mm-hotmm-list li{float:left;width:146px;margin-right:10px;padding:15px 0 7px;display:inline;text-align:center;background:#e8e8e8;border-radius:5px;overflow:hidden}
+        .mm-hotmm-list li a{ display:block;}
+        .mm-hotmm-list li img{margin:0 auto}
+        .mm-hotmm-list li p{width:90%;margin:0 auto;height:18px;overflow:hidden;text-shadow:1px 1px 0 #fff}
+        .mm-hotmm-cont{height:278px}
+    </style>
 </head>
 <body>
+<div class="look-demo">
+    <div class="mm-slider-wrap" id="changeSee">
+        <div class="mm-topic-title mm-hotmm-title">
+            <h1>最HOT美女</h1>
+            <a class="hotmm-change" href="javascript:void(0)">换换看&gt;&gt;</a>
+        </div>
+        <div class="mm-topic-cont mm-hotmm-cont clearfix">
+            <div class="mm-hotmm-inner">
+                <ul class="mm-hotmm-list">
+                    <li>
+                        <a href="#" title="Queenie"><img src="http://p2.vanclimg.com/product/0/1/8/0189089/lists170/97608.jpg" alt="寻找游戏姬Queenie" height="210" width="130"></a>
+                        <p><a title="Queenie" href="/game/232705/">寻找游戏姬Queenie</a></p>
+                    </li>
+                    <li>
+                        <a href="#" title="Queenie"><img src="http://p5.vanclimg.com/product/0/1/8/0188632/lists170/21776.jpg" alt="寻找游戏姬Queenie" height="210" width="130"></a>
+                        <p><a title="Queenie" href="/game/232705/">寻找游戏姬Queenie</a></p>
+                    </li>
+                    <li>
+                        <a href="#" title="Queenie"><img src="http://p2.vanclimg.com/product/0/1/8/0187455/lists170/51072.jpg" alt="寻找游戏姬Queenie" height="210" width="130"></a>
+                        <p><a title="Queenie" href="/game/232705/">寻找游戏姬Queenie</a></p>
+                    </li>
+                    <li>
+                        <a href="#" title="Queenie"><img src="http://p5.vanclimg.com/product/0/1/8/0184122/lists170/28099.jpg" alt="寻找游戏姬Queenie" height="210" width="130"></a>
+                        <p><a title="Queenie" href="/game/232705/">寻找游戏姬Queenie</a></p>
+                    </li>
+                    <li>
+                        <a href="#" title="Queenie"><img src="http://p3.vanclimg.com/product/0/1/8/0184157/lists170/78694.jpg" alt="寻找游戏姬Queenie" height="210" width="130"></a>
+                        <p><a title="Queenie" href="/game/232705/">寻找游戏姬Queenie</a></p>
+                    </li>
+                    <li>
+                        <a href="#" title="Queenie"><img src="http://b5.photo.store.qq.com/psu?/522930242/dYzMN.5p12hQtkm8KofTGndp*.CjcMN8Kx9jcnLB.*E!/m/YVfBCwOIHgAAYjaiBQOdHgAA&bo=9AF*AgAAAAAAAK4!" alt="寻找游戏姬Queenie" height="210" width="130"></a>
+                        <p><a title="Queenie" href="/game/232705/">寻找游戏姬Queenie</a></p>
+                    </li>
+                    <li>
+                        <a href="#" title="Queenie"><img src="http://p4.vanclimg.com/product/0/1/8/0186197/lists170/74570.jpg" alt="寻找游戏姬Queenie" height="210" width="130"></a>
+                        <p><a title="Queenie" href="/game/232705/">寻找游戏姬Queenie</a></p>
+                    </li>
+                    <li>
+                        <a href="#" title="Queenie"><img src="http://p3.vanclimg.com/product/0/1/8/0186655/lists170/58846.jpg" alt="寻找游戏姬Queenie" height="210" width="130"></a>
+                        <p><a title="Queenie" href="/game/232705/">寻找游戏姬Queenie</a></p>
+                    </li>
+                    <li>
+                        <a href="#" title="Queenie"><img src="http://p2.vanclimg.com/product/0/1/8/0186186/lists170/61070.jpg" alt="寻找游戏姬Queenie" height="210" width="130"></a>
+                        <p><a title="Queenie" href="/game/232705/">寻找游戏姬Queenie</a></p>
+                    </li>
+                    <li>
+                        <a href="#" title="Queenie"><img src="http://p5.vanclimg.com/product/0/1/8/0186193/lists170/38470.jpg" alt="寻找游戏姬Queenie" height="210" width="130"></a>
+                        <p><a title="Queenie" href="/game/232705/">寻找游戏姬Queenie</a></p>
+                    </li>
+                    <li>
+                        <a href="#" title="Queenie"><img src="http://p5.vanclimg.com/product/0/1/8/0185766/lists170/62770.jpg" alt="寻找游戏姬Queenie" height="210" width="130"></a>
+                        <p><a title="Queenie" href="/game/232705/">寻找游戏姬Queenie</a></p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    $(function($){
+        $.fn.changeList = function(options){
+            var defaults = {
+                        tag : 'li', // tab name
+                        subName : '.utilTabSub', // sub class name
+                        eventType : 'click', // event type
+                        num : 4,
+                        showType : 'show' // show effect type
+                    },
+                    opts = $.extend({}, defaults, options),
+                    that = $(this),
+                    subUl = that.find(opts.subName),
+                    subItems = subUl.find('li'),
+                    size = subItems.length,
+                    liW = subItems.outerWidth(true),
+                    ulW = liW * size,
+                    page = size + 1,
+                    n = opts.num,
+                    randNum = 0,
+                    m = 0;
 
-<input id="btn" type="button" value="test"/>
-<div id="div" style="position:absolute;width: 200px;height: 200px;background: #f00;"></div>
-<script>
-    (function(){
-        var box = document.getElementById('box');
-    }());
+            if(size > n){
+                that.find(opts.tag)[opts.eventType](function() {
+                    randNum = mathRand(n, size);
+                    subItems.hide();
+                    $.each(randNum, function (i, el) {
+                        subItems.eq(el).fadeIn(800);
+                    });
+                });
+            }
+        };
+    }(jQuery));
+
+    /**
+     * create Random number
+     * @param bit: number
+     * @param max: max number
+     * @return {Array}
+     */
+    function mathRand(bit, max){
+        var num = 0,
+                arr = [],
+                ret = [];
+        for(var i=0; i<bit; i++){
+            num = Math.floor(Math.random() * max);
+            if($.inArray(num, ret) == -1){
+                ret.push(num);
+            } else {
+                i--;
+                continue;
+            }
+        }
+        return ret;
+    }
+    $('#changeSee').changeList({
+        tag: '.hotmm-change',
+        subName: '.mm-hotmm-list',
+        num: 4
+    });
 </script>
 </body>
 </html>

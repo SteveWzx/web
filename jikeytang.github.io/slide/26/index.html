@@ -1,18 +1,234 @@
-<!doctype html>
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title></title>
-    <link rel="stylesheet" type="text/css" href="css/main.css" media="all"/>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+    <title>test</title>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+    <style type="text/css">
+        *{ margin:0; padding:0;}
+        body{font:12px/2 arial; background:#ccc;}
+        a{color:#0029c4;text-decoration:none;}
+        a:hover{color:#c00;}
+        .wrap{ border:2px solid #aaa; background:#fff; padding:20px;}
+        /* uidialog */
+        .ui-dialog{position:fixed;min-width:150px;background:#fff;overflow:hidden;z-index:99999;border:5px solid #767576;}
+        .ui-dialog h1{*margin-top:-3px;position:relative;text-indent:1em;padding:3px 0;font-size:14px;font-weight:normal;background:#efefef;border-bottom:1px solid #ccc;-moz-user-select:none;/* FF禁止选择文字 */-webkit-user-select:none;/* Chrome禁止选择文字 */}
+        .ui-dialog h1 .ui-close{position:absolute;right:10px;cursor:pointer;text-indent:0;}
+        .ui-dialog-body{ padding:10px;}
+        .ui-title{ border-bottom:1px solid #ccc; background:#f0f0f0;}
+        .ui-mask{position:absolute;left:0;top:0;z-index:77777;background:#000;filter:alpha(opacity=50);opacity:0.5;}
+        /* 模拟IE6 position:fix的效果 From: http://www.blueidea.com/tech/web/2010/7665.asp */
+        *html{background:url(*) fixed;}
+        *html body{margin:0;height:100%;}
+        .wrap{ width:500px; margin:40px auto;}
+    </style>
+
 </head>
 <body>
+<div class="wrap">
+    <h2>特点：接口丰富、轻便、弹出层上层、单击遮罩层关闭。</h2>
+    <ol>
+        <li>
+            <h1>测试 $.fn.UIDialog 调用，并弹出层上层</h1>
+            <a href="javascript:void(0)">测试a链接1</a>
+            <table class="tab" style="display:none;">
+                <tr>
+                    <th>用户名：</th>
+                    <td><input type="text" name="" id="useranme"></td>
+                </tr>
+                <tr>
+                    <th></th>
+                    <td><input id="mybtn" type="submit" value="又是一个新的"></td>
+                </tr>
+            </table>
+        </li>
+        <li>
+            <h1>测试弹出 next() 的内容</h1>
+            <a href="javascript:void(0)">测试a链接2</a>
+            <div>
+                <p>扯面是一种陕西和山西的传统面食小吃，已有3000年。主要原料：上白面粉、鸡蛋、菠菜、红萝卜、调味品。</p>
+                <p>做扯面，和面的技术是最关键的。和面过程中有几个关键点：首先水和面的比例是一个关键，做扯面要求和的面最软，揪片次之，手擀面、刀削面最硬，做扯面一般是一斤面六两多水。和面的过程也比较重要，先把面打成面穗(水一点一点的加)，再揉成面团，兑水扎软(一般反复扎几次)，然后用湿布蒙住。醒面也是必需的，和好的面醒半小时后才好用。 </p>
+            </div>
+        </li>
+        <li>
+            <h1>多种方式调用</h1>
+            <a href="javascript:void(0)">测试a链接3</a>
+            <p>扯面是一种陕西和山西的传统面食小吃，已有3000年。</p>
+            <input id="btn" type="button" value="test-$.UIDialog" />
+            <div>热乎乎的扯面，浇上自己喜欢的调和(调料)，或番茄酱、或肉炸酱、或炖菜，配上香喷喷的老陈醋，油汪汪的红辣子，挑一根放到嘴里一吸一嘬之下，扯面特有的筋道和绵软，你只有试过才知道哦。 </div>
+            <input id="btn2" type="button" value="test-$.fn.UIDialog">
 
-<input id="btn" type="button" value="test"/>
-<div id="div" style="position:absolute;width: 200px;height: 200px;background: #f00;"></div>
-<script>
-    (function(){
-        var box = document.getElementById('box');
-    }());
+        </li>
+    </ol>
+
+
+    <br>
+
+
+</div>
+<script type="text/javascript">
+    (function($){
+        $.fn.UIDialog = function(options){
+            var defaults = {
+                IE         :$.browser.msie,
+                IE6        :$.browser.version == 6,
+                FIREFOX    :$.browser.mozilla,
+                window     :$(window),
+                document   :$(document),
+                body       :$(document.body),
+                id         :null,  // 需要赋值的ID
+                callOnOpen :null,  // 弹出后调用
+                callOnClose:null,  // 关闭后调用
+                eventType  :null,  // 事件类型 click, blur, change, dblclick, error, focus, load, mousedown, mouseout, mouseup
+                idContent  :null,  // 需要添加的id
+                width      :'auto', // 宽
+                height     :'auto', // 高
+                title      :'消息',  // 标题
+                content    :'测试内容'  // 内容
+            };
+            var opts = $.extend({}, defaults, options);
+
+            var instance = {
+                // 初始化方法
+                init: function(opts, me){
+                    var that = this,
+                            cache = $.UIDialog.cache;
+                    for(var p in opts){ // opts 绑定到 instance
+                        this[p] = opts[p];
+                    }
+                    that.me = me; // 被调用者
+                    that.createDialog();
+                    that.createMask();
+                    that.mask.fadeTo('slow', 0.5).click(function(){
+                        that.close();
+                    });
+                    cache.push(that.dialog);
+                    cache.push(that.mask);
+                    that.dialog.fadeIn('slow', function(){ that.callOnOpen && that.callOnOpen(); });
+                    that.setZIndex();
+                },
+                // 创建容器
+                createDialog: function(){
+                    var that = this,
+                            dialog = $('<div class="ui-dialog"></div>').appendTo(this.body).hide(),
+                            dialogTitle = $('<h1 class="ui-dialog-title"></h1>').appendTo(dialog),
+                            dialogBody = $('<div class="ui-dialog-body"></div>').appendTo(dialog),
+                            titleClose = null;
+                    opts.id && dialog.attr('id', opts.id);
+                    that.dialog = dialog;
+                    that.title ? dialogTitle.append(that.title) : title.hide();
+                    titleClose = $('<a class="ui-close" href="###">关闭</a>').appendTo(dialogTitle).click(function(){ that.close(); });
+                    dialogBody.append(that.content);
+//                    dialogBody.append(that.me.next().html());
+                    that.IE6 && dialog.css({position:'absolute'});
+                    that.setSize();
+                    return that;
+                },
+                // 创建模板
+                createMask: function(){
+                    var that = this,
+                            body = that.body,
+                            windowWidth = that.window.width(),
+                            mask = $('<div class="ui-mask"></div>').appendTo(body).hide();
+                    that.mask = mask;
+                    mask.css({width: windowWidth, height: that.document.height()});
+                    that.IE6 && mask.html('<iframe src="about:blank" style="width:100%;height:100%;position:absolute;top:0;left:0;z-index:-1;filter:alpha(opacity=0)"></iframe>'); // 添加全屏iframe以防止select穿透
+                    return that;
+                },
+                // 设置大小
+                setSize: function(){
+                    var that = this,
+                            dialog = that.dialog,
+                            window = that.window,
+                            windowWidth = window.width(),
+                            windowHeight = window.height(),
+                            left, top;
+                    dialog.css({width: that.width, height: that.height});
+                    var defaultTop = Math.floor((windowHeight - dialog.outerHeight()) / 2);
+                    left = (windowWidth - dialog.width()) / 2 + 'px';
+                    top = defaultTop + 'px';
+                    dialog.css({left: left, top: top});
+                    return that;
+                },
+                // 设置堆叠值
+                setZIndex: function(){
+                    var that = this,
+                            dialog = that.dialog,
+                            mask = that.mask,
+                            indexVal = $.UIDialog.globalIndex++; // 引用全局变量，否则每次初始化后值为原始值
+                    dialog && dialog.css({zIndex: indexVal});
+                    mask && mask.css({zIndex: indexVal - 1});
+                    return that;
+                },
+                // 关闭
+                close: function(){
+                    var that = this,
+                            cache = $.UIDialog.cache,
+                            dialog = cache[cache.length - 2],
+                            mask = cache[cache.length - 1];
+                    dialog.trigger('unload').unbind('click');
+                    mask.trigger('unload').unbind('click');
+                    that.slowRemove(dialog).slowRemove(mask);
+                    cache.splice(cache.length - 2, 2);
+                    return that;
+                },
+                // 渐隐
+                slowRemove: function(ele){
+                    var that = this;
+                    ele.fadeOut('slow', function(){
+                        that.callOnClose && that.callOnClose();
+                        $(this).remove();
+                    });
+                    return that;
+                }
+            };
+            var eventType = opts.eventType;
+            if(eventType){ // 如果是 $.fn.UIDialog 方式调用
+                return this.each(function(index){
+                    $(this).bind(eventType, function(){
+                        instance.init(opts, $(this));
+//                        return false;
+                    });
+                });
+            } else { // 如果是 $.UIDialog 方式调用
+                instance.init(opts, $(this));
+            }
+        };
+        $.UIDialog = function(s){
+            $.fn.UIDialog(s);
+        };
+        $.UIDialog.globalIndex = new Date().getFullYear() + '' + new Date().getHours();  // 全局堆叠值,不能超过最大值(2147483647) From: http://softwareas.com/whats-the-maximum-z-index
+        $.UIDialog.cache = []; // 缓存对象
+
+    })(jQuery);
+
+    $('a').click(function(){
+        $.UIDialog({
+            content: $(this).next().html(),
+            id: 'testtab',
+            width: 500
+        });
+        $('#testtab #mybtn').click(function(){
+            console.log($('#testtab').find('#useranme').val());
+        });
+    });
+    $('#mybtn').live('click', function(){
+        $.UIDialog({
+            content: '我是一个兵'
+        })
+    });
+
+    $('#btn').click(function(){
+        $.UIDialog({
+            content: $(this).next().html()
+        });
+    })
+    $('#btn2').UIDialog({
+        eventType: 'click',
+        content: '我是一个弹出层！'
+    })
 </script>
+
 </body>
 </html>

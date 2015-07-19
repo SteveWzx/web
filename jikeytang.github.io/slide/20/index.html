@@ -1,18 +1,130 @@
-<!doctype html>
-<html>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title></title>
-    <link rel="stylesheet" type="text/css" href="css/main.css" media="all"/>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+    <title>二级延迟菜单 - 豪情</title>
+    <style type="text/css">
+        *{margin:0;padding:0;}
+        body{font:12px/1.125 Arial,Helvetica,sans-serif;background:#333;}
+        table{border-collapse:collapse;border-spacing:0;}
+        li{list-style:none;}
+        a:focus,input,textarea{outline-style:none;}
+        input[type="text"],input[type="password"],textarea{outline-style:none;-webkit-appearance:none;}
+        a{color:#0a8cd2;text-decoration:none;}
+        a:hover{text-decoration:underline;}
+        .none{display:none}
+        .demo{width:600px;height:500px;margin:30px auto;padding:30px;border:5px solid #ccc;background:#fff;}
+        .main_nav{width:404px;height:30px;margin:0 auto;}
+        .main_nav ul li{float:left;width:100px;height:30px;border-right:1px solid #666;position:relative;}
+        .main_nav ul li a{display:block;height:30px;line-height:30px;text-align:center;background:#333;color:#ccc;text-decoration:none;}
+        .submenu{position:absolute;left:0;top:30px;width:100px;display:none;}
+        .submenu dd{height:31px;}
+        .main_nav ul li dd a{display:block;height:30px;line-height:30px;text-align:center;color:#ccc;background:#333;border-bottom:1px solid #666;}
+        .main_nav ul li dd a:hover{background:#555;color:#fff;}
+    </style>
 </head>
 <body>
-
-<input id="btn" type="button" value="test"/>
-<div id="div" style="position:absolute;width: 200px;height: 200px;background: #f00;"></div>
-<script>
-    (function(){
-        var box = document.getElementById('box');
-    }());
+<div id="content" class="demo">
+    <div class="main_nav hover">
+        <ul>
+            <li><a class="link" href="javascript:" title="">关于我们</a>
+                <dl class="submenu">
+                    <dd><a href="javascript:" title="">栏目子导航1</a></dd>
+                    <dd><a href="javascript:" title="">栏目子导航1</a></dd>
+                    <dd><a href="javascript:" title="">栏目子导航1</a></dd>
+                    <dd><a href="javascript:" title="">栏目子导航1</a></dd>
+                    <dd><a href="javascript:" title="">栏目子导航1</a></dd>
+                </dl>
+            </li>
+            <li><a class="link" href="javascript:" title="">新闻中心</a>
+                <dl class="submenu">
+                    <dd><a href="javascript:" title="">栏目子导航2</a></dd>
+                    <dd><a href="javascript:" title="">栏目子导航2</a></dd>
+                    <dd><a href="javascript:" title="">栏目子导航2</a></dd>
+                    <dd><a href="javascript:" title="">栏目子导航2</a></dd>
+                    <dd><a href="javascript:" title="">栏目子导航2</a></dd>
+                </dl>
+            </li>
+            <li><a class="link" href="javascript:" title="">联系我们</a>
+                <dl class="submenu">
+                    <dd><a href="javascript:" title="">栏目子导航3</a></dd>
+                    <dd><a href="javascript:" title="">栏目子导航3</a></dd>
+                    <dd><a href="javascript:" title="">栏目子导航3</a></dd>
+                    <dd><a href="javascript:" title="">栏目子导航3</a></dd>
+                    <dd><a href="javascript:" title="">栏目子导航3</a></dd>
+                </dl>
+            </li>
+            <li><a class="link" href="javascript:" title="">雁过留声</a>
+                <dl class="submenu">
+                    <dd><a href="javascript:" title="">栏目子导航4</a></dd>
+                    <dd><a href="javascript:" title="">栏目子导航4</a></dd>
+                    <dd><a href="javascript:" title="">栏目子导航4</a></dd>
+                    <dd><a href="javascript:" title="">栏目子导航4</a></dd>
+                    <dd><a href="javascript:" title="">栏目子导航4</a></dd>
+                </dl>
+            </li>
+        </ul>
+    </div>
+</div>
+<script type="text/javascript">
+    (function(window){
+        /**
+         * getElementsByClassname
+         * @param oParent parent ele
+         * @param cls classname
+         * @return {*}
+         */
+        function getByClass(oParent, cls){
+            if(document.getElementsByClassName){
+                return (oParent || document).getElementsByClassName(cls);
+            } else {
+                oParent   = oParent || document;
+                var res   = [],
+                        child = null,
+                        reg   = new RegExp('(^|\\s)' + cls + '(\\s|$)', 'i');
+                for(var i = 0, len = oParent.all.length; i < len; i ++){
+                    child = oParent.all[i];
+                    if(reg.test(child.className)){
+                        res.push(child);
+                    }
+                }
+                return res;
+            }
+        }
+        var content = document.getElementById('content'),
+                oA      = getByClass(content, 'link'),
+                child   = null,
+                timer   = null,
+                oDl     = getByClass(content, 'submenu');
+        for(var i = 0, len = oA.length; i < len; i++){
+            child             = oA[i];
+            child.index       = i;
+            child.onmouseover = function(){
+                for(var j = 0; j < len; j++){
+                    oDl[j].style.display = 'none';
+                }
+                oDl[this.index].style.display = 'block';
+                clearTimeout(timer); // 清除从 dl 移回时的定时器
+            }
+            child.onmouseout = function(){
+                var that = this;
+                timer    = setTimeout(function(){
+                    oDl[that.index].style.display = 'none';
+                }, 500);
+            }
+            oDl[i].onmouseover = function(){
+                clearTimeout(timer);
+            }
+            oDl[i].onmouseout = function(){
+                var that = this;
+                timer    = setTimeout(function(){
+                    that.style.display = 'none';
+                }, 500);
+            }
+        }
+    }(window));
 </script>
 </body>
 </html>

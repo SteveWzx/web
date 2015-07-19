@@ -1,18 +1,130 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <title></title>
-    <link rel="stylesheet" type="text/css" href="css/main.css" media="all"/>
+    <meta charset="utf-8"/>
+    <title>单独图片轮换 - 豪情</title>
+    <style type="text/css">
+        *{margin:0;padding:0;}
+        body{font:12px/1.125 Arial,Helvetica,sans-serif;background:#000;}
+        table{border-collapse:collapse;border-spacing:0;}
+        li{list-style:none;}
+        fieldset,img{border:0;}
+        article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}
+        a:focus,input,textarea{outline-style:none;}
+        textarea{resize:none}
+        a{color:#0a8cd2;text-decoration:none;}
+        a:hover{color:#f60;text-decoration:underline;}
+        .clearfix:after{content:".";display:block;height:0;clear:both;visibility:hidden;}
+        .clearfix{display:inline-block;}
+        .clearfix{display:block;}
+        .none{display:none}
+        .demo{width:180px;height:210px;margin:40px auto;background:#fff;padding:25px;border:2px solid #ccc;border-radius:5px;}
+        .scrollBox{display:inline;float:left;height:223px;position:relative;width:180px;overflow:hidden;}
+        .prev,.next{background:url(http://images.cnitblog.com/blog/100150/201305/01234427-d9c492e118d040ffb59ec9d80955edbb.png) 0 0 no-repeat;}
+        .prev{background-position:0 0;bottom:7px;cursor:pointer;display:inline-block;height:13px;position:absolute;right:20px;width:15px;z-index:99;}
+        .next{background-position:-22px 0;bottom:7px;cursor:pointer;display:inline-block;height:13px;position:absolute;right:0;width:15px;z-index:99;}
+        .control{display:inline;float:left;margin:0 auto;width:180px;}
+        .control div{float:left;}
+        #control_scroll{height:223px;overflow:hidden;position:relative;width:180px;}
+        .pic{position:absolute;float:left;}
+        .pic li{display:inline;float:left;text-align:left;width:180px;}
+        .pic li img.lbimg{height:190px;margin:0 auto 12px;overflow:hidden;width:180px;}
+    </style>
 </head>
 <body>
-
-<input id="btn" type="button" value="test"/>
-<div id="div" style="position:absolute;width: 200px;height: 200px;background: #f00;"></div>
-<script>
-    (function(){
-        var box = document.getElementById('box');
-    }());
+<!--http://sports.qq.com/photo/?pgv_ref=aio2012&ptlang=2052-->
+<!--http://news.qq.com/base2011/ued_scroll.js-->
+<div class="demo">
+    <div class="scrollBox">
+        <div id="prev" class="prev"></div>
+        <div class="control" id="container">
+            <ul class="pic">
+                <li><a href="#"><img class="lbimg" alt="张蓝心登杂志秀美腿" src="http://img1.gtimg.com/sports/pics/hv1/235/122/1287/83718520.jpg" /><br />
+                    张蓝心登杂志秀美腿</a> </li>
+                <li><a href="#"><img class="lbimg" alt="潘晓婷蕾丝装身姿动人" src="http://img1.gtimg.com/sports/pics/hv1/242/122/1287/83718527.jpg" /><br />
+                    潘晓婷蕾丝装身姿动人</a> </li>
+                <li><a href="#"><img class="lbimg" alt="泛珠赛车宝贝清丽登场" src="http://img1.gtimg.com/sports/pics/hv1/249/122/1287/83718534.jpg" /><br />
+                    泛珠赛车宝贝清丽登场</a> </li>
+                <li><a href="#"><img class="lbimg" alt="CBA宝贝热舞助阵" src="http://img1.gtimg.com/sports/pics/hv1/24/188/1286/83670114.jpg" /><br />
+                    CBA宝贝热舞助阵</a> </li>
+                <li><a href="#"><img class="lbimg" alt="徐冬冬写真姿态优雅" src="http://img1.gtimg.com/sports/pics/hv1/237/122/1287/83718522.jpg" /><br />
+                    徐冬冬写真姿态优雅</a> </li>
+            </ul>
+        </div>
+        <div id="next" class="next"></div>
+    </div>
+</div>
+<script type="text/javascript">
+    (function(window){
+        function id(node){
+            return typeof node == 'string' ? document.getElementById(node) : node;
+        }
+        function SingleSlide(obj){
+            for(var p in obj){
+                this[p] = id(obj[p]);
+            }
+            this.init.apply(this, arguments);
+        }
+        SingleSlide.prototype = {
+            init : function(){
+                var that = this,
+                        timer = null;
+                this.oUl = this.container.getElementsByTagName('ul')[0];
+                this.aLi = this.oUl.getElementsByTagName('li');
+                this.iMaxWidth = this.aLi[0].offsetWidth;
+                this.iNow = 0; // 当前标记
+                var bigBox = this.container.parentNode;
+                this.oUl.innerHTML += this.oUl.innerHTML;
+                this.oUl.style.width = this.aLi[0].offsetWidth * this.aLi.length + 'px';
+                timer = setInterval(function(){
+                    that.auto(that, that.oUl);
+                }, 2000);
+                this.prevBtn.onclick = function(){
+                    that.prev(that, that.oUl);
+                }
+                this.nextBtn.onclick = function(){
+                    that.auto(that, that.oUl);
+                }
+                bigBox.onmouseover = function(){
+                    clearInterval(timer);
+                }
+                bigBox.onmouseout = function(){
+                    timer = setInterval(function(){
+                        that.auto(that, that.oUl);
+                    }, 2000);
+                }
+            },
+            auto : function(obj, ul){
+                obj.iNow++;
+                if(obj.iNow >= obj.aLi.length){
+                    obj.iNow = 0;
+                }
+                obj.move(ul, -obj.iNow * obj.iMaxWidth);
+            },
+            prev : function(obj, ul){
+                obj.iNow--;
+                if(obj.iNow <= -1){
+                    obj.iNow = obj.aLi.length - 1;
+                }
+                obj.move(ul, -obj.iNow * obj.iMaxWidth);
+            },
+            move : function(obj, end){
+                var that = this,
+                        iSpeed = 0;
+                clearInterval(obj.timer);
+                obj.timer = setInterval(function(){
+                    iSpeed = (end - obj.offsetLeft) / 5;
+                    iSpeed = iSpeed > 0 ? Math.ceil(iSpeed) : Math.floor(iSpeed);
+                    obj.style.left = obj.offsetLeft + iSpeed + 'px';
+                }, 30);
+            }
+        }
+        new SingleSlide({
+            container : 'container',
+            prevBtn : 'prev',
+            nextBtn : 'next'
+        });
+    }(window));
 </script>
 </body>
 </html>

@@ -1,18 +1,86 @@
-<!doctype html>
-<html>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title></title>
-    <link rel="stylesheet" type="text/css" href="css/main.css" media="all"/>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+    <title>迅雷评分效果 - 豪情</title>
+    <style type="text/css">
+        *{ margin:0; padding:0;}
+        body{font:12px/1.125 Arial,Helvetica,sans-serif;background:#fff;}
+        table{border-collapse:collapse;border-spacing:0;}
+        li{list-style:none;}
+        input[type="text"],input[type="password"],textarea{outline-style:none;-webkit-appearance:none;}
+        textarea{resize:none}
+        address,caption,cite,code,dfn,em,i,th,var{font-style:normal;font-weight:normal;}
+        legend{color:#000;}
+        a{color:#0a8cd2;text-decoration:none;}
+        a:hover{text-decoration:underline;}
+        .clearfix:after{content:".";display:block;height:0;clear:both;visibility:hidden;}
+        .clearfix{display:inline-block;}
+        .clearfix{display:block;}
+        .none{display:none}
+        .demo{ position:relative; width:300px;margin:0 auto; padding-top:120px;}
+        .list li{ float:left; width:16px; height:16px; margin-right:3px;cursor:pointer; display:inline; overflow:hidden; background:url(http://images.cnitblog.com/blog/100150/201304/02220917-50348f051a004a7385e4aaafcc3ce7a6.png) 0 -16px no-repeat;}
+        .list li.cur{ background-position:0 0;}
+        .score{ font-size:14px; color:#f60; padding:0 5px;}
+        .text{ position:absolute; padding:3px 5px; left:135px;top:120px; border:1px solid #ccc;}
+    </style>
 </head>
 <body>
-
-<input id="btn" type="button" value="test"/>
-<div id="div" style="position:absolute;width: 200px;height: 200px;background: #f00;"></div>
-<script>
-    (function(){
-        var box = document.getElementById('box');
-    }());
+<div id="demo" class="demo">
+    <ul class="list">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    <p class="score"></p>
+    <p class="text none">力荐</p>
+</div>
+<script type="text/javascript">
+    var oDemo = document.getElementById('demo');
+    var oUl = oDemo.getElementsByTagName('ul')[0];
+    var oScore = oDemo.getElementsByTagName('p')[0];
+    var oP = oDemo.getElementsByTagName('p')[1];
+    var aLi = oUl.getElementsByTagName('li');
+    var oLi = null;
+    var aData = ['较差', '一般', '好看', '推荐', '力荐'];
+    var bCheck = false;
+    for(var i = 0; i < aLi.length; i++){
+        var first = null;
+        aLi[i].index = i;
+        oLi = aLi[i];
+        oLi.onmouseover = function(){
+            for(i = 0; i < aLi.length; i++){
+                aLi[i].className = '';
+            }
+            for(var j = 0; j <= this.index; j++){
+                aLi[j].className = 'cur';
+            }
+            oP.style.display = 'block';
+            oP.innerHTML = aData[this.index];
+            if(!bCheck){
+                oScore.innerHTML = (this.index + 1) * 20 + '分';
+            }
+        }
+        oLi.onclick = function(){
+            if(!bCheck){
+                first = this.index;
+                bCheck = true;
+                alert('评分成功!');
+            } else {
+                for(i = 0; i < aLi.length; i++){
+                    aLi[i].className = '';
+                }
+                for(var j = 0; j <= first; j++){
+                    aLi[j].className = 'cur';
+                }
+                alert('你已评过分!');
+            }
+        }
+    }
 </script>
 </body>
 </html>

@@ -1,18 +1,191 @@
-<!doctype html>
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title></title>
-    <link rel="stylesheet" type="text/css" href="css/main.css" media="all"/>
+    <title>UISlideDemo1.0</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+    <!--<script type="text/javascript" src="http://www.cnblogs.com/jquery-1.4.4.min.js"></script>-->
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <!--<script type="text/javascript" src="js/jquery.easing.js"></script>-->
+    <script type="text/javascript" src="http://jquery-swip.googlecode.com/svn/trunk/jquery.easing.1.3.js"></script>
+    <!--<script type="text/javascript" src="js/jquery.UISlide.js"></script>-->
+    <style type="text/css">
+        *{ margin:0;padding:0;}
+        body{font:12px/2 arial;background:#ccc;}
+        a{color:#0029c4;text-decoration:none;}
+        a:hover{color:#c00;}
+        img{border:none 0;}
+        .wrap{width:714px;margin:40px auto;border:2px solid #aaa;background:#fff;padding:5px 5px 0;}
+        .slide_wrap{position:relative;width:710px;height:340px; margin-bottom:5px;border:2px solid #ccc;background:#fff;color:#666;overflow:hidden;}
+        .slide_imglist{}
+        .slide_imglist li{float:left;margin-right:3px;display:inline;}
+        .slide_imglist li img{width:710px;height:340px;display:block;}
+        .slide_title{bottom:0;left:0;width:100%;height:45px;overflow:hidden;position:absolute;}
+        .slide_title h3{position:absolute;top:0;left:0;height:45px;line-height:45px;overflow:hidden;padding:0 10px;z-index:2;display:block;}
+        .slide_title h3 a{color:#efefef;font-weight:bold;font-size:16px;}
+        .slide_title h3 a:hover{color:#ff0;}
+        .slide_title em{position:absolute;left:0;display:block;top:0;width:100%;height:45px;opacity:0.45;filter:alpha(opacity=45);background:#000;z-index:1;}
+        .slide_num{right:5px;z-index:3;top:0;position:absolute;}
+        .slide_num dd{display:inline;margin:10px 4px 0 0;width:22px;height:22px;font-size:14px;text-align:center;line-height:22px;border:1px #eee solid;background:#d4d4d4;cursor:pointer;float:left;}
+        .slide_num dd.active{color:#fff;border:1px #09f solid;background:#09f;}
+    </style>
 </head>
 <body>
-
-<input id="btn" type="button" value="test"/>
-<div id="div" style="position:absolute;width: 200px;height: 200px;background: #f00;"></div>
-<script>
-    (function(){
-        var box = document.getElementById('box');
-    }());
+<div class="wrap">
+    <div id="slide" class="slide_wrap">
+        <ul class="slide_imglist">
+            <li><a title="《画皮Ⅱ》正式版预告首发 魔幻大作妖魅来袭" href="http://fanbuxie.vancl.com/" target="_blank"><img src="http://i4.vanclimg.com/users/26/20120318/focus_1_120318.jpg" alt=""></a></li>
+            <li><a title="《普罗米修斯》全新中文预告首发 科幻大作终现全貌" href="http:////rihan.vancl.com/" target="_blank"><img src="http://i1.vanclimg.com/users/26/20120315/focus_6_3n_cs_120315.jpg" alt=""></a></li>
+            <li><a title="诡异华美缜密悬疑：12大日本推理名家改编宝典" href="http://children.vancl.com/search?navtype=08&attrid_category_attributes=7939" target="_blank"><img src="http://i2.vanclimg.com/users/26/20120321/focus_tz_120321_nn.jpg" alt=""></a></li>
+        </ul>
+        <div class="slide_title">
+            <h3><a href="#" target="_blank">设计好脾气的Web页面</a></h3>
+            <dl class="slide_num"></dl>
+            <em></em>
+        </div>
+    </div>
+    <!--/slide-->
+    <div id="slide2" class="slide_wrap">
+        <ul class="slide_imglist">
+            <li><a title="现代主妇vs职业女性：从 &quot;广告狂人&quot; 看60年代女性风尚" href="http://vt.vancl.com/" target="_blank"><img src="http://i5.vanclimg.com/users/26/20120316/foucs_2_4_vt_201203016n.jpg" alt=""></a></li>
+            <li><a title="诡异华美缜密悬疑：12大日本推理名家改编宝典" href="http://xiuxianku.vancl.com/" target="_blank"><img src="http://i3.vanclimg.com/users/26/20120318/focus_5_120318.jpg" alt=""></a></li>
+            <li><a title="2012佳片鉴赏录：25部奥斯卡种子影片超前瞻" href="http://nanxie.vancl.com/" target="_blank"><img src="http://i2.vanclimg.com/users/26/20120320/focus_6_n_120320.jpg" alt=""></a></li>
+        </ul>
+        <div class="slide_title">
+            <h3><a href="#" target="_blank">设计好脾气的Web页面</a></h3>
+            <dl class="slide_num"></dl>
+            <em></em>
+        </div>
+    </div>
+    <!--/slide-->
+</div>
+<script type="text/javascript">
+    /**
+     * Copyright (c) 2011 Jikeytang (http://jikey.cnblog.com/)
+     * Version: 0.0.1
+     * Demo: http://jikey.cnblog.com/
+     */
+    ;(function($){
+// 图片轮播插件
+        $.fn.UISlide = function(options){
+            var defaults = {
+                playTime :2000, // 间隔时间
+                duration :800, // 延迟时间
+                direction :'left', // 方向
+                easing :'easeInOutQuad', // 自动播放时 easing 方式
+                clickEasing :'easeOutCubic' // 点击时 easing 方式
+            };
+            var opts = $.extend({}, defaults, options); // 参数合并
+            var slide = {
+// 播放调用及一些变量的初始化
+                play: function(opts, me){
+                    var that = this,
+                            isPlay;
+                    that.me = me;
+                    that.picList = me.find('ul'); // 图片列表
+                    that.title = me.find('div').find('a'); // 图片标题
+                    that.oNum = me.find('dl'); // 数字按钮
+                    that.lis = that.picList.find('li'); // li
+                    that.size = that.lis.length; // 图片的数量
+                    that.lisWidth = that.lis.width();
+                    that.isPlay = isPlay; // 是否自动播放
+                    for (var p in opts) { // opts 绑定到 slide
+                        that[p] = opts[p];
+                    }
+                    that.setNums().setTitle();
+                    if(that.size > 1){ // 如果图片数量大于则轮播
+                        that.autoPlay().slideEvent();
+                    }
+                },
+// 设置按钮
+                setNums: function(){
+                    var that = this,
+                            links, // 图片的链接
+                            me = that.me,
+                            size = that.size,
+                            oNum = that.oNum, // 按钮对象
+                            arrTemp = [];
+                    links = that.picList.find('a').first();
+                    that.title.html(links[0].title).attr('href', links[0].href); // 把链接的 title 内容放到标题栏上显示
+                    for(var i=1; i<=size; i++){
+                        arrTemp.push('<dd>' + i + '</dd>');
+                    }
+                    oNum.append(arrTemp.join(''));
+                    that.slideNum = oNum.find('dd');
+                    that.numWidth = (that.slideNum.width() + parseInt(that.slideNum.css('margin-right')) + 2) * size + 1; // 数字按钮宽度
+                    that.setTitle();
+                    return that;
+                },
+// 自动播放
+                autoPlay: function(){
+                    var that = this,
+                            activePos,
+                            direction = that.direction,
+                            picList = that.picList,
+                            slideNum = that.slideNum,
+                            playTime = that.playTime;
+                    that.isPlay = setInterval(function (){
+                        activePos = that.oNum.find('.active').index();
+                        if(direction == 'left'){
+                            if(activePos == (that.size - 1)){
+                                direction = 'right';
+                                activePos --;
+                            } else {
+                                activePos ++;
+                            }
+                        } else {
+                            if(activePos == 0){
+                                direction = 'left';
+                                activePos ++;
+                            } else {
+                                activePos --;
+                            }
+                        }
+                        picList.stop().animate({'margin-left': 0 - activePos * (that.lisWidth + 3)}, {duration: that.duration, easing: that.easing});
+                        slideNum.removeClass('active').eq(activePos).addClass('active');
+                        var links = picList.find('a').eq(activePos);
+                        that.title.html(links[0].title).attr('href', links[0].href);
+                    }, playTime);
+                    return that;
+                },
+// 设置标题
+                setTitle: function(){
+                    var that = this;
+                    that.oNum.width(that.numWidth + 2); // 设置数字按钮宽度
+                    that.picList.width((that.lisWidth + 3) * that.size); // 设置图片容器总宽度
+                    that.slideNum.first().addClass('active');
+                    return that;
+                },
+// 绑定数字按钮事件
+                slideEvent: function(){
+                    var that = this,
+                            slideNum = that.slideNum;
+                    slideNum.click(function(){
+                        var thisNum = $(this).index();
+                        that.picList.stop().animate({"margin-left":0 - thisNum * (that.lisWidth + 3)}, {duration:that.duration, easing:that.clickEasing});
+                        slideNum.removeClass('active').eq(thisNum).addClass('active');
+                        var links = that.picList.find('a').eq(thisNum);
+                        that.title.html(links[0].title).attr('href', links[0].href);
+                    });
+// 鼠标到画面中任意位置，停止播放
+                    that.me.hover(function(){
+                        clearInterval(that.isPlay);
+                    }, function(){
+                        that.autoPlay();
+                    })
+                    return that;
+                }
+            };
+            return this.each(function(){ // $(a,b) 方式调用
+                slide.play(opts, $(this));
+            });
+        }
+    })(jQuery);
+</script>
+<script type="text/javascript">
+    $('#slide').UISlide();
+    $('#slide2').UISlide();
 </script>
 </body>
 </html>

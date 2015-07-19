@@ -1,18 +1,146 @@
-<!doctype html>
+<!DOCTYPE HTML>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <title></title>
-    <link rel="stylesheet" type="text/css" href="css/main.css" media="all"/>
+    <meta charset="UTF-8" />
+    <title>title-jquery-tag</title>
+    <style type="text/css">
+        *{ margin:0; padding:0;}
+        body{font:12px/1.125 Arial,Helvetica,sans-serif;background:#fff;}
+        table{border-collapse:collapse;border-spacing:0;}
+        li{list-style:none;}
+        fieldset,img{border:0;}
+        article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}
+        q:before,q:after{content:'';}
+        a:focus,input,textarea{outline-style:none;}
+        input[type="text"],input[type="password"],textarea{outline-style:none;-webkit-appearance:none;}
+        textarea{resize:none}
+        address,caption,cite,code,dfn,em,i,th,var{font-style:normal;font-weight:normal;}
+        legend{color:#000;}
+        abbr,acronym{border:0;font-variant:normal;}
+        a{color:#0a8cd2;text-decoration:none;}
+        a:hover{text-decoration:underline;}
+        .clearfix:after{content:".";display:block;height:0;clear:both;visibility:hidden;}
+        .clearfix{display:inline-block;}
+        .clearfix{display:block;}
+        .clear{clear:both;height:0;font:0/0 Arial;visibility:hidden;}
+        .none{display:none}
+        .tag-only{ z-index:2;}
+        .tag-only .tag-inner{ z-index:3;}
+        .demo-wrap{ width:700px;margin:20px auto 30px;}
+        .demo-wrap h1{ font-size:14px;}
+        .tag-wrap{position:relative;}
+        .taginput{ width:600px; height:18px; line-height:18px; padding:2px; border:1px solid #ccc;background:#fff;}
+        .tag-outer{ position:absolute; top:20px; left:42px; width:594px; padding:5px; display:none; border:1px solid #ccc;background:#fff; border-top:none; line-height:23px;}
+        .tag-outer strong{ color:#000; font-size:14px;}
+        .tag-outer a{ margin:0 4px; color:#0000ee;cursor:pointer;}
+        .tag-outer a:hover{ color:#f60;}
+        .close{ position:absolute; right:5px; top:5px; color:#666;cursor:pointer;}
+        .info{ color:#f00; padding-left:41px; height:25px; line-height:25px;}
+    </style>
+    <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.0.min.js"></script><!--
+<script type="text/javascript" src="../jquery-1.8.3.min.js"></script>-->
 </head>
 <body>
-
-<input id="btn" type="button" value="test"/>
-<div id="div" style="position:absolute;width: 200px;height: 200px;background: #f00;"></div>
-<script>
-    (function(){
-        var box = document.getElementById('box');
-    }());
-</script>
-</body>
+<div class="demo-wrap">
+    <h1>多项选择</h1>
+    <div class="info"></div>
+    <div class="tag-wrap tag-only">
+        <label class="tag" for="tagInput"><b>标签：</b></label>
+<span id="tag01" class="tag-inner">
+<input id="tagInput" class="taginput" type="text" />
+<div class="tag-outer">
+    <p><b>温馨提示：</b>请选择下面的热门标签及使用过的标签，标签将自动排列至表单域。</p>
+    <span class="close">关闭</span>
+</div>
+</span>
+    </div>
+</div>
+<div class="demo-wrap">
+    <h1>单项选择</h1>
+    <div class="info"></div>
+    <div class="tag-wrap">
+        <label class="tag" for="tagInput"><b>标签：</b></label>
+<span id="tag02" class="tag-inner">
+<input id="tagInput2" class="taginput" type="text" />
+<div class="tag-outer">
+    <p><b>温馨提示：</b>请选择下面的热门标签及使用过的标签，标签将自动排列至表单域。</p>
+    <span class="close">关闭</span>
+</div>
+</span>
+    </div>
+</div>
+<script type="text/javascript">
+    (function($){
+        $.fn.tagSuggest = function(options){
+            var defaults = {
+                        tagItems : 'li',
+                        subName : '.tag-outer',
+                        tagInput : '#tagInput',
+                        one : false
+                    },
+                    opts = $.extend({}, defaults, options),
+                    tagList = opts.tagItems,
+                    html = '',
+                    links = '',
+                    subName = $(this).find(opts.subName),
+                    tagInput = $(this).find(opts.tagInput),
+                    one = opts.one,
+                    tagName = '',
+                    inputVal = null,
+                    selectVal = '',
+                    info = $(this).parent().prev(),
+                    that = $(this);
+            return this.each(function(){
+                for(var k in tagList){ // join items
+                    var t = '<p><strong>', v = tagList[k];
+                    t += k + '</strong>';
+                    v = v.join('</a><a href="javascript:void(0)">');
+                    html += t + '<a href="javascript:void(0)">' + v + '</a></p>';
+                }
+                subName.append(html);
+                that.hover(function(){ // show menu
+                    tagInput.focus();
+                    subName.slideDown();
+                }, function(){
+                    subName.hide();
+                    info.html('');
+                })
+                subName.find('a').on('click', function(){
+                    inputVal = tagInput.val();
+                    selectVal = $(this).html();
+                    if(inputVal.indexOf(selectVal) != -1){
+                        info.html('已选择,请重新选择！');
+                        return false;
+                    } else {
+                        info.html('');
+                    }
+                    if(one){ // if only change
+                        tagName = $(this).html();
+                    } else {
+                        tagName += tagName != '' ? ',' + $(this).html() : $(this).html();
+                    }
+                    tagInput.val(tagName);
+                });
+                // close
+                $('.close').on('click', function(){
+                    subName.hide();
+                });
+            });
+        };
+    }(jQuery));
+    var data = {
+        '热门标签:' : ['时光漫步', 'JavaScript', 'jQuery plugin'],
+        '您使用过的标签：' : ['许巍', 'Sophie Zelmani', '王菲', '小娟&山谷里的居民']
+    };
+    // more selected
+    $('#tag01').tagSuggest({
+        tagItems : data
+    });
+    // one selected
+    $('#tag02').tagSuggest({
+        tagItems : data,
+        tagInput : '#tagInput2',
+        one : true
+    });
+</script></body>
 </html>

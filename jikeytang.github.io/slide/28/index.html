@@ -1,18 +1,60 @@
+
 <!doctype html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title></title>
-    <link rel="stylesheet" type="text/css" href="css/main.css" media="all"/>
+    <meta charset="UTF-8" />
+    <title>test-group-following</title>
+    <!-- // <script type="text/javascript" src="../jquery-1.8.3.min.js"></script> -->
+    <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.3.min.js"></script>
+    <style type="text/css">
+        *{margin:0;padding:0;}
+        body{font:12px/1.5 arial;background:#fff;}
+        img{border:none 0;}
+        .scroll{position:absolute;left:10px;}
+        .scroll-outer{position:relative;width:145px;height:300px;}
+        .scroll-cont{position:absolute;top:0;left:0;height:280px;border:1px solid #cc0;background:#f1f1f1;}
+        .scroll-close{position:absolute;bottom:0;right:0;display:block;text-decoration:none;}
+        .scroll-close:hover{color:#c00;}
+    </style>
 </head>
 <body>
-
-<input id="btn" type="button" value="test"/>
-<div id="div" style="position:absolute;width: 200px;height: 200px;background: #f00;"></div>
-<script>
-    (function(){
-        var box = document.getElementById('box');
-    }());
+<div style="height:3000px;"></div>
+<div class="scroll">
+    <div class="scroll-outer">
+        <div class="scroll-cont">
+            <a href="#" target="_blank">
+                <img width="143" height="280" src="http://guniangwang.com/user_upload_img/713/201212/s/20121231110033.jpg" alt="" />
+            </a>
+        </div>
+        <a href="javascript:void(0)" class="scroll-close">关闭</a>
+    </div>
+</div>
+<script type="text/javascript">
+    (function($){
+        $.fn.dual = function(options){
+            var defaults  = {
+                        delaytime : 1000
+                    },
+                    opts          = $.extend(defaults, options),
+                    win  = $(window),
+                    right         = this.clone().appendTo('body'), // clone other
+                    center        = (win.height() - this.height()) / 2,
+                    ele           = $('.scroll'),
+                    close         = ele.find('.scroll-close');
+            right.css({left: 'auto', right: '10px'}); // initialize
+            return ele.each(function(){
+                var that = $(this);
+                $(this).css({top: center});
+                win.scroll(function(){
+                    that.animate({top: center + win.scrollTop()}, {duration: opts.delaytime, queue: false});
+                });
+                close.click(function(){
+                    that.hide();
+                });
+            });
+        }
+    }(jQuery));
+    $('.scroll').dual(); // call
 </script>
 </body>
 </html>

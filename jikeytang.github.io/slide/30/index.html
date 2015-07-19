@@ -1,18 +1,180 @@
-<!doctype html>
-<html>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title></title>
-    <link rel="stylesheet" type="text/css" href="css/main.css" media="all"/>
+    <title>豪情</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+    <style type="text/css">
+        *{margin:0;padding:0;}
+        body{font-size:12px;}
+        li{list-style:none;}
+        a{text-decoration:none;}
+        a:link{color:#000;text-decoration:none;}
+        a:hover{text-decoration:none;}
+        #nav{width:500px;margin:0 auto;padding-top:20px;}
+        #nav li{text-align:center;float:left;position:relative;}
+        #nav li a{float:left;width:65px;height:30px;line-height:30px;border:1px solid #ccc;margin-right:15px;}
+        #nav li a:hover{background:#eee;}
+        #nav li ul{position:absolute;top:30px;left:0px;width:600px;display:none;}
+        #nav li ul li a{width:65px;height:30px;line-height:30px;border:1px solid #ccc;}
+        #nav li ul li ul{position:absolute;top:30px;left:0px;display:none;}
+        #nav li ul li ul li{float:none;}
+        #nav li ul li ul li a{float:none;display:block;}
+        .a{border:#ff80c0 solid 2px;width:300px;height:200px;}
+    </style>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            $('#nav li').hover(function(){
+                $(this).children('ul').show().end();
+            }, function(){
+                $(this).children('ul').hide().end();
+            })
+        });
+    </script>
 </head>
 <body>
-
-<input id="btn" type="button" value="test"/>
-<div id="div" style="position:absolute;width: 200px;height: 200px;background: #f00;"></div>
-<script>
-    (function(){
-        var box = document.getElementById('box');
-    }());
-</script>
+<ul id="nav">
+    <li><a href="#">菜单一</a>
+        <ul>
+            <li><a href="#">菜单二</a>
+                <ul>
+                    <li><a href="#">菜单三1</a></li>
+                    <li><a href="#">菜单三2</a></li>
+                    <li><a href="#">菜单三3</a></li>
+                    <li><a href="#">菜单三4</a></li>
+                </ul>
+            </li>
+            <li><a href="#">菜单二</a>
+                <ul>
+                    <li><a href="#">菜单三1</a></li>
+                    <li><a href="#">菜单三2</a></li>
+                    <li><a href="#">菜单三3</a></li>
+                    <li><a href="#">菜单三4</a></li>
+                </ul>
+            </li>
+            <li><a href="#">菜单二</a>
+                <ul>
+                    <li><a href="#">菜单三1</a></li>
+                    <li><a href="#">菜单三2</a></li>
+                    <li><a href="#">菜单三3</a></li>
+                    <li><a href="#">菜单三4</a></li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+    <li><a href="#">菜单一</a>
+        <ul>
+            <li><a href="#">菜单二</a>
+                <ul>
+                    <li><a href="#">菜单三1</a></li>
+                    <li><a href="#">菜单三2</a></li>
+                    <li><a href="#">菜单三3</a></li>
+                    <li><a href="#">菜单三4</a></li>
+                </ul>
+            </li>
+            <li><a href="#">菜单二</a>
+                <ul>
+                    <li><a href="#">菜单三1</a></li>
+                    <li><a href="#">菜单三2</a></li>
+                    <li><a href="#">菜单三3</a></li>
+                    <li><a href="#">菜单三4</a></li>
+                </ul>
+            </li>
+            <li><a href="#">菜单二</a>
+                <ul>
+                    <li><a href="#">菜单三1</a></li>
+                    <li><a href="#">菜单三2</a></li>
+                    <li><a href="#">菜单三3</a></li>
+                    <li><a href="#">菜单三4</a></li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+    <li><a href="#">菜单一</a>
+        <ul>
+            <li><a href="#">菜单二</a>
+                <ul>
+                    <li><a href="#">菜单三1</a></li>
+                    <li><a href="#">菜单三2</a></li>
+                    <li><a href="#">菜单三3</a></li>
+                    <li><a href="#">菜单三4</a></li>
+                </ul>
+            </li>
+            <li><a href="#">菜单二</a>
+                <ul>
+                    <li><a href="#">菜单三1</a></li>
+                    <li><a href="#">菜单三2</a></li>
+                    <li><a href="#">菜单三3</a></li>
+                    <li><a href="#">菜单三4</a></li>
+                </ul>
+            </li>
+            <li><a href="#">菜单二</a>
+                <ul>
+                    <li><a href="#">菜单三1</a></li>
+                    <li><a href="#">菜单三2</a></li>
+                    <li><a href="#">菜单三3</a></li>
+                    <li><a href="#">菜单三4</a></li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+    <li><a href="#">菜单一</a>
+        <ul>
+            <li><a href="#">菜单二</a>
+                <ul>
+                    <li><a href="#">菜单三1</a></li>
+                    <li><a href="#">菜单三2</a></li>
+                    <li><a href="#">菜单三3</a></li>
+                    <li><a href="#">菜单三4</a></li>
+                </ul>
+            </li>
+            <li><a href="#">菜单二</a>
+                <ul>
+                    <li><a href="#">菜单三1</a></li>
+                    <li><a href="#">菜单三2</a></li>
+                    <li><a href="#">菜单三3</a></li>
+                    <li><a href="#">菜单三4</a></li>
+                </ul>
+            </li>
+            <li><a href="#">菜单二</a>
+                <ul>
+                    <li><a href="#">菜单三1</a></li>
+                    <li><a href="#">菜单三2</a></li>
+                    <li><a href="#">菜单三3</a></li>
+                    <li><a href="#">菜单三4</a></li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+    <li><a href="#">菜单一</a>
+        <ul>
+            <li><a href="#">菜单二</a>
+                <ul>
+                    <li><a href="#">菜单三1</a></li>
+                    <li><a href="#">菜单三2</a></li>
+                    <li><a href="#">菜单三3</a></li>
+                    <li><a href="#">菜单三4</a></li>
+                </ul>
+            </li>
+            <li><a href="#">菜单二</a>
+                <ul>
+                    <li><a href="#">菜单三1</a></li>
+                    <li><a href="#">菜单三2</a></li>
+                    <li><a href="#">菜单三3</a></li>
+                    <li><a href="#">菜单三4</a></li>
+                </ul>
+            </li>
+            <li><a href="#">菜单二</a>
+                <ul>
+                    <li><a href="#">菜单三1</a></li>
+                    <li><a href="#">菜单三2</a></li>
+                    <li><a href="#">菜单三3</a></li>
+                    <li><a href="#">菜单三4</a></li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+</ul>
 </body>
 </html>

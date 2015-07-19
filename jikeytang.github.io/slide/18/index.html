@@ -1,18 +1,244 @@
-<!doctype html>
+
+<!DOCTYPE HTML>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <title></title>
-    <link rel="stylesheet" type="text/css" href="css/main.css" media="all"/>
+    <meta charset="UTF-8" />
+    <title>微博置顶 - 豪情</title>
+    <style type="text/css">
+        *{ margin:0; padding:0;}
+        body{font:12px/1.125 Arial,Helvetica,sans-serif;background:#fff;}
+        table{border-collapse:collapse;border-spacing:0;}
+        li{list-style:none;}
+        fieldset,img{border:0;}
+        article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}
+        q:before,q:after{content:'';}
+        a:focus,input,textarea{outline-style:none;}
+        input[type="text"],input[type="password"],textarea{outline-style:none;-webkit-appearance:none;}
+        textarea{resize:none}
+        address,caption,cite,code,dfn,em,i,th,var{font-style:normal;font-weight:normal;}
+        legend{color:#000;}
+        abbr,acronym{border:0;font-variant:normal;}
+        a{color:#0a8cd2;text-decoration:none;}
+        a:hover{text-decoration:underline;}
+        .clearfix:after{content:".";display:block;height:0;clear:both;visibility:hidden;}
+        .clearfix{display:inline-block;}
+        .clearfix{display:block;}
+        .clear{clear:both;height:0;font:0/0 Arial;visibility:hidden;}
+        .none{display:none}
+        /* content */
+        .wb-wrap{ width:600px;margin:0 auto;min-height:800px;}
+        .wb-list li{ margin:-1px 20px 0; padding:21px 0;border-bottom:1px solid #e6e6e6; clear:both; zoom:1;}
+        .wb-face{ float:left; width:50px;}
+        .wb-detail{ margin-left:65px;}
+        .wb-title-oper{ float:right;}
+        .wb-detail-title{ margin-bottom:10px;}
+        .wb-detail-title h1{ font-size:12px;}
+        .wb-detail-main{ line-height:18px; color:#333;}
+        .wb-detail-bot{ padding-top:15px;}
+        .wb-bot-handle{ float:right;}
+        .wb-bot-handle i{ margin:0 6px 0 8px; color:#aeaeae;font-style:normal; font-weight:normal;}
+    </style>
 </head>
 <body>
-
-<input id="btn" type="button" value="test"/>
-<div id="div" style="position:absolute;width: 200px;height: 200px;background: #f00;"></div>
-<script>
-    (function(){
-        var box = document.getElementById('box');
-    }());
+<div class="wb-wrap">
+    <ul id="wbList" class="wb-list">
+        <li>
+            <div class="wb-face">
+                <a href="#" title="HTML5中国"><img src="http://tp4.sinaimg.cn/2357270831/50/5637571285/1" alt="" /></a>
+            </div>
+            <!--/face-->
+            <div class="wb-detail">
+                <div class="wb-detail-title ">
+                    <div class="wb-title-oper"><a class="set-stick" href="#">置顶↑</a></div>
+                    <h1><a href="javascript:void(0)">HTML5中国</a></h1>
+                </div>
+                <div class="wb-detail-main">
+                    【HTML5正重新定义移动OS】<a title="http://www.html5cn.org/article-4683-1.html" href="http://t.cn/zYO3hAV" target="_blank" mt="url" action-type="feed_list_url">http://t.cn/zYO3hAV</a> 除了Windows Phone、BlackBerry 10这些与iOS和Android表象略有不同，但实际架构都差不多的系统外，火狐在MWC上最新推出的Firefox OS，以及Ubuntu Touch都有着与前面的系统与众不同的特点——兼容HTML5 WebApps。
+                </div>
+                <div class="wb-detail-bot">
+                    <div class="wb-bot-handle">
+                        <a href="#">转发</a><i>|</i>
+                        <a href="#">收藏</a><i>|</i>
+                        <a href="#">评论(2)</a>
+                    </div>
+                    <div class="wb-from">
+                        <a class="wb-time" href="#">今天09:17</a>
+                        <i>来自</i>
+                        <a href="#">专业版微博</a>
+                    </div>
+                </div>
+            </div>
+            <!--/detail-->
+        </li>
+        <li>
+            <div class="wb-face">
+                <a href="#" title="火速传播"><img src="http://tp4.sinaimg.cn/3247317827/50/40013115449/0" alt="" /></a>
+            </div>
+            <!--/face-->
+            <div class="wb-detail">
+                <div class="wb-detail-title ">
+                    <div class="wb-title-oper"><a class="set-stick" href="#">置顶↑</a></div>
+                    <h1><a href="javascript:void(0)">火速传播</a></h1>
+                </div>
+                <div class="wb-detail-main">
+                    揭秘：电影《暴走吧，女人》三天内引发120多万目标观影人群围观、互动的幕后超级推手~火速刨根
+                </div>
+                <div class="wb-detail-bot">
+                    <div class="wb-bot-handle">
+                        <a href="#">转发</a><i>|</i>
+                        <a href="#">收藏</a><i>|</i>
+                        <a href="#">评论(2)</a>
+                    </div>
+                    <div class="wb-from">
+                        <a class="wb-time" href="#">今天09:17</a>
+                        <i>来自</i>
+                        <a href="#">专业版微博</a>
+                    </div>
+                </div>
+            </div>
+            <!--/detail-->
+        </li>
+        <li>
+            <div class="wb-face">
+                <a href="#" title="寒冬winter"><img src="http://tp2.sinaimg.cn/1196343093/50/5645239610/1" alt="" /></a>
+            </div>
+            <!--/face-->
+            <div class="wb-detail">
+                <div class="wb-detail-title ">
+                    <div class="wb-title-oper"><a class="set-stick" href="#">置顶↑</a></div>
+                    <h1><a href="javascript:void(0)">寒冬winter</a></h1>
+                </div>
+                <div class="wb-detail-main">
+                    神GG本是哈尔滨中央大街web前端活招牌,无奈失足上海滩十里洋场,得电商霸主大阿里相救才不至误入游戏歧途,携手etao比价网走上新商业文明大道!别看哥虎背熊腰眼睛小,哥就像那玻璃门上的中国结:又红又专又喜庆！
+                </div>
+                <div class="wb-detail-bot">
+                    <div class="wb-bot-handle">
+                        <a href="#">转发</a><i>|</i>
+                        <a href="#">收藏</a><i>|</i>
+                        <a href="#">评论(2)</a>
+                    </div>
+                    <div class="wb-from">
+                        <a class="wb-time" href="#">今天09:17</a>
+                        <i>来自</i>
+                        <a href="#">专业版微博</a>
+                    </div>
+                </div>
+            </div>
+            <!--/detail-->
+        </li>
+        <li>
+            <div class="wb-face">
+                <a href="#" title="JavaScriptDev"><img src="http://tp1.sinaimg.cn/2659103760/50/5624237149/1" alt="" /></a>
+            </div>
+            <!--/face-->
+            <div class="wb-detail">
+                <div class="wb-detail-title ">
+                    <div class="wb-title-oper"><a class="set-stick" href="#">置顶↑</a></div>
+                    <h1><a href="javascript:void(0)">JavaScriptDev</a></h1>
+                </div>
+                <div class="wb-detail-main">
+                    Adobe重磅HTML5动画制作工具：<a class="a_topic" href="http://huati.weibo.com/k/Edge+Animate+1.5?from=501">#Edge Animate 1.5#</a>发布！支持CSS Filter，Gradients,Web字体以及诸多全新工具。在Adobe Creative Cloud上免费注册后即可下载。注册地址：<a title="http://ccmchina.cloudapp.net/api/Go/80" href="http://t.cn/zYOBpkm" target="_blank" mt="url" action-type="feed_list_url">http://t.cn/zYOBpkm</a> , 登录：<a title="http://ccmchina.cloudapp.net/api/Go/79" href="http://t.cn/zYOBOKq" target="_blank" mt="url" action-type="feed_list_url">http://t.cn/zYOBOKq</a>
+                </div>
+                <div class="wb-detail-bot">
+                    <div class="wb-bot-handle">
+                        <a href="#">转发</a><i>|</i>
+                        <a href="#">收藏</a><i>|</i>
+                        <a href="#">评论(2)</a>
+                    </div>
+                    <div class="wb-from">
+                        <a class="wb-time" href="#">今天09:17</a>
+                        <i>来自</i>
+                        <a href="#">专业版微博</a>
+                    </div>
+                </div>
+            </div>
+            <!--/detail-->
+        </li>
+        <li>
+            <div class="wb-face">
+                <a href="#" title="玉伯也叫射雕"><img src="http://tp3.sinaimg.cn/1748374882/50/40013360299/1" alt="" /></a>
+            </div>
+            <!--/face-->
+            <div class="wb-detail">
+                <div class="wb-detail-title ">
+                    <div class="wb-title-oper"><a class="set-stick" href="#">置顶↑</a></div>
+                    <h1><a href="javascript:void(0)">玉伯也叫射雕</a></h1>
+                </div>
+                <div class="wb-detail-main">
+                    补充了一篇关于 CommonJS、RequireJS、SeaJS 的八卦：http://t.cn/zYODZUV 可以直接阅读这个回复。
+                </div>
+                <div class="wb-detail-bot">
+                    <div class="wb-bot-handle">
+                        <a href="#">转发</a><i>|</i>
+                        <a href="#">收藏</a><i>|</i>
+                        <a href="#">评论(2)</a>
+                    </div>
+                    <div class="wb-from">
+                        <a class="wb-time" href="#">今天09:17</a>
+                        <i>来自</i>
+                        <a href="#">专业版微博</a>
+                    </div>
+                </div>
+            </div>
+            <!--/detail-->
+        </li>
+    </ul>
+</div>
+<!--/wrap-->
+<script type="text/javascript">
+    (function(window){
+        var wbList = document.getElementById('wbList'),
+                liEle = wbList.getElementsByTagName('li'),
+                curLi = null,
+                eveTarget = null;
+        for(var i = 0; i < liEle.length; i++){
+            curLi = liEle[i];
+            curLi.onclick = function(event){
+                event = event || window.event;
+                eveTarget = event.target || event.srcElement;
+                // click a
+                if(eveTarget.tagName.toLowerCase() == 'a' && eveTarget.className == 'set-stick'){
+                    // first list
+                    if(prev(this) != null){
+                        wbList.insertBefore(this, wbList.firstChild);
+                        fadeIn(this);
+                    } else {
+                        alert('已置顶，请换一个试试！');
+                    }
+                }
+            }
+        }
+        // fadein method
+        function fadeIn(ele){
+            var aVal = 1;
+            /*
+             (function(){
+             ele.style.opacity = (aVal / 100);
+             ele.style.filter = 'alpha(opacity=' + aVal + ')';
+             aVal ++;
+             if(aVal <= 100){
+             setTimeout(arguments.callee, 15);
+             }
+             })();
+             */
+            function step(){
+                ele.style.opacity = (aVal / 100);
+                ele.style.filter = 'alpha(opacity=' + aVal + ')';
+                aVal ++;
+                if(aVal <= 100){
+                    setTimeout(step, 15);
+                }
+            }
+            step();
+        }
+        // prev elem
+        function prev(elem){
+            do{
+                elem = elem.previousSibling;
+            } while(elem && elem.nodeType != 1);
+            return elem;
+        }
+    }(window));
 </script>
 </body>
 </html>

@@ -1,18 +1,112 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <title></title>
-    <link rel="stylesheet" type="text/css" href="css/main.css" media="all"/>
+    <meta charset="utf-8"/>
+    <title>腾讯体育轮换tab菜单 - 豪情</title>
+    <style type="text/css">
+        *{margin: 0;padding: 0;}
+        body{font:12px/1.5 arial;background: #141e38;}
+        ul,li{list-style: none;}
+        .demo{width: 320px;margin: 0 auto;padding-top: 80px;}
+        a{color: #fff;text-decoration: none;}
+        a:hover{color: #ff0;}
+        .clearfix:after{content:".";display:block;height:0;clear:both;visibility:hidden;}
+        .clearfix{display:inline-block;}
+        .clearfix{display:block;}
+        .clear{clear:both;height:0;font:0/0 Arial;visibility:hidden;}
+        .none{display:none}
+        .title{height: 33px;line-height: 28px;overflow: hidden;}
+        .nav a{float: left;font-size: 14px;font-weight: bold;height: 28px;width: 87px;text-align: center;margin-right: 5px;display: inline;background: #333131;color: #fff;}
+        .nav a.on{height: 33px;color: #ABD4FF;background: url(http://images.cnitblog.com/blog/100150/201304/07233652-68f62c0b28e2476b90520b72044f7a26.gif) 0 0 no-repeat;}
+        .content{width: 314px;padding-top: 10px;}
+        .list li{float: left;width: 145px;margin: 0 10px 10px 0;text-align: center;display: inline;color: #fff;}
+    </style>
 </head>
 <body>
-
-<input id="btn" type="button" value="test"/>
-<div id="div" style="position:absolute;width: 200px;height: 200px;background: #f00;"></div>
-<script>
-    (function(){
-        var box = document.getElementById('box');
-    }());
-</script>
-</body>
+<section class="demo">
+    <div class="title">
+        <nav id="nav" class="nav clearfix">
+            <a class="on" href="javascript:void(0)">美图速递</a>
+            <a href="javascript:void(0)">经典回眸</a>
+        </nav>
+    </div>
+    <div id="content" class="content">
+        <ul class="list">
+            <li><a target="_blank" href="#"><img alt="卡戴珊孕期着装PK王妃" src="http://img1.gtimg.com/sports/pics/hv1/48/120/1298/84433098.jpg" /><br />
+                卡戴珊孕期着装PK王妃</a></li>
+            <li><a target="_blank" href="#"><img alt="阿Sa跳水真人秀亮相" src="http://img1.gtimg.com/sports/pics/hv1/49/120/1298/84433099.jpg" /><br />
+                阿Sa跳水真人秀亮相</a></li>
+            <li><a target="_blank" href="#"><img alt="车侑蓝亮相台球展卖萌" src="http://img1.gtimg.com/sports/pics/hv1/51/120/1298/84433101.jpg" /><br />
+                车侑蓝亮相台球展卖萌</a></li>
+            <li><a target="_blank" href="#"><img alt="UFC女郎变美国啦啦队长" src="http://img1.gtimg.com/sports/pics/hv1/54/120/1298/84433104.jpg" /><br />
+                UFC女郎变美国啦啦队长</a></li>
+            <li><a target="_blank" href="#"><img src="http://img1.gtimg.com/sports/pics/hv1/124/67/1297/84354634.jpg" alt="" /><br />
+                200J肥男减肥后逆袭女神</a></li>
+            <li><a target="_blank" href="#" rel="nofollow"><img title="" src="http://img1.gtimg.com/sports/pics/hv1/98/214/1277/83091593.jpg" alt="" /><br />巧祛狐臭，远离尴尬(图)</a></li>
+        </ul>
+        <ul class="list none">
+            <li><a target="_blank" href="#"><img alt="王心凌为棒球赛开球" src="http://img1.gtimg.com/sports/pics/hv1/198/23/1298/84408513.jpg" /><br />
+                王心凌为棒球赛开球</a></li>
+            <li><a target="_blank" href="#"><img alt="威廉王子夫妇秀球技" src="http://img1.gtimg.com/sports/pics/hv1/199/23/1298/84408514.jpg" /><br />
+                威廉王子夫妇秀球技</a></li>
+            <li><a target="_blank" href="#"><img alt="美女健身教练秀身姿" src="http://img1.gtimg.com/sports/pics/hv1/200/23/1298/84408515.jpg" /><br />
+                美女健身教练秀身姿</a></li>
+            <li><a target="_blank" href="#"><img alt="NBA悍将与女友出街" src="http://img1.gtimg.com/sports/pics/hv1/201/23/1298/84408516.jpg" /><br />
+                NBA悍将与女友出街</a></li>
+            <li><a target="_blank" href="#"><img alt="莫布里环保活动左拥右抱" src="http://img1.gtimg.com/sports/pics/hv1/50/120/1298/84433100.jpg" /><br />
+                莫布里环保活动左拥右抱</a></li>
+            <li><a target="_blank" href="#" rel="nofollow"><img src="http://img1.gtimg.com/sports/pics/hv1/217/192/1173/76323502.jpg" alt="" /><br />喝酒“千杯不醉”有秘诀</a></li>
+        </ul>
+    </div>
+</section>
+<script type="text/javascript">
+    (function(window){
+        var oNav = document.getElementById('nav');
+        var aAnchors = oNav.getElementsByTagName('a');
+        var oContent = document.getElementById('content');
+        var aUl = oContent.getElementsByTagName('ul');
+        var timer = null;
+        var num = 0;
+        function auto(){
+            timer = setInterval(function(){
+                if(num >= aAnchors.length){
+                    num = 0;
+                }
+                play(num);
+                num ++;
+            }, 2000);
+        }
+        auto();
+        function play(v){
+            for(var i = 0; i < aAnchors.length; i++){
+                aAnchors[i].className = '';
+                aUl[i].style.display = 'none';
+            }
+            aAnchors[v].className = 'on';
+            aUl[v].style.display = 'block';
+        }
+        for(var i = 0; i < aAnchors.length; i++){
+            aAnchors[i].index = i;
+            aAnchors[i].onmouseover = function(){
+                clearInterval(timer);
+                play(this.index);
+            }
+            aAnchors[i].onmouseout = function(){
+                timer = setTimeout(function(){
+                    play(0);
+                    auto();
+                }, 500);
+            }
+            aUl[i].onmouseover = function(){
+                clearInterval(timer);
+            }
+            aUl[i].onmouseout = function(){
+                timer = setTimeout(function(){
+                    play(0);
+                    auto();
+                }, 500);
+            }
+        }
+    }(window));
+</script></body>
 </html>

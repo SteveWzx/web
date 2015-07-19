@@ -1,18 +1,151 @@
-<!doctype html>
-<html>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title></title>
-    <link rel="stylesheet" type="text/css" href="css/main.css" media="all"/>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+    <title>模拟搜索结果项 - 豪情</title>
+    <style type="text/css">
+        *{ margin:0; padding:0;}
+        body{font:12px/1.125 Arial,Helvetica,sans-serif;background:#fff;}
+        table{border-collapse:collapse;border-spacing:0;}
+        li{list-style:none;}
+        fieldset,img{border:0;}
+        article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}
+        q:before,q:after{content:'';}
+        a:focus,input,textarea{outline-style:none;}
+        input[type="text"],input[type="password"],textarea{outline-style:none;-webkit-appearance:none;}
+        textarea{resize:none}
+        address,caption,cite,code,dfn,em,i,th,var{font-style:normal;font-weight:normal;}
+        legend{color:#000;}
+        abbr,acronym{border:0;font-variant:normal;}
+        a{color:#333;text-decoration:none;}
+        a:hover{text-decoration:underline;}
+        .clearfix:after{content:".";display:block;height:0;clear:both;visibility:hidden;}
+        .clearfix{display:inline-block;}
+        .clearfix{display:block;}
+        .clear{clear:both;height:0;font:0/0 Arial;visibility:hidden;}
+        .none{display:none}
+        .demo{ width:550px;margin:50px auto;}
+        .input{width:543px; height:30px; line-height:30px; padding:3px 0 3px 5px; border:1px solid #ccc;background:#fff;}
+        .demo .hover{ display:block;}
+        .list{ border:1px solid #817f82;background:#fff; display:none;}
+        .list li{width:548px; text-indent:1em;display:block; height:28px; line-height:28px;}
+        .list li.cur{background:#ebebeb; text-decoration:none;}
+    </style>
 </head>
 <body>
-
-<input id="btn" type="button" value="test"/>
-<div id="div" style="position:absolute;width: 200px;height: 200px;background: #f00;"></div>
-<script>
-    (function(){
-        var box = document.getElementById('box');
-    }());
+<div class="demo">
+    <input class="input" type="text" name="" id="input" />
+    <ul id="list" class="list">
+        <li>豪情</li>
+        <li>sina</li>
+        <li>网易邮箱</li>
+        <li>新浪微博</li>
+        <li>腾讯微信</li>
+    </ul>
+</div>
+<script type="text/javascript">
+    function id(){
+        return document.getElementById(arguments[0]);
+    }
+    (function(window){
+        var input = id('input'),
+                list = id('list'),
+                oA = list.getElementsByTagName('li');
+        // show list
+        input.onclick = function(){
+            var items = null;
+            list.className = 'list hover';
+            // set first current css
+            for(var i = 0; i < oA.length; i++){
+                items = oA[i];
+                if(input.value && items.innerHTML == input.value){
+                    items.className = 'cur';
+                }
+            }
+        }
+        // set first input val
+        input.value = oA[0].innerHTML;
+        // hide list
+        document.documentElement.onclick = function(e){
+            e = e ? e.target : window.event.srcElement;
+            if(e.tagName.toLowerCase() == 'body' || e.tagName.toLowerCase() == 'html'){
+                list.className = 'list';
+            }
+        }
+        var oLi = null;
+        for(var i = 0; i < oA.length; i++){
+            oLi = oA[i];
+            // click hide list and set input val
+            oLi.onclick = function(){
+                list.className = 'list';
+                input.value = this.innerHTML;
+            }
+            oLi.onmouseover = function(){
+                // clear all selected css
+                for(var j = 0; j < oA.length; j++){
+                    oA[j].className = '';
+                }
+                this.className = 'cur';
+            }
+            oLi.onmouseout = function(){
+                this.className = '';
+            }
+        }
+        // keyboard trigger
+        document.documentElement.onkeydown = function(e){
+            e = e || window.event;
+            var target = e.target || e.srcElement,
+                    kcode = 0,
+                    index = getItems() || 0;
+            if(target.tagName.toLowerCase() == 'input' && list.className == 'list hover'){
+                kcode = e.keyCode;
+                switch(kcode){
+                    case 13 : // enter
+                        list.className = 'list';
+                        break;
+                    case 37 : // left
+                    case 38 : // up
+                        /*
+                         if(index > 0){ // if min
+                         hover(oA[index - 1]);
+                         } else {
+                         hover(oA[oA.length - 1]);
+                         }
+                         */
+                        hover(oA[index > 0 ? index - 1 : oA.length - 1]);
+                        break;
+                    case 39 : // right
+                    case 40 : // down
+                        /*
+                         if(index < oA.length - 1){ // if max
+                         hover(oA[index + 1]);
+                         } else {
+                         hover(oA[0]);
+                         }
+                         */
+                        hover(oA[index > 0 ? index + 1 : 0]);
+                        break;
+                }
+            }
+        }
+        // get current index
+        function getItems(){
+            for(var i = 0; i < oA.length; i++){
+                if(oA[i].className == 'cur'){
+                    return i;
+                }
+            }
+        }
+        // set hover class
+        function hover(obj){
+            for(var i = 0; i < oA.length; i++){
+                oA[i].className = '';
+            }
+            obj.className = 'cur';
+            input.value = obj.innerHTML;
+        }
+    }(window));
 </script>
 </body>
 </html>
