@@ -68,7 +68,7 @@
         SingleSlide.prototype = {
             init : function(){
                 var that = this,
-                        timer = null;
+                    timer = null;
                 this.oUl = this.container.getElementsByTagName('ul')[0];
                 this.aLi = this.oUl.getElementsByTagName('li');
                 this.iMaxWidth = this.aLi[0].offsetWidth;
@@ -81,13 +81,13 @@
                 }, 2000);
                 this.prevBtn.onclick = function(){
                     that.prev(that, that.oUl);
-                }
+                };
                 this.nextBtn.onclick = function(){
                     that.auto(that, that.oUl);
-                }
+                };
                 bigBox.onmouseover = function(){
                     clearInterval(timer);
-                }
+                };
                 bigBox.onmouseout = function(){
                     timer = setInterval(function(){
                         that.auto(that, that.oUl);
@@ -118,7 +118,7 @@
                     obj.style.left = obj.offsetLeft + iSpeed + 'px';
                 }, 30);
             }
-        }
+        };
         new SingleSlide({
             container : 'container',
             prevBtn : 'prev',

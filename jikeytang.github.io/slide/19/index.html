@@ -23,7 +23,7 @@
     (function(){
         function viewSize(){
             var doc = document,
-                    de = doc.documentElement;
+                de = doc.documentElement;
             return {
                 'width': (window.innerWidth || (de && de.clientWidth) || doc.body.clientWidth),
                 'height': (window.innerHeight || (de && de.clientHeight) || doc.body.clientHeight)
@@ -33,7 +33,7 @@
             return document.documentElement.scrollTop || document.body.scrollTop;
         }
         var btn = null,
-                timer = 0;
+            timer = 0;
         function apendScroll(){
             btn = document.createElement('a');
             btn.href = 'javascript:void(0)';
