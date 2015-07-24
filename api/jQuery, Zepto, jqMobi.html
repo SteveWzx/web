@@ -1,0 +1,1677 @@
+<!DOCTYPE html>
+<!-- saved from url=(0024)http://jsrun.it/21f/mrCH -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8"><title>jQuery, Zepto, jqMobi 機能比較表 (2012-11) - js do it</title>
+<meta name="Description" content="jsdo.it - share JavaScript, HTML5 and CSS - ">
+<meta name="Keywords" content="JavaScript,HTML5,CSS">
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1">
+
+<link href="./jQuery, Zepto, jqMobi_files/css" type="text/css" rel="stylesheet">
+
+<style type="text/css">div { margin: 10px auto; max-width: 400px; }
+.table thead th,
+.table td { text-align: center; }
+.table td.f { text-align: left; }
+</style></head>
+<body>
+<div>
+    <p>jQuery 1.7.2, Zepto 1.0rc1, jqMobi 1.11</p>
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>Function</th>
+                <th>jQuery</th>
+                <th>Zepto</th>
+                <th>jqMobi</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="success">
+                <td class="f">$.Event</td>
+                <td>✔</td>
+                <td>✔</td>
+                <td>✔</td>
+            </tr>
+            <tr>
+                <td class="f">$.acceptData</td>
+                <td>✔</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="f">$.access</td>
+                <td>✔</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="f">$.active</td>
+                <td>✔</td>
+                <td>✔</td>
+                <td>-</td>
+            </tr>
+            <tr class="success">
+                <td class="f">$.ajax</td>
+                <td>✔</td>
+                <td>✔</td>
+                <td>✔</td>
+            </tr>
+            <tr>
+                <td class="f">$.ajaxJSONP</td>
+                <td>-</td>
+                <td>✔</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="f">$.ajaxPrefilter</td>
+                <td>✔</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="f">$.ajaxSettings</td>
+                <td>✔</td>
+                <td>✔</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="f">$.ajaxSetup</td>
+                <td>✔</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="f">$.ajaxTransport</td>
+                <td>✔</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="f">$.asap</td>
+                <td>-</td>
+                <td>-</td>
+                <td>✔</td>
+            </tr>
+            <tr>
+                <td class="f">$.attr</td>
+                <td>✔</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="f">$.attrFn</td>
+                <td>✔</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="f">$.attrHooks</td>
+                <td>✔</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="f">$.bind</td>
+                <td>-</td>
+                <td>-</td>
+                <td>✔</td>
+            </tr>
+            <tr>
+                <td class="f">$.bindReady</td>
+                <td>✔</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="f">$.boxModel</td>
+                <td>✔</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="f">$.browser</td>
+                <td>✔</td>
+                <td>✔</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="f">$.buildFragment</td>
+                <td>✔</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="f">$.cache</td>
+                <td>✔</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="f">$.Callbacks</td>
+                <td>✔</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="f">$.camelCase</td>
+                <td>✔</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="f">$.clean</td>
+                <td>✔</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="f">$.cleanData</td>
+                <td>✔</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="f">$.cleanUpContent</td>
+                <td>-</td>
+                <td>-</td>
+                <td>✔</td>
+            </tr>
+            <tr>
+                <td class="f">$.clone</td>
+                <td>✔</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="f">$.contains</td>
+                <td>✔</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="f">$.css</td>
+                <td>✔</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="f">$.cssHooks</td>
+                <td>✔</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="f">$.cssNumber</td>
+                <td>✔</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="f">$.cssProps</td>
+                <td>✔</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="f">$.curCSS</td>
+                <td>✔</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="f">$.data</td>
+                <td>✔</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="f">$.Deferred</td>
+                <td>✔</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="f">$.dequeue</td>
+                <td>✔</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="f">$.dir</td>
+                <td>✔</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            <tr class="success">
+                <td class="f">$.each</td>
+                <td>✔</td>
+                <td>✔</td>
+                <td>✔</td>
+            </tr>
+            <tr>
+                <td class="f">$.easing</td>
+                <td>✔</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="f">$.error</td>
+                <td>✔</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="f">$.etag</td>
+                <td>✔</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            <tr class="success">
+                <td class="f">$.event</td>
+                <td>✔</td>
+                <td>✔</td>
+                <td>✔</td>
+            </tr>
+            <tr>
+                <td class="f">$.expando</td>
+                <td>✔</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="f">$.expr</td>
+                <td>✔</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            <tr class="success">
+                <td class="f">$.extend</td>
+                <td>✔</td>
+                <td>✔</td>
+                <td>✔</td>
+            </tr>
+            <tr>
+                <td class="f">$.feat</td>
+                <td>-</td>
+                <td>-</td>
+                <td>✔</td>
+            </tr>
+            <tr>
+                <td class="f">$.filter</td>
+                <td>✔</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="f">$.find</td>
+                <td>✔</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            <tr class="success">
+                <td class="f">$.fn</td>
+                <td>✔</td>
+                <td>✔</td>
+                <td>✔</td>
+            </tr>
+            <tr>
+                <td class="f">$.fragments</td>
+                <td>✔</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="f">$.fx</td>
+                <td>✔</td>
+                <td>✔</td>
+                <td>-</td>
+            </tr>
+            <tr class="success">
+                <td class="f">$.get</td>
+                <td>✔</td>
+                <td>✔</td>
+                <td>✔</td>
+            </tr>
+            <tr class="success">
+                <td class="f">$.getJSON</td>
+                <td>✔</td>
+                <td>✔</td>
+                <td>✔</td>
+            </tr>
+            <tr>
+                <td class="f">$.getScript</td>
+                <td>✔</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="f">$.globalEval</td>
+                <td>✔</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="f">$.grep</td>
+                <td>✔</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="f">$.guid</td>
+                <td>✔</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="f">$.hasData</td>
+                <td>✔</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="f">$.holdReady</td>
+                <td>✔</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="f">$.inArray</td>
+                <td>✔</td>
+                <td>✔</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="f">$.is$</td>
+                <td>-</td>
+                <td>-</td>
+                <td>✔</td>
+            </tr>
+            <tr class="success">
+                <td class="f">$.isArray</td>
+                <td>✔</td>
+                <td>✔</td>
+                <td>✔</td>
+            </tr>
+            <tr>
+                <td class="f">$.isEmptyObject</td>
+                <td>✔</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            <tr class="success">
+                <td class="f">$.isFunction</td>
+                <td>✔</td>
+                <td>✔</td>
+                <td>✔</td>
+            </tr>
+            <tr>
+                <td class="f">$.isNumeric</td>
+                <td>✔</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="f">$.isObject</td>
+                <td>-</td>
+                <td>✔</td>
+                <td>✔</td>
+            </tr>
+            <tr>
+                <td class="f">$.isPlainObject</td>
+                <td>✔</td>
+                <td>✔</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="f">$.isReady</td>
+                <td>✔</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="f">$.isWindow</td>
+                <td>✔</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="f">$.isXMLDoc</td>
+                <td>✔</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="f">$.jsonP</td>
+                <td>-</td>
+                <td>-</td>
+                <td>✔</td>
+            </tr>
+            <tr>
+                <td class="f">$.lastModified</td>
+                <td>✔</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="f">$.makeArray</td>
+                <td>✔</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            <tr class="success">
+                <td class="f">$.map</td>
+                <td>✔</td>
+                <td>✔</td>
+                <td>✔</td>
+            </tr>
+            <tr>
+                <td class="f">$.merge</td>
+                <td>✔</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="f">$.noConflict</td>
+                <td>✔</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="f">$.noData</td>
+                <td>✔</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="f">$.nodeName</td>
+                <td>✔</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="f">$.noop</td>
+                <td>✔</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="f">$.now</td>
+                <td>✔</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="f">$.nth</td>
+                <td>✔</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="f">$.offset</td>
+                <td>✔</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="f">$.os</td>
+                <td>-</td>
+                <td>✔</td>
+                <td>✔</td>
+            </tr>
+            <tr class="success">
+                <td class="f">$.param</td>
+                <td>✔</td>
+                <td>✔</td>
+                <td>✔</td>
+            </tr>
+            <tr>
+                <td class="f">$.parseJSON</td>
+                <td>✔</td>
+                <td>-</td>
+                <td>✔</td>
+            </tr>
+            <tr>
+                <td class="f">$.parseXML</td>
+                <td>✔</td>
+                <td>-</td>
+                <td>✔</td>
+            </tr>
+            <tr class="success">
+                <td class="f">$.post</td>
+                <td>✔</td>
+                <td>✔</td>
+                <td>✔</td>
+            </tr>
+            <tr>
+                <td class="f">$.prop</td>
+                <td>✔</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="f">$.propFix</td>
+                <td>✔</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="f">$.propHooks</td>
+                <td>✔</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            <tr class="success">
+                <td class="f">$.proxy</td>
+                <td>✔</td>
+                <td>✔</td>
+                <td>✔</td>
+            </tr>
+            <tr>
+                <td class="f">$.queue</td>
+                <td>✔</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="f">$.ready</td>
+                <td>✔</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="f">$.readyWait</td>
+                <td>✔</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="f">$.removeAttr</td>
+                <td>✔</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="f">$.removeData</td>
+                <td>✔</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="f">$.removeEvent</td>
+                <td>✔</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="f">$.sibling</td>
+                <td>✔</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="f">$.speed</td>
+                <td>✔</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="f">$.style</td>
+                <td>✔</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="f">$.sub</td>
+                <td>✔</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="f">$.support</td>
+                <td>✔</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="f">$.swap</td>
+                <td>✔</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="f">$.text</td>
+                <td>✔</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="f">$.timers</td>
+                <td>✔</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="f">$.trigger</td>
+                <td>-</td>
+                <td>-</td>
+                <td>✔</td>
+            </tr>
+            <tr>
+                <td class="f">$.trim</td>
+                <td>✔</td>
+                <td>✔</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="f">$.type</td>
+                <td>✔</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="f">$.uaMatch</td>
+                <td>✔</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="f">$.unbind</td>
+                <td>-</td>
+                <td>-</td>
+                <td>✔</td>
+            </tr>
+            <tr>
+                <td class="f">$.unique</td>
+                <td>✔</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            <tr class="success">
+                <td class="f">$.uuid</td>
+                <td>✔</td>
+                <td>✔</td>
+                <td>✔</td>
+            </tr>
+            <tr>
+                <td class="f">$.valHooks</td>
+                <td>✔</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="f">$.when</td>
+                <td>✔</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="f">$.zepto</td>
+                <td>-</td>
+                <td>✔</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="f">_toggle</td>
+                <td>✔</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="f">add</td>
+                <td>✔</td>
+                <td>✔</td>
+                <td>-</td>
+            </tr>
+            <tr class="success">
+                <td class="f">addClass</td>
+                <td>✔</td>
+                <td>✔</td>
+                <td>✔</td>
+            </tr>
+            <tr>
+                <td class="f">after</td>
+                <td>✔</td>
+                <td>✔</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="f">ajaxComplete</td>
+                <td>✔</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="f">ajaxError</td>
+                <td>✔</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="f">ajaxSend</td>
+                <td>✔</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="f">ajaxStart</td>
+                <td>✔</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="f">ajaxStop</td>
+                <td>✔</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="f">ajaxSuccess</td>
+                <td>✔</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="f">andSelf</td>
+                <td>✔</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="f">anim</td>
+                <td>-</td>
+                <td>✔</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="f">animate</td>
+                <td>✔</td>
+                <td>✔</td>
+                <td>-</td>
+            </tr>
+            <tr class="success">
+                <td class="f">append</td>
+                <td>✔</td>
+                <td>✔</td>
+                <td>✔</td>
+            </tr>
+            <tr>
+                <td class="f">appendTo</td>
+                <td>✔</td>
+                <td>✔</td>
+                <td>-</td>
+            </tr>
+            <tr class="success">
+                <td class="f">attr</td>
+                <td>✔</td>
+                <td>✔</td>
+                <td>✔</td>
+            </tr>
+            <tr>
+                <td class="f">before</td>
+                <td>✔</td>
+                <td>✔</td>
+                <td>-</td>
+            </tr>
+            <tr class="success">
+                <td class="f">bind</td>
+                <td>✔</td>
+                <td>✔</td>
+                <td>✔</td>
+            </tr>
+            <tr>
+                <td class="f">blur</td>
+                <td>✔</td>
+                <td>✔</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="f">change</td>
+                <td>✔</td>
+                <td>✔</td>
+                <td>-</td>
+            </tr>
+            <tr class="success">
+                <td class="f">children</td>
+                <td>✔</td>
+                <td>✔</td>
+                <td>✔</td>
+            </tr>
+            <tr>
+                <td class="f">clearQueue</td>
+                <td>✔</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="f">click</td>
+                <td>✔</td>
+                <td>✔</td>
+                <td>-</td>
+            </tr>
+            <tr class="success">
+                <td class="f">clone</td>
+                <td>✔</td>
+                <td>✔</td>
+                <td>✔</td>
+            </tr>
+            <tr class="success">
+                <td class="f">closest</td>
+                <td>✔</td>
+                <td>✔</td>
+                <td>✔</td>
+            </tr>
+            <tr>
+                <td class="f">concat</td>
+                <td>-</td>
+                <td>✔</td>
+                <td>✔</td>
+            </tr>
+            <tr>
+                <td class="f">constructor</td>
+                <td>✔</td>
+                <td>-</td>
+                <td>✔</td>
+            </tr>
+            <tr>
+                <td class="f">contents</td>
+                <td>✔</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="f">context</td>
+                <td>✔</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="f">contextmenu</td>
+                <td>✔</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            <tr class="success">
+                <td class="f">css</td>
+                <td>✔</td>
+                <td>✔</td>
+                <td>✔</td>
+            </tr>
+            <tr class="success">
+                <td class="f">data</td>
+                <td>✔</td>
+                <td>✔</td>
+                <td>✔</td>
+            </tr>
+            <tr>
+                <td class="f">dblclick</td>
+                <td>✔</td>
+                <td>✔</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="f">delay</td>
+                <td>✔</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            <tr class="success">
+                <td class="f">delegate</td>
+                <td>✔</td>
+                <td>✔</td>
+                <td>✔</td>
+            </tr>
+            <tr>
+                <td class="f">dequeue</td>
+                <td>✔</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="f">detach</td>
+                <td>✔</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="f">die</td>
+                <td>✔</td>
+                <td>✔</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="f">domManip</td>
+                <td>✔</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            <tr class="success">
+                <td class="f">each</td>
+                <td>✔</td>
+                <td>✔</td>
+                <td>✔</td>
+            </tr>
+            <tr class="success">
+                <td class="f">empty</td>
+                <td>✔</td>
+                <td>✔</td>
+                <td>✔</td>
+            </tr>
+            <tr>
+                <td class="f">end</td>
+                <td>✔</td>
+                <td>-</td>
+                <td>✔</td>
+            </tr>
+            <tr>
+                <td class="f">eq</td>
+                <td>✔</td>
+                <td>✔</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="f">error</td>
+                <td>✔</td>
+                <td>✔</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="f">extend</td>
+                <td>✔</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="f">fadeIn</td>
+                <td>✔</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="f">fadeOut</td>
+                <td>✔</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="f">fadeTo</td>
+                <td>✔</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="f">fadeToggle</td>
+                <td>✔</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            <tr class="success">
+                <td class="f">filter</td>
+                <td>✔</td>
+                <td>✔</td>
+                <td>✔</td>
+            </tr>
+            <tr class="success">
+                <td class="f">find</td>
+                <td>✔</td>
+                <td>✔</td>
+                <td>✔</td>
+            </tr>
+            <tr>
+                <td class="f">first</td>
+                <td>✔</td>
+                <td>✔</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="f">focus</td>
+                <td>✔</td>
+                <td>✔</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="f">focusin</td>
+                <td>✔</td>
+                <td>✔</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="f">focusout</td>
+                <td>✔</td>
+                <td>✔</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="f">forEach</td>
+                <td>-</td>
+                <td>✔</td>
+                <td>✔</td>
+            </tr>
+            <tr class="success">
+                <td class="f">get</td>
+                <td>✔</td>
+                <td>✔</td>
+                <td>✔</td>
+            </tr>
+            <tr>
+                <td class="f">has</td>
+                <td>✔</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            <tr class="success">
+                <td class="f">hasClass</td>
+                <td>✔</td>
+                <td>✔</td>
+                <td>✔</td>
+            </tr>
+            <tr class="success">
+                <td class="f">height</td>
+                <td>✔</td>
+                <td>✔</td>
+                <td>✔</td>
+            </tr>
+            <tr class="success">
+                <td class="f">hide</td>
+                <td>✔</td>
+                <td>✔</td>
+                <td>✔</td>
+            </tr>
+            <tr>
+                <td class="f">hover</td>
+                <td>✔</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            <tr class="success">
+                <td class="f">html</td>
+                <td>✔</td>
+                <td>✔</td>
+                <td>✔</td>
+            </tr>
+            <tr>
+                <td class="f">index</td>
+                <td>✔</td>
+                <td>✔</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="f">indexOf</td>
+                <td>-</td>
+                <td>✔</td>
+                <td>✔</td>
+            </tr>
+            <tr>
+                <td class="f">init</td>
+                <td>✔</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="f">innerHeight</td>
+                <td>✔</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="f">innerWidth</td>
+                <td>✔</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            <tr class="success">
+                <td class="f">insertAfter</td>
+                <td>✔</td>
+                <td>✔</td>
+                <td>✔</td>
+            </tr>
+            <tr class="success">
+                <td class="f">insertBefore</td>
+                <td>✔</td>
+                <td>✔</td>
+                <td>✔</td>
+            </tr>
+            <tr>
+                <td class="f">is</td>
+                <td>✔</td>
+                <td>✔</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="f">jquery</td>
+                <td>✔</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="f">keydown</td>
+                <td>✔</td>
+                <td>✔</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="f">keypress</td>
+                <td>✔</td>
+                <td>✔</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="f">keyup</td>
+                <td>✔</td>
+                <td>✔</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="f">last</td>
+                <td>✔</td>
+                <td>✔</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="f">length</td>
+                <td>✔</td>
+                <td>-</td>
+                <td>✔</td>
+            </tr>
+            <tr>
+                <td class="f">live</td>
+                <td>✔</td>
+                <td>✔</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="f">load</td>
+                <td>✔</td>
+                <td>✔</td>
+                <td>-</td>
+            </tr>
+            <tr class="success">
+                <td class="f">map</td>
+                <td>✔</td>
+                <td>✔</td>
+                <td>✔</td>
+            </tr>
+            <tr>
+                <td class="f">mousedown</td>
+                <td>✔</td>
+                <td>✔</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="f">mouseenter</td>
+                <td>✔</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="f">mouseleave</td>
+                <td>✔</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="f">mousemove</td>
+                <td>✔</td>
+                <td>✔</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="f">mouseout</td>
+                <td>✔</td>
+                <td>✔</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="f">mouseover</td>
+                <td>✔</td>
+                <td>✔</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="f">mouseup</td>
+                <td>✔</td>
+                <td>✔</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="f">next</td>
+                <td>✔</td>
+                <td>✔</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="f">nextAll</td>
+                <td>✔</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="f">nextUntil</td>
+                <td>✔</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            <tr class="success">
+                <td class="f">not</td>
+                <td>✔</td>
+                <td>✔</td>
+                <td>✔</td>
+            </tr>
+            <tr class="success">
+                <td class="f">off</td>
+                <td>✔</td>
+                <td>✔</td>
+                <td>✔</td>
+            </tr>
+            <tr class="success">
+                <td class="f">offset</td>
+                <td>✔</td>
+                <td>✔</td>
+                <td>✔</td>
+            </tr>
+            <tr>
+                <td class="f">offsetParent</td>
+                <td>✔</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="f">oldElement</td>
+                <td>-</td>
+                <td>-</td>
+                <td>✔</td>
+            </tr>
+            <tr class="success">
+                <td class="f">on</td>
+                <td>✔</td>
+                <td>✔</td>
+                <td>✔</td>
+            </tr>
+            <tr class="success">
+                <td class="f">one</td>
+                <td>✔</td>
+                <td>✔</td>
+                <td>✔</td>
+            </tr>
+            <tr>
+                <td class="f">outerHeight</td>
+                <td>✔</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="f">outerWidth</td>
+                <td>✔</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            <tr class="success">
+                <td class="f">parent</td>
+                <td>✔</td>
+                <td>✔</td>
+                <td>✔</td>
+            </tr>
+            <tr>
+                <td class="f">parents</td>
+                <td>✔</td>
+                <td>✔</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="f">parentsUntil</td>
+                <td>✔</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="f">pluck</td>
+                <td>-</td>
+                <td>✔</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="f">position</td>
+                <td>✔</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            <tr class="success">
+                <td class="f">prepend</td>
+                <td>✔</td>
+                <td>✔</td>
+                <td>✔</td>
+            </tr>
+            <tr>
+                <td class="f">prependTo</td>
+                <td>✔</td>
+                <td>✔</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="f">prev</td>
+                <td>✔</td>
+                <td>✔</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="f">prevAll</td>
+                <td>✔</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="f">prevUntil</td>
+                <td>✔</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="f">promise</td>
+                <td>✔</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            <tr class="success">
+                <td class="f">prop</td>
+                <td>✔</td>
+                <td>✔</td>
+                <td>✔</td>
+            </tr>
+            <tr class="success">
+                <td class="f">push</td>
+                <td>✔</td>
+                <td>✔</td>
+                <td>✔</td>
+            </tr>
+            <tr>
+                <td class="f">pushStack</td>
+                <td>✔</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="f">queue</td>
+                <td>✔</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            <tr class="success">
+                <td class="f">ready</td>
+                <td>✔</td>
+                <td>✔</td>
+                <td>✔</td>
+            </tr>
+            <tr>
+                <td class="f">reduce</td>
+                <td>-</td>
+                <td>✔</td>
+                <td>✔</td>
+            </tr>
+            <tr class="success">
+                <td class="f">remove</td>
+                <td>✔</td>
+                <td>✔</td>
+                <td>✔</td>
+            </tr>
+            <tr class="success">
+                <td class="f">removeAttr</td>
+                <td>✔</td>
+                <td>✔</td>
+                <td>✔</td>
+            </tr>
+            <tr class="success">
+                <td class="f">removeClass</td>
+                <td>✔</td>
+                <td>✔</td>
+                <td>✔</td>
+            </tr>
+            <tr>
+                <td class="f">removeData</td>
+                <td>✔</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="f">removeProp</td>
+                <td>✔</td>
+                <td>-</td>
+                <td>✔</td>
+            </tr>
+            <tr>
+                <td class="f">replaceAll</td>
+                <td>✔</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="f">replaceClass</td>
+                <td>-</td>
+                <td>-</td>
+                <td>✔</td>
+            </tr>
+            <tr>
+                <td class="f">replaceWith</td>
+                <td>✔</td>
+                <td>✔</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="f">resize</td>
+                <td>✔</td>
+                <td>✔</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="f">scroll</td>
+                <td>✔</td>
+                <td>✔</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="f">scrollLeft</td>
+                <td>✔</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="f">scrollTop</td>
+                <td>✔</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="f">select</td>
+                <td>✔</td>
+                <td>✔</td>
+                <td>-</td>
+            </tr>
+            <tr class="success">
+                <td class="f">selector</td>
+                <td>✔</td>
+                <td>✔</td>
+                <td>✔</td>
+            </tr>
+            <tr class="success">
+                <td class="f">serialize</td>
+                <td>✔</td>
+                <td>✔</td>
+                <td>✔</td>
+            </tr>
+            <tr>
+                <td class="f">serializeArray</td>
+                <td>✔</td>
+                <td>✔</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="f">setupOld</td>
+                <td>-</td>
+                <td>-</td>
+                <td>✔</td>
+            </tr>
+            <tr class="success">
+                <td class="f">show</td>
+                <td>✔</td>
+                <td>✔</td>
+                <td>✔</td>
+            </tr>
+            <tr class="success">
+                <td class="f">siblings</td>
+                <td>✔</td>
+                <td>✔</td>
+                <td>✔</td>
+            </tr>
+            <tr class="success">
+                <td class="f">size</td>
+                <td>✔</td>
+                <td>✔</td>
+                <td>✔</td>
+            </tr>
+            <tr class="success">
+                <td class="f">slice</td>
+                <td>✔</td>
+                <td>✔</td>
+                <td>✔</td>
+            </tr>
+            <tr>
+                <td class="f">slideDown</td>
+                <td>✔</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="f">slideToggle</td>
+                <td>✔</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="f">slideUp</td>
+                <td>✔</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="f">sort</td>
+                <td>✔</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="f">splice</td>
+                <td>✔</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="f">stop</td>
+                <td>✔</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="f">submit</td>
+                <td>✔</td>
+                <td>✔</td>
+                <td>-</td>
+            </tr>
+            <tr class="success">
+                <td class="f">text</td>
+                <td>✔</td>
+                <td>✔</td>
+                <td>✔</td>
+            </tr>
+            <tr>
+                <td class="f">toArray</td>
+                <td>✔</td>
+                <td>✔</td>
+                <td>-</td>
+            </tr>
+            <tr class="success">
+                <td class="f">toggle</td>
+                <td>✔</td>
+                <td>✔</td>
+                <td>✔</td>
+            </tr>
+            <tr>
+                <td class="f">toggleClass</td>
+                <td>✔</td>
+                <td>✔</td>
+                <td>-</td>
+            </tr>
+            <tr class="success">
+                <td class="f">trigger</td>
+                <td>✔</td>
+                <td>✔</td>
+                <td>✔</td>
+            </tr>
+            <tr>
+                <td class="f">triggerHandler</td>
+                <td>✔</td>
+                <td>✔</td>
+                <td>-</td>
+            </tr>
+            <tr class="success">
+                <td class="f">unbind</td>
+                <td>✔</td>
+                <td>✔</td>
+                <td>✔</td>
+            </tr>
+            <tr class="success">
+                <td class="f">undelegate</td>
+                <td>✔</td>
+                <td>✔</td>
+                <td>✔</td>
+            </tr>
+            <tr>
+                <td class="f">unload</td>
+                <td>✔</td>
+                <td>✔</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="f">unwrap</td>
+                <td>✔</td>
+                <td>✔</td>
+                <td>-</td>
+            </tr>
+            <tr class="success">
+                <td class="f">val</td>
+                <td>✔</td>
+                <td>✔</td>
+                <td>✔</td>
+            </tr>
+            <tr class="success">
+                <td class="f">width</td>
+                <td>✔</td>
+                <td>✔</td>
+                <td>✔</td>
+            </tr>
+            <tr>
+                <td class="f">wrap</td>
+                <td>✔</td>
+                <td>✔</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="f">wrapAll</td>
+                <td>✔</td>
+                <td>✔</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td class="f">wrapInner</td>
+                <td>✔</td>
+                <td>-</td>
+                <td>-</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+<script type="text/javascript">
+
+</script>
+
+
+</body></html>
