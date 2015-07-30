@@ -1,0 +1,804 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<link rel="stylesheet" type="text/css" href="../base/ant-base.css" />
+<link rel="stylesheet" type="text/css" href="css/doc.css" />
+<title>Ant UI组件说明文档</title>
+</head>
+<body>
+<div class="doc-top">
+<div class="ant-grid-1000 ant-bc ant-clearfix">
+<div class="ant-fl doc-logo">Ant UI</div>
+<ul class="ant-fr doc-nav ant-yahei">
+<li class="current"><a href="index.html">UI规范</a></li>
+<li><a href="ant_widget.html">UI组件</a></li>
+<li><a href="js_doc.html">JS组件</a></li>
+<li><a href="standard.html">前端规范</a></li>
+</ul>
+</div>
+</div>
+<div class="doc-banner ant-yahei">
+<div class="ant-grid-1000 ant-bc">
+<h1>开始使用Ant CSS<span class="code-kop"><sup style="margin-left:5px;font-size:13px;">v1.0</sup></span></h1>
+<p>ant css使用说明、示例、代码结构、实例展示...</p>
+</div>
+</div>
+<div class="doc-box">
+<div class="ant-grid-1000 ant-bc ant-clearfix">
+<div class="ant-fl doc-fast-nav ant-yahei">
+<div class="doc-nav-list">
+<dl class="doc-ui-guide">
+<dt>使用说明</dt>
+<dd>
+<p><a href="javascript:;">导读</a></p>
+<p><a href="javascript:;">准备工作</a></p>
+<p><a href="javascript:;">扩展规则</a></p>
+</dd>
+</dl>
+<dl class="doc-ui-list">
+<dt>UI组件列表</dt>
+<dd>
+<p><a href="javascript:;">基础类</a></p>
+<p><a href="javascript:;">通用模块类</a></p>
+<p><a href="javascript:;">按钮</a></p>
+<p><a href="javascript:;">单行文本框</a></p>
+<p><a href="javascript:;">多行文本框</a></p>
+<p><a href="javascript:;">单选框</a></p>
+<p><a href="javascript:;">复选框</a></p>
+<p><a href="javascript:;">下拉列表</a></p>
+<p><a href="javascript:;">搜索类</a></p>
+<p><a href="javascript:;">分页类</a></p>
+<p><a href="javascript:;">焦点图</a></p>
+<p><a href="javascript:;">面包屑</a></p>
+<p><a href="javascript:;">进度条</a></p>
+<p><a href="javascript:;">选项卡</a></p>
+<p><a href="javascript:;">验证提示</a></p>
+<p><a href="javascript:;">弹出层</a></p>
+<p><a href="javascript:;">返回顶部或底部</a></p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="ant-fr doc-content">
+<dl class="code-box">
+<dt class="code-hd ant-yahei">导读</dt>
+<dd class="code-bd ant-yahei">
+<p>在ant css里，都以<span class="code-kop">ant-</span>开头。</p>
+<p class="ant-pt6">ant css兼容ie6+及其它现代浏览器。ant css部分采用了css3构建，在兼容性上，采用了<span class="code-kop">“渐进增强”</span>方式处理。</p>
+<p class="ant-pt6">ant css可在现有基础上进行扩展。</p>
+</dd>
+<dd class="code-bd">
+<pre>
+<code>
+<span class="code-desp">部分例子</span>
+.ant-yahei {font-family:\5FAE\8F6F\96C5\9ED1;} <span class="code-note">//微软雅黑</span>
+ 
+.ant-s14 {font-size:14px;} <span class="code-note">//字体大小14px</span>
+ 
+.ant-ml6 {margin-left:6px;} <span class="code-note">//margin-left 6px</span>
+ 
+.ant-mr6 {margin-right:6px;} <span class="code-note">//margin-right 6px;</span>
+ 
+ ...
+</code>
+</pre>
+</dd>
+</dl>
+<dl class="code-box">
+<dt class="code-hd ant-yahei">准备工作</dt>
+<dd class="code-bd ant-yahei">第一步 在你的页面head里引入指定的css, 如下所示</dd>
+<dd class="code-bd">
+<pre>
+<code>
+<span class="code-desp">引入css</span>
+<span class="code-other">&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;http://static.wkimg.com/common/ui/base/ant-base.css&quot; /&gt;</span>
+</code>
+</pre>
+</dd>
+<dd class="code-bd ant-yahei">第二步 在你的页面, 通常是在底部引入指定的<span class="code-kop">jquery</span>和<span class="code-kop">ant-widget</span>文件, 如下所示</dd>
+<dd>
+<pre>
+<code>
+<span class="code-desp">引入js</span>
+<span class="code-other">&lt;script type=&quot;text/javascript&quot; src=&quot;http://static.wkimg.com/common/lib/jquery/1.8.3/jquery.min.js&quot;&gt;&lt;/script&gt;</span>
+<span class="code-other">&lt;script type=&quot;text/javascript&quot; src=&quot;http://static.wkimg.com/common/lib/widget/2.0.1/ant-widget.js&quot;&gt;&lt;/script&gt;</span>
+</code>
+</pre>
+</dd>
+<dd class="code-bd ant-yahei">第三步 在你的页面里就可以随心写代码了, 如下所示</dd>
+<dd>
+<pre>
+<code>
+<span class="code-desp">一个简单示例</span>
+<span class="code-other">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;meta charset=&quot;gbk&quot; /&gt;
+&lt;title&gt;hello world!&lt;/title&gt;
+&lt;link type=&quot;text/css&quot; rel=&quot;stylesheet&quot; href=&quot;http://static.wkimg.com/common/ui/base/ant-base.css&quot; /&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;a class=&quot;ant-btn&quot; href=&quot;&quot;&gt;hello world!&lt;/a&gt;
+
+&lt;script type=&quot;text/javascript&quot; src=&quot;http://static.wkimg.com/common/lib/jquery/1.8.3/jquery.min.js&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;http://static.wkimg.com/common/lib/widget/2.0.1/ant-widget.js&quot;&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</span>
+</code>
+</pre>
+</dd>
+</dl>
+<dl class="code-box">
+<dt class="code-hd ant-yahei">扩展规则</dt>
+<dd class="code-bd ant-yahei"><span class="code-kop">当页面组件样式部分有变化时，采取自定义class方式去扩展，不要重写class名字去覆盖。</span></dd>
+<dd class="code-bd ant-yahei">
+<pre>
+<code>
+<span class="code-desp">一个扩展示例</span>
+<span class="code-note">比如某个页面的一个模块的内容区背景颜色和默认的不一样。那么你可以作如下的扩展。</span>
+<span class="code-other">
+<span class="code-desp">默认的</span>
+&lt;div class=&quot;ant-common-item&quot;&gt;
+   &lt;div class=&quot;ant-common-item-hd&quot;&gt;模块标题&lt;/div&gt;
+   &lt;div class=&quot;ant-common-item-bd&quot;&gt;模块内容&lt;/div&gt;
+&lt;/div&gt;
+
+<span class="code-desp">扩展后</span>
+<span class="code-note">错误做法</span>
+.ant-common-item-bd {
+   background-color:#999;
+}
+
+&lt;div class=&quot;ant-common-item&quot;&gt;
+   &lt;div class=&quot;ant-common-item-hd&quot;&gt;模块标题&lt;/div&gt;
+   &lt;div class=&quot;ant-common-item-bd&quot;&gt;模块内容&lt;/div&gt;
+&lt;/div&gt;
+
+<span class="code-note">正确做法</span>
+.item-bg {
+   background-color:#999;
+}
+
+&lt;div class=&quot;ant-common-item&quot;&gt;
+   &lt;div class=&quot;ant-common-item-hd&quot;&gt;模块标题&lt;/div&gt;
+   &lt;div class=&quot;ant-common-item-bd <span class="code-kop">item-bg</span>&quot;&gt;模块内容&lt;/div&gt;
+&lt;/div&gt;
+
+<span class="code-note">我们通过自定义一个item-bg类来修改其背景颜色。这样就可以达到预期效果。不要试图重写原class来实现。</span>
+</span>
+</code>
+</pre>
+</dl>
+<dl class="code-box">
+<dt class="code-hd ant-yahei"><a class="ant-fr find-ui" target="_blank" href="ant_widget.html#base">查看UI</a>基础类</dt>
+<dd class="code-bd">
+<pre>
+<code>
+<span class="code-desp">页面宽度。目前页面宽度是1000px</span>
+.ant-grid-1000 {width:1000px;}
+
+<span class="code-desp">字体。内置2种常用字体：微软雅黑、tahoma字体</span>
+.ant-yahei {font-family:\5FAE\8F6F\96C5\9ED1;} <span class="code-note">微软雅黑字体</span>
+.ant-tahoma {font-family:Tahoma, Verdana;} <span class="code-note">Tahoma字体</span>
+
+<span class="code-desp">字体大小。内置4种字体大小。12px、14px、16px、18px</span>
+.ant-s12 {font-size:12px;} <span class="code-note">12px</span>
+.ant-s14 {font-size:14px;} <span class="code-note">14px</span>
+.ant-s16 {font-size:16px;} <span class="code-note">16px</span>
+.ant-s18 {font-size:18px;} <span class="code-note">18px</span>
+
+<span class="code-desp">颜色。内置页面文字、链接、背景主色调</span>
+<span class="code-note">蓝色系及链接颜色</span>
+.ant-lakeblue, .ant-lakeblue a, .ant-lakeblue a:visited {
+    color:#0dc3ce;
+    text-decoration:none;
+}
+
+<span class="code-note">light-lakeblue</span>
+.ant-light-lakeblue {
+    color:#76dde3;
+}
+
+<span class="code-note">brightblue</span>
+.ant-brightblue {
+    background:#bdf1f4;
+}
+
+<span class="code-note">lightblue</span>
+.ant-lightblue {
+    background:#e6fbfc;
+}
+
+<span class="code-note">deepgray及链接颜色</span>
+.ant-deepgray, .ant-deepgray a, .ant-deepgray a:visited {
+    color:#333;
+    text-decoration:none;
+}
+
+<span class="code-note">gray及链接颜色</span>
+.ant-gray, .ant-gray a, .ant-gray a:visited {
+    color:#666;
+    text-decoration:none;
+}
+
+<span class="code-note">lightgray及链接颜色</span>
+.ant-lightgray, .ant-lightgray a, .ant-lightgray a:visited {
+     color:#999;
+}
+
+<span class="code-note">orange及:hover颜色</span>
+.ant-orange {
+   color:#f7a61e;
+}
+.ant-deepgray a:hover, .ant-gray a:hover, .ant-lakeblue a:hover {
+    color:#76dde3;
+    text-decoration:underline;
+}
+
+<span class="code-note">green</span>
+.ant-green {
+    color:#62bd42;
+}
+
+<span class="code-note">border</span>
+.ant-bdr {
+    color:#eaeaea;
+}
+
+<span class="code-note">背景颜色</span>
+.ant-3fa {
+    background:#fafafa;
+}
+.ant-3fd {
+    background:#fdfdfd;
+}
+.ant-3fe {
+    background:#fefefe;
+}
+.ant-3f2 {
+    background:#f2f2f2;
+}
+
+<span class="code-desp">浮动</span>
+.ant-fl {float:left; display:inline;} <span class="code-note">向左浮动</span>
+.ant-fr {float:right; display:inline;} <span class="code-note">向右浮动</span>
+.ant-clearfix:after {visibility: hidden; display: block; font-size: 0; content: " "; clear: both; height: 0;} <span class="code-note">清除浮动</span>
+.ant-clearfix {*zoom:1;}
+
+<span class="code-desp">居中</span>
+.ant-bc {margin-left:0; margin-right:0;}
+
+<span class="code-desp">margin和padding</span>
+<span class="code-note">四个方向值, 分别以6, 8, 10, 14, 20为一个区间</span>
+
+.ant-ml6 {margin-left: 6px;}
+.ant-mr6 {margin-right: 6px;}
+.ant-pl6 {padding-left: 6px;}
+.ant-pr6 {padding-right: 6px;}
+...
+</code>
+</pre>
+</dd>
+</dl>
+<dl class="code-box">
+<dt class="code-hd ant-yahei"><a class="ant-fr find-ui" target="_blank" href="ant_widget.html#common">查看UI</a>通用模块类<span class="code-kop code-comp">ant-common-item</span></dt>
+<dd class="code-bd code-note">通用模块类包括主要模块和次要模块。每个模块都有三部分构成：主体、头部、内容区。头部、内容区域可以依项目需求自定义。</dd>
+<dd class="code-bd">
+<pre>
+<code>
+<span class="code-desp">模块类</span>
+&lt;div class=&quot;ant-common-item&quot;&gt;
+   &lt;div class=&quot;ant-common-item-hd&quot;&gt;自定义模块标题&lt;/div&gt;
+   &lt;div class=&quot;ant-common-item-bd&quot;&gt;自定义模块内容&lt;/div&gt;
+&lt;/div&gt;
+</code>
+</pre>
+</dd>
+</dl>
+<dl class="code-box">
+<dt class="code-hd ant-yahei"><a class="ant-fr find-ui" target="_blank" href="ant_widget.html#button">查看UI</a>按钮<span class="code-kop code-comp">ant-btn-*</span></dt>
+<dd class="code-bd">
+<pre>
+<code>
+<span class="code-desp">按钮说明</span>
+<span class="code-note">目前按钮有四种高度尺寸。每个尺寸对应四种颜色。高度分别是28px、30px、32px、34px。颜色分别是blue、orange、green、gray。</span>
+
+<span class="code-note">每个按钮是在基础按钮<span class="code-kop">ant-btn</span>的基础上演变而成的。如：</span>
+
+&lt;a href=&quot;###&quot; class=&quot;ant-btn <span class="code-kop">ant-btn-middle ant-btn-main-orange</span>&quot;&gt;&lt;/a&gt; <span class="code-note">一个高度为30px的橙色按钮</span>
+
+<span class="code-kop">ant-btn</span> <span class="code-note">默认高度28px</span>
+
+<span class="code-kop">ant-btn-middle</span> <span class="code-note">高度30px</span>
+
+<span class="code-kop">ant-btn-xmiddle</span> <span class="code-note">高度32px</span>
+
+<span class="code-kop">ant-btn-large</span> <span class="code-note">高度34px</span>
+
+<span class="code-desp">部分按钮代码</span>
+&lt;a href=&quot;###&quot; class=&quot;ant-btn&quot;&gt;&lt;/a&gt; <span class="code-note">默认按钮</span>
+
+&lt;a href=&quot;###&quot; class=&quot;ant-btn ant-btn-main-orange&quot;&gt;&lt;/a&gt; <span class="code-note">默认橙色按钮</span>
+
+&lt;a href=&quot;###&quot; class=&quot;ant-btn ant-btn-main-blue&quot;&gt;&lt;/a&gt; <span class="code-note">默认蓝色按钮</span>
+
+&lt;a href=&quot;###&quot; class=&quot;ant-btn ant-btn-main-green&quot;&gt;&lt;/a&gt; <span class="code-note">默认绿色按钮</span>
+
+&lt;a href=&quot;###&quot; class=&quot;ant-btn ant-btn-main-gray&quot;&gt;&lt;/a&gt; <span class="code-note">默认灰色按钮</span>
+
+&lt;a href=&quot;###&quot; class=&quot;ant-btn ant-btn-middle ant-btn-main-blue&quot;&gt;&lt;/a&gt; <span class="code-note">高度30px蓝色按钮</span>
+
+...
+</code>
+</pre>
+</dd>
+</dl>
+<dl class="code-box">
+<dt class="code-hd ant-yahei"><a class="ant-fr find-ui" target="_blank" href="ant_widget.html#form">查看UI</a>单行文本框<span class="code-kop code-comp">ant-input-text</span></dt>
+<dd class="code-bd">
+<pre>
+<code>
+<span class="code-desp">单行文本框代码</span>
+<span class="code-note">默认 220px x 34px。单行文本框高度固定，宽度可以根据项目实际情况来定义</span>
+
+&lt;input type=&quot;text&quot; class=&quot;ant-input-text&quot; /&gt; <span class="code-note">单行文本框</span>
+</code>
+</pre>
+</dd>
+</dl>
+<dl class="code-box">
+<dt class="code-hd ant-yahei"><a class="ant-fr find-ui" target="_blank" href="ant_widget.html#form">查看UI</a>多行文本框<span class="code-kop code-comp">ant-area</span></dt>
+<dd class="code-bd">
+<pre>
+<code>
+<span class="code-desp">多行文本框代码</span>
+<span class="code-note">默认 260px x 100px。宽度、高度可以根据项目实际情况来定义</span>
+
+&lt;textarea class=&quot;ant-area&quot;&gt;&lt;/textarea&gt; <span class="code-note">默认多行文本框</span>
+</code>
+</pre>
+</dd>
+</dl>
+<dl class="code-box">
+<dt class="code-hd ant-yahei"><a class="ant-fr find-ui" target="_blank" href="ant_widget.html#form">查看UI</a>单选框<span class="code-kop code-comp">ant-check-one</span></dt>
+<dd class="code-bd">
+<pre>
+<code>
+<span class="code-desp">单选框代码</span>
+&lt;span data-checked=&quot;false&quot; class=&quot;ant-check ant-check-one&quot;&gt;&lt;/span&gt; <span class="code-note">单选框(未选中)</span>
+
+&lt;span data-checked=&quot;true&quot; class=&quot;ant-check ant-checked-one&quot;&gt;&lt;/span&gt; <span class="code-note">单选框(选中)</span>
+</code>
+</pre>
+</dd>
+</dl>
+<dl class="code-box">
+<dt class="code-hd ant-yahei"><a class="ant-fr find-ui" target="_blank" href="ant_widget.html#form">查看UI</a>复选框<span class="code-kop code-comp">ant-check-more</span></dt>
+<dd class="code-bd">
+<pre>
+<code>
+<span class="code-desp">复选框代码</span>
+&lt;span data-checked=&quot;false&quot; class=&quot;ant-check ant-check-more&quot;&gt;&lt;/span&gt; <span class="code-note">复选框(未选中)</span>
+
+&lt;span data-checked=&quot;true&quot; class=&quot;ant-check ant-checked-more&quot;&gt;&lt;/span&gt; <span class="code-note">复选框(选中)</span>
+</span>
+</code>
+</pre>
+</dd>
+</dl>
+<dl class="code-box">
+<dt class="code-hd ant-yahei"><a class="ant-fr find-ui" target="_blank" href="ant_widget.html#form">查看UI</a>下拉列表<span class="code-kop code-comp">ant-select</span></dt>
+<dd class="code-bd">
+<pre>
+<code>
+<span class="code-desp">下拉列表代码</span>
+&lt;div class=&quot;ant-select&quot;&gt;
+ &lt;span class=&quot;ant-selected-text&quot;&gt;&lt;em&gt;请选择&lt;/em&gt;&lt;i&gt;&lt;/i&gt;&lt;/span&gt;
+ &lt;div class=&quot;ant-select-item&quot;&gt;
+  &lt;ul class=&quot;ant-select-list&quot;&gt;
+    &lt;li&gt;&lt;a href=&quot;javascript:;&quot;&gt;北京协和医院&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;javascript:;&quot;&gt;东直门中医院&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;javascript:;&quot;&gt;天坛医院&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;javascript:;&quot;&gt;阜外医院&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+ &lt;/div&gt;
+&lt;/div&gt;
+</code>
+</pre>
+</dd>
+</dl>
+<dl class="code-box">
+<dt class="code-hd ant-yahei"><a class="ant-fr find-ui" target="_blank" href="ant_widget.html#search">查看UI</a>搜索类<span class="code-kop code-comp">ant-search-bar-*</span></dt>
+<dd class="code-bd">
+<pre>
+<code>
+<span class="code-desp">搜索类代码</span>
+<span class="code-note">默认搜索</span>
+&lt;div class=&quot;ant-search-bar&quot;&gt;
+ &lt;form action=&quot;&quot;&gt;
+   &lt;div class=&quot;ant-search-wrap&quot;&gt;
+     &lt;div class=&quot;ant-search-bdr&quot;&gt;
+      &lt;input type=&quot;text&quot; name=&quot;search&quot; placeholder=&quot;请输入关键词&quot; /&gt;
+      &lt;button class=&quot;ant-search-btn&quot; type=&quot;submit&quot;&gt;搜一下&lt;/button&gt;
+     &lt;/div&gt;
+     &lt;span class=&quot;ant-search-icon&quot;&gt;&lt;/span&gt;
+    &lt;/div&gt;
+   &lt;/form&gt;
+&lt;/div&gt;
+
+<span class="code-note">二级页搜索</span>
+&lt;div class=&quot;ant-search-bar ant-search-bar-less&quot;&gt;
+  &lt;form action=&quot;&quot;&gt;
+    &lt;div class=&quot;ant-search-wrap&quot;&gt;
+     &lt;div class=&quot;ant-search-bdr&quot;&gt;
+      &lt;input type=&quot;text&quot; name=&quot;search&quot; placeholder=&quot;请输入关键词&quot; /&gt;
+      &lt;button class=&quot;ant-search-btn&quot; type=&quot;submit&quot;&gt;搜一下&lt;/button&gt;
+   &lt;/div&gt;
+   &lt;span class=&quot;ant-search-icon&quot;&gt;&lt;/span&gt;
+   &lt;/div&gt;
+ &lt;/form&gt;
+&lt;/div&gt;
+
+<span class="code-note">带条件的搜索</span>
+&lt;div class=&quot;ant-search-bar ant-search-bar-less ant-search-bar-drop&quot;&gt;
+  &lt;form action=&quot;&quot;&gt;
+   &lt;div class=&quot;ant-search-wrap&quot;&gt;
+    &lt;div class=&quot;ant-search-bdr&quot;&gt;
+     &lt;input type=&quot;text&quot; name=&quot;search&quot; placeholder=&quot;请输入关键词&quot; /&gt;
+     &lt;button class=&quot;ant-search-btn&quot; type=&quot;submit&quot;&gt;搜一下&lt;/button&gt;
+    &lt;/div&gt;
+   &lt;/div&gt;
+  &lt;/form&gt;
+  &lt;div class=&quot;ant-search-bar-dropcon&quot;&gt;
+   &lt;span class=&quot;ant-search-bar-dropin&quot;&gt;找话题&lt;/span&gt;
+   &lt;span class=&quot;ant-search-bar-dropicon&quot;&gt;&lt;/span&gt;
+   &lt;ul class=&quot;ant-search-bar-droplist&quot;&gt;
+    &lt;li&gt;&lt;a href=&quot;&quot;&gt;找医院&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;&quot;&gt;找药品&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;&quot;&gt;找专家&lt;/a&gt;&lt;/li&gt;
+   &lt;/ul&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+<span class="code-note">综合搜索</span>
+&lt;div class=&quot;ant-search-bar&quot;&gt;
+  &lt;ul class=&quot;ant-search-bar-tab ant-yahei ant-clearfix&quot;&gt;
+     &lt;li class=&quot;current&quot;&gt;综合&lt;/li&gt;
+     &lt;li&gt;问答&lt;/li&gt;
+     &lt;li&gt;疾病&lt;/li&gt;
+     &lt;li&gt;医院&lt;/li&gt;
+     &lt;li&gt;医生&lt;/li&gt;
+     &lt;li&gt;药品&lt;/li&gt;
+     &lt;li&gt;资讯&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;form action=&quot;&quot;&gt;
+	&lt;div class=&quot;ant-search-wrap&quot;&gt;
+	  &lt;div class=&quot;ant-search-bdr&quot;&gt;
+		&lt;input type=&quot;text&quot; name=&quot;search&quot; placeholder=&quot;请输入关键词&quot; /&gt;
+		&lt;button class=&quot;ant-search-btn&quot; type=&quot;submit&quot;&gt;搜一下&lt;/button&gt;
+	  &lt;/div&gt;
+	  &lt;span class=&quot;ant-search-icon&quot;&gt;&lt;/span&gt;
+   &lt;/div&gt;
+&lt;/form&gt;
+&lt;/div&gt;
+</code>
+</pre>
+</dd>
+</dl>
+<dl class="code-box">
+<dt class="code-hd ant-yahei"><a class="ant-fr find-ui" target="_blank" href="ant_widget.html#page">查看UI</a>分页类<span class="code-kop code-comp">ant-page</span></dt>
+<dd class="code-bd">
+<pre>
+<code>
+<span class="code-desp">分页类代码</span>
+&lt;div class=&quot;ant-yahei ant-page&quot;&gt;
+  &lt;a href=&quot;&quot;&gt;上一页&lt;/a&gt;
+  &lt;a href=&quot;&quot;&gt;1&lt;/a&gt;
+  &lt;span class=&quot;ant-page-now&quot;&gt;2&lt;/span&gt;
+  &lt;a href=&quot;&quot;&gt;3&lt;/a&gt;
+  &lt;a href=&quot;&quot;&gt;4&lt;/a&gt;
+  &lt;a href=&quot;&quot;&gt;5&lt;/a&gt;
+  &lt;a href=&quot;&quot;&gt;10&lt;/a&gt;
+  &lt;a href=&quot;&quot;&gt;下一页&lt;/a&gt;
+&lt;/div&gt;
+</code>
+</pre>
+</dd>
+</dl>
+<dl class="code-box">
+<dt class="code-hd ant-yahei"><a class="ant-fr find-ui" target="_blank" href="ant_widget.html#slider">查看UI</a>焦点图<span class="code-kop code-comp">ant-slide</span></dt>
+<dd class="code-bd">
+<pre>
+<code>
+<span class="code-desp">焦点图代码</span>
+<span class="code-note">默认焦点图</span>
+&lt;div class=&quot;ant-slide&quot;&gt;
+  &lt;div class=&quot;ant-slide-pic-wrap&quot;&gt;
+    &lt;ul class=&quot;ant-slide-pic&quot;&gt;
+      &lt;li&gt;&lt;img src=&quot;xxx/1.jpg&quot; width=&quot;600&quot; height=&quot;200&quot; /&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/div&gt;
+  &lt;ul class=&quot;ant-slide-trigger&quot;&gt;
+   &lt;li class=&quot;current&quot;&gt;&lt;a href=&quot;javascript:;&quot;&gt;&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;
+
+<span class="code-note">带按钮的焦点图</span>
+&lt;div class=&quot;ant-slide&quot;&gt;
+  &lt;div class=&quot;ant-slide-pic-wrap&quot;&gt;
+    &lt;ul class=&quot;ant-slide-pic&quot;&gt;
+      &lt;li&gt;&lt;img src=&quot;xxx/1.jpg&quot; width=&quot;600&quot; height=&quot;200&quot; /&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/div&gt;
+  &lt;ul class=&quot;ant-slide-trigger&quot;&gt;
+   &lt;li class=&quot;current&quot;&gt;&lt;a href=&quot;javascript:;&quot;&gt;&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;a class=&quot;ant-slide-btn ant-slide-prev-btn&quot; href=&quot;javascript:;&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;/a&gt;
+  &lt;a class=&quot;ant-slide-btn ant-slide-next-btn&quot; href=&quot;javascript:;&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;/a&gt;
+&lt;/div&gt;
+
+<span class="code-note">带标题的焦点图</span>
+&lt;div class=&quot;ant-slide ant-slide-full&quot;&gt;
+  &lt;div class=&quot;ant-slide-pic-wrap&quot;&gt;
+    &lt;ul class=&quot;ant-slide-pic&quot;&gt;
+      &lt;li&gt;&lt;img src=&quot;xxx/1.jpg&quot; width=&quot;600&quot; height=&quot;200&quot; /&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/div&gt;
+  &lt;p class="ant-slide-title ant-s14 ant-yahei"&gt;标题文字&lt;/p&gt;
+  &lt;div class="ant-slide-shadow">&lt;/div&gt;
+  &lt;ul class=&quot;ant-slide-trigger&quot;&gt;
+   &lt;li class=&quot;current&quot;&gt;&lt;a href=&quot;javascript:;&quot;&gt;&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;a class=&quot;ant-slide-btn ant-slide-prev-btn&quot; href=&quot;javascript:;&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;/a&gt;
+  &lt;a class=&quot;ant-slide-btn ant-slide-next-btn&quot; href=&quot;javascript:;&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;/a&gt;
+&lt;/div&gt;
+</code>
+</pre>
+</dd>
+</dl>
+<dl class="code-box">
+<dt class="code-hd ant-yahei"><a class="ant-fr find-ui" target="_blank" href="ant_widget.html#position">查看UI</a>面包屑<span class="code-kop code-comp">ant-position</span></dt>
+<dd class="code-bd">
+<pre>
+<code>
+<span class="code-desp">面包屑代码</span>
+&lt;div class=&quot;ant-position&quot;&gt;
+  &lt;a href=&quot;&quot;&gt;疾病百科&lt;/a&gt;&lt;span&gt;&gt;&lt;/span&gt;
+  &lt;a href=&quot;&quot;&gt;消化内科&lt;/a&gt;
+  &lt;span&gt;&gt;&lt;/span&gt;&lt;em&gt;厌食症&lt;/em&gt;
+&lt;/div&gt;
+</code>
+</pre>
+</dd>
+</dl>
+<dl class="code-box">
+<dt class="code-hd ant-yahei"><a class="ant-fr find-ui" target="_blank" href="ant_widget.html#progress">查看UI</a>进度条<span class="code-kop code-comp">ant-progress</span></dt>
+<dd class="code-bd">
+<pre>
+<code>
+<span class="code-desp">进度条代码</span>
+&lt;div class=&quot;ant-progress&quot;&gt;
+    &lt;div class=&quot;ant-progress-bar&quot;&gt;100%&lt;/div&gt;
+&lt;/div&gt;
+</code>
+</pre>
+</dd>
+</dl>
+<dl class="code-box">
+<dt class="code-hd ant-yahei"><a class="ant-fr find-ui" target="_blank" href="ant_widget.html#tab">查看UI</a>tab选项卡<span class="code-kop code-comp">ant-tab、ant-tab-slider</span></dt>
+<dd class="code-bd">
+<pre>
+<code>
+<span class="code-desp">tab选项卡代码</span>
+<span class="code-note">tab选项卡是在通用模块的基础上构建的，看示例：</span>
+
+<span class="code-note">选项卡一：由ant-common-item和ant-tab共同组成</span>
+&lt;div class="ant-common-item"&gt;
+  &lt;div class="ant-common-item-hd <span class="code-kop">ant-tab</span>"&gt;
+     &lt;ul class="ant-yahei ant-clearfix"&gt;
+        &lt;li class="current"&gt;皮肤科&lt;/li&gt;
+        &lt;li&gt;神经内科&lt;/li&gt;
+        &lt;li&gt;神经外科&lt;/li&gt;
+        &lt;li&gt;血液科&lt;/li&gt;
+     &lt;/ul&gt;
+  &lt;/div&gt;
+  &lt;div class="ant-common-item-bd"&gt;
+     &lt;div class="panel"&gt;panel1&lt;/div&gt;
+     &lt;div class="panel" style="display:none;"&gt;panel2&lt;/div&gt;
+     &lt;div class="panel" style="display:none;"&gt;panel3&lt;/div&gt;
+     &lt;div class="panel" style="display:none;"&gt;panel4&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+<span class="code-note">选项卡二：由ant-common-item和ant-tab-slider共同组成</span>
+&lt;div class="ant-common-item"&gt;
+   &lt;div class="ant-common-item-hd <span class="code-kop">ant-tab-slider</span>"&gt;
+       &lt;ul class="ant-yahei ant-clearfix"&gt;
+          &lt;li class="current"&gt;皮肤科&lt;/li&gt;
+          &lt;li&gt;神经内科&lt;/li&gt;
+          &lt;li&gt;神经外科&lt;/li&gt;
+          &lt;li&gt;血液科&lt;/li&gt;
+       &lt;/ul&gt;
+      &lt;span class="ant-sliding"&gt;&lt;/span&gt;
+    &lt;/div&gt;
+   &lt;div class="ant-common-item-bd"&gt;
+       &lt;div class="panel"&gt;panel1&lt;/div&gt;
+       &lt;div class="panel" style="display:none;"&gt;panel2&lt;/div&gt;
+       &lt;div class="panel" style="display:none;"&gt;panel3&lt;/div&gt;
+       &lt;div class="panel" style="display:none;"&gt;panel4&lt;/div&gt;
+   &lt;/div&gt;
+&lt;/div&gt;
+</code>
+</pre>
+</dd>
+</dl>
+<dl class="code-box">
+<dt class="code-hd ant-yahei"><a class="ant-fr find-ui" target="_blank" href="ant_widget.html#tip">查看UI</a>验证提示(icon，文字)<span class="code-kop code-comp">ant-tip-*</span></dt>
+<dd class="code-bd">
+<pre>
+<code>
+<span class="code-desp">验证提示代码</span>
+<span class="code-note">非友好提示</span>
+&lt;span class=&quot;ant-tip ant-tip-bad&quot;&gt;
+   &lt;i class=&quot;ant-tip-stop ant-ml6&quot;&gt;&lt;/i&gt;
+   &lt;em class=&quot;ant-ml6 ant-mr6&quot;&gt;禁止信息&lt;/em&gt;
+&lt;/span&gt;
+
+&lt;span class=&quot;ant-tip ant-tip-bad&quot;&gt;
+   &lt;i class=&quot;ant-tip-error ant-ml6&quot;&gt;&lt;/i&gt;
+   &lt;em class=&quot;ant-ml6 ant-mr6&quot;&gt;错误信息&lt;/em&gt;
+&lt;/span&gt;
+
+&lt;span class=&quot;ant-tip ant-tip-bad&quot;&gt;
+   &lt;i class=&quot;ant-tip-warning ant-ml6&quot;&gt;&lt;/i&gt;
+   &lt;em class=&quot;ant-ml6 ant-mr6&quot;&gt;警告信息&lt;/em&gt;
+&lt;/span&gt;
+&lt;span class=&quot;ant-tip ant-tip-bad&quot;&gt;
+   &lt;i class=&quot;ant-tip-doubt ant-ml6&quot;&gt;&lt;/i&gt;
+   &lt;em class=&quot;ant-ml6 ant-mr6&quot;&gt;疑问信息&lt;/em&gt;
+&lt;/span&gt;
+
+<span class="code-note">友好提示</span>
+&lt;span class=&quot;ant-tip ant-tip-good&quot;&gt;
+   &lt;i class=&quot;ant-tip-point ant-ml6&quot;&gt;&lt;/i&gt;
+   &lt;em class=&quot;ant-ml6 ant-mr6&quot;&gt;提示信息&lt;/em&gt;
+&lt;/span&gt;
+
+&lt;span class=&quot;ant-tip ant-tip-good&quot;&gt;
+   &lt;i class=&quot;ant-tip-remind ant-ml6&quot;&gt;&lt;/i&gt;
+   &lt;em class=&quot;ant-ml6 ant-mr6&quot;&gt;提醒信息&lt;/em&gt;
+&lt;/span&gt;
+
+&lt;span class=&quot;ant-tip ant-tip-good&quot;&gt;
+   &lt;i class=&quot;ant-tip-notice ant-ml6&quot;&gt;&lt;/i&gt;
+   &lt;em class=&quot;ant-ml6 ant-mr6&quot;&gt;公告信息&lt;/em&gt;
+&lt;/span&gt;
+
+<span class="code-note">成功提示信息</span>
+&lt;span class=&quot;ant-tip ant-tip-ok&quot;&gt;
+   &lt;i class=&quot;ant-tip-remind ant-ml6&quot;&gt;&lt;/i&gt;
+   &lt;em class=&quot;ant-ml6 ant-mr6&quot;&gt;成功信息&lt;/em&gt;
+&lt;/span&gt;
+</code>
+</pre>
+</dd>
+</dl>
+<dl class="code-box">
+<dt class="code-hd ant-yahei"><a class="ant-fr find-ui" target="_blank" href="ant_widget.html#pop">查看UI</a>弹出层<span class="code-kop code-comp">ant-popover-*</span></dt>
+<dd class="code-bd code-note">弹出层基础结构由三部分组成, 分别为标题栏，内容区，尾部。可以通过自定义内容区，达到项目需要的效果。</dd>
+<dd class="code-bd">
+<pre>
+<code>
+<span class="code-desp">基础结构</span>
+&lt;div class=&quot;ant-popover&quot;&gt;
+  &lt;div class=&quot;ant-popover-hd&quot;&gt;&lt;/div&gt; <span class="code-note">标题栏</span>
+  &lt;div class=&quot;ant-popover-bd&quot;&gt;&lt;/div&gt; <span class="code-note">内容区</span>
+  &lt;div class=&quot;ant-popover-extra&quot;&gt;&lt;/div&gt; <span class="code-note">尾部区域</span>
+&lt;/div&gt;
+</code>
+</pre>
+</dd>
+<dd class="code-bd code-note">自定义扩展弹出层样式，如下所示：</dd>
+<dd class="code-bd">
+<pre>
+<code>
+<span class="code-desp">弹出层代码</span>
+<span class="code-note">一个简单的弹出层</span>
+&lt;div class=&quot;ant-popover&quot;&gt;
+  &lt;div class=&quot;ant-popover-hd&quot;&gt;
+    &lt;span class=&quot;ant-popover-tip&quot;&gt;提示信息&lt;/span&gt;
+    &lt;a href=&quot;javascript:;&quot; class=&quot;ant-popover-close&quot;&gt;关闭&lt;/a&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;ant-popover-bd&quot;&gt;hello world!&lt;/div&gt;
+&lt;/div&gt;
+
+<span class="code-note">一个自定义对话框</span>
+&lt;div class=&quot;ant-popover&quot;&gt;
+  &lt;div class=&quot;ant-popover-hd&quot;&gt;
+    &lt;span class=&quot;ant-popover-tip&quot;&gt;提示信息&lt;/span&gt;
+    &lt;a href=&quot;javascript:;&quot; class=&quot;ant-popover-close&quot;&gt;关闭&lt;/a&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;ant-popover-bd&quot;&gt;hello world!&lt;/div&gt;
+  &lt;div class=&quot;ant-popover-extra&quot;&gt;
+    &lt;a href=&quot;javascript:;&quot; class=&quot;ant-btn ant-yahei ant-btn-main-blue&quot;&gt;确定&lt;/a&gt;
+    &lt;a href=&quot;javascript:;&quot; class=&quot;ant-btn ant-yahei ant-btn-main-gray&quot;&gt;取消&lt;/a&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+<span class="code-note">一个登录示例</span>
+&lt;div class=&quot;ant-popover&quot;&gt;
+  &lt;div class=&quot;ant-popover-hd&quot;&gt;
+    &lt;span class=&quot;ant-popover-tip&quot;&gt;用户登录&lt;/span&gt;
+    &lt;a href=&quot;javascript:;&quot; class=&quot;ant-popover-close&quot;&gt;关闭&lt;/a&gt;
+  &lt;/div&gt;
+   &lt;div class=&quot;ant-popover-bd&quot;&gt;
+    &lt;div class=&quot;ant-clearfix&quot;&gt;
+	&lt;label style=&quot;color:#666;&quot;&gt;用户名：&lt;/label&gt;
+	&lt;input type=&quot;text&quot; class=&quot;ant-input-text&quot; /&gt;
+    &lt;/div&gt;
+     &lt;div class=&quot;mt20 ant-clearfix&quot;&gt;
+	 &lt;label style=&quot;color:#666;&quot;&gt;密&nbsp;&nbsp;码：&lt;/label&gt;
+	 &lt;input type=&quot;text&quot; class=&quot;ant-input-text&quot; /&gt;
+     &lt;/div&gt;
+     &lt;div class=&quot;ant-clearfix&quot;&gt;
+         &lt;button type=&quot;submit&quot; class=&quot;ant-btn ant-btn-main-blue ant-yahei&quot;&gt;登录&lt;/button&gt;
+     &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code>
+</pre>
+</dd>
+</dl>
+<dl class="code-box">
+<dt class="code-hd ant-yahei"><a class="ant-fr find-ui" target="_blank" href="ant_toplace.html#pop">查看UI</a>返回顶部或底部<span class="code-kop code-comp">ant-toplace</span></dt>
+<dd class="code-bd code-note">返回顶部或者底部。</dd>
+<dd class="code-bd">
+<pre>
+<code>
+<span class="code-desp">基础结构</span>
+&lt;div class=&quot;ant-toplace&quot;&gt;
+  &lt;span class=&quot;ant-gotop&quot;&gt;&lt;/span&gt; <span class="code-note">返回顶部图标</span>
+&lt;/div&gt;
+
+&lt;div class=&quot;ant-toplace&quot;&gt;
+  &lt;span class=&quot;ant-gobottom&quot;&gt;&lt;/span&gt; <span class="code-note">返回底部图标</span>
+&lt;/div&gt;
+</code>
+</pre>
+</dd>
+<dd class="code-bd code-note">自定义返回图标的位置，如下所示：</dd>
+<dd class="code-bd">
+<pre>
+<code>
+&lt;style&gt;
+   .ant-top-pos{bottom:50px;}
+&lt;/style&gt;
+
+&lt;div class=&quot;ant-toplace ant-top-pos&quot;&gt;
+  &lt;span class=&quot;ant-gotop&quot;&gt;&lt;/span&gt;
+&lt;/div&gt;
+</code>
+</pre>
+</dd>
+</dl>
+</div>
+</div>
+<div class="doc-footer ant-yahei"><p>Ant UI归寻医问药网所有</p>Power by haitao &copy;2014</div>
+</div>
+<div class="gotop"></div>
+<div class="doc-dir-nav ant-yahei ant-s14">
+<dl class="doc-helper">
+	<dt>快速导航</dt>
+	<dd class="current"><a href="index.html">UI规范</a></dd>
+	<dd><a target="_blank" href="ant_widget.html">UI组件</a></dd>
+	<dd><a target="_blank" href="js_doc.html">JS组件</a></dd>
+	<dd><a target="_blank" href="standard.html">前端规范</a></dd>
+</dl>
+</div>
+<script type="text/javascript" src="http://static.wkimg.com/common/lib/jquery/1.8.3/jquery.min.js"></script>
+<script type="text/javascript" src="http://static.wkimg.com/common/lib/widget/2.0.1/ant-widget.js"></script>
+<script type="text/javascript" src="js/doc.js"></script>
+</body>
+</html>

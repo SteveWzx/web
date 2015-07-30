@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>自定义对话框</title>
+<link rel="stylesheet" type="text/css" href="css.css" />
+<script type="text/javascript" src="http://static.wkimg.com/common/lib/jquery.min.js"></script>
+<script type="text/javascript" src="http://static.wkimg.com/common/lib/jquery-xywy-plus.js"></script>
+<script type="text/javascript">
+$(function(){
+  $('.dialog').dialog({
+        title: '对话框',
+        container: '.dialog-bd',
+        content: 'hello world!',
+        close: '.dialog-close',
+        cancel: '.dialog-cancel',
+        confirm: '.dialog-confirm',
+        animate: true,
+        operate: function(maskId){
+            //点击确定按钮时触发此函数
+            alert(maskId);
+        }
+    });
+})
+</script>
+</head>
+<body>
+<div class="dialog">
+    <div class="dialog-hd"><a href="javascript:;" class="dialog-close">关闭</a></div>
+    <div class="dialog-bd"></div>
+    <div class="dialog-extra">
+        <a href="javascript:;" class="dialog-cancel">取消</a>
+        <a href="javascript:;" class="dialog-confirm">确定</a>
+    </div>
+</div>
+</body>
+</html>

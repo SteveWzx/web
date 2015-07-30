@@ -1,0 +1,164 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>焦点图</title>
+<link rel="stylesheet" type="text/css" href="css.css" />
+<script type="text/javascript" src="http://static.wkimg.com/common/lib/jquery.min.js"></script>
+<script type="text/javascript" src="http://static.wkimg.com/common/lib/jquery-xywy-plus.js"></script>
+</head>
+<body>
+<div class="wrap">
+    <div id="slide3" class="title box_hd">默认焦点图</div>
+    <div class="slide slide3 pr">
+        <div class="slidepic pr">
+            <ul class="pic pa">
+                <li><a href=""><img title="体验意大利优美风情" src="images/001.jpg" width="500" alt="" /></a></li>
+                <li><a href=""><img title="体验美国优美风情" src="images/002.jpg" width="500" alt="" /></a></li>
+                <li><a href=""><img title="感受英国优美风情" src="images/003.jpg" width="500" alt="" /></a></li>
+                <li><a href=""><img title="游走在浪漫的威尼斯" src="images/004.jpg" width="500" alt="" /></a></li>
+                <li><a href=""><img title="美丽的荷兰风情" src="images/005.jpg" width="500" alt="" /></a></li>
+            </ul>
+            <div class="pa shadow"></div>
+            <div class="pa pic-des pic-des3">体验意大利优美风情</div>
+        </div>
+        <ul class="trigger pa">
+            <li class="current">1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+        </ul>
+    </div>
+    <script type="text/javascript">
+        $('.slide3').slide({
+			loop: true,
+            dataPanel: '.pic-des3'
+        });
+    </script>
+    <br />
+    <div id="slide1" class="title box_hd">横向动画效果</div>
+    <div class="slide slide1 pr">
+        <div class="slidepic pr">
+            <ul class="pic pa">
+                <li><a href=""><img title="体验意大利优美风情" src="images/001.jpg" width="500" alt="" /></a></li>
+                <li><a href=""><img title="体验美国优美风情" src="images/002.jpg" width="500" alt="" /></a></li>
+                <li><a href=""><img title="感受英国优美风情" src="images/003.jpg" width="500" alt="" /></a></li>
+                <li><a href=""><img title="游走在浪漫的威尼斯" src="images/004.jpg" width="500" alt="" /></a></li>
+                <li><a href=""><img title="美丽的荷兰风情" src="images/005.jpg" width="500" alt="" /></a></li>
+            </ul>
+            <div class="pa shadow"></div>
+            <div class="pa pic-des pic-des1">体验意大利优美风情</div>
+        </div>
+        <ul class="trigger pa">
+            <li class="current">1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+        </ul>
+    </div>
+    <script type="text/javascript">
+        $('.slide1').slide({
+            animate: true,
+			loop: true,
+            dataPanel: '.pic-des1'
+        });
+    </script>
+    <br />
+    <div id="slide2" class="title box_hd">垂直方向动画效果</div>
+    <div class="slide slide2 pr">
+        <div class="slidepic pr">
+            <ul class="pic pa">
+                <li><a href=""><img title="体验意大利优美风情" src="images/001.jpg" width="500" alt="" /></a></li>
+                <li><a href=""><img title="体验美国优美风情" src="images/002.jpg" width="500" alt="" /></a></li>
+                <li><a href=""><img title="感受英国优美风情" src="images/003.jpg" width="500" alt="" /></a></li>
+                <li><a href=""><img title="游走在浪漫的威尼斯" src="images/004.jpg" width="500" alt="" /></a></li>
+                <li><a href=""><img title="美丽的荷兰风情" src="images/005.jpg" width="500" alt="" /></a></li>
+            </ul>
+            <div class="pa shadow"></div>
+            <div class="pa pic-des pic-des2">体验意大利优美风情</div>
+        </div>
+        <ul class="trigger pa">
+            <li class="current">1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+        </ul>
+    </div>
+    <script type="text/javascript">
+        $('.slide2').slide({
+            animate: true,
+            vertical: true,
+			loop: true,
+            dataPanel: '.pic-des2',
+            time:4000
+         });
+    </script>
+    <div id="slide4" class="title box_hd">带左右箭头的焦点图</div>
+    <div class="slide slide4 pr">
+        <div class="slidepic pr">
+            <ul class="pic pa">
+                <li><a href=""><img title="体验意大利优美风情" src="images/001.jpg" width="500" alt="" /></a></li>
+                <li><a href=""><img title="体验美国优美风情" src="images/002.jpg" width="500" alt="" /></a></li>
+                <li><a href=""><img title="感受英国优美风情" src="images/003.jpg" width="500" alt="" /></a></li>
+                <li><a href=""><img title="游走在浪漫的威尼斯" src="images/004.jpg" width="500" alt="" /></a></li>
+                <li><a href=""><img title="美丽的荷兰风情" src="images/005.jpg" width="500" alt="" /></a></li>
+            </ul>
+            <div class="pa shadow"></div>
+            <div class="pa pic-des pic-des4">体验意大利优美风情</div>
+            <span class="pa pre"></span>
+            <span class="pa next"></span>
+        </div>
+        <ul class="trigger pa">
+            <li class="current">1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+        </ul>
+    </div>
+    <script type="text/javascript">
+      $('.slide4').slide({
+            animate: true,
+			loop: true,
+            dataPanel: '.pic-des4',
+            leftButton: '.pre',
+            rightButton: '.next',
+            time:5000
+         });
+    </script>
+	 <div id="slide5" class="title box_hd">具有透明度效果的焦点图</div>
+    <div class="slide slide5 pr">
+        <div class="slidepic pr">
+            <ul class="pic pa">
+                <li><a href=""><img title="体验意大利优美风情" src="images/001.jpg" width="500" alt="" /></a></li>
+                <li><a href=""><img title="体验美国优美风情" src="images/002.jpg" width="500" alt="" /></a></li>
+                <li><a href=""><img title="感受英国优美风情" src="images/003.jpg" width="500" alt="" /></a></li>
+                <li><a href=""><img title="游走在浪漫的威尼斯" src="images/004.jpg" width="500" alt="" /></a></li>
+                <li><a href=""><img title="美丽的荷兰风情" src="images/005.jpg" width="500" alt="" /></a></li>
+            </ul>
+            <div class="pa shadow"></div>
+            <div class="pa pic-des pic-des5">体验意大利优美风情</div>
+        </div>
+        <ul class="trigger pa">
+            <li class="current">1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+        </ul>
+    </div>
+	<script type="text/javascript">
+      $('.slide5').slide({
+            animate: false,
+			opacity: true,
+			loop: true,
+            dataPanel: '.pic-des5',
+            time:5000
+         });
+    </script>
+</div>
+</body>
+</html>

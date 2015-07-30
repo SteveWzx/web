@@ -1,0 +1,1967 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<link rel="stylesheet" type="text/css" href="http://static.wkimg.com/common/ui/base/ant-base.css" />
+<link rel="stylesheet" type="text/css" href="css/doc.css" />
+<title>Ant UI组件说明文档</title>
+</head>
+<body>
+<div class="doc-top">
+<div class="ant-grid-1000 ant-bc ant-clearfix">
+<div class="ant-fl doc-logo">Ant UI</div>
+<ul class="ant-fr doc-nav ant-yahei">
+<li><a href="index.html">UI规范</a></li>
+<li><a href="ant_widget.html">UI组件</a></li>
+<li class="current"><a href="js_doc.html">JS组件</a></li>
+<li><a href="standard.html">前端规范</a></li>
+</ul>
+</div>
+</div>
+<div class="doc-banner ant-yahei">
+<div class="ant-grid-1000 ant-bc">
+<h1>开始使用Ant Widget<span class="code-kop"><sup style="margin-left:5px;font-size:13px;">v2.0.1</sup></span></h1>
+<p>ant widget使用说明、示例、代码结构、实例展示...</p>
+</div>
+</div>
+<div class="doc-box">
+<div class="ant-grid-1000 ant-bc ant-clearfix">
+<div class="ant-fl doc-fast-nav ant-yahei">
+<div class="doc-nav-list">
+<dl class="doc-ui-guide">
+<dt>使用说明</dt>
+<dd>
+<p><a href="javascript:;"><span class="code-kop">版本说明</span></a></p>
+<p><a href="javascript:;">导读</a></p>
+<p><a href="javascript:;">准备工作</a></p>
+</dd>
+</dl>
+<dl class="doc-ui-list">
+<dt>Ant插件列表</dt>
+<dd>
+<p><a href="javascript:;">ie6判断</a></p>
+<p><a href="javascript:;">cookie操作</a></p>
+<p><a href="javascript:;">选项卡</a></p>
+<p><a href="javascript:;">焦点图</a></p>
+<p><a href="javascript:;">图片滚动</a></p>
+<p><a href="javascript:;">文本滚动</a></p>
+<p><a href="javascript:;">图集相册</a></p>
+<p><a href="javascript:;">图片放大镜</a></p>
+<p><a href="javascript:;">图层拖拽</a></p>
+<p><a href="javascript:;">模拟滚动条</a></p>
+<p><a href="javascript:;">回顶部或底部</a></p>
+<p><a href="javascript:;">滚动监听</a></p>
+<p><a href="javascript:;">文本框自动完成</a></p>
+<p><a href="javascript:;">文本框默认文字</a></p>
+<p><a href="javascript:;">自定义弹出层</a></p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="ant-fr doc-content">
+<dl class="code-box">
+<dt class="code-hd ant-yahei">版本说明</dt>
+<dd class="code-bd ant-yahei">
+<p>2.0.1版本的更新说明：</p>
+<p class="pt10"><span class="code-kop">1. 去掉了loopSlide。</span></p>
+<p><span class="code-kop">2. 改写了slide，把loopSlide的部分效果融合进了slide，并且性能更好。</span></p>
+<p><span class="code-kop">3. 凡是带有leftButton和rightButton参数的，都改为了prevButton和nextButton</span></p>
+<p><span class="code-kop">4. 优化了monitor。</span></p>
+</dd>
+</dl>
+<dl class="code-box">
+<dt class="code-hd ant-yahei">导读</dt>
+<dd class="code-bd ant-yahei">
+<p><span class="code-kop">ant widget</span>是基于jquery的插件库，使用简单，通过配置相关参数，配合<span class="code-kop">ant css</span>，能快速开发出界面效果，可以做到一种结构，多种效果。</p>
+</dd>
+<dd class="code-bd">
+<pre>
+<code>
+<span class="code-desp">部分例子</span>
+<span class="code-sign">$('</span>.slide-box<span class="code-sign">').slide({</span>
+    <span class="code-sign">animate:</span> true
+    <span class="code-sign">time:</span> 4000
+<span class="code-sign">})</span>
+
+...
+</code>
+</pre>
+</dd>
+</dl>
+<dl class="code-box">
+<dt class="code-hd ant-yahei">准备工作</dt>
+<dd class="code-bd ant-yahei">第一步 在你的页面head里引入插件所需的css, 比如：</dd>
+<dd class="code-bd">
+<pre>
+<code>
+<span class="code-desp">引入css</span>
+<span class="code-other">&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;http://static.wkimg.com/common/ui/base/ant-base.css&quot; /&gt;</span>
+</code>
+</pre>
+</dd>
+<dd class="code-bd ant-yahei">第二步 按照插件要求写好html结构，比如：</dd>
+<dd class="code-bd">
+<pre>
+<code>
+<span class="code-desp">html结构</span>
+&lt;div class="ant-slide"&gt;
+  &lt;div class="ant-slide-pic-wrap"&gt;
+    &lt;ul class="ant-slide-pic"&gt;
+      &lt;li&gt;&lt;img src="xxx/1.jpg" width="600" height="200" /&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/div&gt;
+  &lt;ul class="ant-slide-trigger"&gt;
+      &lt;li class="current"&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;
+</code>
+</pre>
+</dd>
+<dd class="code-bd ant-yahei">第三步 在你的页面, 通常是在底部引入指定的<span class="code-kop">jquery</span>和<span class="code-kop">ant-widget</span>文件, 如下所示</dd>
+<dd>
+<pre>
+<code>
+<span class="code-desp">引入js</span>
+<span class="code-other">&lt;script type=&quot;text/javascript&quot; src=&quot;http://static.wkimg.com/common/lib/jquery/1.8.3/jquery.min.js&quot;&gt;&lt;/script&gt;</span>
+<span class="code-other">&lt;script type=&quot;text/javascript&quot; src=&quot;http://static.wkimg.com/common/lib/widget/2.0.1/ant-widget.js&quot;&gt;&lt;/script&gt;</span>
+</code>
+</pre>
+</dd>
+<dd class="code-bd ant-yahei">第四步 调用插件相关方法即可，如下所示</dd>
+<dd>
+<pre>
+<code>
+<span class="code-desp">一个简单示例</span>
+<span class="code-sign">&lt;script type=&quot;text/javascript&quot;&gt;</span>
+
+    <span class="code-sign">$('</span>.ant-slide<span class="code-sign">').slide({</span>
+       <span class="code-sign">animate:</span> true
+   <span class="code-sign">})</span>
+   
+<span class="code-sign">&lt;/script&gt;</span>
+</code>
+</pre>
+</dd>
+</dl>
+<dl class="code-box">
+<dt class="code-hd ant-yahei">ie6判断<span class="code-kop code-comp">$.isIE6()</span></dt>
+<dd class="code-bd">
+<span class="code-desp">参数列表</span>
+<table class="props_tb">
+<colgroup>
+	<col style="width:130px">
+	<col style="width:100px">
+	<col style="width:70px">
+	<col style="width:370px">
+</colgroup>
+<thead>
+	<tr class="even">
+		<th>参数</th>
+		<th>数据类型</th>
+		<th>默认值</th>
+		<th>参数说明</th>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+		<td><b class="name">—</b></td>
+		<td><span class="type">—</span></td>
+		<td><span class="normal">—</span></td>
+		<td class="t_l">
+			<p>—</p>
+		</td>
+	</tr> 
+</tbody>
+</table>
+</dd>
+<dd class="code-bd">
+<span class="code-desp">返回值</span>
+<div class="return-value code-sign">true | false</div>
+</dd>
+<dd class="code-bd">
+<span class="code-note">用法</span>
+<pre class="mt10">
+<code>
+var <span class="code-sign">ant-flag</span> = <span class="code-sign">$.isIE6();</span>
+
+<span class="code-sign">if(</span>ant-flag<span class="code-sign">){</span>
+   //some code
+<span class="code-sign">}</span>
+</code>
+</pre>
+</dd>
+</dl>
+<dl class="code-box">
+<dt class="code-hd ant-yahei">cookie操作<span class="code-kop code-comp">$.cookie(cookie名字, cookie值, options)</span></dt>
+<dd class="code-bd">
+<span class="code-desp">参数列表</span>
+<table class="props_tb ant-yahei">
+<colgroup>
+	<col style="width:130px">
+	<col style="width:100px">
+	<col style="width:70px">
+	<col style="width:370px">
+</colgroup>
+<thead>
+	<tr class="even">
+		<th>参数</th>
+		<th>数据类型</th>
+		<th>默认值</th>
+		<th>参数说明</th>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+		<td><b class="name">cookie名字(必须)</b></td>
+		<td><span class="type">string</span></td>
+		<td><span class="normal">无</span></td>
+		<td class="t_l">
+			<p>要获取或者要设置的cookie的名</p>
+		</td>
+	</tr>
+	<tr>
+		<td><b class="name">cookie值(必须)</b></td>
+		<td><span class="type">string</span></td>
+		<td><span class="normal">无</span></td>
+		<td class="t_l">
+			<p>设置cookie的值</p>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="4"><span class="code-kop">options</span>参数</td>
+	</tr>
+	<tr>
+		<td><b class="name">expires</b></td>
+		<td><span class="type">number</span></td>
+		<td><span class="normal">1天</span></td>
+		<td class="t_l">
+			<p>cookie过期时间</p>
+		</td>
+	</tr>
+	<tr>
+		<td><b class="name">domain</b></td>
+		<td><span class="type">string</span></td>
+		<td><span class="normal">当前域</span></td>
+		<td class="t_l">
+			<p>设置cookie所在域</p>
+		</td>
+	</tr>
+	<tr>
+		<td><b class="name">path</b></td>
+		<td><span class="type">string</span></td>
+		<td><span class="normal">根目录</span></td>
+		<td class="t_l">
+			<p>设置cookie所在的网站目录</p>
+		</td>
+	</tr>
+</tbody>
+</table>
+</dd>
+<dd class="code-bd">
+<span class="code-desp">返回值</span>
+<div class="return-value"><span class="code-sign">当获取cookie时，返回获取的cookie。其它情况无返回值</span></div>
+</dd>
+<dd class="code-bd">
+<span class="code-note">用法</span>
+<pre class="mt10">
+<code>
+<span class="code-note">//设置cookie</span>
+<span class="code-sign">$.cookie(</span>'cookieName', 'zhangsan'<span class="code-sign">);</span>
+
+<span class="code-note">//设置带有可选参数的cookie</span>
+<span class="code-sign">$.cookie(</span>'cookieName', 'zhangsan', {expires: 2, domain: '/'}<span class="code-sign">);</span>
+
+<span class="code-note">//读取cookie</span>
+<span class="code-sign">$.cookie(</span>'cookieName'<span class="code-sign">);</span>
+
+<span class="code-note">//删除cookie</span>
+<span class="code-sign">$.cookie(</span>'cookieName', {expires: -1}<span class="code-sign">);</span>
+</code>
+</pre>
+</dd>
+</dl>
+<dl class="code-box">
+<dt class="code-hd ant-yahei">选项卡<span class="code-kop code-comp">$('.ant-tab').tab(options)</span></dt>
+<dd class="code-bd">
+<span class="code-desp"><span class="code-kop">options</span>参数列表</span>
+<table class="props_tb ant-yahei">
+<colgroup>
+	<col style="width:130px">
+	<col style="width:100px">
+	<col style="width:70px">
+	<col style="width:370px">
+</colgroup>
+<thead>
+	<tr class="even">
+		<th>参数</th>
+		<th>数据类型</th>
+		<th>默认值</th>
+		<th>参数说明</th>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+		<td><b class="name">type</b></td>
+		<td><span class="type">string</span></td>
+		<td><span class="normal">mouseover</span></td>
+		<td class="t_l">
+			<p>鼠标事件名称</p>
+		</td>
+	</tr>
+	<tr>
+		<td><b class="name">triggerClass</b></td>
+		<td><span class="type">string</span></td>
+		<td><span class="normal">current</span></td>
+		<td class="t_l">
+			<p>选项卡切换时，当前选项的class名字</p>
+		</td>
+	</tr>
+	<tr>
+		<td><b class="name">tab</b></td>
+		<td><span class="type">string</span></td>
+		<td><span class="normal">li</span></td>
+		<td class="t_l">
+			<p>指定切换项的元素,标准jquery选择器, 如.tab &gt; li</p>
+		</td>
+	</tr>
+	<tr>
+		<td><b class="name">panelClass</b></td>
+		<td><span class="type">string</span></td>
+		<td><span class="normal">panel</span></td>
+		<td class="t_l">
+			<p>指定对应切换项目元素的class名字</p>
+		</td>
+	</tr>
+	<tr>
+		<td><b class="name">defaultPanel</b></td>
+		<td><span class="type">number</span></td>
+		<td><span class="normal">0(默认显示第一个)</span></td>
+		<td class="t_l">
+			<p>显示指定索引值的面板, 索引值从0开始</p>
+		</td>
+	</tr>
+	<tr>
+		<td><b class="name">slideTab</b></td>
+		<td><span class="type">object</span></td>
+		<td><span class="normal">trigger: .factor<br>sliding: false<br>vertical: false<br>speed: 300ms</span></td>
+		<td class="t_l">
+			<p>
+				此项是复合参数。开启tab项的滑动效果, 包含4个参数<br>trigger&nbsp;&nbsp;具有滑动效果的元素class<br>sliding&nbsp;&nbsp;是否打开tab项的滑动效果<br>vertical&nbsp;&nbsp;是否垂直方向滑动<br>speed&nbsp;&nbsp;滑动速度
+			</p>
+		</td>
+	</tr>
+	<tr>
+		<td><b class="name">opacity</b></td>
+		<td><span class="type">boolean</span></td>
+		<td><span class="normal">false</span></td>
+		<td class="t_l">
+			<p>切换时是否带透明度效果</p>
+		</td>
+	</tr>
+	<tr>
+		<td><b class="name">delay</b></td>
+		<td><span class="type">number</span></td>
+		<td><span class="normal">200ms</span></td>
+		<td class="t_l">
+			<p>当事件是mouseover时,鼠标经过时的延时时间</p>
+		</td>
+	</tr>
+	<tr>
+		<td><b class="name">operate</b></td>
+		<td><span class="type">function</span></td>
+		<td><span class="normal">function(){}</span></td>
+		<td class="t_l">
+			<p>非异步方式下的回调函数.该函数有一个参数, 是当前项的索引值</p>
+		</td>
+	</tr>
+	<tr>
+		<td><b class="name">async</b></td>
+		<td><span class="type">object</span></td>
+		<td><span class="normal">state: false<br>url: a.php<br>type: get<br>dataType:json<br>data: [ ]<br>error:function<br>success:function</span></td>
+		<td class="t_l">
+			<p>此项是复合参数, 选项卡是否开启ajax调用<br>
+				state&nbsp;&nbsp;是否开启ajax调用, 默认false, 不开启<br>
+				url&nbsp;&nbsp;请求的后台url.多个url以逗号分开, 和tab项一一对应, 当某项无ajax请求时, 为空值.如'" ","a.php","b.php"'代表第一个tab项无ajax请求<br>
+				type&nbsp;&nbsp;请求后台的方式, get | post<br>
+				dataType&nbsp;&nbsp;后台返回的数据格式, json | jsonp | text<br>
+				data&nbsp;&nbsp;附加到url后的参数, 数组格式, 和tab项一一对应, 当某项无参数时, 值为0. 如[0,'a=2','a=3']代表第一个tab项无参数.多个参数以&amp;符分开, 如['a=1&amp;b=2']<br>
+				error&nbsp;&nbsp;请求失败时要执行的函数<br>
+				success&nbsp;&nbsp;请求成功时要执行的函数, 此函数返回2个参数:第一个是当前的数据面板元素, jquery对象;第二个是后台返回的数据
+			</p>
+		</td>
+	</tr>
+</tbody>
+</table>
+</dd>
+<dd class="code-bd">
+<span class="code-desp">返回值</span>
+<div class="return-value"><span class="code-sign">无返回值</span></div>
+</dd>
+<dd class="code-bd">
+<span class="code-note">用法</span>
+<pre class="mt10">
+<code>
+<span class="code-desp">html结构</span>
+&lt;div class=&quot;tab-box&quot;&gt;
+  &lt;div class=&quot;ant-tab&quot;&gt;
+     &lt;ul class=&quot;ant-yahei ant-clearfix&quot;&gt;
+        &lt;li class=&quot;current&quot;&gt;皮肤科&lt;/li&gt;
+        &lt;li&gt;神经内科&lt;/li&gt;
+        &lt;li&gt;神经外科&lt;/li&gt;
+        &lt;li&gt;血液科&lt;/li&gt;
+     &lt;/ul&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;panel&quot;&gt;panel1&lt;/div&gt;
+  &lt;div class=&quot;panel&quot; style=&quot;display:none;&quot;&gt;panel2&lt;/div&gt;
+  &lt;div class=&quot;panel&quot; style=&quot;display:none;&quot;&gt;panel3&lt;/div&gt;
+  &lt;div class=&quot;panel&quot; style=&quot;display:none;&quot;&gt;panel4&lt;/div&gt;
+&lt;/div&gt;
+
+<span class="code-desp">调用方法</span>
+<span class="code-sign">$(</span>'.tab-box'<span class="code-sign">).tab({</span>
+    <span class="code-sign">type:</span>'mouseover',
+    <span class="code-sign">panelClass:</span> 'panel', 
+<span class="code-sign">});</span>
+
+<span class="code-desp">示例</span>
+<a href="example/tab.html" target="_blank" class="code-exp">多种选项卡</a>
+</code>
+</pre>
+</dd>
+</dl>
+<dl class="code-box">
+<dt class="code-hd ant-yahei">焦点图<span class="code-kop code-comp">$('.ant-slide').slide(options)</span></dt>
+<dd class="code-bd">
+<span class="code-desp"><span class="code-kop">options</span>参数列表</span>
+<table class="props_tb ant-yahei">
+<colgroup>
+	<col style="width:130px">
+	<col style="width:100px">
+	<col style="width:70px">
+	<col style="width:370px">
+</colgroup>
+<thead>
+	<tr class="even">
+		<th>参数</th>
+		<th>数据类型</th>
+		<th>默认值</th>
+		<th>参数说明</th>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+		<td><b class="name">animate</b></td>
+		<td><span class="type">boolean</span></td>
+		<td><span class="normal">false</span></td>
+		<td class="t_l">
+			<p>焦点图是否具有动画效果</p>
+		</td>
+	</tr>
+	<tr>
+		<td><b class="name">vertical</b></td>
+		<td><span class="type">boolean</span></td>
+		<td><span class="normal">false</span></td>
+		<td class="t_l">
+			<p>是否可以垂直方向运动。此项当animate为true时, 有效</p>
+		</td>
+	</tr>
+	<tr>
+		<td><b class="name">opacity</b></td>
+		<td><span class="type">boolean</span></td>
+		<td><span class="normal">false</span></td>
+		<td class="t_l">
+			<p>是否具有透明度变化效果, 当此项打开时, animate自动关闭。</p>
+		</td>
+	</tr>
+	<tr>
+		<td><b class="name">prevButton</b></td>
+		<td><span class="type">string</span></td>
+		<td><span class="normal">.prev_button</span></td>
+		<td class="t_l">
+			<p>当焦点图需要带有向前查看按钮时, 向前查看按钮的class或者id</p>
+		</td>
+	</tr>
+	<tr>
+		<td><b class="name">nextButton</b></td>
+		<td><span class="type">string</span></td>
+		<td><span class="normal">.next_button</span></td>
+		<td class="t_l">
+			<p>当焦点图需要带有向后查看按钮时, 向后查看按钮的class或者id</p>
+		</td>
+	</tr>
+	<tr>
+		<td><b class="name">trigger</b></td>
+		<td><span class="type">boolean</span></td>
+		<td><span class="normal">false</span></td>
+		<td class="t_l">
+			<p>是否自动生成手动切换的小图标</p>
+		</td>
+	</tr>
+	<tr>
+		<td><b class="name">triggerClass</b></td>
+		<td><span class="type">string</span></td>
+		<td><span class="normal">current</span></td>
+		<td class="t_l">
+			<p>手动切换小图标的class名字</p>
+		</td>
+	</tr>
+	<tr>
+		<td><b class="name">dataAttr</b></td>
+		<td><span class="type">string</span></td>
+		<td><span class="normal">title</span></td>
+		<td class="t_l">
+			<p>存放图片标题的自定义属性</p>
+		</td>
+	</tr>
+	<tr>
+		<td><b class="name">dataPanel</b></td>
+		<td><span class="type">string</span></td>
+		<td><span class="normal">.text</span></td>
+		<td class="t_l">
+			<p>存放图片标题文字的html容器class, 可以是标准jquery选择符</p>
+		</td>
+	</tr>
+	<tr>
+		<td><b class="name">type</b></td>
+		<td><span class="type">string</span></td>
+		<td><span class="normal">mouseover</span></td>
+		<td class="t_l">
+			<p>手动切换时的鼠标事件</p>
+		</td>
+	</tr>
+	<tr>
+		<td><b class="name">auto</b></td>
+		<td><span class="type">boolean</span></td>
+		<td><span class="normal">true</span></td>
+		<td class="t_l">
+			<p>焦点图是否支持自动播放</p>
+		</td>
+	</tr>
+	<tr>
+		<td><b class="name">speed</b></td>
+		<td><span class="type">number</span></td>
+		<td><span class="normal">300ms</span></td>
+		<td class="t_l">
+			<p>焦点图的动画速度</p>
+		</td>
+	</tr>
+	<tr>
+		<td><b class="name">time</b></td>
+		<td><span class="type">number</span></td>
+		<td><span class="normal">3000ms</span></td>
+		<td class="t_l">
+			<p>图片切换时的间隔时间</p>
+		</td>
+	</tr>
+</tbody>
+</table>
+</dd>
+<dd class="code-bd">
+<span class="code-desp">返回值</span>
+<div class="return-value code-sign">无返回值</div>
+</dd>
+<dd class="code-bd">
+<span class="code-note">用法</span>
+<pre class="mt10">
+<code>
+<span class="code-desp">html结构</span>
+&lt;div class=&quot;ant-slide&quot;&gt;
+  &lt;div class=&quot;ant-slide-pic-wrap&quot;&gt;
+    &lt;ul class=&quot;ant-slide-pic&quot;&gt;
+      &lt;li&gt;&lt;img src=&quot;xxx/1.jpg&quot; width=&quot;600&quot; height=&quot;200&quot; /&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;img src=&quot;xxx/2.jpg&quot; width=&quot;600&quot; height=&quot;200&quot; /&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/div&gt;
+  &lt;ul class=&quot;ant-slide-trigger&quot;&gt;
+   &lt;li class=&quot;current&quot;&gt;&lt;a href=&quot;&quot;&gt;&lt;/a&gt;&lt;/li&gt;
+   &lt;li&gt;&lt;a href=&quot;&quot;&gt;&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;
+
+<span class="code-desp">调用方法</span>
+<span class="code-sign">$(</span>'.ant-slide'<span class="code-sign">).slide({</span>
+   <span class="code-sign">type:</span> 'mouseover', 
+   <span class="code-sign">triggerClass:</span> 'current',
+   <span class="code-sign">animate:</span> true
+<span class="code-sign">})</span>
+
+<span class="code-desp">示例</span>
+<a href="example/slide.html" target="_blank" class="code-exp">多种焦点图效果</a>
+</code>
+</pre>
+</dd>
+</dl>
+<dl class="code-box">
+<dt class="code-hd ant-yahei">图片滚动<span class="code-kop code-comp">$('.ant-photo-scroll').loopScroll(options)</span></dt>
+<dd class="code-bd">
+<span class="code-desp"><span class="code-kop">options</span>参数列表</span>
+<table class="props_tb ant-yahei">
+<colgroup>
+	<col style="width:130px">
+	<col style="width:100px">
+	<col style="width:70px">
+	<col style="width:370px">
+</colgroup>
+<thead>
+	<tr class="even">
+		<th>参数</th>
+		<th>数据类型</th>
+		<th>默认值</th>
+		<th>参数说明</th>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+		<td><b class="name">amount</b></td>
+		<td><span class="type">number</span></td>
+		<td><span class="normal">1</span></td>
+		<td class="t_l">
+			<p>每次的滚动数量</p>
+		</td>
+	</tr>
+	<tr>
+		<td><b class="name">vertical</b></td>
+		<td><span class="type">boolean</span></td>
+		<td><span class="normal">false</span></td>
+		<td class="t_l">
+			<p>是否进行垂直方向滚动</p>
+		</td>
+	</tr>
+	<tr>
+		<td><b class="name">prevButton</b></td>
+		<td><span class="type">string</span></td>
+		<td><span class="normal">.roll_lbtn</span></td>
+		<td class="t_l">
+			<p>当滚动需要带有向前查看按钮时, 向前查看按钮的class或者id</p>
+		</td>
+	</tr>
+	<tr>
+		<td><b class="name">nextButton</b></td>
+		<td><span class="type">string</span></td>
+		<td><span class="normal">.roll_rbtn</span></td>
+		<td class="t_l">
+			<p>当滚动需要带有向后查看按钮时, 向后查看按钮的class或者id</p>
+		</td>
+	</tr>
+	<tr>
+		<td><b class="name">auto</b></td>
+		<td><span class="type">boolean</span></td>
+		<td><span class="normal">false</span></td>
+		<td class="t_l">
+			<p>是否支持自动滚动</p>
+		</td>
+	</tr>
+	<tr>
+		<td><b class="name">speed</b></td>
+		<td><span class="type">number</span></td>
+		<td><span class="normal">300ms</span></td>
+		<td class="t_l">
+			<p>滚动的动画速度</p>
+		</td>
+	</tr>
+	<tr>
+		<td><b class="name">time</b></td>
+		<td><span class="type">number</span></td>
+		<td><span class="normal">3000ms</span></td>
+		<td class="t_l">
+			<p>每次滚动的间隔时间</p>
+		</td>
+	</tr>
+	<tr>
+		<td><b class="name">operate</b></td>
+		<td><span class="type">function</span></td>
+		<td><span class="normal">无</span></td>
+		<td class="t_l">
+			<p>每次滚动时的回调函数, 此回调函数有2个参数，第一个是当前滚动元素的索引值, 第二个是总的滚动次数</p>
+		</td>
+	</tr>
+</tbody>
+</table>
+</dd>
+<dd class="code-bd">
+<span class="code-desp">返回值</span>
+<div class="return-value code-sign">无返回值</div>
+</dd>
+<dd class="code-bd">
+<span class="code-note">用法</span>
+<pre class="mt10">
+<code>
+<span class="code-desp">html结构</span>
+&lt;div class=&quot;ant-photo-scroll&quot;&gt;
+   &lt;div class=&quot;ant-photo-scroll-wrap&quot;&gt;
+      &lt;div class=&quot;ant-photo-scroll-list&quot;&gt;
+          &lt;ul class=&quot;ant-photo-scroll-item&quot;&gt;
+              &lt;li&gt;&lt;a href=&quot;&quot;&gt;&lt;img src=&quot;images/01.jpg&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;&lt;/li&gt;
+              &lt;li&gt;&lt;a href=&quot;&quot;&gt;&lt;img src=&quot;images/02.jpg&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;&lt;/li&gt;
+              &lt;li&gt;&lt;a href=&quot;&quot;&gt;&lt;img src=&quot;images/03.jpg&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;&lt;/li&gt;
+              &lt;li&gt;&lt;a href=&quot;&quot;&gt;&lt;img src=&quot;images/04.jpg&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;&lt;/li&gt;
+              &lt;li&gt;&lt;a href=&quot;&quot;&gt;&lt;img src=&quot;images/05.jpg&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;&lt;/li&gt;
+              &lt;li&gt;&lt;a href=&quot;&quot;&gt;&lt;img src=&quot;images/06.jpg&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;&lt;/li&gt;
+          &lt;/ul&gt;
+       &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;a href=&quot;javascript:;&quot; class=&quot;leftbutton&quot; title=&quot;上一个&quot;&gt;&lt;/a&gt;
+    &lt;a href=&quot;javascript:;&quot; class=&quot;rightbutton&quot; title=&quot;下一个&quot;&gt;&lt;/a&gt;
+&lt;/div&gt;
+
+<span class="code-desp">调用方法</span>
+<span class="code-sign">$(</span>'.ant-photo-scroll'<span class="code-sign">).loopScroll({</span>
+    <span class="code-sign">prevButton:</span> '.leftbutton', 
+    <span class="code-sign">nextButton:</span> '.rightbutton',
+    <span class="code-sign">auto:</span> true,
+    <span class="code-sign">operate:</span> function(curIndex, maxIndex){
+       <span class="code-note">//要执行的代码</span>
+    <span class="code-sign">}</span>
+<span class="code-sign">})</span>
+
+<span class="code-desp">示例</span>
+<a href="example/loopscroll.html" target="_blank" class="code-exp">多种图片滚动效果</a>
+</code>
+</pre>
+</dd>
+</dl>
+<dl class="code-box">
+<dt class="code-hd ant-yahei">文本滚动<span class="code-kop code-comp">$('.ant-text-scroll').textScroll(options)</span></dt>
+<dd class="code-bd">
+<span class="code-desp"><span class="code-kop">options</span>参数列表</span>
+<table class="props_tb ant-yahei">
+	<colgroup>
+		<col style="width:130px">
+		<col style="width:100px">
+		<col style="width:70px">
+		<col style="width:370px">
+	</colgroup>
+	<thead>
+		<tr class="even">
+			<th>参数</th>
+			<th>数据类型</th>
+			<th>默认值</th>
+			<th>参数说明</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td><b class="name">panel</b></td>
+			<td><span class="type">string</span></td>
+			<td><span class="normal">无</span></td>
+			<td class="t_l">
+				<p>需要滚动的第一个html元素, 合法的jquery选择器, 如li:first</p>
+			</td>
+		</tr>
+		<tr>
+			<td><b class="name">vertical</b></td>
+			<td><span class="type">boolean</span></td>
+			<td><span class="normal">true</span></td>
+			<td class="t_l">
+				<p>文本是否垂直滚动</p>
+			</td>
+		</tr>
+		<tr>
+			<td><b class="name">time</b></td>
+			<td><span class="type">number</span></td>
+			<td><span class="normal">3000ms</span></td>
+			<td class="t_l">
+				<p>每次滚动的间隔时间</p>
+			</td>
+		</tr>
+		<tr>
+			<td><b class="name">speed</b></td>
+			<td><span class="type">number</span></td>
+			<td><span class="normal">600ms</span></td>
+			<td class="t_l">
+				<p>滚动速度</p>
+			</td>
+		</tr>
+	</tbody>
+	</table>
+</dd>
+<dd class="code-bd">
+<span class="code-desp">返回值</span>
+<div class="return-value code-sign">无返回值</div>
+</dd>
+<dd class="code-bd">
+<span class="code-note">用法</span>
+<pre class="mt10">
+<code>
+<span class="code-desp">html结构</span>
+&lt;div class=&quot;ant-text-scroll&quot;&gt;
+   &lt;ul class=&quot;ant-text-scroll-list&quot;&gt;
+      &lt;li&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;/li&gt;
+   &lt;/ul&gt;
+&lt;/div&gt;
+
+<span class="code-desp">调用方法</span>
+<span class="code-sign">$(</span>'.ant-text-scroll'<span class="code-sign">).textScroll({</span>
+    <span class="code-sign">vertical:</span> true
+<span class="code-sign">});</span>
+
+<span class="code-desp">示例</span>
+<a href="example/textscroll.html" target="_blank" class="code-exp">文本横向或纵向滚动</a>
+</code>
+</pre>
+</dd>
+</dl>
+<dl class="code-box">
+<dt class="code-hd ant-yahei">图集相册<span class="code-kop code-comp">$('.ant-photos').photoAlbum(options)</span></dt>
+<dd class="code-bd">
+<span class="code-desp"><span class="code-kop">options</span>参数列表</span>
+<table class="props_tb ant-yahei">
+	<colgroup>
+		<col style="width:130px">
+		<col style="width:100px">
+		<col style="width:70px">
+		<col style="width:370px">
+	</colgroup>
+	<thead>
+		<tr class="even">
+			<th>参数</th>
+			<th>数据类型</th>
+			<th>默认值</th>
+			<th>参数说明</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td><b class="name">photoPanel(必须)</b></td>
+			<td><span class="type">string</span></td>
+			<td><span class="normal">.photo-origin</span></td>
+			<td class="t_l">
+				<p>存放大图的容器, 合法的jquery选择器, 如.photo-origin</p>
+			</td>
+		</tr>
+		<tr>
+			<td><b class="name">dataPanel</b></td>
+			<td><span class="type">string</span></td>
+			<td><span class="normal">.photo-info</span></td>
+			<td class="t_l">
+				<p>存放大图描述的容器, 合法的jquery选择器, 如.photo-info</p>
+			</td>
+		</tr>
+		<tr>
+			<td><b class="name">prevButton</b></td>
+			<td><span class="type">array</span></td>
+			<td><span class="normal">['.curPrevBtn','.prevBtn']</span></td>
+			<td class="t_l">
+				<p>向前查看图片的按钮class或者id, 合法的jquery选择器, 这里以数组方式传入</p>
+			</td>
+		</tr>
+		<tr>
+			<td><b class="name">nextButton</b></td>
+			<td><span class="type">array</span></td>
+			<td><span class="normal">['.curNextBtn','.nextBtn']</span></td>
+			<td class="t_l">
+				<p>向后查看图片的按钮class或者id, 合法的jquery选择器, 这里以数组方式传入</p>
+			</td>
+		</tr>
+		<tr>
+			<td><b class="name">animate</b></td>
+			<td><span class="type">object</span></td>
+			<td><span class="normal">opacity: false<br>speed: 400</span></td>
+			<td class="t_l">
+				<p>此项是复合参数, 设置查看图片时是否带动画效果(默认是透明度变化), 包含2个属性.<br>opaicty: 是否打开透明度, 默认false<br>speed: 透明度变化速度(毫秒数), 默认400毫秒</p>
+			</td>
+		</tr>
+		<tr>
+			<td><b class="name">vertical</b></td>
+			<td><span class="type">boolean</span></td>
+			<td><span class="normal">false</span></td>
+			<td class="t_l">
+				<p>缩略图是否在垂直方向展示</p>
+			</td>
+		</tr>
+		<tr>
+			<td><b class="name">holdPage</b></td>
+			<td><span class="type">boolean</span></td>
+			<td><span class="normal">false</span></td>
+			<td class="t_l">
+				<p>刷新页面后, 是否停留在上次查看的图片上。此项通过hash记住当前状态</p>
+			</td>
+		</tr>
+		<tr>
+			<td><b class="name">mouseWheel</b></td>
+			<td><span class="type">boolean</span></td>
+			<td><span class="normal">false</span></td>
+			<td class="t_l">
+				<p>是否开启鼠标滚轮来查看图片</p>
+			</td>
+		</tr>
+		<tr>
+			<td><b class="name">dataAttr(必须)</b></td>
+			<td><span class="type">json</span></td>
+			<td><span class="normal">{"url": "", "data" : ""}</span></td>
+			<td class="t_l">
+				<p>这里以标准json方式存放数据, url存放每张大图的真实地址, data存放每张大图的描述信息</p>
+			</td>
+		</tr>
+		<tr>
+			<td><b class="name">numPanel</b></td>
+			<td><span class="type">string</span></td>
+			<td><span class="normal">.number</span></td>
+			<td class="t_l">
+				<p>存放每张图片序号的容器, 合法jquery选择器, 如.number</p>
+			</td>
+		</tr>
+		<tr>
+			<td><b class="name">totalPanel</b></td>
+			<td><span class="type">string</span></td>
+			<td><span class="normal">.total</span></td>
+			<td class="t_l">
+				<p>存放图片总数的容器, 合法jquery选择器, 如.total</p>
+			</td>
+		</tr>
+		<tr>
+			<td><b class="name">triggerClass</b></td>
+			<td><span class="type">string</span></td>
+			<td><span class="normal">current</span></td>
+			<td class="t_l">
+				<p>处于当前状态下缩略图的class名字</p>
+			</td>
+		</tr>
+		<tr>
+			<td><b class="name">pages</b></td>
+			<td><span class="type">object</span></td>
+			<td><span class="normal">
+			pagePanel:'.photo-page'<br>
+			numTag:'a'<br>
+			triggerClass:'current'
+			</span></td>
+			<td class="t_l">
+				<p>此项是复合参数, 设置图集是否展示全部页码。目的是增强查看图集的快捷性。包含三个参数: pagePanel: 存放页码的容器, 合法的jquery选择器.<br> numTag: 输出每个页码所使用的标签, 默认a标签. <br>triggerClass: 当前页码的class名字。</p>
+			</td>
+		</tr>
+		<tr>
+			<td><b class="name">operate</b></td>
+			<td><span class="type">function</span></td>
+			<td><span class="normal">无</span></td>
+			<td class="t_l">
+				<p>图片浏览时所执行的回调函数, 此函数有2个参数,每一张图片的索引值和图片总数</p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+</dd>
+<dd class="code-bd">
+<span class="code-note">用法</span>
+<pre class="mt10">
+<code>
+<span class="code-desp">html结构</span>
+<span class="code-note">此处展示的是基础结构，复杂的请看示例</span>
+
+&lt;div class=&quot;ant-phtotos&quot;&gt;
+    &lt;span class=&quot;ant-phtotos-origin&quot;&gt;&lt;/span&gt;
+    &lt;a href=&quot;javascript:;&quot; hidefocus=&quot;&quot; class=&quot;ant-phtotos-prev&quot;&gt;&lt;/a&gt;
+    &lt;a href=&quot;javascript:;&quot; hidefocus=&quot;&quot; class=&quot;ant-phtotos-next&quot;&gt;&lt;/a&gt;
+&lt;/div&gt;
+&lt;div class=&quot;ant-phtotos-thumb&quot;&gt;
+   &lt;ul&gt;
+       &lt;li&gt;&lt;img src=&quot;xxx.jpg&quot; /&gt;&lt;/li&gt;
+   &lt;/ul&gt;
+&lt;/div&gt;
+
+<span class="code-desp">调用方法</span>
+<span class="code-sign">$(</span>'.ant-photos'<span class="code-sign">).photoAlbum({</span>
+    <span class="code-sign">prevButton:</span> ['.ant-photos-prev'],
+    <span class="code-sign">nextButton:</span> ['.ant-photos-next'],
+    <span class="code-sign">animate:</span> {opacity: true, speed: 600},
+    <span class="code-sign">holdPage:</span> true,
+    <span class="code-sign">operate:</span> function(index, length){
+      //要执行的代码
+    <span class="code-sign">}</span>
+<span class="code-sign">});</span>
+
+<span class="code-desp">示例</span>
+<a href="example/photo.html" target="_blank" class="code-exp">图集相册效果</a>
+</code>
+</pre>
+</dd>
+</dl>
+
+<dl class="code-box">
+<dt class="code-hd ant-yahei">图片放大镜<span class="code-kop code-comp">$('.ant-piczoom').picZoom(options)</span></dt>
+<dd class="code-bd">
+<span class="code-desp"><span class="code-kop">options</span>参数列表</span>
+<table class="props_tb ant-yahei">
+	<colgroup>
+		<col style="width:130px">
+		<col style="width:100px">
+		<col style="width:70px">
+		<col style="width:370px">
+	</colgroup>
+	<thead>
+		<tr class="even">
+			<th>参数</th>
+			<th>数据类型</th>
+			<th>默认值</th>
+			<th>参数说明</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td><b class="name">smallPanel</b></td>
+			<td><span class="type">string</span></td>
+			<td><span class="normal">.small-panel</span></td>
+			<td class="t_l">
+				<p>存放原图的容器, 合法的jquery选择器, 如.small-Panel</p>
+			</td>
+		</tr>
+		<tr>
+			<td><b class="name">largePanel</b></td>
+			<td><span class="type">string</span></td>
+			<td><span class="normal">.large-panel</span></td>
+			<td class="t_l">
+				<p>存放大图的容器, 合法的jquery选择器, 如.large-panel</p>
+			</td>
+		</tr>
+		<tr>
+			<td><b class="name">thumbPanel</b></td>
+			<td><span class="type">string</span></td>
+			<td><span class="normal">.thumb-panel</span></td>
+			<td class="t_l">
+				<p>存放缩略图的容器, 合法的jquery选择器, 如.thumb-panel</p>
+			</td>
+		</tr>
+		<tr>
+			<td><b class="name">dataAttr</b></td>
+			<td><span class="type">string</span></td>
+			<td><span class="normal">data-url</span></td>
+			<td class="t_l">
+				<p>存放原图和大图的属性名称</p>
+			</td>
+		</tr>
+		<tr>
+			<td><b class="name">ratio</b></td>
+			<td><span class="type">number</span></td>
+			<td><span class="normal">0.5</span></td>
+			<td class="t_l">
+				<p>缩放比例, 即放大镜和小图、大图和其父级容器之间的比例, 取值范围(0, 1)</p>
+			</td>
+		</tr>
+		<tr>
+			<td><b class="name">prevButton</b></td>
+			<td><span class="type">object</span></td>
+			<td><span class="normal">enable: '.prev-btn'<br />disable: '.un-prev-btn'</span></td>
+			<td class="t_l">
+				<p>向前查图片的按钮。包含两个属性: enable, disable。都为标准jquery选择器</p>
+			</td>
+		</tr>
+		<tr>
+			<td><b class="name">nextButton</b></td>
+			<td><span class="type">object</span></td>
+			<td><span class="normal">enable: '.next-btn'<br />disable: '.un-next-btn'</span></td>
+			<td class="t_l">
+				<p>向后查图片的按钮。包含两个属性: enable, disable。都为标准jquery选择器</p>
+			</td>
+		</tr>
+		<tr>
+			<td><b class="name">glassStyle</b></td>
+			<td><span class="type">object</span></td>
+			<td><span class="normal">{ }</span></td>
+			<td class="t_l">
+				<p>放大镜的样式列表, 可以定义多种样式。为标准jquery对象表示法的格式。如{width: 100, height: 100}</p>
+			</td>
+		</tr>
+		<tr>
+			<td><b class="name">triggerClass</b></td>
+			<td><span class="type">string</span></td>
+			<td><span class="normal">current</span></td>
+			<td class="t_l">
+				<p>当前缩略图的class名字</p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+</dd>
+<dd class="code-bd">
+<span class="code-note">用法</span>
+<pre class="mt10">
+<code>
+<span class="code-desp">html结构</span>
+
+&lt;div class=&quot;zoom-box&quot;&gt;
+   &lt;div class=&quot;piczoom&quot;&gt;
+      &lt;img src=&quot;images/xxx.jpg&quot; width=&quot;300&quot; height=&quot;300&quot; alt=&quot;&quot; /&gt;
+   &lt;/div&gt;
+   &lt;div class=&quot;piczoom-list&quot;&gt;
+	  &lt;div class=&quot;piczoom-item&quot;&gt;
+         &lt;ul class=&quot;ant-clearfix&quot;&gt;
+            &lt;li data-url=&quot;images/xxx.jpg|images/xxx.jpg&quot;&gt;&lt;img src=&quot;images/xxx.jpg&quot; /&gt;&lt;/li&gt;
+         &lt;/ul&gt;
+      &lt;/div&gt;
+     &lt;a href=&quot;javascript:;&quot; class=&quot;z-prev-btn&quot;&gt;&lt;/a&gt;
+     &lt;a href=&quot;javascript:;&quot; class=&quot;z-next-btn&quot;&gt;&lt;/a&gt;
+     &lt;span href=&quot;javascript:;&quot; class=&quot;un-z-prev-btn&quot;&gt;&lt;/span&gt;
+     &lt;span href=&quot;javascript:;&quot; class=&quot;un-z-next-btn&quot;&gt;&lt;/span&gt;
+   &lt;/div&gt;
+   &lt;div class=&quot;piczoom-large&quot;&gt;&lt;img src=&quot;images/xxx.jpg&quot; width=&quot;600&quot; height=&quot;600&quot; alt=&quot;&quot; /&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+<span class="code-desp">调用方法</span>
+<span class="code-sign">$(</span>'.ant-piczoom'<span class="code-sign">).picZoom({</span>
+    <span class="code-sign">prevButton:</span> {enable: '.prev-btn', disable: '.un-prev-btn'},
+    <span class="code-sign">nextButton:</span> {enable: '.next-btn', disable: '.un-next-btn'},
+    <span class="code-sign">ratio:</span> 0.5,
+    <span class="code-sign">glassStyle:</span> {position: 'absolute', opacity: 0.5, background: '#fff'}
+<span class="code-sign">});</span>
+
+<span class="code-desp">示例</span>
+<a href="example/piczoom.html" target="_blank" class="code-exp">图片放大镜效果</a>
+</code>
+</pre>
+</dd>
+</dl>
+
+<dl class="code-box">
+<dt class="code-hd ant-yahei">图层拖拽<span class="code-kop code-comp">$('.ant-drag-box').drag(options)</span></dt>
+<dd class="code-bd">
+<span class="code-desp"><span class="code-kop">options</span>参数列表</span>
+<table class="props_tb ant-yahei">
+	<colgroup>
+		<col style="width:130px">
+		<col style="width:100px">
+		<col style="width:70px">
+		<col style="width:370px">
+	</colgroup>
+	<thead>
+		<tr class="even">
+			<th>参数</th>
+			<th>数据类型</th>
+			<th>默认值</th>
+			<th>参数说明</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td><b class="name">parent</b></td>
+			<td><span class="type">boolean</span></td>
+			<td><span class="normal">true</span></td>
+			<td class="t_l">
+				<p>是否可以点击当前层任意位置进行拖动</p>
+			</td>
+		</tr>
+		<tr>
+			<td><b class="name">operate</b></td>
+			<td><span class="type">function</span></td>
+			<td><span class="normal">无</span></td>
+			<td class="t_l">
+				<p>拖动层后, 鼠标放开的时候执行的函数, 此函数可以返回一个含有top和left属性值的对象</p>
+			</td>
+		</tr>
+	</tbody>
+	</table>
+</dd>
+<dd class="code-bd">
+<span class="code-desp">返回值</span>
+<div class="return-value code-sign">返回当前元素容器的相对坐标位置，包含top和left</div>
+</dd>
+<dd class="code-bd">
+<span class="code-note">用法</span>
+<pre class="mt10">
+<code>
+<span class="code-desp">html结构</span>
+&lt;div class=&quot;ant-drag-box&quot;&gt;
+    &lt;div class=&quot;ant-drag-box-hd&quot;&gt;拖拽&lt;/div&gt;
+&lt;/div&gt;
+
+<span class="code-desp">调用方法</span>
+<span class="code-sign">$(</span>'.ant-drag-box'<span class="code-sign">).drag({</span>
+   <span class="code-sign">parent:</span> false,
+   <span class="code-sign">operate:</span> function(position){
+      alert(position.left + position.top);
+   <span class="code-sign">}</span>
+<span class="code-sign">});</span>
+
+<span class="code-desp">示例</span>
+<a href="example/drag.html" target="_blank" class="code-exp">多种拖拽效果</a>
+</code>
+</pre>
+</dd>
+</dl>
+<dl class="code-box">
+<dt class="code-hd ant-yahei">模拟滚动条<span class="code-kop code-comp">$('.ant-scrollbar').scrollBar(options)</span></dt>
+<dd class="code-bd">
+<span class="code-desp"><span class="code-kop">options</span>参数列表</span>
+<table class="props_tb ant-yahei">
+	<colgroup>
+		<col style="width:130px">
+		<col style="width:100px">
+		<col style="width:70px">
+		<col style="width:370px">
+	</colgroup>
+	<thead>
+		<tr class="even">
+			<th>参数</th>
+			<th>数据类型</th>
+			<th>默认值</th>
+			<th>参数说明</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td><b class="name">content</b></td>
+			<td><span class="type">string</span></td>
+			<td><span class="normal">.conBox</span></td>
+			<td class="t_l">
+				<p>滚动内容区的class或者id, 标准jquery选择器</p>
+			</td>
+		</tr>
+		<tr>
+			<td><b class="name">bar</b></td>
+			<td><span class="type">string</span></td>
+			<td><span class="normal">.bar</span></td>
+			<td class="t_l">
+				<p>滚动条的class或者id, 标准jquery选择器</p>
+			</td>
+		</tr>
+		<tr>
+			<td><b class="name">prevButton</b></td>
+			<td><span class="type">string</span></td>
+			<td><span class="normal">.prebtn</span></td>
+			<td class="t_l">
+				<p>向上或者向左滚动的按钮class或者id, 标准jquery选择器</p>
+			</td>
+		</tr>
+		<tr>
+			<td><b class="name">nextButton</b></td>
+			<td><span class="type">string</span></td>
+			<td><span class="normal">.nextbtn</span></td>
+			<td class="t_l">
+				<p>向下或者向右滚动的按钮class或者id, 标准jquery选择器</p>
+			</td>
+		</tr>
+		<tr>
+			<td><b class="name">vertical</b></td>
+			<td><span class="type">boolean</span></td>
+			<td><span class="normal">true</span></td>
+			<td class="t_l">
+				<p>是否垂直方向滚动</p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+</dd>
+<dd class="code-bd">
+<span class="code-desp">返回值</span>
+<div class="return-value code-sign">无返回值</div>
+</dd>
+<dd class="code-bd">
+<span class="code-note">用法</span>
+<pre class="mt10">
+<code>
+<span class="code-desp">html结构</span>
+&lt;div class=&quot;ant-scrollbar&quot;&gt;
+   &lt;div class=&quot;wraper&quot;&gt;
+      &lt;div class=&quot;content&quot;&gt;
+          &lt;p&gt;内容&lt;/p&gt;
+      &lt;/div&gt;
+   &lt;/div&gt;
+   &lt;div class=&quot;scrollwrap&quot;&gt;
+       &lt;div class=&quot;pre&quot;&gt;&lt;/div&gt;
+       &lt;div class=&quot;barwrap&quot;&gt;
+         &lt;div class=&quot;bar&quot;&gt;&lt;/div&gt;
+       &lt;/div&gt;
+       &lt;div class=&quot;next&quot;&gt;&lt;/div&gt;
+   &lt;/div&gt;
+&lt;/div&gt;
+
+<span class="code-desp">调用方法</span>
+<span class="code-sign">$(</span>'.ant-scrollbar'<span class="code-sign">).scrollBar({</span>
+   <span class="code-sign">content:</span> '.content',
+   <span class="code-sign">bar:</span> '.bar',
+   <span class="code-sign">prevButton:</span> '.pre',
+   <span class="code-sign">nextButton:</span> '.next'
+<span class="code-sign">});</span>
+
+<span class="code-desp">示例</span>
+<a href="example/scrollbar.html" target="_blank" class="code-exp">多种自定义滚动条效果</a>
+</code>
+</pre>
+</dd>
+</dl>
+<dl class="code-box">
+<dt class="code-hd ant-yahei">回顶部或底部<span class="code-kop code-comp">$('.ant-place').toPlace(place, options)</span></dt>
+<dd class="code-bd">
+<span class="code-desp">参数列表</span>
+<table class="props_tb ant-yahei">
+	<colgroup>
+		<col style="width:130px">
+		<col style="width:100px">
+		<col style="width:70px">
+		<col style="width:370px">
+	</colgroup>
+	<thead>
+		<tr class="even">
+			<th>参数</th>
+			<th>数据类型</th>
+			<th>默认值</th>
+			<th>参数说明</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td><b class="name">place(必选)</b></td>
+			<td><span class="type">string</span></td>
+			<td><span class="normal">无</span></td>
+			<td class="t_l">
+				<p>手动指定的到达位置值, top或者bottom</p>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="4"><span class="code-kop">options</span>参数</td>
+		</tr>
+		<tr>
+			<td><b class="name">top</b></td>
+			<td><span class="type">number</span></td>
+			<td><span class="normal">100</span></td>
+			<td class="t_l">
+				<p>滚动条距离顶部多少时, 开始出现返回顶部按钮</p>
+			</td>
+		</tr>
+		<tr>
+			<td><b class="name">bottom</b></td>
+			<td><span class="type">number</span></td>
+			<td><span class="normal">100</span></td>
+			<td class="t_l">
+				<p>滚动条距离底部多少时, 开始出现返回底部按钮</p>
+			</td>
+		</tr>
+		<tr>
+			<td><b class="name">animate</b></td>
+			<td><span class="type">boolean</span></td>
+			<td><span class="normal">false</span></td>
+			<td class="t_l">
+				<p>到达指定位置过程中, 是否具有动画效果</p>
+			</td>
+		</tr>
+		<tr>
+			<td><b class="name">speed</b></td>
+			<td><span class="type">number</span></td>
+			<td><span class="normal">0ms</span></td>
+			<td class="t_l">
+				<p>到达顶部或者底部的速度</p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+</dd>
+<dd class="code-bd">
+<span class="code-desp">返回值</span>
+<div class="return-value code-sign">无返回值</div>
+</dd>
+<dd class="code-bd">
+<span class="code-note">用法</span>
+<pre class="mt10">
+<code>
+<span class="code-desp">html结构</span>
+&lt;div class=&quot;ant-place&quot;&gt;&lt;/div&gt;
+
+<span class="code-desp">调用方法</span>
+<span class="code-sign">$(</span>'.ant-place'<span class="code-sign">).toPlace(</span>'top', <span class="code-sign">{</span>
+    <span class="code-sign">animate:</span> true,
+    <span class="code-sign">speed:</span> 200
+<span class="code-sign">});</span>
+
+<span class="code-desp">示例</span>
+<a href="example/toplace.html" target="_blank" class="code-exp">返回顶部或底部</a>
+</code>
+</pre>
+</dd>
+</dl>
+<dl class="code-box">
+<dt class="code-hd ant-yahei">滚动监听<span class="code-kop code-comp">$('.ant-monitor-content').monitor(target, options)</span></dt>
+<dd class="code-bd">
+<span class="code-desp">参数列表</span>
+<table class="props_tb ant-yahei">
+	<colgroup>
+		<col style="width:130px">
+		<col style="width:100px">
+		<col style="width:70px">
+		<col style="width:370px">
+	</colgroup>
+	<thead>
+		<tr class="even">
+			<th>参数</th>
+			<th>数据类型</th>
+			<th>默认值</th>
+			<th>参数说明</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td><b class="name">target(必须)</b></td>
+			<td><span class="type">string</span></td>
+			<td><span class="normal">无</span></td>
+			<td class="t_l">
+				<p>监听每个内容区的开始位置元素, 标准jquery选择器</p>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="4"><span class="code-kop">options</span>参数</td>
+		</tr>
+		<tr>
+			<td><b class="name">dirWrap</b></td>
+			<td><span class="type">string</span></td>
+			<td><span class="normal">.catalog</span></td>
+			<td class="t_l">
+				<p>监听浮动列表项的父容器, 标准jquery选择器</p>
+			</td>
+		</tr>
+		<tr>
+			<td><b class="name">listWrap</b></td>
+			<td><span class="type">string</span></td>
+			<td><span class="normal">li</span></td>
+			<td class="t_l">
+				<p>监听浮动列表项, 标准jquery选择器</p>
+			</td>
+		</tr>
+		<tr>
+			<td><b class="name">triggerClass</b></td>
+			<td><span class="type">string</span></td>
+			<td><span class="normal">current</span></td>
+			<td class="t_l">
+				<p>当前点击目录的class名字</p>
+			</td>
+		</tr>
+		<tr>
+			<td><b class="name">speed</b></td>
+			<td><span class="type">number</span></td>
+			<td><span class="normal">400ms</span></td>
+			<td class="t_l">
+				<p>滚动到指定位置时的速度</p>
+			</td>
+		</tr>
+		<tr>
+			<td><b class="name">disTop</b></td>
+			<td><span class="type">object</span></td>
+			<td><span class="normal">0, 9999</span></td>
+			<td class="t_l">
+				<p>距离顶部多少距离时, 隐藏快速导航目录, 包含两个属性: <br>minTop: 0(默认), maxTop: 9999(默认)</p>
+			</td>
+		</tr>
+		<tr>
+			<td><b class="name">topDiff</b></td>
+			<td><span class="type">number</span></td>
+			<td><span class="normal">0</span></td>
+			<td class="t_l">
+				<p>顶部差距, 默认为0. 当浏览器顶部有跟随的浮动层时, 请指定此项的值。</p>
+			</td>
+		</tr>
+		<tr>
+			<td><b class="name">opacity</b></td>
+			<td><span class="type">boolean</span></td>
+			<td><span class="normal">false</span></td>
+			<td class="t_l">
+				<p>快速导航目录显示时, 是否具有透明度效果</p>
+			</td>
+		</tr>
+		<tr>
+			<td><b class="name">animate</b></td>
+			<td><span class="type">boolean</span></td>
+			<td><span class="normal">true</span></td>
+			<td class="t_l">
+				<p>滚动到指定位置时, 是否具有动画效果</p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+</dd>
+<dd class="code-bd">
+<span class="code-note">用法</span>
+<pre class="mt10">
+<code>
+<span class="code-desp">html结构</span>
+&lt;div class=&quot;ant-monitor-content&quot;&gt;
+    &lt;h2&gt;&lt;/h2&gt;
+&lt;/div&gt;
+&lt;div class=&quot;side&quot;&gt;
+   &lt;ul class=&quot;catalog&quot;&gt;
+       &lt;li&gt;&lt;/li&gt;
+   &lt;/ul&gt;
+&lt;/div&gt;
+
+<span class="code-desp">调用方法</span>
+<span class="code-sign">$(</span>'.ant-monitor-content'<span class="code-sign">).monitor(</span>'h2', <span class="code-sign">{</span>
+   <span class="code-sign">dirWrap:</span> '.catalog',
+   <span class="code-sign">disTop:</span> {minTop: 200, maxTop: 1000}
+<span class="code-sign">});</span>
+
+<span class="code-desp">示例</span>
+<a href="example/monitor.html" target="_blank" class="code-exp">滚动监听效果</a>
+</code>
+</pre>
+</dd>
+</dl>
+<dl class="code-box">
+<dt class="code-hd ant-yahei">自动完成<span class="code-kop code-comp">$('.ant-smartshow').smartShow(options)</span></dt>
+<dd class="code-bd">
+<span class="code-desp"><span class="code-kop">options</span>参数列表</span>
+<table class="props_tb ant-yahei">
+	<colgroup>
+		<col style="width:130px">
+		<col style="width:100px">
+		<col style="width:70px">
+		<col style="width:370px">
+	</colgroup>
+	<thead>
+		<tr class="even">
+			<th>参数</th>
+			<th>数据类型</th>
+			<th>默认值</th>
+			<th>参数说明</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td><b class="name">url</b></td>
+			<td><span class="type">string</span></td>
+			<td><span class="normal">无</span></td>
+			<td class="t_l">
+				<p>请求的后端页面地址</p>
+			</td>
+		</tr>
+		<tr>
+			<td><b class="name">param</b></td>
+			<td><span class="type">string</span></td>
+			<td><span class="normal">key</span></td>
+			<td class="t_l">
+				<p>后台接受保存数据的参数, 如keyword=高血压, 其中keyword就是param</p>
+			</td>
+		</tr>
+		<tr>
+			<td><b class="name">panel</b></td>
+			<td><span class="type">string</span></td>
+			<td><span class="normal">无</span></td>
+			<td class="t_l">
+				<p>提示数据的元素class, id等, jquery标准选择器</p>
+			</td>
+		</tr>
+		<tr>
+			<td><b class="name">dataWrap</b></td>
+			<td><span class="type">string</span></td>
+			<td><span class="normal">li</span></td>
+			<td class="t_l">
+				<p>包裹提示数据的容器标签名</p>
+			</td>
+		</tr>
+		<tr>
+			<td><b class="name">dataType</b></td>
+			<td><span class="type">string</span></td>
+			<td><span class="normal">json</span></td>
+			<td class="t_l">
+				<p>后台返回的数据类型, json或jsonp</p>
+			</td>
+		</tr>
+		<tr>
+			<td><b class="name">wrapClass</b></td>
+			<td><span class="type">string</span></td>
+			<td><span class="normal">current</span></td>
+			<td class="t_l">
+				<p>包裹提示数据的容器标签class名字</p>
+			</td>
+		</tr>
+		<tr>
+			<td><b class="name">success</b></td>
+			<td><span class="type">function</span></td>
+			<td><span class="normal">无</span></td>
+			<td class="t_l">
+				<p>请求成功返回数据后执行的函数, 通常在这里执行数据插入操作</p>
+			</td>
+		</tr>
+		<tr>
+			<td><b class="name">operate</b></td>
+			<td><span class="type">function</span></td>
+			<td><span class="normal">无</span></td>
+			<td class="t_l">
+				<p>执行相关功能的回调函数</p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+</dd>
+<dd class="code-bd">
+<span class="code-desp">返回值</span>
+<div class="return-value code-sign">无返回值</div>
+</dd>
+<dd class="code-bd">
+<span class="code-note">用法</span>
+<pre class="mt10">
+<code>
+<span class="code-desp">html结构</span>
+&lt;input class=&quot;ant-input-text&quot; name=&quot;keyword&quot; type=&quot;text&quot; value=&quot;&quot; autocomplete=&quot;off&quot; /&gt;
+&lt;ul class=&quot;smart_box&quot;&gt;
+&lt;/ul&gt;
+
+<span class="code-desp">调用方法</span>
+<span class="code-sign">$(</span>'.ant-input-text'<span class="code-sign">).smartShow({</span>
+   <span class="code-sign">url:</span> 'http://so.xywy.com/ajax/suggest.php',
+   <span class="code-sign">param:</span> 'keyword',
+   <span class="code-sign">panel:</span> '.smart_box',
+   <span class="code-sign">dataType:</span> 'jsonp',
+   <span class="code-sign">success:</span> function(data){
+      <span class="code-note">//执行数据插入</span>
+   }
+<span class="code-sign">});</span>
+
+<span class="code-desp">示例</span>
+<a href="example/smartshow.html" target="_blank" class="code-exp">自动完成效果</a>
+</code>
+</pre>
+</dd>
+</dl>
+<dl class="code-box">
+<dt class="code-hd ant-yahei">文本框默认文字<span class="code-kop code-comp">$('.ant-input-text').checkValue(options)</span></dt>
+<dd class="code-bd">
+<span class="code-desp"><span class="code-kop">options</span>参数列表</span>
+<table class="props_tb ant-yahei">
+	<colgroup>
+		<col style="width:130px">
+		<col style="width:100px">
+		<col style="width:70px">
+		<col style="width:370px">
+	</colgroup>
+	<thead>
+		<tr class="even">
+			<th>参数</th>
+			<th>数据类型</th>
+			<th>默认值</th>
+			<th>参数说明</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td><b class="name">defaultValue</b></td>
+			<td><span class="type">Array</span></td>
+			<td><span class="normal">[ ]</span></td>
+			<td class="t_l">
+				<p>此参数可以设置文本框的默认值, 数组形式, 如['请输入用户名', '请输入年龄']</p>
+			</td>
+		</tr>
+		<tr>
+			<td><b class="name">focusCss</b></td>
+			<td><span class="type">object</span></td>
+			<td><span class="normal">{ }</span></td>
+			<td class="t_l">
+				<p>此参数是复合类型.可以对获取焦点的文本框进行样式设置.写法完全遵循css对象表示法.如:<br>focusCss: {color: '#666'}</p>
+			</td>
+		</tr>
+		<tr>
+			<td><b class="name">blurCss</b></td>
+			<td><span class="type">object</span></td>
+			<td><span class="normal">{ }</span></td>
+			<td class="t_l">
+				<p>此参数是复合类型.可以对失去焦点的文本框进行样式设置.写法完全遵循css对象表示法.如:<br>blurCss: {color: '#999'}</p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+</dd>
+<dd class="code-bd">
+<span class="code-desp">返回值</span>
+<div class="return-value code-sign">无返回值</div>
+</dd>
+<dd class="code-bd">
+<span class="code-note">用法</span>
+<pre class="mt10">
+<code>
+<span class="code-desp">html结构</span>
+&lt;input type=&quot;text&quot; value=&quot;请输入用户名&quot; /&gt;
+
+<span class="code-desp">调用方法</span>
+<span class="code-sign">$(</span>'input'<span class="code-sign">).checkValue({</span>
+   <span class="code-sign">defaultValue:</span> ['请输入用户名'],
+   <span class="code-sign">focusCss:</span> {
+      <span class="code-sign">borderColor:</span> '#ff6600',
+      <span class="code-sign">color:</span> '#333',
+      <span class="code-sign">width:</span> function(){
+        $(this).animate({width: 300}, 200);
+     }
+ <span class="code-sign">},</span>
+  <span class="code-sign">blurCss: {</span>
+     <span class="code-sign">borderColor:</span> '#999',
+     <span class="code-sign">color:</span> '#999',
+     <span class="code-sign">width:</span> function(){
+      $(this).animate({width: 200}, 200);
+    }
+  <span class="code-sign">}</span>
+<span class="code-sign">});</span>
+
+<span class="code-desp">示例</span>
+<a href="example/checkvalue.html" target="_blank" class="code-exp">文本框默认值效果</a>
+</code>
+</pre>
+</dd>
+</dl>
+<dl class="code-box">
+<dt class="code-hd ant-yahei">自定义弹出层<span class="code-kop code-comp">$('ant-dialog').dialog(options)</span></dt>
+<dd class="code-bd">
+<span class="code-desp"><span class="code-kop">options</span>参数列表</span>
+<table class="props_tb ant-yahei">
+	<colgroup>
+		<col style="width:130px">
+		<col style="width:100px">
+		<col style="width:70px">
+		<col style="width:370px">
+	</colgroup>
+	<thead>
+		<tr class="even">
+			<th>参数</th>
+			<th>数据类型</th>
+			<th>默认值</th>
+			<th>参数说明</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td><b class="name">container</b></td>
+			<td><span class="type">string</span></td>
+			<td><span class="normal">.dialog-bd</span></td>
+			<td class="t_l">
+				<p>对话框内容容器的class或者id, jquery选择器</p>
+			</td>
+		</tr>
+		<tr>
+			<td><b class="name">content</b></td>
+			<td><span class="type">string</span></td>
+			<td><span class="normal">hello world !</span></td>
+			<td class="t_l">
+				<p>对话框内容</p>
+			</td>
+		</tr>
+		<tr>
+			<td><b class="name">close</b></td>
+			<td><span class="type">string</span></td>
+			<td><span class="normal">.dialog-close</span></td>
+			<td class="t_l">
+				<p>对话框关闭按钮的class或者id, jquery选择器</p>
+			</td>
+		</tr>
+		<tr>
+			<td><b class="name">confirm</b></td>
+			<td><span class="type">string</span></td>
+			<td><span class="normal">.dialog-confirm</span></td>
+			<td class="t_l">
+				<p>对话框确认按钮的class或者id, jquery选择器</p>
+			</td>
+		</tr>
+		<tr>
+			<td><b class="name">cancel</b></td>
+			<td><span class="type">string</span></td>
+			<td><span class="normal">.dialog-cancel</span></td>
+			<td class="t_l">
+				<p>对话框取消按钮的class或者id, jquery选择器</p>
+			</td>
+		</tr>
+		<tr>
+			<td><b class="name">operate</b></td>
+			<td><span class="type">function</span></td>
+			<td><span class="normal">无</span></td>
+			<td class="t_l">
+				<p>点击确定按钮触发的回调函数, 此函数有一个参数, 即遮罩层的id</p>
+			</td>
+		</tr>
+		<tr>
+			<td><b class="name">animate</b></td>
+			<td><span class="type">boolean</span></td>
+			<td><span class="normal">false</span></td>
+			<td class="t_l">
+				<p>是否支持动画</p>
+			</td>
+		</tr>
+		<tr>
+			<td><b class="name">mask</b></td>
+			<td><span class="type">boolean</span></td>
+			<td><span class="normal">true</span></td>
+			<td class="t_l">
+				<p>是否带有遮罩层</p>
+			</td>
+		</tr>
+		<tr>
+			<td><b class="name">opacity</b></td>
+			<td><span class="type">number</span></td>
+			<td><span class="normal">0.1</span></td>
+			<td class="t_l">
+				<p>设置遮罩层的透明度</p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+</dd>
+<dd class="code-bd">
+<span class="code-note">用法</span>
+<pre class="mt10">
+<code>
+<span class="code-desp">html结构</span>
+&lt;div class=&quot;ant-dialog&quot;&gt;
+    &lt;div class=&quot;ant-dialog-hd&quot;&gt;&lt;a href=&quot;javascript:;&quot; class=&quot;ant-dialog-close&quot;&gt;关闭&lt;/a&gt;&lt;/div&gt;
+    &lt;div class=&quot;ant-dialog-bd&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;ant-dialog-extra&quot;&gt;
+        &lt;a href=&quot;javascript:;&quot; class=&quot;ant-dialog-cancel&quot;&gt;取消&lt;/a&gt;
+        &lt;a href=&quot;javascript:;&quot; class=&quot;ant-dialog-confirm&quot;&gt;确定&lt;/a&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+<span class="code-desp">调用方法</span>
+<span class="code-sign">$(</span>'.ant-dialog'<span class="code-sign">).dialog({</span>
+   <span class="code-sign">title:</span> '对话框',
+   <span class="code-sign">container:</span> '.ant-dialog-bd',
+   <span class="code-sign">content:</span> 'hello world!',
+   <span class="code-sign">close:</span> '.ant-dialog-close',
+   <span class="code-sign">cancel:</span> '.ant-dialog-cancel',
+   <span class="code-sign">confirm:</span> '.ant-dialog-confirm',
+   <span class="code-sign">animate:</span> false
+<span class="code-sign">});
+
+<span class="code-desp">示例</span>
+<a href="example/dialog.html" target="_blank" class="code-exp">自定义弹出层效果</a>
+</code>
+</pre>
+</dd>
+</dl>
+</div>
+</div>
+<div class="doc-footer ant-yahei"><p>Ant UI归寻医问药网所有</p>Power by haitao &copy;2014</div>
+</div>
+<div class="ant-toplace" style="bottom:30px;">
+<span class="ant-gotop"></span>
+</div>
+<div class="doc-dir-nav ant-yahei ant-s14">
+<dl class="doc-helper">
+	<dt>快速导航</dt>
+	<dd><a target="_blank" href="index.html">UI规范</a></dd>
+	<dd><a target="_blank" href="ant_widget.html">UI组件</a></dd>
+	<dd class="current"><a target="_blank" href="js_doc.html">JS组件</a></dd>
+	<dd><a target="_blank" href="standard.html">前端规范</a></dd>
+</dl>
+</div>
+<script type="text/javascript" src="http://static.wkimg.com/common/lib/jquery/1.8.3/jquery.min.js"></script>
+<script type="text/javascript" src="http://static.wkimg.com/common/lib/widget/2.0.1/ant-widget.js"></script>
+<script type="text/javascript" src="js/doc.js"></script>
+<script type="text/javascript">
+$(function(){
+    var checkOnes = $('.ant-check');
+
+    checkOnes.bind('click', function(){
+      if($(this).hasClass('ant-checked-one')){
+         return false;
+      }
+	  
+    $(this).removeClass('ant-check-one').addClass('ant-checked-one')
+    .siblings('.ant-check').addClass('ant-check-one')
+    .removeClass('ant-checked-one');
+    $(this).attr('data-checked', 'true');
+  });
+})
+$(function(){
+	var checkOnes = $('.checkbox');
+	checkOnes.bind('click', function(){
+		 if($(this).hasClass('ant-check-more')){
+			$(this).removeClass('ant-check-more').addClass('ant-checked-more');
+			$(this).attr('data-checked', 'true');
+		 }else{
+			$(this).addClass('ant-check-more').removeClass('ant-checked-more');
+			$(this).attr('data-checked', 'false');
+		 }
+	});
+})
+$(function(){
+    var selects = $('.ant-select');
+    selects.bind('click', function(e){
+        var target = $(e.target),
+            textNode = $(this).find('em'),
+            item = $(this).find('.ant-select-item');
+         
+        item.bind({
+            timer: null,
+            mouseenter: function(){
+                clearTimeout(this.timer);
+                $(this).show();
+            },
+            mouseleave: function(){
+                var self = $(this);
+                clearTimeout(this.timer);
+                this.timer = setTimeout(function(){
+                    self.hide();
+                }, 500);
+            }
+        });
+         if(!$.isEmptyObject(target.closest('.ant-selected-text')[0])){
+            item.show();
+         }else{
+            textNode.html(target.html());
+            item.hide();
+         }
+         
+    });
+})
+$(function(){
+    var selects = $('.ant-search-bar-dropcon');
+    selects.bind('click', function(e){
+        var target = $(e.target),
+            textNode = $(this).find('.ant-search-bar-dropin'),
+            item = $(this).find('.ant-search-bar-droplist');
+         
+        item.bind({
+            timer: null,
+            mouseenter: function(){
+                clearTimeout(this.timer);
+                $(this).show();
+            },
+            mouseleave: function(){
+                var self = $(this);
+                clearTimeout(this.timer);
+                this.timer = setTimeout(function(){
+                    self.hide();
+                }, 500);
+            }
+        });
+         if(target.hasClass('ant-search-bar-dropcon') 
+         || !$.isEmptyObject(target.parent('.ant-search-bar-dropcon')[0])){
+            item.show();
+         }else{
+            textNode.html(target.html());
+            item.hide();
+         }
+         
+    });
+})
+$(function(){
+    $('.ant-slide').each(function(key, value){
+        if(!key){
+            $(this).slide({
+                trigger: '.ant-slide-trigger',
+                animate: true
+            });
+        }else{
+            $(this).slide({
+                trigger: '.ant-slide-trigger',
+                animate: true,
+                time: 4000,
+                prevButton: '.ant-slide-prev-btn',
+                nextButton: '.ant-slide-next-btn'
+            });
+        }
+    });
+})
+$(function(){
+    $('.tab-box').each(function(key, value){
+        if(!key){
+            $(this).tab();
+        }else{
+            $(this).tab({
+                slideTab: {
+                    sliding: true,
+                    trigger: '.ant-sliding'
+                }
+            });
+        }
+    });
+})
+</script>
+</body>
+</html>

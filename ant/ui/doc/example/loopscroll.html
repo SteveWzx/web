@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>图片滚动</title>
+<link rel="stylesheet" type="text/css" href="http://static.wkimg.com/common/ui/base/ant-base.css" />
+<link rel="stylesheet" type="text/css" href="../css/example.css" />
+<script type="text/javascript" src="http://static.wkimg.com/common/lib/jquery/1.8.3/jquery.min.js"></script>
+<script type="text/javascript" src="http://static.wkimg.com/common/lib/widget/2.0.1/ant-widget.js"></script>
+</head>
+<body>
+<div class="ant-grid-1000 ant-bc">
+    <div id="scroll_list1" class="ant-s16 ant-yahei pt10 ant-pb10">默认方式的图片滚动</div>
+    <div class="scroll-box">
+        <div class="scroll-wrap">
+            <div class="scroll-list scroll-list1">
+                <ul class="scroll-item">
+                    <li><a href=""><img src="../images/01.jpg" alt="" /></a></li>
+                    <li><a href=""><img src="../images/02.jpg" alt="" /></a></li>
+                    <li><a href=""><img src="../images/03.jpg" alt="" /></a></li>
+                    <li><a href=""><img src="../images/04.jpg" alt="" /></a></li>
+                    <li><a href=""><img src="../images/05.jpg" alt="" /></a></li>
+                    <li><a href=""><img src="../images/06.jpg" alt="" /></a></li>
+                </ul>
+            </div>
+        </div>
+        <a href="javascript:;" class="leftbutton leftbutton1" title="上一个"></a>
+        <a href="javascript:;" class="rightbutton rightbutton1" title="下一个"></a>
+    </div>
+    <script type="text/javascript">
+        $('.scroll-list1').loopScroll({
+            prevButton: '.leftbutton1',
+            nextButton: '.rightbutton1',
+            auto: true
+        });
+    </script>
+    <br />
+    <br />
+	<div id="scroll_list2" class="ant-s16 ant-yahei ant-pb10">垂直方向滚动的图片</div>
+    <div class="scroll-box2">
+        <div class="scroll-wrap2">
+            <div class="scroll-list2">
+                <ul class="scroll-item2">
+                    <li><a href=""><img src="../images/01.jpg" alt="" /></a></li>
+                    <li><a href=""><img src="../images/02.jpg" alt="" /></a></li>
+                    <li><a href=""><img src="../images/03.jpg" alt="" /></a></li>
+                    <li><a href=""><img src="../images/04.jpg" alt="" /></a></li>
+                    <li><a href=""><img src="../images/05.jpg" alt="" /></a></li>
+                    <li><a href=""><img src="../images/06.jpg" alt="" /></a></li>
+                </ul>
+            </div>
+        </div>
+        <a href="javascript:;" class="leftbutton2" title="上一个"></a>
+        <a href="javascript:;" class="rightbutton2" title="下一个"></a>
+    </div>
+    <script type="text/javascript">
+        $('.scroll-list2').loopScroll({
+            prevButton: '.leftbutton2',
+            nextButton: '.rightbutton2',
+            vertical: true,
+            auto: true
+        });
+    </script>
+</div>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>自定义对话框</title>
+<link rel="stylesheet" type="text/css" href="http://static.wkimg.com/common/ui/base/ant-base.css" />
+<link rel="stylesheet" type="text/css" href="../css/example.css" />
+<script type="text/javascript" src="http://static.wkimg.com/common/lib/jquery/1.8.3/jquery.min.js"></script>
+<script type="text/javascript" src="http://static.wkimg.com/common/lib/widget/2.0.1/ant-widget.js"></script>
+<script type="text/javascript">
+$(function(){
+  $('.ant-popover').dialog({
+        title: '对话框',
+        container: '.ant-popover-bd',
+        content: 'hello world!',
+        close: '.ant-popover-close',
+		cancel: '.ant-btn-main-blue',
+		confirm: '.ant-btn-main-gray',
+        animate: true
+    });
+})
+</script>
+</head>
+<body>
+<div class="ant-popover" style="display:none;">
+  <div class="ant-popover-hd">
+    <span class="ant-popover-tip">提示信息</span>
+    <a href="javascript:;" class="ant-popover-close">关闭</a>
+  </div>
+  <div class="ant-popover-bd">hello world!</div>
+  <div class="ant-popover-extra">
+    <a href="javascript:;" class="ant-btn ant-btn-main-blue">确定</a>
+    <a href="javascript:;" class="ant-btn ant-btn-main-gray">取消</a>
+  </div>
+</div>
+</body>
+</html>

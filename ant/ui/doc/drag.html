@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>拖拽</title>
+<link rel="stylesheet" type="text/css" href="css.css" />
+<style type="text/css">
+.wrapper{position:relative;margin:20px auto;width:500px;height:500px;border:1px solid #ddd;}
+textarea{margin-top:440px;}
+.box2{position:absolute;top:0;left:0;z-index:10;width:250px;height:150px;color:#333;font-size:12px;border:1px solid #ccc;border-radius:5px;box-shadow:1px 2px 2px 1px rgba(0, 0, 0, 0.1);background-color:#fff;}
+.box2_hd{height:30px;line-height:30px;text-indent:1em;border-bottom:1px solid #ddd;cursor:move;}
+</style>
+<script type="text/javascript" src="http://static.wkimg.com/common/lib/jquery.min.js"></script>
+<script type="text/javascript" src="http://static.wkimg.com/common/lib/jquery-xywy-plus.js"></script>
+</head>
+<body>
+<div class="wrap"><div id="drag" class="title box_hd" style="text-align:center;">拖拽效果</div></div>
+<div class="box1 box2">
+	<div class="box2_hd">相对文档</div>
+</div>
+<div class="wrapper">
+    <div class="box2 box3">
+        <div class="box2_hd">相对父级</div>
+    </div>
+    <textarea class="text2" cols="30" rows="2"></textarea>
+</div>
+<script type="text/javascript">
+    $('.box3').drag({
+        parent: true,
+        operate: function(pos){
+            var top = pos.top,
+                left = pos.left,
+                position = 'x=' + left + ', y=' + top;
+                
+            $('.text2').val(position);
+       }
+    });
+	$('.box1').drag({
+        parent: true,
+        operate: function(pos){
+            var top = pos.top,
+                left = pos.left,
+                position = 'x=' + left + ', y=' + top;
+                
+            $('.text2').val(position);
+       }
+    });
+</script>
+</body>
+</html>

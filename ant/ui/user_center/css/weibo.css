@@ -1,0 +1,18 @@
+/* CSS Document */
+.bj{ background:#f7fcff; padding-bottom:60px;}
+.weibo_text p{ font-size:18px; color:#666; font-family:\5FAE\8F6F\96C5\9ED1; padding-top:49px;}
+.weibo_text span{ font-size:14px; color:#666; margin-top:7px; display:block;}
+.weibo_left{margin-left:40px; width:460px; margin-top:20px;}
+.weibo_tj label{ font-size:14px; color:#666; width:70px; text-align:right; float:left; line-height:27px; margin-right:10px;}
+.weibo_tj input{ width:216px; height:25px; background:url(http://img.xywy.com/user_center/images/img1.jpg) no-repeat; border:1px solid #d5d6d6; float:left;}
+.weibo_xq{ line-height:27px; margin-left:10px; float:left; color:#999; font-size:12px;}
+.weibo_agree{font-size:12px; color:#999; margin-left:66px; padding-top:43px;}
+.weibo_agree input{ margin:5px; }
+.weibo_left button{ background:url(http://img.xywy.com/user_center/images/img2.jpg) no-repeat; width:160px; height:39px; border:0; margin-top:44px; margin-left:69px;}
+.weibo_zj{ padding-top:19px; margin-left:80px;}
+.weibo_rightext{ margin-top:40px; margin-left:72px; color:#666; font-size:14px;}
+.weibo_righttj label{ font-size:14px; color:#666; width:50px; text-align:right; float:left; line-height:27px; margin-right:10px;}
+.weibo_righttj input{ width:216px; height:25px; background:url(http://img.xywy.com/user_center/images/img1.jpg) no-repeat; border:1px solid #d5d6d6; float:left;}
+.weibo_righttj{ margin-left:54px;}
+.weibo_right button{ background:url(http://img.xywy.com/user_center/images/img4.jpg) no-repeat; width:160px; height:39px; border:0; margin-top:44px; margin-left:120px;}
+.weibo_bom{ text-align:center; font-size:12px; color:#333;}

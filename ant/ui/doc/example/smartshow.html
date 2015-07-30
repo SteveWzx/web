@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>文字只能提示</title>
+<link href="http://so.xywy.com/refs/css/public.css" rel="stylesheet" type="text/css" />
+<link href="http://so.xywy.com/refs/css/index_new_style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div class="hd ant-clearfix">
+  <h1><a href="http://so.xywy.com/" target="_blank"><img src="http://so.xywy.com/refs/images/soso_logo.gif" width="258" height="70" /></a></h1>
+  <div class="m_search">
+    <div class="search_list">
+      <ul>
+        <li onmousedown="recordAdVisitLinks('soxywycom_zonghe_index');" class="current">综合</li>
+        <li onmousedown="recordAdVisitLinks('soxywycom_wenda_index');">问答</li>
+        <li onmousedown="recordAdVisitLinks('soxywycom_jibing_index');">疾病</li>
+        <li onmousedown="recordAdVisitLinks('soxywycom_yiyuan_index');">医院</li>
+        <li onmousedown="recordAdVisitLinks('soxywycom_yisheng_index');">医生</li>
+        <li onmousedown="recordAdVisitLinks('soxywycom_yaopin_index');">药品</li>
+        <!--<li onmousedown="recordAdVisitLinks('soxywycom_yaodian_index');">药店</li>-->
+        <li onmousedown="recordAdVisitLinks('soxywycom_zixun');">资讯</li>
+        <!--<li>商城</li>-->
+      </ul>
+    </div>
+    <div class="search_box ant-clearfix">
+      <form action="zonghe.php?keyword=" name="search" method="post" id="search" class="ant-clearfix" onsubmit="return checkForm();">
+          <input id="keyword" class="input_text1" name="keyword" type="text"  value="" autocomplete="off" />
+          <input type="submit" value="" name="" id="click_button"  class="btn"  />
+          <input type="hidden" name="search_type" id="search_type" value="0" />
+      </form>
+      <ul class="smart_box">
+        
+      </ul>
+    </div>
+</div>
+</div>
+<!--end hd-->
+<script type="text/javascript" src="http://static.wkimg.com/common/lib/jquery/1.8.3/jquery.min.js"></script>
+<script type="text/javascript" src="http://static.wkimg.com/common/lib/widget/2.0.1/ant-widget.js"></script>
+<script type="text/javascript">
+$('#keyword').smartShow({
+    url: 'http://so.xywy.com/ajax/suggest.php',
+    param: 'keyword',
+    panel: '.smart_box',
+    dataType: 'jsonp',
+    success: function(msg){
+        var str = '',
+            arr,
+            length;
+            
+        if(msg.result > 0 && msg.data){
+            $('.smart_box').show();
+            arr = msg.data.split(',');
+            length = arr.length;
+            $.each(arr, function(i, v){
+                str += '<li>' + v + '</li>';
+            });
+           $('.smart_box').html(str);
+        }
+    },
+    operate: function(){
+        $('#search').submit();
+    }
+});
+</script>
+</body>
+</html>

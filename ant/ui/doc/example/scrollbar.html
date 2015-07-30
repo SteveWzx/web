@@ -1,0 +1,63 @@
+ <!doctype html>
+<html>
+  <head>
+    <meta charset="gbk" />
+    <title>模拟滚动条</title>
+    <link rel="stylesheet" type="text/css" href="http://static.wkimg.com/common/ui/base/ant-base.css" />
+	<link rel="stylesheet" type="text/css" href="../css/example.css" />
+	<script type="text/javascript" src="http://static.wkimg.com/common/lib/jquery/1.8.3/jquery.min.js"></script>
+	<script type="text/javascript" src="http://static.wkimg.com/common/lib/widget/2.0.1/ant-widget.js"></script>
+  </head>
+  <body>
+  <div class="ant-grid-1000 ant-bc">
+    <div class="ant-s16 ant-yahei ant-pt20 ant-pb10">默认状态下的模拟滚动条</div>
+    <div class="ant-scrollbar ant-clearfix">
+	   <div class="wraper">
+		  <div class="content">
+			  <p>1号墓女尸经医学家临床检验：结缔组织、肌肉组织和软骨等细微结构保存完好，全身有柔软的弹性，皮肤细密而滑腻，部分关节可以转动，甚至手足上的纹路也清晰可见。但病理解剖检查却发现，死者生前患有冠心病、多发性胆石症、全身性动脉粥样硬化症，右上肺有结核病灶，右前臂曾经骨折，在直肠和肝脏内有鞭虫卵、蛲虫卵和血吸虫卵，一只胆囊先天畸形。女尸的多种病变为研究古病理学、古代疾病史和中国医学发展史，提供了宝贵的科学资料。经医学鉴定，死者血型为A型，生前曾生育过，由此印证史书中记载的她有两个儿子的事实。那么她是怎样亡故的呢？经分析，该女尸皮下脂肪丰满，皮肤没有褥疮，无高度衰老迹象，故应为突发急病而死。从病症推断与解剖发现，其食道、胃及肠内有甜瓜子138颗半，死亡时间应在暑天，可能是吃了生冷甜瓜后引发胆绞痛，由此诱发冠状动脉痉挛，导致严重心律紊乱而猝然死亡。</p>
+		  </div>
+	   </div>
+	   <div class="scrollwrap">
+		   <div class="pre">∧</div>
+		   <div class="barwrap">
+			 <div class="bar"></div>
+		   </div>
+		   <div class="next">∨</div>
+	   </div>
+	</div>
+      <script>
+		$('.ant-scrollbar').scrollBar({
+			content: '.content',
+			bar: '.bar',
+			prevButton: '.pre',
+			nextButton: '.next'
+		});
+      </script>
+	  <div class="ant-s16 ant-yahei ant-pt20 ant-pb10">横向的模拟滚动条</div>
+      <div class="ant-scrollbar ant-scrollbar2">
+        <div class="wrap2">
+            <div class="content2">
+                <p>1号墓女尸经医学家临床检验：结缔组织、肌肉组织和软骨等细微结构保存完好，全身有柔软的弹性，皮肤细密而滑腻，部分关节可以转动，甚至手足上的纹路也清晰可见。但病理解剖检查却发现，死者生前患有冠心病、多发性胆石症、全身性动脉粥样硬化症，右上肺有结核病灶，右前臂曾经骨折，在直肠和肝脏内有鞭虫卵、蛲虫卵和血吸虫卵，一只胆囊先天畸形。女尸的多种病变为研究古病理学、古代疾病史和中国医学发展史，提供了宝贵的科学资料。经医学鉴定，死者血型为A型，生前曾生育过，由此印证史书中记载的她有两个儿子的事实。那么她是怎样亡故的呢？经分析，该女尸皮下脂肪丰满，皮肤没有褥疮，无高度衰老迹象，故应为突发急病而死。从病症推断与解剖发现，其食道、胃及肠内有甜瓜子138颗半，死亡时间应在暑天，可能是吃了生冷甜瓜后引发胆绞痛，由此诱发冠状动脉痉挛，导致严重心律紊乱而猝然死亡。</p>
+            </div>
+        </div>
+        <div class="scrollwrap2">
+            <div class="pre2"><</div>
+            <div class="barwrap2">
+                <div class="bar2"></div>
+            </div>
+            <div class="next2">></div>
+        </div>
+        <div style="clear:both;"></div>
+      </div>
+  </div>
+  <script type="text/javascript">
+    $('.ant-scrollbar2').scrollBar({
+        content: '.content2',
+        bar: '.bar2',
+        prevButton: '.pre2',
+        nextButton: '.next2',
+        vertical: false
+    });
+  </script>
+  </body>
+</html>

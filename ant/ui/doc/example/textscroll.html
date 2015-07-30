@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>文本滚动</title>
+<link rel="stylesheet" type="text/css" href="http://static.wkimg.com/common/ui/base/ant-base.css" />
+<link rel="stylesheet" type="text/css" href="../css/example.css" />
+<script type="text/javascript" src="http://static.wkimg.com/common/lib/jquery/1.8.3/jquery.min.js"></script>
+<script type="text/javascript" src="http://static.wkimg.com/common/lib/widget/2.0.1/ant-widget.js"></script>
+</head>
+<body>
+<div class="ant-grid-1000">
+    <div id="text_scroll1" class="ant-pl20 ant-pt20 ant-s16 ant-yahei">默认方式文本滚动</div>
+    <div class="ant-text-scroll ant-ml20 ant-mt20 ant-s14">
+        <ul class="ant-text-scroll-list">
+            <li>美妆情报：彩色美瞳的彩妆小贴士</li>
+            <li>最辣女神桑德拉 后花园男神扎堆</li>
+            <li>全球时尚博主盛会终极PK</li>
+            <li>直击2014秋冬上海时装周</li>
+            <li>一姐格局风云变幻 细数华谊女星的浮沉</li>
+            <li>艾玛斯通与男友散步 十指紧扣秀恩爱</li>
+            <li>足球宝贝梦瑶登《时装》 尽显豪情style</li>
+            <li>伦敦男装周明星看秀 大仁哥阳光马尔福妩媚</li>
+        </ul>
+    </div>
+    <script type="text/javascript">
+        $('.ant-text-scroll').textScroll({
+            vertical: true
+        });
+    </script>
+    <br />
+    <br />
+    <div id="text_scroll2" class="ant-pl20 ant-pt20 ant-s16 ant-yahei">水平方向的文本滚动</div>
+    <div class="ant-text-scroll2 ant-ml20 ant-mt20 ant-s14">
+        <ul class="ant-text-scroll-list2">
+            <li>美妆情报：彩色美瞳的彩妆小贴士</li>
+            <li>最辣女神桑德拉 后花园男神扎堆</li>
+            <li>全球时尚博主盛会终极PK</li>
+            <li>直击2014秋冬上海时装周</li>
+            <li>一姐格局风云变幻 细数华谊女星的浮沉</li>
+            <li>艾玛斯通与男友散步 十指紧扣秀恩爱</li>
+            <li>足球宝贝梦瑶登《时装》 尽显豪情style</li>
+            <li>伦敦男装周明星看秀 大仁哥阳光马尔福妩媚</li>
+        </ul>
+    </div>
+</div>
+<script type="text/javascript">
+$('.ant-text-scroll2').textScroll({
+    vertical: false
+});
+</script>
+</body>
+</html>

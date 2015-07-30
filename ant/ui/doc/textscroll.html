@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>文本滚动</title>
+<link rel="stylesheet" href="css.css" type="text/css" />
+<style type="text/css">
+*{margin:0;padding:0;}
+body{margin:50px;background:url(about:blank) fixed;font-size:14px;}
+li{list-style:none;}
+img{border:0 none;display:block;}
+.clearfix{zoom:1;}
+.clearfix:after{display:block;visibility:hidden;clear:both;height:0;overflow:hidden;content:"\20";}
+.text_scroll{height:150px;overflow:hidden;}
+.text_scroll li{height:25px;line-height:25px;}
+.text_scroll2{position:relative;width:300px;height:25px;overflow:hidden;}
+.ss2{position:absolute;height:25px;width:9999px;}
+.ss2 li{float:left;width:300px;}
+</style>
+<script type="text/javascript" src="http://static.wkimg.com/common/lib/jquery.min.js"></script>
+<script type="text/javascript" src="http://static.wkimg.com/common/lib/jquery-xywy-plus.js"></script>
+</head>
+<body>
+<div class="wrap">
+    <div id="text_scroll1" class="title box_hd">默认方式文本滚动</div>
+    <div class="text_scroll">
+        <ul class="ss">
+            <li>美妆情报：彩色美瞳的彩妆小贴士</li>
+            <li>最辣女神桑德拉 后花园男神扎堆</li>
+            <li>全球时尚博主盛会终极PK</li>
+            <li>直击2014秋冬上海时装周</li>
+            <li>一姐格局风云变幻 细数华谊女星的浮沉</li>
+            <li>艾玛斯通与男友散步 十指紧扣秀恩爱</li>
+            <li>足球宝贝梦瑶登《时装》 尽显豪情style</li>
+            <li>伦敦男装周明星看秀 大仁哥阳光马尔福妩媚</li>
+        </ul>
+    </div>
+    <script type="text/javascript">
+        $('.text_scroll').textScroll({
+            vertical: true
+        });
+    </script>
+    <br />
+    <br />
+    <div id="text_scroll2" class="title box_hd">水平方向的文本滚动</div>
+    <div class="text_scroll2">
+        <ul class="ss2">
+            <li>美妆情报：彩色美瞳的彩妆小贴士</li>
+            <li>最辣女神桑德拉 后花园男神扎堆</li>
+            <li>全球时尚博主盛会终极PK</li>
+            <li>直击2014秋冬上海时装周</li>
+            <li>一姐格局风云变幻 细数华谊女星的浮沉</li>
+            <li>艾玛斯通与男友散步 十指紧扣秀恩爱</li>
+            <li>足球宝贝梦瑶登《时装》 尽显豪情style</li>
+            <li>伦敦男装周明星看秀 大仁哥阳光马尔福妩媚</li>
+        </ul>
+    </div>
+</div>
+<script type="text/javascript">
+$('.text_scroll2').textScroll({
+    vertical: false
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,352 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<link rel="stylesheet" type="text/css" href="http://static.wkimg.com/common/ui/base/ant-base.css" />
+<link rel="stylesheet" type="text/css" href="css/doc.css" />
+<title>Ant UI组件说明文档</title>
+</head>
+<body>
+<div class="doc-top">
+<div class="ant-grid-1000 ant-bc ant-clearfix">
+<div class="ant-fl doc-logo">Ant UI</div>
+<ul class="ant-fr doc-nav ant-yahei">
+<li><a href="index.html">UI规范</a></li>
+<li><a href="ant_widget.html">UI组件</a></li>
+<li><a href="js_doc.html">JS组件</a></li>
+<li class="current"><a href="standard.html">前端规范</a></li>
+</ul>
+</div>
+</div>
+<div class="doc-banner ant-yahei">
+<div class="ant-grid-1000 ant-bc">
+<h1>前端代码规范</h1>
+<p>规范是一种约定、一种态度。良好的态度是你今后的财富...</p>
+</div>
+</div>
+<div class="doc-box">
+<div class="ant-grid-1000 ant-bc ant-clearfix">
+<div class="ant-fl doc-fast-nav ant-yahei">
+<div class="doc-nav-list">
+<dl class="doc-ui-guide">
+<dt>规范说明</dt>
+<dd>
+<p class="list-item"><a href="javascript:;">什么是规范</a></p>
+</dd>
+</dl>
+<dl class="doc-ui-list">
+<dt>规范项目</dt>
+<dd>
+<p class="list-item"><a href="javascript:;">css命名规范</a></p>
+<p class="list-item"><a href="javascript:;">css书写规范</a></p>
+<p class="list-item"><a href="javascript:;">js变量命名规范</a></p>
+<p class="list-item"><a href="javascript:;">js书写规范</a></p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="ant-fr doc-content">
+<dl class="code-box">
+<dt class="code-hd ant-yahei">什么是规范？</dt>
+<dd class="code-bd ant-yahei">
+<p>规范是一种约定，是一种态度。在前端开发中，尤其是在有团队参入合作的项目中，规范显的尤为重要。好的规范不仅可以提高工作效率，而且对未来代码的可读性，可扩展性，可维护性具有重大意义。</p>
+</dd>
+</dl>
+<dl class="code-box">
+<dt class="code-hd ant-yahei">css命名规范</dt>
+<dd class="code-bd ant-yahei">一、class名以英文或英文缩写开始</dd>
+<dd class="code-bd ant-yahei">二、公用class名以"<span class="code-kop">泛英文</span>"形式命名</dd>
+<dd class="code-bd ant-yahei">三、模块区域统一用"<span class="code-kop">单词-作用域</span>"方式命名</dd>
+<dd class="code-bd">
+<pre>
+<code>
+<span class="code-desp">英文或英文缩写开头，"-"分割</span>
+<span class="code-other">.ant-search-item { }</span>
+<span class="code-other">.ant-word-item { }</span>
+...
+</code>
+</pre>
+</dd>
+<dd class="code-bd ant-yahei">公用class尽量采用<span class="code-kop">"泛英文"</span>命名方式。如下图所示：</dd>
+<dd><img src="images/s_01.jpg" alt="" /></dd>
+<dd class="code-bd ant-yahei">上面所示的两幅图，在结构上是相同的，所以可以采用"泛英文"命名方式。</dd>
+<dd class="code-bd">
+<pre>
+<code>
+<span class="code-desp">上图的html结构，好的命名方式。此处的widget(部件)命名很好的解决了耦合性，提高了公用性。</span>
+&lt;div class=&quot;<span class="code-kop">ant-widget</span>&quot;&gt;
+ &lt;div class="<span class="code-kop">ant-widget-hd</span>"&gt;
+    &lt;h2&gt;&lt;/h2&gt;
+    &lt;span&gt;&lt;/span&gt;
+ &lt;/div&gt;
+ &lt;div class="<span class="code-kop">ant-widget-bd</span>"&gt;
+    &lt;h3&gt;&lt;/h3&gt;
+    &lt;div class=&quot;<span class="code-kop">ant-widget-pic</span>&quot;&gt;
+       &lt;img src="" /&gt;
+       &lt;p&gt;&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;ul&gt;
+       &lt;li&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+ &lt;/div&gt;
+&lt;/div&gt;
+
+<span class="code-desp">上图的html结构，不好的命名方式。此处命名没错，但太过具体化，容易造成代码冗余。</span>
+ &lt;div class=&quot;<span class="code-kop">reader-box</span>&quot;&gt;
+  &lt;div class="<span class="code-kop">reader-hd</span>"&gt;
+    &lt;h2&gt;&lt;/h2&gt;
+    &lt;span&gt;&lt;/span&gt;
+  &lt;/div&gt;
+  &lt;div class="<span class="code-kop">reader-bd</span>"&gt;
+    &lt;h3&gt;&lt;/h3&gt;
+    &lt;div class=&quot;<span class="code-kop">reader-pic</span>&quot;&gt;
+       &lt;img src="" /&gt;
+       &lt;p&gt;&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;ul&gt;
+       &lt;li&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+ &lt;/div&gt;
+&lt;/div&gt;
+
+<span class="code-note">这种命名可能会带来这样的结果，当另一模块和此处相同时，可能又会再起一个class名字。如.founder{ }。这样，可能在样式表中会这样写，.reader, .founder{ }。所以容易造成冗余。</span>
+</code>
+</pre>
+<dd class="code-bd ant-yahei">当页面某个部分是无重复的，就可以用特指英文命名。如：友情链接，联系我们等等。<br >为了统一命名规范，今后大家统一用"<span class="code-kop">单词-作用域</span>"的形式。</dd>
+<dd>
+<pre>
+<code>
+<span class="code-desp">模块区域命名示例</span>
+&lt;div class=&quot;<span class="code-kop">ant-artical</span>&quot;&gt;
+    &lt;strong class=&quot;<span class="code-kop">ant-article-hd</span>&quot;&gt;标题&lt;/strong&gt;
+    &lt;div class=&quot;<span class="code-kop">ant-article-bd</span>&quot;&gt;
+	&lt;div class=&quot;<span class="code-kop">ant-article-item-bd</span>&quot;&gt;摘要之类的&lt;/div&gt;
+        &lt;div class=&quot;<span class="code-kop">ant-article-content</span>&quot;&gt;内容&lt;/div&gt;
+     &lt;/div&gt;
+&lt;/div&gt;
+</code>
+</pre>
+</dd>
+</dl>
+<dl class="code-box">
+<dt class="code-hd ant-yahei">css书写规范</dt>
+<dd class="code-bd ant-yahei">一、多用class，少用id</dd>
+<dd class="code-bd ant-yahei">二、css选择符深度最好控制在二级以内</dd>
+<dd class="code-bd ant-yahei">三、影响自身几何属性的属性写在前面，其它属性写在后面</dd>
+<dd class="code-bd">
+<pre>
+<code>
+<span class="code-desp">选择符示例</span>
+.widget-bd{ }           <span class="code-note">好</span>
+
+.widget-bd ul{ }      	<span class="code-note">好</span>
+
+.widget-bd ul li{ }   	<span class="code-note">不好</span>
+
+.widget-bd li{ }      	<span class="code-note">好</span>
+
+div.widget-bd span{ } 	<span class="code-note">不好</span>
+
+.widget-bd span{ }    	<span class="code-note">好</span>
+
+div#widget ul li{ }   	<span class="code-note">非常不好</span>
+...
+</code>
+</pre>
+</dd>
+<dd class="code-bd">
+<pre>
+<code>
+<span class="code-desp">写法示例</span>
+.widget-box{width:200px;height:100px;border:1px solid #ddd;color:#fff;background:#000;}
+
+.widget-wrap{position:absolute;width:1000px;margin:0 auto;}
+
+<span class="code-note">width，height，定位，border，margin，padding等这样影响元素自身几何属性的，都写在前面。其它，如color，background，font-size等修饰性属性都写在后面。</span>
+</code>
+</pre>
+</dl>
+<dl class="code-box">
+<dt class="code-hd ant-yahei">js变量命名规范</dt>
+<dd class="code-bd ant-yahei">为了保证项目的进度和开发效率，我们规定统一使用jquery库。虽在开发中我们使用了库，但是对于js代码书写也有很多的要求。</dd>
+<dd class="code-bd">
+<pre>
+<code>
+<span class="code-desp">变量统一使用英文命名或英文简写命名，采用驼峰式写法。不许使用匈牙利命名法</span>
+var height = 100;		<span class="code-note">正确</span>
+
+var boxWidth = 10;		<span class="code-note">正确</span>
+
+var submitBtn = '.submit';	<span class="code-note">正确</span>
+
+var iBoxWidth = 10;	<span class="code-note">不正确(匈牙利命名)</span>
+...
+</code>
+</pre>
+</dd>
+</dl>
+<dl class="code-box">
+<dt class="code-hd ant-yahei">js代码书写规范</dt>
+<dd class="code-bd ant-yahei">一、采用单一var定义变量。</dd>
+<dd class="code-bd ant-yahei">二、变量与操作符之间，变量与语句之间用空格字符分开。</dd>
+<dd class="code-bd ant-yahei">三、单语句if要加{ }，else要跟在if语句第二个大括号后面。</dd>
+<dd class="code-bd ant-yahei">四、for循环语句中的自增变量提前定义。</dd>
+<dd class="code-bd ant-yahei">五、使用立即执行的匿名函数，防止全局变量污染。</dd>
+<dd class="code-bd ant-yahei">六、dom节点，offsetWidth、offsetHeight、scrollWidth、scrollHeight、clientWidth、clientHeight都用变量来保存。</dd>
+<dd class="code-bd ant-yahei">七、操作innerHTML时，用空字符串临时保存。</dd>
+<dd class="code-bd ant-yahei">八、动态插入dom节点时，用文档片段(documentfragment)来临时保存。</dd>
+<dd class="code-bd ant-yahei">九、对外接口采用模块模式。</dd>
+<dd class="code-bd">
+<pre>
+<code>
+<span class="code-desp">采用单一var定义变量。</span>
+var i,
+    j,
+    n,
+    key = 0;
+
+<span class="code-desp">变量与操作符之间，变量与语句之间用空格字符分开。</span>
+<span class="code-note">定义变量</span>
+
+var max = 10,
+    set = false;
+	
+<span class="code-note">书写语句</span>
+
+if(i == 10){
+   
+   //code
+   
+}
+
+for(i = 0; i < length; i++){
+
+   //code
+
+}
+
+<span class="code-desp">单语句if要加{ }，else要跟在if语句第二个大括号后面。</span>
+if(i == 10){
+
+   return false;
+   
+}
+
+if(i == 10){
+
+   return false;
+   
+}else{
+
+   return true;
+   
+}
+
+<span class="code-desp">for循环语句中的自增变量提前定义。</span>
+var i = 0;
+
+for(; i < length; i++){
+	
+     //code
+	
+}
+
+<span class="code-desp">使用立即执行的匿名函数，防止全局变量污染</span>
+(function(){
+   var k = 0,
+       top = 10,
+       dom = document.getElementById('top');
+	
+    dom.addEventListener('click', function(){
+	
+	    return top;
+		
+    }, false);
+	
+})()
+
+<span class="code-desp">dom节点，offsetWidth、offsetHeight、scrollWidth、scrollHeight、clientWidth、clientHeight都用变量来保存</span>
+var items = document.getElementsByTagName('li'),
+    winHeight = window.clientHeight,
+    docHeight = document.documentElement.scrollHeight;
+
+<span class="code-desp">操作innerHTML时，用空字符串临时保存。</span>
+var str = ''
+    node = document.getElementById('list'),
+    i = 0,
+    length = 10;
+	
+for(; i < length; i++){
+
+    str += i;
+	
+}
+node.innerHTML = str;
+
+<span class="code-desp">动态插入dom节点时，用文档片段(documentfragment)来临时保存。</span>
+var node = document.getElementById('list'),
+    fragment = document.createDocumentfragment(),
+    nodeItem = null,
+    i = 0,
+    length = 10;
+	
+for(; i < length; i++){
+
+    nodeItem = document.createElement('li');
+    fragment.appendChild(nodeItem);
+	
+}
+node.appendChild(fragment);
+
+
+<span class="code-desp">js模块模式，定义对外接口</span>
+function module(){
+	
+    var k = 0,
+        init = null;
+    
+	init = function(){
+	    
+		return k;
+		
+	};
+	
+	return {
+        
+		init: function(){
+		
+			init();
+			
+		}
+	}
+}
+
+var mod = module();
+
+mod.init();
+
+</code>
+</pre>
+</dd>
+</dl>
+</div>
+</div>
+<div class="doc-footer ant-yahei"><p>Ant UI归寻医问药网所有</p>Power by haitao &copy;2014</div>
+</div>
+<div class="ant-toplace" style="bottom:30px;">
+<span class="ant-gotop"></span>
+</div>
+<div class="doc-dir-nav ant-yahei ant-s14">
+<dl class="doc-helper">
+	<dt>快速导航</dt>
+	<dd><a href="index.html">UI规范</a></dd>
+	<dd><a target="_blank" href="ant_widget.html">UI组件</a></dd>
+	<dd><a target="_blank" href="js_doc.html">JS组件</a></dd>
+	<dd class="current"><a target="_blank" href="standard.html">前端规范</a></dd>
+</dl>
+</div>
+<script type="text/javascript" src="http://static.wkimg.com/common/lib/jquery/1.8.3/jquery.min.js"></script>
+<script type="text/javascript" src="http://static.wkimg.com/common/lib/widget/2.0.1/ant-widget.js"></script>
+<script type="text/javascript" src="js/doc.js"></script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>放大镜</title>
+<link rel="stylesheet" type="text/css" href="http://static.wkimg.com/common/ui/base/ant-base.css" />
+<link rel="stylesheet" type="text/css" href="../css/example.css" />
+<script type="text/javascript" src="http://static.wkimg.com/common/lib/jquery/1.8.3/jquery.min.js"></script>
+<script type="text/javascript" src="http://static.wkimg.com/common/lib/widget/2.0.1/ant-widget.js"></script>
+</head>
+<body>
+<div class="ant-grid-1000 ant-bc">
+	<div class="zoom-box">
+		<div class="piczoom">
+			<img src="../images/z_01.jpg" width="300" height="300" alt="" />
+		</div>
+		<div class="piczoom-list">
+			<div class="piczoom-item">
+				<ul class="ant-clearfix">
+					<li data-url="../images/z_00_02.jpg|../images/z_00.jpg"><img src="../images/z_00_03.jpg" width="40" height="40" alt="" /></li>
+					<li data-url="../images/z_01_02.jpg|../images/z_01.jpg"><img src="../images/z_01_03.jpg" width="40" height="40" alt="" /></li>
+					<li data-url="../images/z_02_02.jpg|../images/z_02.jpg"><img src="../images/z_02_03.jpg" width="40" height="40" alt="" /></li>
+					<li data-url="../images/z_03_02.jpg|../images/z_03.jpg"><img src="../images/z_03_03.jpg" width="40" height="40" alt="" /></li>
+					<li data-url="../images/z_04_02.jpg|../images/z_04.jpg"><img src="../images/z_04_03.jpg" width="40" height="40" alt="" /></li>
+					<li data-url="../images/z_05_02.jpg|../images/z_05.jpg"><img src="../images/z_05_03.jpg" width="40" height="40" alt="" /></li>
+				</ul>
+			</div>
+			<a href="javascript:;" class="z-prev-btn"></a>
+			<a href="javascript:;" class="z-next-btn"></a>
+			<span href="javascript:;" class="un-z-prev-btn"></span>
+			<span href="javascript:;" class="un-z-next-btn"></span>
+		</div>
+		<div class="piczoom-large"><img src="../images/z_00.jpg" width="600" height="600" alt="" /></div>
+	</div>
+</div>
+<script type="text/javascript">
+$('.zoom-box').picZoom({
+	smallPanel: '.piczoom',
+	largePanel: '.piczoom-large',
+	thumbPanel: '.piczoom-list',
+	ratio: 0.5,
+	prevButton: {
+		enable: '.z-prev-btn',
+		disable: '.un-z-prev-btn'
+	},
+	nextButton: {
+		enable: '.z-next-btn',
+		disable: '.un-z-next-btn'
+	},
+	triggerClass: 'current'
+});
+</script>
+</body>
+</html>

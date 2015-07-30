@@ -1,0 +1,1967 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<link rel="stylesheet" type="text/css" href="http://static.wkimg.com/common/ui/base/reset.css" />
+<title>寻医问药网JS组件说明文档</title>
+<style type="text/css">
+.top-box{position:fixed;width:100%;top:0;left:0;}
+.mainbox{background-color:#f0f0f0;font-family:\5FAE\8F6F\96C5\9ED1;}
+.side{width:200px;height:600px;}
+.main{margin-left:200px;background-color:#fff;}
+.hd{height:80px;padding-left:20px;font-size:28px;font-weight:700;color:#fff;background-color:#5ac2de;}
+.caption{height:60px;line-height:60px;}
+.capinfo{line-height:normal;font-size:12px;font-weight:200;font-family:tahoma;}
+.version{bottom:10px;left:340px;font-family:tahoma;}
+.main dl{padding:35px 0 0 20px;}
+.side dl{padding:12px 0 0 20px;}
+.side dt,.main dt{padding-bottom:5px;font-size:14px;font-weight:700;color:#333;}
+.side dd,.main dd{line-height:28px;font-size:14px;}
+.side a{display:block;padding-left:20px;color:#666;}
+.side a:hover{text-decoration:none;}
+.side-box{float:left;position:fixed;top:80px;width:200px;}
+.side-box .current a{color:#fff;background-color:#5ac2de;}
+@media screen and (max-width:1366px){
+	.side dd{font-size:12px;}
+}
+.main dl{color:#444;}
+.main dt{font-size:16px;font-weight:700;border-bottom:1px solid #ddd;}
+.main dd{padding-top:20px;}
+pre,.code{font:normal 14px/normal Monaco, Consolas, "Lucida Console", monospace;}
+pre{margin:0 10px 0 20px;padding-top:15px;color:#003388;border-radius:2px;background-color:#eee;}
+pre span{line-height:22px;}
+.code,.how a{color:#028fc4;}
+.props_tb{ width:98%; border-collapse:collapse; border-bottom:1px solid #e5e5e5; border-left:1px solid #e5e5e5; margin:20px 0 0 20px; }
+.props_tb tr td{ line-height:24px; padding:5px 0; text-align:center; border-right:1px solid #e5e5e5; border-bottom:1px solid #e5e5e5; color:#666; font-size:13px; }
+.props_tb tr .t_l{ text-align:left; padding:5px 10px; }
+.props_tb .even td{ background:#f5f5f5; }
+.props_tb tr .bg_white{ background:#fff; }
+.props_tb th{ background:#f5f5f5; line-height:40px; border-right:1px solid #e5e5e5; font-size:13px; font-weight:700; border-top:2px solid #028fc4; text-align:center; }
+.props_tb p{ line-height:24px; padding:5px 0; color:#666; }
+.props_tb .name{ font-family:arial; color:#333; font-size:13px; }
+.props_tb .type{ font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif; color:#666; }
+.how{padding:20px;font-size:14px;}
+.demo-box{margin:0 20px;}
+.demo{display:inline-block;margin-right:5px;padding:10px;background-color:#003388;color:#fff;text-decoration:none;}
+.demo:hover{text-decoration:none;}
+.gotop{position:fixed;_position:absolute;bottom:40px;right:10px;width:45px;height:45px;background:url(images/sideToolbar.png) 0 0 no-repeat;}
+.footer{margin-top:20px;padding:5px 0;color:#666;text-align:center;border-top:1px solid #ddd;}
+</style>
+<script type="text/javascript" src="http://static.wkimg.com/common/lib/jquery/1.8.3/jquery.min.js"></script>
+<script type="text/javascript" src="http://static.wkimg.com/common/lib/widget/2.0.1/ant-widget.js"></script>
+<script type="text/javascript">
+    $(function(){
+        $('.main').monitor('dl', {
+            dirWrap:'.side-box',
+            listWrap: 'dd',
+			topDiff: 55,
+            disTop:{maxTop: 99999}
+        });
+    })
+</script>
+</head>
+<body>
+<div class="bc top-box">
+    <div class="hd pr">
+        <div class="caption">寻医问药网JS组件说明文档</div>
+        <div class="capinfo pr5 tr">www.xywy.com</div>
+        <div class="pa f12 version">v1.0</div>
+    </div>
+</div>
+<div id="box" class="mainbox clearfix">
+    <div class="side fl">
+        <div class="side-box">
+            <dl>
+            	<dt>使用指南</dt>
+            	<dd><a href="javascript:;">使用前的准备工作</a></dd>
+            </dl>
+        <dl>
+            <dt>组件列表</dt>
+            <dd><a href="javascript:;">判断ie6</a></dd>
+            <dd><a href="javascript:;">cookie操作</a></dd>
+            <dd><a href="javascript:;">选项卡</a></dd>
+            <dd><a href="javascript:;">普通焦点图<span style="padding-left:10px;font-size:12px;color:#ff0000;">推荐使用</span></a></dd>
+            <dd><a href="javascript:;">循环焦点图<span style="padding-left:10px;font-size:12px;color:#ff0000;">不推荐使用</span></a></dd>
+            <dd><a href="javascript:;">图片循环滚动</a></dd>
+            <dd><a href="javascript:;">图集相册效果</a></dd>
+            <dd><a href="javascript:;">文本循环滚动</a></dd>
+            <dd><a href="javascript:;">拖拽</a></dd>
+            <dd><a href="javascript:;">模拟滚动条</a></dd>
+            <dd><a href="javascript:;">到达顶部或底部</a></dd>
+            <dd><a href="javascript:;">滚动监听</a></dd>
+            <dd><a href="javascript:;">自动完成效果</a></dd>
+            <dd><a href="javascript:;">文本框默认文字</a></dd>
+            <dd><a href="javascript:;">自定义对话框</a></dd>
+        </dl>
+        </div>
+    </div>
+    <div class="main">
+        <dl id="start">
+            <dt>使用前的准备工作</dt>
+            <dd>第一步  在你的页面head里引入相关css, 如下所示</dd>
+            <dd>
+            <span class="code">
+                <code>
+                    <pre style="padding:5px 0 5px 10px;margin:0 5px;line-height:30px;">&lt;link type="text/css" rel="stylesheet" href="main.css" /&gt;</pre>
+                 </code>
+             </span>
+            </dd>
+            <dd>第二步  在你的页面里, 通常是在页面底部引入jquery和ant-widget.js, 如下所示</dd>
+            <dd>
+            <span class="code">
+                <code>
+                    <pre style="padding:5px 0 0 10px;margin:0 5px;height:60px;line-height:25px;font-size:13px;">&lt;script type=&quot;text/javascript&quot;src=&quot;http://static.wkimg.com/common/lib/jquery/1.8.3/jquery.min.js&quot;&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="http://static.wkimg.com/common/lib/widget/2.0.1/ant-widget.js"&gt;&lt;/script&gt;
+                    </pre>
+                 </code>
+             </span>
+            </dd>
+            <dd>第三步  在你的页面里就可以用相关插件函数了, 如下所示</dd>
+            <dd>
+            <span class="code">
+        <code>
+        <pre style="padding:0 0 0 10px;margin:0 5px;">
+        
+        &lt;script&gt;
+            var flag = $.isIE6();
+            if(flag){
+                //some code;
+            }
+            
+            $('.slide-box').slide();
+            ...
+        &lt;/script&gt;
+        
+        </pre>
+        </code>
+             </span>
+            </dd>
+        </dl>
+        <dl id="ie6">
+            <dt>判断ie6</dt>
+            <dd><span class="code">$.isIE6()</span></dd>
+        </dl>
+        <table class="props_tb">
+            <colgroup>
+                <col style="width:130px">
+                <col style="width:100px">
+                <col style="width:70px">
+                <col style="width:370px">
+            </colgroup>
+            <thead>
+                <tr class="even">
+                    <th>参数</th>
+                    <th>数据类型</th>
+                    <th>默认值</th>
+                    <th>参数说明</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><b class="name">—</b></td>
+                    <td><span class="type">—</span></td>
+                    <td><span class="normal">—</span></td>
+                    <td class="t_l">
+                        <p>—</p>
+                    </td>
+                </tr> 
+            </tbody>
+        </table>
+        <div class="how">返回值</div>
+        <code>
+        <pre>
+            true | false
+        </pre>
+        </code>
+        <div class="how">用法</div>
+        <code>
+        <pre>
+            var flag = $.isIE6();
+            
+            if(flag){
+                //some code
+            }
+        </pre>
+        </code>
+        
+        <dl id="cookie">
+            <dt>操作cookie</dt>
+            <dd><span class="code">$.cookie(cookie名字, cookie值, options)</span></dd>
+        </dl>
+        <table class="props_tb">
+            <colgroup>
+                <col style="width:130px">
+                <col style="width:100px">
+                <col style="width:70px">
+                <col style="width:370px">
+            </colgroup>
+            <thead>
+                <tr class="even">
+                    <th>参数</th>
+                    <th>数据类型</th>
+                    <th>默认值</th>
+                    <th>参数说明</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><b class="name">cookie名字(必须)</b></td>
+                    <td><span class="type">string</span></td>
+                    <td><span class="normal">无</span></td>
+                    <td class="t_l">
+                        <p>要获取或者要设置的cookie的名</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td><b class="name">cookie值(必须)</b></td>
+                    <td><span class="type">string</span></td>
+                    <td><span class="normal">无</span></td>
+                    <td class="t_l">
+                        <p>设置cookie的值</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td><b class="name">expires(可选)</b></td>
+                    <td><span class="type">number</span></td>
+                    <td><span class="normal">1天</span></td>
+                    <td class="t_l">
+                        <p>cookie过期时间</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td><b class="name">domain(可选)</b></td>
+                    <td><span class="type">string</span></td>
+                    <td><span class="normal">当前域</span></td>
+                    <td class="t_l">
+                        <p>设置cookie所在域</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td><b class="name">path(可选)</b></td>
+                    <td><span class="type">string</span></td>
+                    <td><span class="normal">根目录</span></td>
+                    <td class="t_l">
+                        <p>设置cookie所在的网站目录</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="how">返回值</div>
+        <code>
+        <pre>
+            获取cookie的值
+        </pre>
+        </code>
+        <div class="how">用法</div>
+        <code>
+        <pre>
+            //设置cookie
+            
+            $.cookie('cookieName', 'zhangsan');
+            
+            //设置带有可选参数的cookie
+            
+            $.cookie('cookieName', 'zhangsan', {expires: 2, domain: '/'});
+            
+            //读取cookie
+            
+            $.cookie('cookieName');
+            
+            //删除cookie
+            
+            $.cookie('cookieName', {expires: -1});
+        </pre>
+        </code>
+        
+        
+        <dl id="tab">
+            <dt>选项卡</dt>
+            <dd><span class="code">$(jquery选择器).tab(options)</span></dd>
+        </dl>
+        <table class="props_tb">
+            <colgroup>
+                <col style="width:130px">
+                <col style="width:100px">
+                <col style="width:70px">
+                <col style="width:370px">
+            </colgroup>
+            <thead>
+                <tr class="even">
+                    <th>参数</th>
+                    <th>数据类型</th>
+                    <th>默认值</th>
+                    <th>参数说明</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><b class="name">jquery选择器(必须)</b></td>
+                    <td><span class="type">string</span></td>
+                    <td><span class="normal">无</span></td>
+                    <td class="t_l">
+                        <p>标准的jquery选择器</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td><b class="name">type(可选)</b></td>
+                    <td><span class="type">string</span></td>
+                    <td><span class="normal">mouseover</span></td>
+                    <td class="t_l">
+                        <p>鼠标事件名称</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td><b class="name">triggerClass(可选)</b></td>
+                    <td><span class="type">string</span></td>
+                    <td><span class="normal">current</span></td>
+                    <td class="t_l">
+                        <p>选项卡切换时，当前选项的class名字</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td><b class="name">tab(可选)</b></td>
+                    <td><span class="type">string</span></td>
+                    <td><span class="normal">li</span></td>
+                    <td class="t_l">
+                        <p>指定切换项的元素,标准jquery选择器, 如.tab > li</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td><b class="name">panelClass(可选)</b></td>
+                    <td><span class="type">string</span></td>
+                    <td><span class="normal">panel</span></td>
+                    <td class="t_l">
+                        <p>指定对应切换项目元素的class名字</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td><b class="name">defaultPanel(可选)</b></td>
+                    <td><span class="type">number</span></td>
+                    <td><span class="normal">0(默认显示第一个)</span></td>
+                    <td class="t_l">
+                        <p>显示指定索引值的面板, 索引值从0开始</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td><b class="name">slideTab(可选)</b></td>
+                    <td><span class="type">object</span></td>
+                    <td><span class="normal">trigger: .factor<br />sliding: false<br />vertical: false<br />speed: 300ms</span></td>
+                    <td class="t_l">
+                        <p>
+                            此项是复合参数。开启tab项的滑动效果, 包含4个参数<br />trigger&nbsp;&nbsp;具有滑动效果的元素class<br />sliding&nbsp;&nbsp;是否打开tab项的滑动效果<br />vertical&nbsp;&nbsp;是否垂直方向滑动<br />speed&nbsp;&nbsp;滑动速度
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td><b class="name">opacity(可选)</b></td>
+                    <td><span class="type">boolean</span></td>
+                    <td><span class="normal">false</span></td>
+                    <td class="t_l">
+                        <p>切换时是否带透明度效果</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td><b class="name">delay(可选)</b></td>
+                    <td><span class="type">number</span></td>
+                    <td><span class="normal">200ms</span></td>
+                    <td class="t_l">
+                        <p>当事件是mouseover时,鼠标经过时的延时时间</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td><b class="name">operate(可选)</b></td>
+                    <td><span class="type">function</span></td>
+                    <td><span class="normal">function(){}</span></td>
+                    <td class="t_l">
+                        <p>非异步方式下的回调函数.该函数有一个参数, 是当前项的索引值</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td><b class="name">asyn(可选)</b></td>
+                    <td><span class="type">object</span></td>
+                    <td><span class="normal">state: false<br />url: a.php<br />type: get<br />dataType:json<br />data: [ ]<br />error: function(){}<br />success: function(){}</span></td>
+                    <td class="t_l">
+                        <p>此项是复合参数, 选项卡是否开启ajax调用<br />
+                            state&nbsp;&nbsp;是否开启ajax调用, 默认false, 不开启<br />
+                            url&nbsp;&nbsp;请求的后台url.多个url以逗号分开, 和tab项一一对应, 当某项无ajax请求时, 为空值.如'" ","a.php","b.php"'代表第一个tab项无ajax请求<br />
+                            type&nbsp;&nbsp;请求后台的方式, get | post<br />
+                            dataType&nbsp;&nbsp;后台返回的数据格式, json | jsonp | text<br />
+                            data&nbsp;&nbsp;附加到url后的参数, 数组格式, 和tab项一一对应, 当某项无参数时, 值为0. 如[0,'a=2','a=3']代表第一个tab项无参数.多个参数以&符分开, 如['a=1&b=2']<br />
+                            error&nbsp;&nbsp;请求失败时要执行的函数<br />
+                            success&nbsp;&nbsp;请求成功时要执行的函数, 此函数返回2个参数:第一个是当前的数据面板元素, jquery对象;第二个是后台返回的数据
+                        </p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="how">返回值</div>
+        <code>
+        <pre>
+            无返回值
+        </pre>
+        </code>
+        <div class="how">用法</div>
+        <code>
+        <pre>
+            //默认调用
+            
+            $('.tab-box').tab();
+            
+            //带有可选参数的调用
+            
+            $('.tab-box').tab({
+            
+                <span>type:'mouseover',
+                panelClass: 'panel', 
+                delay: 150
+               </span> 
+            });
+            
+            //tab项带滑动效果的调用
+            
+            $('.tab-box').tab({
+            
+                <span>type:'mouseover',
+                panelClass: 'panel', 
+                slideTab: {sliding: true, trigger: '.on', speed: 300}
+               </span> 
+            });
+            
+            //开启ajax效果的调用
+            
+            $('.tab-box').tab({
+            
+                <span>type:'mouseover',
+                panelClass: 'panel',
+                asyn: {state: true, url: 'a.php', dataType: 'jsonp', success: function(obj, data){
+                      //obj.html(data);
+                 }
+               }
+               </span> 
+            });
+        </pre>
+        </code>
+        <div class="how">例子</div>
+        <div class="demo-box">
+            <a class="demo" href="tab.html" target="_blank">默认选项卡</a>
+            <a class="demo" href="tab.html" target="_blank">透明度效果选项卡</a>
+            <a class="demo" href="tab.html" target="_blank">点击事件选项卡</a>
+            <a class="demo" href="tab.html" target="_blank">tab项具备滑动效果的选项卡</a>
+            <a class="demo" href="tab.html" target="_blank">具备可以调整默认项的选项卡</a>
+            <a class="demo" href="tab.html" target="_blank">具备ajax调用的选项卡</a>
+        </div>
+        <dl id="slide">
+            <dt>焦点图<span style="padding-left:20px;font-size:14px;" class="code">推荐使用</span></dt>
+            <dd><span class="code">$(jquery选择器).slide(options)</span></dd>
+        </dl>
+        <table class="props_tb">
+            <colgroup>
+                <col style="width:130px">
+                <col style="width:100px">
+                <col style="width:70px">
+                <col style="width:370px">
+            </colgroup>
+            <thead>
+                <tr class="even">
+                    <th>参数</th>
+                    <th>数据类型</th>
+                    <th>默认值</th>
+                    <th>参数说明</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><b class="name">jquery选择器(必须)</b></td>
+                    <td><span class="type">string</span></td>
+                    <td><span class="normal">无</span></td>
+                    <td class="t_l">
+                        <p>标准的jquery选择器</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td><b class="name">animate(可选)</b></td>
+                    <td><span class="type">boolean</span></td>
+                    <td><span class="normal">false</span></td>
+                    <td class="t_l">
+                        <p>焦点图是否具有动画效果</p>
+                    </td>
+                </tr>
+				<tr>
+                    <td><b class="name">loop(可选)</b></td>
+                    <td><span class="type">boolean</span></td>
+                    <td><span class="normal">false</span></td>
+                    <td class="t_l">
+                        <p>焦点图是否打开循环模式, 默认关闭。当焦点图中有广告时, 设置为false。<span style="color:#ff0000;">其它情况建议使用时设置为true。</span></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td><b class="name">vertical(可选)</b></td>
+                    <td><span class="type">boolean</span></td>
+                    <td><span class="normal">false</span></td>
+                    <td class="t_l">
+                        <p>是否可以垂直方向运动。此项当animate为true时, 有效</p>
+                    </td>
+                </tr>
+				<tr>
+                    <td><b class="name">opacity(可选)</b></td>
+                    <td><span class="type">boolean</span></td>
+                    <td><span class="normal">false</span></td>
+                    <td class="t_l">
+                        <p>是否具有透明度变化效果, 当此项打开时, animate自动关闭。</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td><b class="name">leftButton(可选)</b></td>
+                    <td><span class="type">string</span></td>
+                    <td><span class="normal">.left_button</span></td>
+                    <td class="t_l">
+                        <p>当焦点图需要带有左按钮时, 左按钮的class或者id</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td><b class="name">rightButton(可选)</b></td>
+                    <td><span class="type">string</span></td>
+                    <td><span class="normal">.right_button</span></td>
+                    <td class="t_l">
+                        <p>当焦点图需要带有右按钮时, 右按钮的class或者id</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td><b class="name">trigger(可选)</b></td>
+                    <td><span class="type">boolean</span></td>
+                    <td><span class="normal">false</span></td>
+                    <td class="t_l">
+                        <p>是否自动生成手动切换的小图标</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td><b class="name">triggerClass(可选)</b></td>
+                    <td><span class="type">string</span></td>
+                    <td><span class="normal">current</span></td>
+                    <td class="t_l">
+                        <p>手动切换小图标的class名字</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td><b class="name">dataAttr(可选)</b></td>
+                    <td><span class="type">string</span></td>
+                    <td><span class="normal">title</span></td>
+                    <td class="t_l">
+                        <p>存放图片标题的自定义属性</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td><b class="name">dataPanel(可选)</b></td>
+                    <td><span class="type">string</span></td>
+                    <td><span class="normal">.text</span></td>
+                    <td class="t_l">
+                        <p>存放图片标题文字的html容器class, 可以是标准jquery选择符</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td><b class="name">type(可选)</b></td>
+                    <td><span class="type">string</span></td>
+                    <td><span class="normal">mouseover</span></td>
+                    <td class="t_l">
+                        <p>手动切换时的鼠标事件</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td><b class="name">auto(可选)</b></td>
+                    <td><span class="type">boolean</span></td>
+                    <td><span class="normal">true</span></td>
+                    <td class="t_l">
+                        <p>焦点图是否支持自动播放</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td><b class="name">speed(可选)</b></td>
+                    <td><span class="type">number</span></td>
+                    <td><span class="normal">300ms</span></td>
+                    <td class="t_l">
+                        <p>焦点图的动画速度</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td><b class="name">time(可选)</b></td>
+                    <td><span class="type">number</span></td>
+                    <td><span class="normal">3000ms</span></td>
+                    <td class="t_l">
+                        <p>图片切换时的间隔时间</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="how">返回值</div>
+        <code>
+        <pre>
+            无返回值
+        </pre>
+        </code>
+        <div class="how">用法</div>
+        <code>
+        <pre>
+            //默认用法
+            
+            $('.slide').slide({loop: true});
+            
+            //具备横向动画效果的用法
+            
+            $('.slide').slide({
+            
+                <span>type: 'mouseover', 
+                triggerClass: 'current',
+                loop: true,
+                animate: true,
+                time: 3000
+                </span>
+            })
+			
+            //具备竖直方向动画效果的用法
+            
+            $('.slide').slide({
+            
+                <span>type: 'mouseover', 
+                triggerClass: 'current', 
+                loop: true,
+                animate: true,
+                vertical: true,
+                time: 3000
+                </span>
+            })
+			
+            //具备透明度变化效果的用法
+            
+            $('.slide').slide({
+            
+                <span>type: 'mouseover', 
+                triggerClass: 'current', 
+                loop: true,
+                animate: false,
+                opacity: true,
+                time: 3000
+                </span>
+            })
+        </pre>
+        </code>
+        <div class="how">例子</div>
+        <div class="demo-box">
+            <a class="demo" href="slide.html#slide3" target="_blank">默认焦点图</a>
+            <a class="demo" href="slide.html#slide1" target="_blank">横向动画效果焦点图</a>
+            <a class="demo" href="slide.html#slide2" target="_blank">垂直方向动画效果焦点图</a>
+            <a class="demo" href="slide.html#slide4" target="_blank">带左右箭头的焦点图</a>
+			<a class="demo" href="slide.html#slide5" target="_blank">带透明度效果的焦点图</a>
+        </div>
+        
+        <dl id="loopslide">
+            <dt>循环焦点图<span style="padding-left:20px;font-size:14px;color:#ff0000;">不推荐使用, 建议使用slide。slide具备loopSlide同样的功能, 效果更好。</span></dt>
+            <dd><span class="code">$(jquery选择器).loopSlide(options)</span></dd>
+        </dl>
+        <table class="props_tb">
+            <colgroup>
+                <col style="width:130px">
+                <col style="width:100px">
+                <col style="width:70px">
+                <col style="width:370px">
+            </colgroup>
+            <thead>
+                <tr class="even">
+                    <th>参数</th>
+                    <th>数据类型</th>
+                    <th>默认值</th>
+                    <th>参数说明</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><b class="name">jquery选择器(必须)</b></td>
+                    <td><span class="type">string</span></td>
+                    <td><span class="normal">无</span></td>
+                    <td class="t_l">
+                        <p>标准的jquery选择器</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td><b class="name">opacity(可选)</b></td>
+                    <td><span class="type">boolean</span></td>
+                    <td><span class="normal">false</span></td>
+                    <td class="t_l">
+                        <p>焦点图是否具有透明度效果</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td><b class="name">vertical(可选)</b></td>
+                    <td><span class="type">boolean</span></td>
+                    <td><span class="normal">false</span></td>
+                    <td class="t_l">
+                        <p>是否可以垂直方向运动</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td><b class="name">leftButton(可选)</b></td>
+                    <td><span class="type">string</span></td>
+                    <td><span class="normal">.left_button</span></td>
+                    <td class="t_l">
+                        <p>当焦点图需要带有左按钮时, 左按钮的class或者id</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td><b class="name">rightButton(可选)</b></td>
+                    <td><span class="type">string</span></td>
+                    <td><span class="normal">.right_button</span></td>
+                    <td class="t_l">
+                        <p>当焦点图需要带有右按钮时, 右按钮的class或者id</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td><b class="name">trigger(可选)</b></td>
+                    <td><span class="type">boolean</span></td>
+                    <td><span class="normal">false</span></td>
+                    <td class="t_l">
+                        <p>是否自动生成手动切换的小图标</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td><b class="name">triggerClass(可选)</b></td>
+                    <td><span class="type">string</span></td>
+                    <td><span class="normal">current</span></td>
+                    <td class="t_l">
+                        <p>手动切换小图标的class名字</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td><b class="name">dataAttr(可选)</b></td>
+                    <td><span class="type">string</span></td>
+                    <td><span class="normal">title</span></td>
+                    <td class="t_l">
+                        <p>存放图片标题的自定义属性</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td><b class="name">dataPanel(可选)</b></td>
+                    <td><span class="type">string</span></td>
+                    <td><span class="normal">.text</span></td>
+                    <td class="t_l">
+                        <p>存放图片标题文字的html容器class, 可以是标准jquery选择符</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td><b class="name">type(可选)</b></td>
+                    <td><span class="type">string</span></td>
+                    <td><span class="normal">mouseover</span></td>
+                    <td class="t_l">
+                        <p>手动切换时的鼠标事件</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td><b class="name">auto(可选)</b></td>
+                    <td><span class="type">boolean</span></td>
+                    <td><span class="normal">true</span></td>
+                    <td class="t_l">
+                        <p>焦点图是否支持自动播放</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td><b class="name">speed(可选)</b></td>
+                    <td><span class="type">number</span></td>
+                    <td><span class="normal">300ms</span></td>
+                    <td class="t_l">
+                        <p>焦点图的动画速度</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td><b class="name">time(可选)</b></td>
+                    <td><span class="type">number</span></td>
+                    <td><span class="normal">3000ms</span></td>
+                    <td class="t_l">
+                        <p>图片切换时的间隔时间</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="how">返回值</div>
+        <code>
+        <pre>
+            无返回值
+        </pre>
+        </code>
+        <div class="how">用法</div>
+        <code>
+        <pre>
+            //默认用法
+            
+            $('.slide').loopSlide();
+            
+            //带有可选参数的用法
+            
+            $('.slide').loopSlide({
+            
+                <span>type: 'mouseover', 
+                triggerClass: 'current', 
+                animate: true,
+                time: 3000
+                </span>
+            })
+        </pre>
+        </code>
+        <div class="how">例子</div>
+        <div class="demo-box">
+            <a class="demo" href="loopslide.html#loopslide1" target="_blank">默认焦点图</a>
+            <a class="demo" href="loopslide.html#loopslide2" target="_blank">具有透明度效果焦点图</a>
+            <a class="demo" href="loopslide.html#loopslide3" target="_blank">垂直方向动画效果焦点图</a>
+            <a class="demo" href="loopslide.html#loopslide4" target="_blank">带左右按钮的焦点图</a>
+        </div>
+        
+        <dl id="loopscroll">
+            <dt>循环滚动</dt>
+            <dd><span class="code">$(jquery选择器).loopScroll(options)</span></dd>
+        </dl>
+        <table class="props_tb">
+            <colgroup>
+                <col style="width:130px">
+                <col style="width:100px">
+                <col style="width:70px">
+                <col style="width:370px">
+            </colgroup>
+            <thead>
+                <tr class="even">
+                    <th>参数</th>
+                    <th>数据类型</th>
+                    <th>默认值</th>
+                    <th>参数说明</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><b class="name">jquery选择器(必须)</b></td>
+                    <td><span class="type">string</span></td>
+                    <td><span class="normal">无</span></td>
+                    <td class="t_l">
+                        <p>标准的jquery选择器</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td><b class="name">amount(可选)</b></td>
+                    <td><span class="type">number</span></td>
+                    <td><span class="normal">1</span></td>
+                    <td class="t_l">
+                        <p>每次的滚动数量</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td><b class="name">vertical(可选)</b></td>
+                    <td><span class="type">boolean</span></td>
+                    <td><span class="normal">false</span></td>
+                    <td class="t_l">
+                        <p>是否进行垂直方向滚动</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td><b class="name">leftButton(可选)</b></td>
+                    <td><span class="type">string</span></td>
+                    <td><span class="normal">.left_button</span></td>
+                    <td class="t_l">
+                        <p>当滚动需要带有左按钮时, 左按钮的class或者id</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td><b class="name">rightButton(可选)</b></td>
+                    <td><span class="type">string</span></td>
+                    <td><span class="normal">.right_button</span></td>
+                    <td class="t_l">
+                        <p>当滚动需要带有右按钮时, 右按钮的class或者id</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td><b class="name">auto(可选)</b></td>
+                    <td><span class="type">boolean</span></td>
+                    <td><span class="normal">false</span></td>
+                    <td class="t_l">
+                        <p>是否支持自动滚动</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td><b class="name">speed(可选)</b></td>
+                    <td><span class="type">number</span></td>
+                    <td><span class="normal">300ms</span></td>
+                    <td class="t_l">
+                        <p>滚动的动画速度</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td><b class="name">time(可选)</b></td>
+                    <td><span class="type">number</span></td>
+                    <td><span class="normal">3000ms</span></td>
+                    <td class="t_l">
+                        <p>每次滚动的间隔时间</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td><b class="name">operate(可选)</b></td>
+                    <td><span class="type">function</span></td>
+                    <td><span class="normal">无</span></td>
+                    <td class="t_l">
+                        <p>每次滚动时的回调函数, 此回调函数有2个参数，第一个是当前滚动的索引值, 第二个是总的滚动次数</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="how">返回值</div>
+        <code>
+        <pre>
+            无返回值
+        </pre>
+        </code>
+        <div class="how">用法</div>
+        <code>
+        <pre>
+            //默认用法
+            
+            $('.scroll-box').loopScroll();
+            
+            //带有可选参数的用法
+            
+            $('.scroll-box').loopScroll({
+            
+                <span>leftButton: '.leftbtn', 
+                rightButton: '.rightBtn',
+                amount: 2,
+                auto: true,
+                operate: function(index, maxIndex){
+                    //some code
+                }
+                </span>
+            })
+        </pre>
+        </code>
+        <div class="how">例子</div>
+        <div class="demo-box">
+            <a class="demo" href="loopscroll.html#scroll_list1" target="_blank">默认的图片滚动效果</a>
+            <a class="demo" href="loopscroll.html#scroll_list2" target="_blank">垂直方向的图片滚动效果</a>
+        </div>
+        
+        <dl id="photoalbum">
+            <dt>图集相册效果</dt>
+            <dd><span class="code">$(jquery选择器).photoAlbum(options)</span><span style="margin-left:10px;color:#666;">//此插件采用图片预先加载方式，保证图片查看顺畅</span></dd>
+        </dl>
+        <table class="props_tb">
+            <colgroup>
+                <col style="width:130px">
+                <col style="width:100px">
+                <col style="width:70px">
+                <col style="width:370px">
+            </colgroup>
+            <thead>
+                <tr class="even">
+                    <th>参数</th>
+                    <th>数据类型</th>
+                    <th>默认值</th>
+                    <th>参数说明</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><b class="name">jquery选择器(必须)</b></td>
+                    <td><span class="type">string</span></td>
+                    <td><span class="normal">无</span></td>
+                    <td class="t_l">
+                        <p>标准jquery选择器</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td><b class="name">photoPanel(必须)</b></td>
+                    <td><span class="type">string</span></td>
+                    <td><span class="normal">.photo-origin</span></td>
+                    <td class="t_l">
+                        <p>存放大图的容器, 合法的jquery选择器, 如.photo-origin</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td><b class="name">dataPanel(可选)</b></td>
+                    <td><span class="type">string</span></td>
+                    <td><span class="normal">.photo-info</span></td>
+                    <td class="t_l">
+                        <p>存放大图描述的容器, 合法的jquery选择器, 如.photo-info</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td><b class="name">preButton(可选)</b></td>
+                    <td><span class="type">array</span></td>
+                    <td><span class="normal">['.curPrevBtn', '.prevBtn']</span></td>
+                    <td class="t_l">
+                        <p>向前查看图片的按钮class或者id, 合法的jquery选择器, 这里以数组方式传入</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td><b class="name">nextButton(可选)</b></td>
+                    <td><span class="type">array</span></td>
+                    <td><span class="normal">['.curNextBtn', '.nextBtn']</span></td>
+                    <td class="t_l">
+                        <p>向后查看图片的按钮class或者id, 合法的jquery选择器, 这里以数组方式传入</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td><b class="name">animate(可选)</b></td>
+                    <td><span class="type">object</span></td>
+                    <td><span class="normal">opacity: false<br />speed: 400</span></td>
+                    <td class="t_l">
+                        <p>此项是复合参数, 设置查看图片时是否带动画效果(默认是透明度变化), 包含2个属性.<br />opaicty: 是否打开透明度, 默认false<br />speed: 透明度变化速度(毫秒数), 默认400毫秒</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td><b class="name">vertical(可选)</b></td>
+                    <td><span class="type">boolean</span></td>
+                    <td><span class="normal">false</span></td>
+                    <td class="t_l">
+                        <p>缩略图是否在垂直方向展示</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td><b class="name">holdPage(可选)</b></td>
+                    <td><span class="type">boolean</span></td>
+                    <td><span class="normal">false</span></td>
+                    <td class="t_l">
+                        <p>刷新页面后, 是否停留在上次查看的图片上。此项通过hash记住当前状态</p>
+                    </td>
+                </tr>
+				<tr>
+                    <td><b class="name">mouseWheel(可选)</b></td>
+                    <td><span class="type">boolean</span></td>
+                    <td><span class="normal">false</span></td>
+                    <td class="t_l">
+                        <p>是否开启鼠标滚轮来查看图片</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td><b class="name">dataAttr(必须)</b></td>
+                    <td><span class="type">json</span></td>
+                    <td><span class="normal">{"url": "", "data" : ""}</span></td>
+                    <td class="t_l">
+                        <p>这里以标准json方式存放数据, url存放每张大图的真实地址, data存放每张大图的描述信息</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td><b class="name">numPanel(可选)</b></td>
+                    <td><span class="type">string</span></td>
+                    <td><span class="normal">.number</span></td>
+                    <td class="t_l">
+                        <p>存放每张图片序号的容器, 合法jquery选择器, 如.number</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td><b class="name">totalPanel(可选)</b></td>
+                    <td><span class="type">string</span></td>
+                    <td><span class="normal">.total</span></td>
+                    <td class="t_l">
+                        <p>存放图片总数的容器, 合法jquery选择器, 如.total</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td><b class="name">triggerClass(可选)</b></td>
+                    <td><span class="type">string</span></td>
+                    <td><span class="normal">current</span></td>
+                    <td class="t_l">
+                        <p>处于当前状态下缩略图的class名字</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td><b class="name">pages(可选)</b></td>
+                    <td><span class="type">object</span></td>
+                    <td><span class="normal">
+                    pagePanel:'.photo-page'<br />
+                    numTag:'a'<br />
+                    triggerClass:'current'
+                    </span></td>
+                    <td class="t_l">
+                        <p>此项是复合参数, 设置图集是否展示全部页码。目的是增强查看图集的快捷性。包含三个参数: pagePanel: 存放页码的容器, 合法的jquery选择器.<br /> numTag: 输出每个页码所使用的标签, 默认a标签. <br />triggerClass: 当前页码的class名字。</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td><b class="name">operate(可选)</b></td>
+                    <td><span class="type">function</span></td>
+                    <td><span class="normal">无</span></td>
+                    <td class="t_l">
+                        <p>图片浏览时所执行的回调函数, 此函数有2个参数,每一张图片的索引值和图片总数</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="how">返回值</div>
+        <code>
+        <pre>
+            无返回值
+        </pre>
+        </code>
+        <div class="how">用法</div>
+        <code>
+        <pre>
+            //默认用法
+            
+            $('.photo').photoAlbum();
+            
+            //带有可选参数的用法
+            
+            $('.photo').photoAlbum({
+            
+                <span>preButton: ['.thumb-prev-btn', '.photo-prev'],
+                nextButton: ['.thumb-next-btn', '.photo-next'],
+                pages: {pagePanel: '.page-num', triggerClass: 'current'},
+                animate: {opacity: true, speed: 800},
+                operate: function(index, length){
+                    if(index === length - 1){
+                        //some code
+                    }
+                    if(index === 0){
+                        //some code
+                    }
+                }
+                </span>
+            });
+        </pre>
+        </code>
+        <div class="how">例子</div>
+        <div class="demo-box">
+            <a class="demo" href="photo.html#photoalbum" target="_blank">默认图集展示效果</a>
+            <a class="demo" href="photo2.html#photoalbum" target="_blank">可以记住状态的图集展示效果</a>
+        </div>
+        
+        <dl id="textscroll">
+            <dt>文本滚动</dt>
+            <dd><span class="code">$(jquery选择器).textScroll(options)</span></dd>
+        </dl>
+           <table class="props_tb">
+            <colgroup>
+                <col style="width:130px">
+                <col style="width:100px">
+                <col style="width:70px">
+                <col style="width:370px">
+            </colgroup>
+            <thead>
+                <tr class="even">
+                    <th>参数</th>
+                    <th>数据类型</th>
+                    <th>默认值</th>
+                    <th>参数说明</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><b class="name">jquery选择器(必须)</b></td>
+                    <td><span class="type">string</span></td>
+                    <td><span class="normal">无</span></td>
+                    <td class="t_l">
+                        <p>标准jquery选择器</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td><b class="name">panel(可选)</b></td>
+                    <td><span class="type">string</span></td>
+                    <td><span class="normal">无</span></td>
+                    <td class="t_l">
+                        <p>需要滚动的第一个html元素, 合法的jquery选择器, 如li:first</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td><b class="name">vertical(可选)</b></td>
+                    <td><span class="type">boolean</span></td>
+                    <td><span class="normal">true</span></td>
+                    <td class="t_l">
+                        <p>文本是否垂直滚动</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td><b class="name">time(可选)</b></td>
+                    <td><span class="type">number</span></td>
+                    <td><span class="normal">3000ms</span></td>
+                    <td class="t_l">
+                        <p>每次滚动的间隔时间</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td><b class="name">speed(可选)</b></td>
+                    <td><span class="type">number</span></td>
+                    <td><span class="normal">600ms</span></td>
+                    <td class="t_l">
+                        <p>滚动速度</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="how">返回值</div>
+        <code>
+        <pre>
+            无返回值
+        </pre>
+        </code>
+        <div class="how">用法</div>
+        <code>
+        <pre>
+            //默认用法
+            
+            $('.text').textScroll();
+            
+            //带有可选参数的用法
+            
+            $('.text').textScroll({
+            
+                <span>panel:'li:first',
+                time: 4000,
+                speed: 500
+                </span>
+            });
+        </pre>
+        </code>
+        <div class="how">例子</div>
+        <div class="demo-box">
+            <a class="demo" href="textscroll.html#text_scroll1" target="_blank">默认方式文本滚动</a>
+            <a class="demo" href="textscroll.html#text_scroll2" target="_blank">水平方向的文本滚动</a>
+        </div>
+        
+        <dl id="drag">
+            <dt>拖拽</dt>
+            <dd><span class="code">$(jquery选择器).drag(options)</span></dd>
+        </dl>
+        <table class="props_tb">
+            <colgroup>
+                <col style="width:130px">
+                <col style="width:100px">
+                <col style="width:70px">
+                <col style="width:370px">
+            </colgroup>
+            <thead>
+                <tr class="even">
+                    <th>参数</th>
+                    <th>数据类型</th>
+                    <th>默认值</th>
+                    <th>参数说明</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><b class="name">jquery选择器(必须)</b></td>
+                    <td><span class="type">string</span></td>
+                    <td><span class="normal">无</span></td>
+                    <td class="t_l">
+                        <p>标准jquery选择器</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td><b class="name">parent(可选)</b></td>
+                    <td><span class="type">boolean</span></td>
+                    <td><span class="normal">true</span></td>
+                    <td class="t_l">
+                        <p>是否可以点击当前层任意位置进行拖动</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td><b class="name">operate(可选)</b></td>
+                    <td><span class="type">function</span></td>
+                    <td><span class="normal">无</span></td>
+                    <td class="t_l">
+                        <p>拖动层后, 鼠标放开的时候执行的函数, 此函数可以返回一个含有top和left属性值的对象</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="how">返回值</div>
+        <code>
+        <pre>
+            返回当前元素容器的相对坐标位置(top, left)
+        </pre>
+        </code>
+        <div class="how">用法</div>
+        <code>
+        <pre>
+            //默认用法
+            
+            $('.drag-box').drag();
+            
+            //带有可选参数的用法
+            
+            $('.box').drag({
+            
+                <span>parent: false, 
+                operate: function(position){ 
+                    alert(position.left + position.top); 
+                }
+                </span>
+             });
+        </pre>
+        </code>
+        <div class="how">例子</div>
+        <div class="demo-box">
+            <a class="demo" href="drag.html" target="_blank">拖拽效果</a>
+        </div>
+        
+        <dl id="scrollbar">
+            <dt>模拟滚动条</dt>
+            <dd><span class="code">$(jquery选择器).scrollBar(options)</span></dd>
+        </dl>
+           <table class="props_tb">
+            <colgroup>
+                <col style="width:130px">
+                <col style="width:100px">
+                <col style="width:70px">
+                <col style="width:370px">
+            </colgroup>
+            <thead>
+                <tr class="even">
+                    <th>参数</th>
+                    <th>数据类型</th>
+                    <th>默认值</th>
+                    <th>参数说明</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><b class="name">jquery选择器(必须)</b></td>
+                    <td><span class="type">string</span></td>
+                    <td><span class="normal">无</span></td>
+                    <td class="t_l">
+                        <p>标准jquery选择器</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td><b class="name">content(可选)</b></td>
+                    <td><span class="type">string</span></td>
+                    <td><span class="normal">.conBox</span></td>
+                    <td class="t_l">
+                        <p>滚动内容区的class或者id, 标准jquery选择器</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td><b class="name">bar(可选)</b></td>
+                    <td><span class="type">string</span></td>
+                    <td><span class="normal">.bar</span></td>
+                    <td class="t_l">
+                        <p>滚动条的class或者id, 标准jquery选择器</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td><b class="name">preButton(可选)</b></td>
+                    <td><span class="type">string</span></td>
+                    <td><span class="normal">.prebtn</span></td>
+                    <td class="t_l">
+                        <p>向上或者向左滚动的按钮class或者id, 标准jquery选择器</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td><b class="name">nextButton(可选)</b></td>
+                    <td><span class="type">string</span></td>
+                    <td><span class="normal">.nextbtn</span></td>
+                    <td class="t_l">
+                        <p>向下或者向右滚动的按钮class或者id, 标准jquery选择器</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td><b class="name">vertical(可选)</b></td>
+                    <td><span class="type">boolean</span></td>
+                    <td><span class="normal">true</span></td>
+                    <td class="t_l">
+                        <p>是否垂直方向滚动</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="how">返回值</div>
+        <code>
+        <pre>
+            无返回值
+        </pre>
+        </code>
+        <div class="how">用法</div>
+        <code>
+        <pre>
+            //默认用法
+            
+            $('.bar-box').scrollBar();
+            
+            //带有可选参数的用法
+            
+            $('.bar-box').scrollBar({
+            
+                <span>content:'.conbox', 
+                bar: '.bar', 
+                preButton: '.prebtn', 
+                nextButton: '.nextbtn', 
+                vertical: true
+                </span>
+            });
+        </pre>
+        </code>
+        <div class="how">例子</div>
+        <div class="demo-box">
+            <a class="demo" href="scrollbar.html" target="_blank">默认状态下的模拟滚动条</a>
+            <a class="demo" href="scrollbar.html" target="_blank">垂直方向的模拟滚动条</a>
+        </div>
+        
+        <dl id="top">
+            <dt>到达顶部或者底部</dt>
+            <dd><span class="code">$(jquery选择器).toPlace(place, options)</span></dd>
+        </dl>
+           <table class="props_tb">
+            <colgroup>
+                <col style="width:130px">
+                <col style="width:100px">
+                <col style="width:70px">
+                <col style="width:370px">
+            </colgroup>
+            <thead>
+                <tr class="even">
+                    <th>参数</th>
+                    <th>数据类型</th>
+                    <th>默认值</th>
+                    <th>参数说明</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><b class="name">jquery选择器(必须)</b></td>
+                    <td><span class="type">string</span></td>
+                    <td><span class="normal">无</span></td>
+                    <td class="t_l">
+                        <p>标准jquery选择器</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td><b class="name">place(必选)</b></td>
+                    <td><span class="type">string</span></td>
+                    <td><span class="normal">无</span></td>
+                    <td class="t_l">
+                        <p>手动指定的到达位置值, top或者bottom</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td><b class="name">top(可选)</b></td>
+                    <td><span class="type">number</span></td>
+                    <td><span class="normal">100</span></td>
+                    <td class="t_l">
+                        <p>滚动条距离顶部多少时, 开始出现返回顶部按钮</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td><b class="name">bottom(可选)</b></td>
+                    <td><span class="type">number</span></td>
+                    <td><span class="normal">100</span></td>
+                    <td class="t_l">
+                        <p>滚动条距离底部多少时, 开始出现返回底部按钮</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td><b class="name">animate(可选)</b></td>
+                    <td><span class="type">boolean</span></td>
+                    <td><span class="normal">false</span></td>
+                    <td class="t_l">
+                        <p>到达指定位置过程中, 是否具有动画效果</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td><b class="name">speed(可选)</b></td>
+                    <td><span class="type">number</span></td>
+                    <td><span class="normal">0ms</span></td>
+                    <td class="t_l">
+                        <p>到达顶部或者底部的速度</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="how">返回值</div>
+        <code>
+        <pre>
+            无返回值
+        </pre>
+        </code>
+        <div class="how">用法</div>
+        <code>
+        <pre>
+            //到达顶部
+            
+            $('.toplace').toPlace('top', {animate: true})
+            
+            //到达底部
+            
+            $('.toplace').toPlace('bottom', {animate: true})
+        </pre>
+        </code>
+        <div class="how">例子</div>
+        <div class="demo-box">
+            <a class="demo" href="toplace.html" target="_blank">返回顶部</a>
+            <a class="demo" href="toplace.html" target="_blank">返回底部</a>
+        </div>
+        
+        <dl id="monitor">
+            <dt>滚动监听</dt>
+            <dd><span class="code">$(jquery选择器).monitor(target, options)</span></dd>
+        </dl>
+        <table class="props_tb">
+            <colgroup>
+                <col style="width:130px">
+                <col style="width:100px">
+                <col style="width:70px">
+                <col style="width:370px">
+            </colgroup>
+            <thead>
+                <tr class="even">
+                    <th>参数</th>
+                    <th>数据类型</th>
+                    <th>默认值</th>
+                    <th>参数说明</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><b class="name">jquery选择器(必须)</b></td>
+                    <td><span class="type">string</span></td>
+                    <td><span class="normal">无</span></td>
+                    <td class="t_l">
+                        <p>标准jquery选择器</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td><b class="name">target(必须)</b></td>
+                    <td><span class="type">string</span></td>
+                    <td><span class="normal">无</span></td>
+                    <td class="t_l">
+                        <p>监听每个内容区的开始位置元素, 标准jquery选择器</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td><b class="name">dirWrap(可选)</b></td>
+                    <td><span class="type">string</span></td>
+                    <td><span class="normal">.catalog</span></td>
+                    <td class="t_l">
+                        <p>监听浮动列表项的父容器, 标准jquery选择器</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td><b class="name">listWrap(可选)</b></td>
+                    <td><span class="type">string</span></td>
+                    <td><span class="normal">li</span></td>
+                    <td class="t_l">
+                        <p>监听浮动列表项, 标准jquery选择器</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td><b class="name">triggerClass(可选)</b></td>
+                    <td><span class="type">string</span></td>
+                    <td><span class="normal">current</span></td>
+                    <td class="t_l">
+                        <p>当前点击目录的class名字</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td><b class="name">speed(可选)</b></td>
+                    <td><span class="type">number</span></td>
+                    <td><span class="normal">400ms</span></td>
+                    <td class="t_l">
+                        <p>滚动到指定位置时的速度</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td><b class="name">disTop(可选)</b></td>
+                    <td><span class="type">object</span></td>
+                    <td><span class="normal">0, 9999</span></td>
+                    <td class="t_l">
+                        <p>距离顶部多少距离时, 隐藏快速导航目录, 包含两个属性: <br />minTop: 0(默认), maxTop: 9999(默认)</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td><b class="name">topDiff(可选)</b></td>
+                    <td><span class="type">number</span></td>
+                    <td><span class="normal">0</span></td>
+                    <td class="t_l">
+                        <p>顶部差距, 默认为0. 当浏览器顶部有跟随的浮动层时, 请指定此项的值。</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td><b class="name">opacity(可选)</b></td>
+                    <td><span class="type">boolean</span></td>
+                    <td><span class="normal">false</span></td>
+                    <td class="t_l">
+                        <p>快速导航目录显示时, 是否具有透明度效果</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td><b class="name">animate(可选)</b></td>
+                    <td><span class="type">boolean</span></td>
+                    <td><span class="normal">true</span></td>
+                    <td class="t_l">
+                        <p>滚动到指定位置时, 是否具有动画效果</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="how">返回值</div>
+        <code>
+        <pre>
+            无返回值
+        </pre>
+        </code>
+        <div class="how">用法</div>
+        <code>
+        <pre>
+            $('.content').monitor('h2', {
+            
+                <span>dirWrap: '.catalog', 
+                listWrap: 'li',
+                disTop: {minTop: 200, maxTop: 1000},
+                animate: true,
+                speed: 400
+                </span>
+             });
+        </pre>
+        </code>
+        <div class="how">例子</div>
+        <div class="demo-box">
+            <a class="demo" href="monitor.html" target="_blank">默认滚动监听实例</a>
+            <a class="demo" href="monitor2.html" target="_blank">目录横向布局时滚动监听实例</a>
+        </div>
+        
+        <dl id="smartshow">
+            <dt>自动完成效果</dt>
+            <dd><span class="code">$(jquery选择器).smartShow(options)</span></dd>
+           
+        </dl>
+        <table class="props_tb">
+            <colgroup>
+                <col style="width:130px">
+                <col style="width:100px">
+                <col style="width:70px">
+                <col style="width:370px">
+            </colgroup>
+            <thead>
+                <tr class="even">
+                    <th>参数</th>
+                    <th>数据类型</th>
+                    <th>默认值</th>
+                    <th>参数说明</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><b class="name">jquery选择器(必须)</b></td>
+                    <td><span class="type">string</span></td>
+                    <td><span class="normal">无</span></td>
+                    <td class="t_l">
+                        <p>文本框的class或者id, 可以是标准的jquery选择器</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td><b class="name">url(可选)</b></td>
+                    <td><span class="type">string</span></td>
+                    <td><span class="normal">无</span></td>
+                    <td class="t_l">
+                        <p>请求的后端页面地址</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td><b class="name">param(可选)</b></td>
+                    <td><span class="type">string</span></td>
+                    <td><span class="normal">key</span></td>
+                    <td class="t_l">
+                        <p>后台接受保存数据的参数, 如keyword=高血压, 其中keyword就是param</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td><b class="name">panel(可选)</b></td>
+                    <td><span class="type">string</span></td>
+                    <td><span class="normal">无</span></td>
+                    <td class="t_l">
+                        <p>提示数据的元素class, id等, jquery标准选择器</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td><b class="name">dataWrap(可选)</b></td>
+                    <td><span class="type">string</span></td>
+                    <td><span class="normal">li</span></td>
+                    <td class="t_l">
+                        <p>包裹提示数据的容器标签名</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td><b class="name">dataType(可选)</b></td>
+                    <td><span class="type">string</span></td>
+                    <td><span class="normal">json</span></td>
+                    <td class="t_l">
+                        <p>后台返回的数据类型, json或jsonp</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td><b class="name">wrapClass(可选)</b></td>
+                    <td><span class="type">string</span></td>
+                    <td><span class="normal">current</span></td>
+                    <td class="t_l">
+                        <p>包裹提示数据的容器标签class名字</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td><b class="name">success(可选)</b></td>
+                    <td><span class="type">function</span></td>
+                    <td><span class="normal">无</span></td>
+                    <td class="t_l">
+                        <p>请求成功返回数据后执行的函数, 通常在这里执行数据插入操作</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td><b class="name">operate(可选)</b></td>
+                    <td><span class="type">function</span></td>
+                    <td><span class="normal">无</span></td>
+                    <td class="t_l">
+                        <p>执行相关功能的回调函数</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="how">返回值</div>
+        <code>
+        <pre>
+            无返回值
+        </pre>
+        </code>
+        <div class="how">用法</div>
+        <code>
+        <pre>
+            $('input.keyword').smartShow({
+            
+                <span>url: 'a.php', 
+                param:'key', 
+                dataType: 'json', 
+                dataWrap: 'li', 
+                wrapClass: 'current', 
+                panel: '.wrapbox', 
+                success:function(data){
+                  //执行数据操作
+                },
+                operate: function(){
+                  //执行其它相关操作
+                }
+                </span>
+             });
+        </pre>
+        </code>
+        <div class="how">例子</div>
+        <div class="demo-box">
+            <a class="demo" href="smartshow.html" target="_blank">文字自动完成效果</a>
+        </div>
+        
+           
+           
+        <dl id="text">
+            <dt>文本框默认文字提示效果</dt>
+            <dd><span class="code">$('input').checkValue(options)</span></dd>
+        </dl>
+        <table class="props_tb">
+            <colgroup>
+                <col style="width:130px">
+                <col style="width:100px">
+                <col style="width:70px">
+                <col style="width:370px">
+            </colgroup>
+            <thead>
+                <tr class="even">
+                    <th>参数</th>
+                    <th>数据类型</th>
+                    <th>默认值</th>
+                    <th>参数说明</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><b class="name">defaultValue(可选)</b></td>
+                    <td><span class="type">Array</span></td>
+                    <td><span class="normal">[ ]</span></td>
+                    <td class="t_l">
+                        <p>此参数可以设置文本框的默认值, 数组形式, 如['请输入用户名', '请输入年龄']</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td><b class="name">focusCss(可选)</b></td>
+                    <td><span class="type">object</span></td>
+                    <td><span class="normal">{ }</span></td>
+                    <td class="t_l">
+                        <p>此参数是复合类型.可以对获取焦点的文本框进行样式设置.写法完全遵循css对象表示法.如:<br />focusCss: {color: '#666'}</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td><b class="name">blurCss(可选)</b></td>
+                    <td><span class="type">object</span></td>
+                    <td><span class="normal">{ }</span></td>
+                    <td class="t_l">
+                        <p>此参数是复合类型.可以对失去焦点的文本框进行样式设置.写法完全遵循css对象表示法.如:<br />blurCss: {color: '#999'}</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+         <div class="how">返回值</div>
+        <code>
+        <pre>
+            无返回值
+        </pre>
+        </code>
+        <div class="how">用法</div>
+        <code>
+        <pre>
+            //默认用法
+            $('input.keyword').checkValue();
+            
+            //带可选参数的用法
+            $('input.keyword').checkValue({
+                defaultValue: ['请输入用户名'],
+                focusCss: {
+                    borderColor: '#ff6600',
+                    color: '#333',
+                    width: function(){
+                        $(this).animate({width: 300}, 200);
+                    }
+                },
+                blurCss: {
+                
+                    borderColor: '#999',
+                    color: '#999',
+                    width: function(){
+                        $(this).animate({width: 200}, 200);
+                    }
+                }
+            });
+        </pre>
+        </code>
+        <div class="how">例子</div>
+        <div class="demo-box">
+            <a class="demo" href="checkvalue.html" target="_blank">文本框默认文字提示效果</a>
+        </div>
+        
+        <dl id="dialog">
+            <dt>自定义对话框</dt>
+            <dd><span class="code">$(jquery选择器).dialog(options)</span></dd>
+        </dl>
+        <table class="props_tb">
+            <colgroup>
+                <col style="width:130px">
+                <col style="width:100px">
+                <col style="width:70px">
+                <col style="width:370px">
+            </colgroup>
+            <thead>
+                <tr class="even">
+                    <th>参数</th>
+                    <th>数据类型</th>
+                    <th>默认值</th>
+                    <th>参数说明</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><b class="name">container(可选)</b></td>
+                    <td><span class="type">string</span></td>
+                    <td><span class="normal">.dialog-bd</span></td>
+                    <td class="t_l">
+                        <p>对话框内容容器的class或者id, jquery选择器</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td><b class="name">content(可选)</b></td>
+                    <td><span class="type">string</span></td>
+                    <td><span class="normal">hello world !</span></td>
+                    <td class="t_l">
+                        <p>对话框内容</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td><b class="name">close(可选)</b></td>
+                    <td><span class="type">string</span></td>
+                    <td><span class="normal">.dialog-close</span></td>
+                    <td class="t_l">
+                        <p>对话框关闭按钮的class或者id, jquery选择器</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td><b class="name">confirm(可选)</b></td>
+                    <td><span class="type">string</span></td>
+                    <td><span class="normal">.dialog-confirm</span></td>
+                    <td class="t_l">
+                        <p>对话框确认按钮的class或者id, jquery选择器</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td><b class="name">cancel(可选)</b></td>
+                    <td><span class="type">string</span></td>
+                    <td><span class="normal">.dialog-cancel</span></td>
+                    <td class="t_l">
+                        <p>对话框取消按钮的class或者id, jquery选择器</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td><b class="name">operate(可选)</b></td>
+                    <td><span class="type">function</span></td>
+                    <td><span class="normal">无</span></td>
+                    <td class="t_l">
+                        <p>点击确定按钮触发的回调函数,此函数返回遮罩层的id</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td><b class="name">animate(可选)</b></td>
+                    <td><span class="type">boolean</span></td>
+                    <td><span class="normal">false</span></td>
+                    <td class="t_l">
+                        <p>是否支持动画</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td><b class="name">mask(可选)</b></td>
+                    <td><span class="type">boolean</span></td>
+                    <td><span class="normal">true</span></td>
+                    <td class="t_l">
+                        <p>是否带有遮罩层</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td><b class="name">opacity(可选)</b></td>
+                    <td><span class="type">number</span></td>
+                    <td><span class="normal">0.1</span></td>
+                    <td class="t_l">
+                        <p>设置遮罩层的透明度</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="how">返回值</div>
+        <code>
+        <pre>
+            无返回值
+        </pre>
+        </code>
+        <div class="how">用法</div>
+        <code>
+        <pre>
+            $('.dialog').dialog({
+            
+                <span>container: '.dialog-bd',
+                content: 'hello world',
+                close: '.dialog-close',
+                cancel: '.dialog-cancel',
+                confirm: '.dialog-confirm',
+                animate: true,
+                operate: function(maskId){
+                    //alert(maskId);
+                }
+                </span>
+          });
+        </pre>
+        </code>
+        <div class="how">例子</div>
+        <div class="demo-box">
+            <a class="demo" href="dialog.html" target="_blank">默认自定义对话框</a>
+            <a class="demo" href="dialog2.html" target="_blank">带动画效果的自定义对话框</a>
+            <a class="demo" href="dialog3.html" target="_blank">带回调函数的自定义对话框</a>
+        </div>
+    </div>
+</div>
+<div class="gotop"></div>
+<script type="text/javascript">
+$('.gotop').toPlace('top', {animate:true, speed:200});
+</script>
+<div class="bc">
+    <div class="footer">power by haitao @2014</div>
+</div>
+</body>
+</html>

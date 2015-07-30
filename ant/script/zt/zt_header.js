@@ -1,0 +1,1 @@
+document.write("<iframe src=\"http://static.wkimg.com/common/script/zt/zt_header.html\" width=\"980\" height=\"52\" scrolling=\"no\" frameborder=\"0\"></iframe>");

@@ -1,0 +1,309 @@
+body{background-color:#f6f6f6;}
+.col-side{width:160px;}
+.col-main{width:810px;}
+.logo{width:160px;}
+.logo img{display:block;}
+.nav{width:810px;height:38px;line-height:38px;overflow:hidden;background-color:#33a89e;}
+.nav ul{border:1px solid #42aea5;}
+.nav li{width:124px;background:url(http://img.xywy.com/user_center/images/split.png) 100% 0 no-repeat;}
+.nav a,.nav a:visited{display:block;margin-right:4px;color:#fff;}
+.nav a:hover{color:#fff;text-decoration:underline;background-color:#19988e;}
+.nav .current a{background-color:#19988e;}
+
+.con-bdr{border-top:1px solid #e7e7e7;border-right:1px solid #e7e7e7;}
+.bdr{border:1px solid #dcdcdc;}
+.green,.green a,.green a:visited{color:#1c9289;}
+.green a:hover{color:#f60;}
+.yellow,.yellow a,.yellow a:visited{color:#ffa71d;}
+.container{background-color:#fff;}
+
+.col-side .container{margin-top:-1px;background:#f2f2f2;}
+.user-info{padding:3px;width:125px;background-color:#fff;}
+.user-info li{display:inline-block;*display:inline;zoom:1;}
+.user-info .first{border-right:1px solid #e2e2de;}
+.user-do,.user-int{padding-left:13px;padding-right:13px;}
+.menu-list li{height:28px;line-height:28px;overflow:hidden;}
+.menu-list a{display:block;padding-left:13px;padding-right:13px;}
+.menu-list a:hover{background-color:#e9e9e9;}
+.menu-list a.current{color:#f60;text-decoration:none;background-color:#cad9d8;}
+.menu-hd{height:26px;line-height:26px;background-color:#e6e6e6;}
+.user-pug li{padding-left:13px;padding-right:13px;color:#666;}
+.user-pug a{display:inline;padding:0;}
+.user-pug a:hover{background:none;}
+
+.tab-menu{border-bottom:2px solid #42aea5;}
+.tab-menu li{height:30px;line-height:30px;}
+.tab-menu li a,.tab-menu li a:visited{display:block;padding:0 15px;color:#333;}
+.tab-menu li.current a,.tab-menu li.current a:visited,.tab-menu li a:hover{color:#fff;background-color:#1e9b91;}
+.button-a{color:#fff;background:url(http://img.xywy.com/user_center/images/btn_a.png) 0 0 no-repeat;}
+.button-a span{height:24px;line-height:24px;*overflow:hidden;background:url(http://img.xywy.com/user_center/images/btn_a.png) 100% 0 no-repeat;}
+.button-a:hover span{text-decoration:underline;}
+
+.letter-area li,.group-item,.dyn-detail dd{border-bottom:1px dashed #ddd;}
+.letter-title{width:55%;}
+.letter-date{width:30%;}
+.letter-do{width:10%;}
+.check-box{width:14px;height:14px;}
+.del-btn{width:14px;height:14px;background:url(http://img.xywy.com/user_center/images/close_btn.png) no-repeat;}
+.button-b{color:#666;border:0 none;background:url(http://img.xywy.com/user_center/images/btn_b.png) 0 0 no-repeat;}
+.button-b span{height:25px;line-height:25px;background:url(http://img.xywy.com/user_center/images/btn_b.png) 100% 0 no-repeat;}
+
+.send-msg{width:570px;}
+.contact-list{margin-top:35px;width:200px;border:1px solid #ddd;}
+.contact-list ul{height:214px;overflow:auto;}
+.contact-list-hd{border-bottom:1px solid #ddd;box-shadow:0 1px 2px 1px rgba(0,0,0,.1);-webkit-box-shadow:0 1px 2px 1px rgba(0,0,0,.1);-moz-box-shadow:0 1px 2px 1px rgba(0,0,0,.1);-o-box-shadow:0 1px 2px 1px rgba(0,0,0,.1);}
+.contact-list-btd,.contact-pop-btm{border-top:1px solid #ddd;border-bottom:0 none;}
+.contact-list-hd,.contact-list li,.contact-pop-bd li{height:26px;line-height:26px;}
+.contact-list li a:hover,.contact-pop-bd li a:hover{text-decoration:none;background-color:#f0f0f0;}
+.contact-list-item{width:200px;height:150px;border:0 none;}
+.contact-pop-box{position:absolute;width:500px;height:370px;border:1px solid #ddd;background-color:#fff;box-shadow:1px 1px 1px 2px rgba(100,125,0,.08);}
+.contact-pop-hd{height:30px;line-height:30px;border-bottom:1px solid #ddd;cursor:move;background-color:#f8f8f8;}
+.contact-pop-bd ul{height:200px;overflow:auto;}
+.contact-pop-tab{border-bottom:1px solid #ddd;}
+.contact-pop-tab li{width:40px;height:22px;line-height:22px;}
+.contact-pop-tab .first{margin-left:185px;}
+.contact-pop-tab .current{color:#fff;background-color:#1c9289;}
+.contact-pop-input input{width:400px;}
+/*ff hack*/
+@-moz-document url-prefix(){
+a.button-b span{margin-top:0;}
+button.button-b span{margin-top:-1px;}
+}
+.button-b:hover span{text-decoration:underline;}
+.letter-txt{width:350px;height:26px;line-height:26px;border:1px solid #ddd;border-top-width:2px;border-left-width:2px;}
+.letter-detail{top:20px;left:160px;width:500px;border:1px solid #ddd;background-color:#fff;box-shadow:2px 2px 2px 1px rgba(0, 0, 0, .1);-o-box-shadow:2px 2px 2px 1px rgba(0, 0, 0, .1);-moz-box-shadow:2px 2px 2px 1px rgba(0, 0, 0, .1);-webkit-box-shadow:2px 2px 2px 1px rgba(0, 0, 0, .1);border-radius:5px;-o-border-radius:5px;-moz-border-radius:5px;-webkit-border-radius:5px;}
+.letter-detail .letter-colse,.letter-detail .letter-send{width:77px;height:21px;background:url(http://img.xywy.com/user_center/images/close_msg.png) no-repeat;}
+.letter-detail .letter-m{width:14px;height:14px;top:10px;right:10px;cursor:pointer;background:url(http://img.xywy.com/user_center/images/close_btn.png) no-repeat;}
+.letter-content{width:484px;height:180px;border:1px solid #ddd;border-top-width:2px;border-left-width:2px;}
+.button-c{color:#fff;border:0 none;background:url(http://img.xywy.com/user_center/images/btn_c.png) 0 0 no-repeat;}
+.button-c span{margin:-1px -3px 0 0;*margin-top:-2px;height:29px;line-height:29px;background:url(http://img.xywy.com/user_center/images/btn_c.png) 100% 0 no-repeat;}
+.btn-del{*margin-top:-2px;}
+.letter-detail .letter-send{background:url(http://img.xywy.com/user_center/images/send_msg.png) no-repeat;}
+
+.myask{background:url(http://img.xywy.com/user_center/images/ico_01.png) no-repeat 0 2px;}
+.ico-flag-a{background:url(http://img.xywy.com/user_center/images/ico_02.png) no-repeat 0 2px;}
+a.qc-btn,a.qc-btn:hover{color:#fff;background-color:#ffa71d;}
+.quick-ask{background:url(http://img.xywy.com/user_center/images/ico_22.gif) no-repeat;}
+.qs-title{width:330px;}
+.qs-res{width:56px;margin-top:10px;line-height:normal;}
+.qs-date,.qs-amount{width:108px;}
+.qs-sta{width:55px;height:20px;margin-top:12px;line-height:20px;background-color:#ffa619;}
+.qs-sta a,.qs-sta a:visited{color:#fff;}
+.qs-new{top:-1px;left:-10px;width:21px;height:13px;background:url(http://img.xywy.com/user_center/images/ico_24.gif) no-repeat;}
+.qs-bd{padding:0 15px;border:1px solid #ddd;border-top:0 none;}
+.qs-bd li{line-height:35px;}
+.qs-er{padding-left:15px;background:url(http://img.xywy.com/user_center/images/ico_23.gif) no-repeat;}
+
+.photo-list li{width:210px;margin:30px 0 0 35px;}
+a.photo-link{top:0;left:0;height:240px;opacity:0.5;filter:alpha(opacity=50);background:#fff;}
+a.photo-link:hover{border:1px solid #64cbc2;border-bottom-width:2px;text-decoration:none;opacity:1;filter:alpha(opacity=100);background:url(about:blank) transparent;}
+.photo-box{border:1px solid #dedede;border-bottom-width:2px;}
+.photo-do{bottom:12px;right:15px;}
+
+.group-photo{width:104px;}
+.group-photo img{border:1px solid #e5e5e5;}
+.group-main{width:480px;}
+.group-extra{width:100px;}
+.text-list li{padding-left:10px;height:24px;line-height:24px;overflow:hidden;background:url(http://img.xywy.com/user_center/images/ico_03.png) 0 8px no-repeat;}
+
+.reply-hd{width:445px;}
+.reply-gp{width:205px;}
+.reply-date{width:100px;}
+.reply-ico{width:16px;height:13px;background:url(http://img.xywy.com/user_center/images/ico_04.png) no-repeat;}
+
+.dis-txt{width:60px;}
+.dis-detail{width:670px;}
+.dyn-list{background:url(http://img.xywy.com/user_center/images/line_bg.png) 100px 0 repeat-y;}
+.dyn-date{width:100px;}
+.dyn-detail{width:676px;}
+.dyn-ico{width:14px;height:14px;top:2px;right:-7px;background:url(http://img.xywy.com/user_center/images/ico_05.png) no-repeat;}
+.dyn-pp{width:12px;height:12px;background:url(http://img.xywy.com/user_center/images/ico_06.png) no-repeat;}
+.dyn-detail p{background-color:#f7f7f7;}
+.load-more a{background-color:#f0f0f0;}
+
+.attent-user{width:250px;}
+.attent-txt{width:181px;height:55px;background:url(http://img.xywy.com/user_center/images/btn_e.png) no-repeat;}
+.attent-extra{width:184px;}
+.attent-txt span{width:60px;}
+.button-d{color:#999;background:url(http://img.xywy.com/user_center/images/btn_d.png) 0 0 no-repeat;}
+.button-d span{height:24px;line-height:24px;background:url(http://img.xywy.com/user_center/images/btn_d.png) 100% 0 no-repeat;}
+
+.register{background:url(http://img.xywy.com/user_center/images/ico_07.png) no-repeat;}
+.reg-step a,.reg-step a:visited{color:#666;text-decoration:none;}
+.reg-step a:hover,.reg-step a.current{font-weight:700;color:#f60;}
+
+.register-list .first{height:30px;line-height:30px;background-color:#f0f0f0;}
+.register-list .regist-num{margin-left:28px;}
+.register-item{width:150px;}
+.register-detail{top:22px;left:220px;z-index:2;width:280px;border:1px solid #f0f0f0;box-shadow:0 0 10px 0 #ddd;-moz-box-shadow:0 0 10px 0 #ddd;-webkit-box-shadow:0 0 10px 0 #ddd;}
+.register-detail .register-detail-ico{top:5px;right:-12px;width:11px;height:19px;background:url(http://img.xywy.com/user_center/images/icon_23.png) no-repeat;}
+.register-detail ul{background-color:#f9f9f9;}
+.register-detail .current{color:#ffa71d;background-color:#f0f0f0;}
+.patient-info,.patient-info th,.patient-info td{border:1px solid #e3e2e2;}
+.patient-info th,.patient-info td{padding:10px 0;width:150px;text-align:center;color:#666;font-weight:700;background-color:#f8f8f8;}
+.patient-info td{font-weight:200;background:none;}
+.patient-info .read{width:80px;border:0 none;color:#666;}
+.patient-info .write{width:80px;height:22px;line-height:22px;border:1px solid #ddd;border-top-width:2px;border-left-width:2px;color:#666;}
+.info-tip{width:137px;height:26px;line-height:26px;background:url(http://img.xywy.com/user_center/images/ico_08.png) no-repeat;}
+.info-txt-tip{width:600px;background-color:#f2f2f2;}
+.patient-add-info .text{width:350px;height:24px;line-height:24px;border:1px solid #ddd;border-top-width:2px;border-left-width:2px;color:#666;}
+.res-step{width:620px;height:78px;border-bottom:5px solid #e1ddde;}
+.res-step li{width:155px;height:78px;background:url(http://img.xywy.com/user_center/images/ico_09.png) 50% 100% no-repeat;}
+.res-step .step1{top:13px;left:-80px;}
+.res-step .step2{top:13px;left:80px;}
+.res-step .step3{top:13px;left:230px;}
+.res-step .step4{top:13px;left:380px;}
+.res-step .step5{top:13px;left:532px;}
+.res-step .current{background:url(http://img.xywy.com/user_center/images/ico_10.png) 50% 100% no-repeat;}
+.res-step .current span{color:#ff9f03;}
+.res-area{background-color:#f8f8f8;}
+
+.person-input-text{padding-left:4px;width:380px;height:28px;line-height:28px;border:1px solid #e2e1e1;border-left-width:2px;border-top-width:2px;color:#666;}
+.person-input-pwd{padding-left:4px;width:220px;height:28px;line-height:28px;border:1px solid #e2e1e1;border-left-width:2px;border-top-width:2px;color:#666;}
+.button-e{left:250px;width:64px;height:27px;border:0 none;background:url(http://img.xywy.com/user_center/images/btn_f.png) no-repeat;}
+.file-input{width:64px;_width:10px;height:27px;right:-15px;top:14px;z-index:2;opacity:0;filter:alpha(opacity=0);}
+.birth-input{width:150px;padding-left:28px;background:url(http://img.xywy.com/user_center/images/ico_28.png) 5px 50% no-repeat;}
+
+.tab-menu-mail{height:30px;line-height:30px;background-color:#f8f8f8;}
+.tab-menu-mail .current{color:#1c9289;}
+.mail-attest .step{width:149px;height:28px;line-height:28px;border:1px solid #ccc;background-color:#f2f2f2;}
+.mail-attest .step-ico{width:58px;height:28px;background:url(http://img.xywy.com/user_center/images/ico_11.png) 0 50% no-repeat;}
+.no-use{width:114px;height:28px;line-height:28px;border:1px solid #ddd;background-color:#eee;color:#ddd;}
+
+.user-amount-int{width:300px;height:10px;line-height:10px;overflow:hidden;border-radius:5px;-webkit-border-radius:5px;-moz-border-radius:5px;-ms-border-radius:5px;background-color:#e0dddd;}
+.user-count-int{height:10px;overflow:hidden;background-color:#ff9f05;border-radius:5px;-webkit-border-radius:5px;-moz-border-radius:5px;-ms-border-radius:5px;}
+.int-detail li{height:28px;line-height:28px;}
+.goods-list li{width:104px;height:140px;margin:20px 22px 0 0;}
+.goods-list p.normal-a{height:15px;overflow:hidden;}
+.goods-list a:hover{background:url(about:blank);}
+.goods-list img{display:block;margin-left:10px;border:1px solid #ddd;}
+.goods-list a:hover img{border:1px solid #f60;}
+.exchange-record a.current{color:#f60;font-weight:700;}
+
+.button-f{width:36px;height:28px;border:0 none;background:url(http://img.xywy.com/user_center/images/btn_g.png) no-repeat;}
+
+.col-middle{width:580px;}
+.col-extra{width:220px;}
+.col-extra-b{width:230px;}
+
+.extra-hd{height:28px;line-height:28px;background-color:#f8f8f8;}
+.extra-ann-bd li{height:28px;line-height:28px;border-bottom:1px solid #f0f0f0;}
+.extra-tab,.items-sub-tab{border-bottom:1px solid #e5e5e4;}
+.extra-tab li,.items-sub-tab li{margin-bottom:-2px;width:95px;height:30px;line-height:25px;}
+.extra-tab .current{background:url(http://img.xywy.com/user_center/images/tab_bg.png) 0 100% no-repeat;}
+.extra-tab-item .extra-pic{width:70px;}
+.extra-tab-item dl{width:120px;}
+.extra-tab-item img{padding:1px;border:1px solid #ddd;}
+.extra-tab-item .button-d{padding-left:8px;}
+.extra-tab-item .button-d span{padding-right:8px;}
+.gochange{width:59px;height:22px;line-height:22px;background:url(http://img.xywy.com/user_center/images/btn_h.png) no-repeat;}
+.extra-hot-bd{height:168px;}
+.extra-hot-bd li{height:28px;line-height:28px;overflow:hidden;}
+.panel{min-height:30px;height:auto;_height:120px;}
+
+.items-hd{height:33px;line-height:33px;*overflow:hidden;background-color:#f8f8f8;}
+.items-tab{border-bottom:1px solid #e5e5e4;}
+.items-tab li{margin-top:1px;}
+.items-tab .current{border-left:1px solid #e5e5e4;border-right:1px solid #e5e5e4;background-color:#fff;}
+.file-item-one{width:142px;}
+.file-item-two{width:85px;}
+.file-item-three{width:85px;}
+.file-item-four{width:85px;}
+.file-item-five{width:100px;}
+.file-item-six{width:62px;}
+.user-file div,.int-detail div,.doc-list div,.doc-item-four .ads,.group-item-one,.group-tab-item div,.select-area-bd li,.select-area-bd li a{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.doc-item-one{width:89px;margin-left:8px;}
+.doc-item-two{width:127px;}
+.doc-item-three{width:116px;}
+.doc-item-four{width:200px;}
+.group-item-one{width:123px;}
+.group-item-two{width:115px;}
+.group-item-three{width:113px;}
+.group-item-four{width:176px;}
+.doc-item-four .ads{width:135px;}
+.doc-item-four .comt{width:70px;}
+.file-do{height:19px;line-height:19px;color:#fff;}
+.file-up{background-color:#33a89e;}
+.file-fin{background-color:#ffa71d;}
+.user-status{background-color:#f8f8f8;}
+.user-status li{width:120px;}
+.user-status .ico-min{width:48px;height:49px;}
+.user-status .ico-first{background:url(http://img.xywy.com/user_center/images/ico_12.png) no-repeat;}
+.user-status .ico-second{background:url(http://img.xywy.com/user_center/images/ico_13.png) no-repeat;}
+.user-status .ico-third{background:url(http://img.xywy.com/user_center/images/ico_14.png) no-repeat;}
+.user-status .ico-fouth{background:url(http://img.xywy.com/user_center/images/ico_15.png) no-repeat;}
+.user-status .ico-status-off{margin-top:18px;height:16px;background:url(http://img.xywy.com/user_center/images/ico_16.png) no-repeat;}
+.user-status .ico-status-on{margin-top:18px;height:16px;color:#82c512;background:url(http://img.xywy.com/user_center/images/ico_17.png) no-repeat;}
+.dis-write-off,.dis-write-on{height:24px;line-height:24px;border:0 none;font-size:12px;color:#999;}
+.dis-write-on{width:120px;border:1px solid #ddd;border-top-width:2px;border-left-width:2px;}
+.ico-write{width:20px;height:20px;background:url(http://img.xywy.com/user_center/images/ico_18.png) 50% 50% no-repeat;}
+.file-pro{margin-top:8px;height:11px;line-height:11px;overflow:hidden;border:1px solid #ffa71d;}
+.file-pro em{height:13px;line-height:13px;background-color:#ffa71d;}
+.items-sub-tab li{width:73px;}
+.items-sub-tab .current{background:url(http://img.xywy.com/user_center/images/tab_bg_02.png) 0 100% no-repeat;}
+.items-bd .reply-ico{width:auto;height:20px;background-position:0 50%;}
+
+.ask-btn{width:68px;height:32px;line-height:32px;border:0 none;color:#fff;background:url(http://img.xywy.com/user_center/images/btn_i.png) no-repeat;}
+.doctor-mark{border:1px solid #ccc;background-color:#f2f2f2;height:20px;line-height:22px;}
+.doctor-mark b{height:17px;background:url(http://img.xywy.com/user_center/images/ico_19.png) 0 2px no-repeat;}
+.select-condition-on{margin:6px 0 0 3px;padding-left:3px;height:15px;line-height:15px;border:1px solid #ffa10a;color:#ffa10a;background-color:#fff;}
+.select-condition-on .cond-canel{margin:-2px 1px 0 3px;width:14px;height:12px;background:url(http://img.xywy.com/user_center/images/ico_20.png) no-repeat;}
+.select-condition-on:hover{text-decoration:none;}
+
+.select-area{line-height:22px;}
+.select-area-bd{width:670px;}
+.selectU-off a{padding-left:16px;background:url(http://img.xywy.com/user_center/images/ico_25.png) 0 50% no-repeat;}
+.selectU-on a{background:url(http://img.xywy.com/user_center/images/ico_24.png) 0 50% no-repeat;}
+.select-area-bd li{margin-bottom:10px;}
+.select-area-bd li a{padding:0 5px;display:block;}
+.select-area-bd li .current{color:#fff;background-color:#1c9289;}
+.select-area-search{width:152px;}
+.hosp-name{width:150px;height:18px;line-height:18px;border:1px solid #999;}
+.doc-amount{height:32px;line-height:32px;background-color:#f8f8f8;}
+.expert-list .expert-list-hd{border:0 none;height:32px;line-height:32px;background-color:#fff5e6;}
+.expert-list .expert-name{width:210px;}
+.expert-list .expert-do{width:150px;}
+.expert-list .expert-date{width:240px;}
+.expert-list .expert-vote{width:95px;}
+.expert-list .expert-call{width:75px;}
+.expert-list table{border:1px solid #ffad33;}
+.expert-list td{padding:1px; border:1px solid #ffad33; text-align:center;}
+.expert-list td.current{color:#ff9900;}
+.expert-list .expert-date a{top:0;left:0;width:240px;height:106px;}
+.expert-list .ico-ask{width:77px;height:24px;background:url(http://static.img.xywy.com/user_center/images/btn_m.png) no-repeat;}
+.expert-list .ico-opp{width:77px;height:24px;background:url(http://static.img.xywy.com/user_center/images/btn_n.png) no-repeat;}
+.expert-name .w60{height:60px;border:1px solid #ddd;text-align:center;}
+.expert-name .expi{height:100%;}
+.hosp-more-list{top:24px;left:0;z-index:2;width:150px;min-height:120px;height:auto;_height:120px;border:1px solid #999;background-color:#fff;box-shadow:1px 1px 1px 2px rgba(200, 200, 209, 0.5);}
+.hosp-more-list li{margin:0;height:24px;line-height:24px;overflow:hidden;}
+.hosp-more-list a:hover{background-color:#f0f0f0;}
+
+label.error-tip{float:left;margin:5px 0 0 5px;font-size:12px;color:#ff0000;}
+
+.succ-box{bottom:50px;left:50%;margin:-30px 0 0 -100px;width:199px;height:61px;box-shadow:3px 3px 3px 1px #ddd;-moz-box-shadow:3px 3px 3px 1px #ddd;-webkit-box-shadow:3px 3px 3px 1px #ddd;background:url(http://img.xywy.com/user_center/images/success.png) no-repeat;}
+.cancel-box{bottom:50px;left:50%;margin:-80px 0 0 -150px;border:1px solid #ddd;box-shadow:3px 3px 3px 1px #ddd;-moz-box-shadow:3px 3px 3px 1px #ddd;-webkit-box-shadow:3px 3px 3px 1px #ddd;background-color:#fff;}
+
+.upload_box{margin: 50px auto 0;width: 550px;border: 1px solid #e0e0e0;background:url(http://img.xywy.com/user_center/images/ico_photo.png) no-repeat 50% 50% #f9f9f9;}
+#upload_progress{height:340px;}
+.progressWrapper{position:relative;margin-top: 10px;padding:0 10px;height:52px;font-size: 12px;border:1px solid #ddd;background-color:#f9f9f9;box-shadow:3px 3px 3px 1px rgba(0, 105, 205, .1);-webkit-box-shadow:3px 3px 3px 1px rgba(0, 105, 205, .1););-moz-box-shadow:3px 3px 3px 1px rgba(0, 105, 205, .1););-o-box-shadow:3px 3px 3px 1px rgba(0, 105, 205, .1);}
+.progressCancel{position:absolute;top:-2px;right:-2px;width:14px;height:14px;background:url(http://img.xywy.com/user_center/images/cancelbutton.gif) no-repeat;}
+.progressBarStatus{color:#999;}
+.progressBarInProgress{margin-top:5px;width:0;height:2px;background-color:blue;}
+.no-data{left:50%;margin-top:-100px;width:200px;height:50px;line-height:50px;border:1px solid #ddd;background-color:#fff;box-shadow:1px 1px 1px 1px rgba(0, 0, 0, .1);-webkit-box-shadow:1px 1px 1px 1px rgba(0, 0, 0, .1);-o-box-shadow:1px 1px 1px 1px rgba(0, 0, 0, .1);-moz-box-shadow:1px 1px 1px 1px rgba(0, 0, 0, .1);}
+.expert-type a{height:24px;line-height:24px;color:#1d9a8a;}
+.expert-type .current{background-color:#c9e6e2;}
+.expert-type span{height:28px;background:url(http://img.xywy.com/uc/d_dot.gif) 50% 100% no-repeat;}
+.page {padding:27px 0;color:#666;}
+.page span{margin:0 2px;}
+.page a {border: #c3c3c3 1px solid; padding:3px 7px; color:#33a89e; background: #fff; margin-right: 1px; text-decoration: none}
+.page a:hover {border: #029702 1px solid; background: url(http://img.xywy.com/user_center/images/page_bg.png) center center #029702;color: #fff; }
+.page a:active {border: #029702 1px solid; background: url(http://img.xywy.com/user_center/images/page_bg.png) center center #029702; color: #fff; }
+.page span.pagecurrent {border:#029702 1px solid; padding:3px 7px; font-weight: bold; background: url(http://img.xywy.com/user_center/images/page_bg.png) center center #029702; color: #fff; margin-right: 1px;}
+
+
+.footer{background-color:#f1f0ef;}
+.contact{border-bottom:1px solid #e5e5e5;}
+.footer-link{width:377px;}
+.footer-link li{float:left;width:120px;}
+.footer-ico{margin:15px 0 0 40px;width:112px;height:110px;background:url(http://img.xywy.com/user_center/images/footer_ico.png) no-repeat;}
+.footer-webinfo{margin-left:40px;width:400px;height:112px;}

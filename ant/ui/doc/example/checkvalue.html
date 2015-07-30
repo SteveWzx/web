@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>文本框默认值效果</title>
+<link rel="stylesheet" type="text/css" href="http://static.wkimg.com/common/ui/base/ant-base.css" />
+<link rel="stylesheet" type="text/css" href="../css/example.css" />
+<script type="text/javascript" src="http://static.wkimg.com/common/lib/jquery/1.8.3/jquery.min.js"></script>
+<script type="text/javascript" src="http://static.wkimg.com/common/lib/widget/2.0.1/ant-widget.js"></script>
+<script type="text/javascript">
+$(function(){
+    $('input').checkValue({
+        defaultValue: ['请输入用户名', '请输入问题标题'],
+        focusCss: {
+            color: '#333',
+            width: function(){
+                $(this).animate({width: 400}, 200);
+            }
+        },
+        blurCss: {
+            color: '#999',
+            width: function(){
+                $(this).animate({width: 300}, 200);
+            }
+        }
+    });
+})
+</script>
+</head>
+<body>
+<div class="ant-pt20 ant-pl20 ant-pb10 ant-s16 ant-yahei">文本框默认值</div>
+<div class="ant-pt20 ant-pl20 ant-pb10"><input type="text" class="ant-input-text ant-input-text-middle" value="请输入用户名"></div>
+<div class="ant-pt20 ant-pl20 ant-pb10"><input type="text" class="ant-input-text ant-input-text-middle" value="请输入问题标题"></div>
+</body>
+</html>

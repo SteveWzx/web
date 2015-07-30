@@ -1,0 +1,156 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>tab选项卡</title>
+<link rel="stylesheet" type="text/css" href="css.css" />
+<script type="text/javascript" src="http://static.wkimg.com/common/lib/jquery.min.js"></script>
+<script type="text/javascript" src="http://static.wkimg.com/common/lib/jquery-xywy-plus.js"></script>
+<style type="text/css">
+body{margin:10px;}
+</style>
+</head>
+<body>
+<div class="wrap">
+     <span class="box_hd">默认选项卡</span>
+    <div class="tab-box2">
+            <div>
+                <ul class="tab">
+                    <li class="current">北京</li>
+                    <li>上海</li>
+                    <li>广州</li>
+                </ul>
+            </div>
+            <div class="panels">
+                <div class="tab-item panel">话题讨论：生殖器白癜风会传染吗</div>
+                <div class="tab-item panel none">15个问题，让你快速了解UVB使用方法</div>
+                <div class="tab-item panel none">为了老公为了爱情，我要战胜白癜风</div>
+            </div>
+    </div>
+    <br />
+    <br />
+    <span class="box_hd">带有透明度效果选项卡</span>
+    <div class="tab-box1">
+            <div>
+                <ul class="tab">
+                    <li class="current">北京</li>
+                    <li>上海</li>
+                    <li>广州</li>
+                </ul>
+            </div>
+            <div class="tab-item panel">话题讨论：生殖器白癜风会传染吗</div>
+            <div class="tab-item panel none">15个问题，让你快速了解UVB使用方法</div>
+            <div class="tab-item panel none">为了老公为了爱情，我要战胜白癜风</div>
+    </div>
+    <script type="text/javascript">
+    $(function(){
+        $('.tab-box1').tab({opacity:true});
+    })
+    </script>
+    <br />
+    <br />
+    <script>
+        $('.tab-box2').tab();
+    </script>
+    <span class="box_hd">具备点击事件的选项卡</span>
+    <div class="tab-box3">
+            <ul class="tab">
+                <li class="current">北京</li>
+                <li>上海</li>
+                <li>广州</li>
+            </ul>
+            <div class="panels">
+                <div class="tab-item panel">话题讨论：生殖器白癜风会传染吗</div>
+                <div class="tab-item panel none">15个问题，让你快速了解UVB使用方法</div>
+                <div class="tab-item panel none">为了老公为了爱情，我要战胜白癜风</div>
+            </div>
+    </div>
+    <script>
+        $('.tab-box3').tab({type: 'click'});
+    </script>
+    <br />
+    <br />
+    <span class="box_hd">tab项具备滑动效果的选项卡</span>
+    <div class="tab-box4">
+        <div class="pr">
+            <ul class="tab slide-tab">
+                <li class="current">北京</li>
+                <li>上海</li>
+                <li>广州</li>
+            </ul>
+            <span class="sliding"></span>
+        </div>
+        <div class="tab-item panel">话题讨论：生殖器白癜风会传染吗</div>
+        <div class="tab-item panel none">15个问题，让你快速了解UVB使用方法</div>
+        <div class="tab-item panel none">为了老公为了爱情，我要战胜白癜风</div>
+    </div>
+    <script type="text/javascript">
+        $('.tab-box4').tab({
+            slideTab: {
+                trigger: '.sliding', 
+                sliding: true
+             }
+        });
+    </script>
+    <br />
+    <br />
+    <span class="box_hd">具备可以调整默认项的选项卡</span>
+    <div class="tab-box5">
+        <div class="pr">
+            <ul class="tab slide-tab">
+                <li class="current">北京</li>
+                <li>上海</li>
+                <li>广州</li>
+            </ul>
+            <span class="sliding"></span>
+        </div>
+        <div class="tab-item panel">话题讨论：生殖器白癜风会传染吗</div>
+        <div class="tab-item panel none">15个问题，让你快速了解UVB使用方法</div>
+        <div class="tab-item panel none">为了老公为了爱情，我要战胜白癜风</div>
+    </div>
+    <script type="text/javascript">
+        $('.tab-box5').tab({
+            slideTab: {
+                trigger: '.sliding', 
+                sliding: true
+             },
+             defaultPanel:1
+        });
+    </script>
+    <br />
+    <br />
+    <span class="box_hd">具备ajax调用的选项卡</span>
+    <div class="tab-box6">
+        <div class="pr">
+            <ul class="tab slide-tab">
+                <li class="current">北京</li>
+                <li>上海</li>
+                <li>广州</li>
+            </ul>
+            <span class="sliding"></span>
+        </div>
+        <div class="tab-item panel">话题讨论：生殖器白癜风会传染吗</div>
+        <div class="tab-item panel none">加载中...</div>
+        <div class="tab-item panel none">加载中...</div>
+    </div>
+    <script type="text/javascript">
+        $('.tab-box6').tab({
+            slideTab: {
+                trigger: '.sliding', 
+                sliding: true
+             },
+             asyn: {
+                state: true,
+                url: 'ajax.php',
+                data: [0, 'a=2', 'a=3'],
+                dataType: 'text',
+                success: function(thisPanel, data){
+                    thisPanel.html(data);
+                }
+             }
+             
+        });
+    </script>
+</div>
+</body>
+</html>

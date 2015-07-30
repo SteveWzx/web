@@ -1,0 +1,40 @@
+.list-lh28 li{height:28px;line-height:28px;overflow:hidden;}
+.group-main-hd{height:30px;line-height:30px;background-color:#f4f4f3;}
+.fsp-bg{background:url(http://img.xywy.com/home_new/images/f_sprite.gif) no-repeat;}
+.user-file-item{border-bottom:1px solid #42aea5;}
+.user-file-disease li{margin-bottom:-4px;height:29px;background:none;}
+.user-file-disease .current{background:url(http://img.xywy.com/user_center/images/ico_arrow.png) no-repeat 50% 100%;}
+.user-file-disease span{height:26px;line-height:26px;}
+.user-file-disease .current span{color:#fff;background-color:#42aea5;}
+.user-file-more{width:108px;height:22px;line-height:22px;background-position:0 -24px;}
+.user-add-more{width:75px;height:22px;line-height:22px;background-position:0 0;}
+.file-list{top:22px;left:0;width:106px;border:1px solid #dcdcdc;border-top:0 none;background-color:#fff;}
+.file-list a:hover{background-color:#f0f0f0;}
+.user-file-box{border:1px solid #e6e5e5;}
+.user-file-box-hd{height:29px;line-height:30px;border-bottom:1px solid #e6e5e5;background-color:#f4f4f3;}
+.user-file-box-bd li{background:url(http://img.xywy.com/home_new/images/dot_line.gif) repeat-x 0 0;}
+.file100{width:97px;}
+.file135{width:205px;}
+.file170{width:170px;}
+.file270{width:270px;}
+.file182{width:182px;}
+.file165{width:165px;}
+.file200{width:200px;}
+.file65{width:65px;}
+.file280{width:320px;}
+.file350{width:380px;}
+.file390{width:390px;}
+.file-pic-close{width:43px;height:49px;top:-20px;right:-20px;background:url(http://img.xywy.com/user_center/images/file_pic.png) no-repeat;_background:none;_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src=http://img.xywy.com/user_center/images/file_pic.png, sizingMethod=scale);}
+.group-patient-fbtn{width:110px;height:26px;line-height:26px;border:0 none;background:url(http://img.xywy.com/user_center/images/btn_o.png) no-repeat;}
+.user-file-input{padding-left:5px;width:195px;height:23px;line-height:23px;border:1px solid #7f9db9;}
+.user-file-date{padding-left:20px;width:180px;color:#666;background:url(http://img.xywy.com/home_new/images/datePicker.gif) no-repeat 2px 50%;}
+.user-file-radio{margin-top:2px;width:14px;height:14px;}
+.user-file-text{padding:5px 0 0 5px;width:350px;height:74px;border:1px solid #7f9db9;}
+.file-pop{position:fixed;_position:absolute;width:497px;z-index:1001;left:50%;margin:-200px 0 0 -249px;top:50%;_top:expression(eval(document.documentElement.scrollTop+200));background-color:#fff;}
+.mask{position:fixed;z-index:100;width:100%;height:100%;top:0;left:0;background-color:#000;opacity:0.6;}
+.file-pop-hd{height:32px;line-height:32px;background-position:0 -76px;}
+.file-pop-bd{border:1px solid #edebeb;border-bottom-width:2px;border-top:0 none;}
+.step{background-color:#f4f4f3;}
+.step li{width:169px;height:32px;line-height:32px;}
+.step .current{color:#fff;background:url(http://img.xywy.com/user_center/images/ico_29.png) no-repeat;}
+.finish-file{background-color:#eff4e2;}

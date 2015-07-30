@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>文本框默认值效果</title>
+<link rel="stylesheet" type="text/css" href="css.css" />
+<script type="text/javascript" src="http://static.wkimg.com/common/lib/jquery.min.js"></script>
+<script type="text/javascript" src="http://static.wkimg.com/common/lib/jquery-xywy-plus.js"></script>
+<style type="text/css">
+input{border:1px solid #999;color:#999;}
+</style>
+<script type="text/javascript">
+$(function(){
+    $('input').checkValue({
+        defaultValue: ['请输入用户名', '请输入问题标题'],
+        focusCss: {
+            borderColor: '#ff6600',
+            color: '#333',
+            width: function(){
+                $(this).animate({width: 300}, 200);
+            }
+        },
+        blurCss: {
+            borderColor: '#999',
+            color: '#999',
+            width: function(){
+                $(this).animate({width: 200}, 200);
+            }
+        }
+    });
+})
+</script>
+</head>
+<body>
+<div class="value_input"><input type="text" value="请输入用户名" /></div>
+<div class="value_input"><input type="text" value="请输入问题标题" /></div>
+</body>
+</html>
