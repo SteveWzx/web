@@ -33,4 +33,4 @@
 * ElasticSlideshow -> ElasticSlideshow
 * sidebar -> Three kinds of methods to achieve the sidebar
 * mobi -> Examples of mobile end page development
-* twbspagination -> jQuery pagination plugin
+* twbspagination -> jquery pagination plugin
