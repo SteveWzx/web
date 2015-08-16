@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>margin 负值的妙用</title>
+<style>
+body{text-align: center;font-size: 0;}
+.d{
+	display:inline-block;
+	width:200px;
+	height:200px;
+	background:red;
+}
+.d2{
+	display:inline-block;
+	width:200px;
+	height:200px;
+	background:yellow;
+}
+
+.d-inner{
+	width: 40px;
+	height: 40px;
+	background: blue;
+	margin-left: -50px;
+	margin-bottom: 1000px;
+}
+
+</style>
+</head>
+<body>
+<div class="d">
+	
+ <div class="d-inner">
+ 	
+ </div>
+
+</div>
+<div class="d2">
+	
+</div>
+<div>dsada</div>
+
+</body>
+</html>

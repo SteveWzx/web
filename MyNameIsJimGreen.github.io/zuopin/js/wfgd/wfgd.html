@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>无缝滚动</title>
+<style>
+html,body,div,ul,li{
+  margin:0;
+  padding:0;
+}
+img{vertical-align:middle;}
+ul,li{list-style:none;}
+.clearfix:after{
+	clear:both;
+	content:" ";
+	visibility:visible;
+    display:block;
+    font-size:0;
+    height:0;
+}
+.contain{
+	width:1200px;
+  height: 300px;
+	margin:100px auto;
+	overflow: hidden;
+  position: relative;
+}
+.contain ul li{
+	float:left;
+  background: url(loading.gif) center center no-repeat #fff;
+  background-size: 100px 100px;
+}
+.biji{
+	margin:0 auto;
+	font:18px/2 "微软雅黑"; 
+}
+.biji p{
+	text-align: center;
+}
+.contain-ul{
+  position: absolute;
+  left: 0;
+}
+</style>
+</head>
+<body>
+    <div class="biji">
+    	<p>
+    		支持除了IE6、7以外的所有浏览器。
+    	</p>
+    </div>
+	<div class="contain">
+		<ul class="contain-ul clearfix">
+			<li><img src="1.jpg" alt=" " height="300" width="300"></li>
+			<li><img src="2.jpg" alt=" " height="300" width="300"></li>
+			<li><img src="3.jpg" alt=" " height="300" width="300"></li>
+			<li><img src="4.jpg" alt=" " height="300" width="300"></li>
+		</ul>
+	</div>
+<script>
+(function() {
+
+var contain = getByClass("contain");
+
+var clearfix = getByClass("contain-ul",contain);
+
+clearfix.innerHTML += clearfix.innerHTML;
+
+var clearfixLi = clearfix.getElementsByTagName("li");
+
+var containWidth = clearfixLi[0].offsetWidth * clearfixLi.length;
+
+clearfix.style.width = containWidth + "px";
+
+// 开始运动
+
+function move(){
+
+   var clearfixLeft = clearfix.offsetLeft;
+  
+   clearfixLeft-=6;
+
+   // 判断是否运动到目的地
+   if(-clearfixLeft >= containWidth/2){
+     
+     clearfix.style.left = 0;
+
+   }else{
+
+      clearfix.style.left = clearfixLeft+"px";
+   
+   }; 
+
+}
+
+contain.timer = setInterval(move,30);
+
+contain.onmouseover = function(){
+
+    clearInterval(contain.timer);
+
+}
+
+contain.onmouseout = function(){
+   contain.timer = setInterval(move,30);
+}
+
+
+function getByClass(className,parent){
+    var 
+        doc = window.document,
+        result = childNodes = child = null,
+        i = len = 0;
+        parent = parent || doc;
+    // 标准浏览器和IE89
+    if("querySelector" in doc){
+       result = parent.querySelectorAll("."+className);
+    // ?
+    }else if("getElementsByClassName" in doc){
+         result = parent.getElementsByClassName(className);
+    // IE67
+    } else {
+      if(parent === doc){
+        if(parent.body.className === className){
+          return parent.body;
+        }
+        parent = parent.body;
+      }
+      childNodes = parent.children;
+        len = childNodes.length;
+        result = [];
+        while(i<len){
+            child = childNodes[i++];
+          if(child.className === className){
+            result.push(child);
+          }
+        }
+    }
+    return result && result.length?result[0]:result;
+  }
+
+  function log(content){
+     console && console.log(content);
+  }
+})();
+</script>
+</body>
+</html>

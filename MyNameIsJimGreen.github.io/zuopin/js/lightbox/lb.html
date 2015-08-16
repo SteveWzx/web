@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=UTF-8>
+<meta content="IE=edge,chrome=1" http-equiv=X-UA-Compatible>
+<meta content=320 name=MobileOptimized>
+<meta content=yes name=apple-mobile-web-app-capable>
+<meta content=black name=apple-mobile-web-app-status-bar-style>
+<meta name=format-detection content="telephone=no">
+<meta name=viewport content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+<meta name=description content="李彦峰">
+<meta name=keywords content="李彦峰,个人作品">
+<title>个人作品--lightbox</title>
+<link rel=stylesheet href="css/lightbox.css"/>
+</head>
+<body>
+
+          class="js-lightbox"   表示这个元素要启用lightbox <br>
+ 		  data-role="lightbox"  表示这个元素要启用lightbox<br>
+          data-source="images/4.jpg" src="images/4.jpg" 原图的地址 <br>
+          data-group="group-2"  标示当前是否属于一个组别<br>
+          data-id="ajhfkajh"    图片的唯一标示<br>
+          data-caption="dadasdl;k;j;jdaddadsa" 当前图片的描述文字<br>
+
+
+<h1>1组图片</h1>
+<div>
+   <img data-role="lightbox"  src="images/1.jpg" data-group="group-1" data-id="kljdahadsda" data-caption="你好爱是" alt=" " width="100" height="100">
+   <img data-role="lightbox"  src="images/2.jpg" data-group="group-1" data-id="dasdaddas" data-caption="大苏打" alt=" " width="100" height="100">
+   <img data-role="lightbox"  src="images/3.jpg" data-group="group-1" data-id="jkdahskd" data-caption="dadasdl;k;j;jdaddadsa" alt=" " width="100" height="100">
+
+<h1>2组图片</h1>
+<div>
+  <img data-role="lightbox"  src="images/4.jpg" data-group="group-2" data-id="kljgfegdahadsda" data-caption="dadasdl;k;j;jdaddadsa" alt=" " width="100" height="100">
+</div>
+
+<div>
+<h1>3组图片</h1>
+<img data-role="lightbox"  src="images/5.jpg" data-group="group-3" data-id="kljgfegdah1adsda" data-caption="dadasdl;k;j;jdaddadsa" alt=" " width="100" height="100">
+<img data-role="lightbox"  src="images/6.jpg" data-group="group-3" data-id="kljgfegdaha2dsda" data-caption="dadasdl;k;j;jdaddadsa" alt=" " width="100" height="100">
+<img data-role="lightbox"  src="images/7.jpg" data-group="group-3" data-id="kljgfegdahad3sda" data-caption="dadasdl;k;j;jdaddadsa" alt=" " width="100" height="100">
+<img data-role="lightbox"  src="images/8.jpg" data-group="group-3" data-id="kljgfegdahads4da" data-caption="dadasdl;k;j;jdaddadsa" alt=" " width="100" height="100">
+</div>
+
+<div>
+<h1>4组图片</h1>
+<img data-role="lightbox"  src="images/9.jpg" data-group="group-4" data-id="kljgfegdasdsah1adsda" data-caption="dadasdl;k;j;jdaddadsa" alt=" " width="100" height="100">
+<img data-role="lightbox"  src="images/10.jpg" data-group="group-4" data-id="kljgfegddaasha2dsda" data-caption="dadasdl;k;j;jdaddadsa" alt=" " width="100" height="100">
+</div>
+<script src="js/jquery-1.8.3.js"></script>
+<script src="js/lightbox.js"></script>
+<script>
+$(function(){
+    var lightbox = new LightBox();
+});
+</script>
+</body>
+</html>

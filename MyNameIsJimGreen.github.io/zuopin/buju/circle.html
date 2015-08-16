@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<title>个人作品--边框旋转</title>
+<meta name=description content="李彦峰">
+<meta name=keywords content="李彦峰,个人简历">
+<style>
+html,body,h3,div,p,ul{margin: 0;padding: 0;}
+body{font:18px/1.5 "方正兰亭细黑简体","微软雅黑",Verdana,Arial,Helvetica,sans-serif;background: #999;height: 100%;overflow: hidden;}
+html{height: 100%;overflow: hidden;}
+a{text-decoration: none;display: block;}
+.demo,.img,.mask,.border{
+	width: 300px;
+	height: 300px;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	-ms-border-radius: 50%;
+	-o-border-radius: 50%;
+	border-radius: 50%;
+}
+.demo{
+    position: relative;
+    margin: 0 auto;
+    top: 50%;
+    -webkit-transform:translateY(-50%);
+    -moz-transform:translateY(-50%);
+    -ms-transform:translateY(-50%);
+    -o-transform:translateY(-50%);
+    transform:translateY(-50%);
+}
+.img{
+	background-size:cover;
+	background: url(images/1.jpg) no-repeat center center;
+}
+.mask,.border{
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+.mask{
+	text-align: center;
+	color:rgba(255,255,255,0);
+	-webkit-transition:all .5s ease-in;
+	-moz-transition:all .5s ease-in;
+	-ms-transition:all .5s ease-in;
+	-o-transition:all .5s ease-in;
+	transition:all .5s ease-in;
+}
+.info{
+	margin-top: 50%;
+	-webkit-transform:translateY(-50%);
+	-moz-transform:translateY(-50%);
+	-ms-transform:translateY(-50%);
+	-o-transform:translateY(-50%);
+	transform:translateY(-50%);--
+}
+.border{
+	border:10px solid #072256;
+	border-left-color: #E07541;
+	border-top-color:#E07541;
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	-ms-box-sizing:border-box;
+	-o-box-sizing:border-box;
+	box-sizing:border-box;
+	-webkit-transition:all .5s ease-in;
+	-moz-transition:all .5s ease-in;
+	-ms-transition:all .5s ease-in;
+	-o-transition:all .5s ease-in;
+	transition:all .5s ease-in;
+}
+.demo:hover .mask{
+	background:rgba(0,0,0,.5);
+	color:rgba(255,255,255,1);
+}
+.demo:hover .border{
+	-webkit-transform:rotate(180deg);
+	-moz-transform:rotate(180deg);
+	-ms-transform:rotate(180deg);
+	-o-transform:rotate(180deg);
+	transform:rotate(180deg);
+}
+</style>
+</head>
+<body>
+  <a href="" class="demo">
+  	<div class="img"></div>
+  	<div class="border"></div>
+  	<div class="mask">
+  		<div class="info">
+  			<h3>你好</h3>
+  			<p>该休息了</p>
+  		</div>
+  	</div>
+  </a>
+</body>
+</html>

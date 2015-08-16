@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<title>个人作品--布局研究</title>
+<meta name=description content="李彦峰">
+<meta name=keywords content="李彦峰,个人简历">
+<style>
+html,body,h3,div,p{margin: 0;padding-top: 0;}
+body{font:18px/1.5 "方正兰亭细黑简体","微软雅黑",Verdana,Arial,Helvetica,sans-serif;}
+h3{text-align: center;}
+span{background:red;}
+</style>
+</head>
+<body>
+<h3>line-height特性研究</h3>
+<p>line-height的定义是：两行文字基线之间的距离。
+<br>对于一个没有设置height的元素，他的height就是line-height的值</p>
+<p>line-height = 内容区域 + 行间距。
+<br>行高决定内联盒子（inline boxes）的高度；行间距可大可小（甚至负值），保证高度正好等同于行高</p>
+<p>在simsun字体下，font-size = 内容区域，内容区域与行高没有关系，只与字体和字号有关</p>
+
+<span>span,我在页面占的高度并不是我背景的高度<br>我占的页面高度其实还是行高</span>
+
+<p>line-height = height 为什么会垂直居中？是因为内容区域大小一定，然后上下的行间距是一样的，所以我是垂直居中的</p>
+<p>当定义了height之后，line-height才不决定高度</p>
+<p>多行文本的高度就是单行文本高度的累加</p>
+<p>containing box > line boxes > inline boxes</p>
+<p style="background:red;display:inline-block;margin-bottom:10px;">行高决定内联盒子（inline boxes）的高度</p>
+<p style="background:red;">此p分两行<br>containing box height = height && containing box height = 2*line box height && line box height = max(inline box height)</p>
+<p style="background:red;margin:10px 0;">
+	line-height的单位可以为绝对单位，也可以为相对单位。下列相对单位的区别为计算方式相同。计算结果也相同，只是子元素继承性不同<br>
+	line-height:1.5   所有后代元素不管三七二十一都要根据自己的字体大小从新计算<br>
+	line-height:150%  父元素计算出行高，然后继承给所有子元素<br>
+	line-height:1.5em 同%<br>
+</p>
+
+<div style="margin:10px 0;background:red;line-height:2;font-size:20px">
+	父元素：line-height:2;font-size:20px
+	<p style="background:blue;font-size:60px">子元素font-size:60px。我是子元素<br>根据我自己的font-size和父亲的line-height从新计算了，大小为 60*2 = 120 px</p>
+</div>
+<div style="margin:10px 0;background:red;line-height:200%;font-size:20px">
+	父元素：line-height:200%;font-size:20px。我乱了。所以这就是页面用line-height:1.5，而不用150%的原因
+	<p style="background:blue;font-size:60px">子元素font-size:60px。我是子元素<br>我并没有根据我的font-size重新计算，我只是继承了父元素，由于父元素的行高为 2 * 20 = 40px，所以我的行高也为40px</p>
+</div>
+
+<div style="margin:10px 0;background:red;line-height:2em;font-size:20px">
+	父元素：line-height:2em;font-size:20px。和上面一样
+	<p style="background:blue;font-size:60px">子元素font-size:60px。我是子元素<br>我并没有根据我的font-size重新计算，我只是继承了父元素，由于父元素的行高为 2 * 20 = 40px，所以我的行高也为40px</p>
+</div>
+</body>
+</html>

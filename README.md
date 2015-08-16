@@ -34,3 +34,4 @@
 * sidebar -> Three kinds of methods to achieve the sidebar
 * mobi -> Examples of mobile end page development
 * twbspagination -> jquery pagination plugin
+* MyNameIsJimGreen.github.io -> [MyNameIsJimGreen](http://www.babyforlove.com/)

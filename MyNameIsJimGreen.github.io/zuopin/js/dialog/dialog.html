@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<title>个人作品--dialog组件</title>
+<meta name=description content="李彦峰">
+<meta name=keywords content="李彦峰,个人简历">
+<link rel=stylesheet href=css/index.css><link rel=stylesheet href=zepto.dialog.css>
+<style>
+    html,body{
+    	height:100%;
+        width:100%;
+        overflow: hidden;
+    }
+    .cover{
+      height:100%;
+      width:100%;
+      background:rgba(36,72,115,.8);
+    }
+	.reserBtn {
+	  height:200px;
+	  width:320px;
+	  display: block;
+	  color: #fff;
+	  font-family: "方正兰亭细黑简体" "微软雅黑";
+	  -webkit-box-pack: center;
+	  border: none;
+	  border-radius: .08rem;
+	  background: #59cbf6;
+	  outline: none;
+	  font-size: 20px;
+	  border-radius: 30px;
+	  position: fixed;
+	  left:50%;
+	  top:50%;
+	  margin-top: -100px;
+	  margin-left: -160px;
+	  text-align: center;
+	  line-height: 320px;
+	  display: block;
+	  line-height:200px;
+}
+</style>
+</head>
+<div class="cover">
+	<a class="reserBtn">我是一只大按钮</a>
+</div>
+<body>
+<script src="zepto.min.js"></script>
+<script src="zepto.dialog.js" defer></script>
+<script>
+	$(function(){
+       $(".reserBtn").click(function(){
+       	$.dialog({
+            content : '你太聪明了~',
+            okText: '到简历页',
+            cancelText: '返回',
+            ok:function(){
+            	location.href = "http://www.babyforlove.com/index.html";
+            },
+            cancel:function(){
+                location.href = "../js.html"
+            }
+    	 });
+       })
+	});
+</script>
+</body>
+</html>

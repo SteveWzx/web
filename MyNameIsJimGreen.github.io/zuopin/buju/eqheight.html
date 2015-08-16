@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>三列当高布局</title>
+<style>
+  .flex-d{
+  	display: -webkit-flex;
+  	display: -moz-flex;
+  	display: -ms-flex;
+  	display: -o-flex;
+  	display: flex;
+  	-webkit-flex-direction:row;
+  	-moz-flex-direction:row;
+  	-ms-flex-direction:row;
+  	-o-flex-direction:row;
+  	flex-direction:row;
+  }
+   .flex-left{
+   	 background: red;
+   	 word-wrap: break-word;
+   	 -webkit-flex:1;
+   	 -moz-flex:1;
+   	 -ms-flex:1;
+   	 -o-flex:1;
+   	 flex:1;
+   }
+   .flex-main{
+   	background: blue;
+   	-webkit-flex:1;
+   	 -moz-flex:1;
+   	 -ms-flex:1;
+   	 -o-flex:1;
+   	 flex:1;
+   	 word-wrap: break-word;
+   }
+   .flex-right{
+   	background: green;
+   	-webkit-flex:1;
+   	 -moz-flex:1;
+   	 -ms-flex:1;
+   	 -o-flex:1;
+   	 flex:1;
+   }
+
+  .box-d{
+  	display: -webkit-box;
+  	display: -moz-box;
+  	display: -ms-box;
+  	display: -o-box;
+  	display: box;
+  	background: #ccc;
+  }
+   .box-left{
+   	 background: red;
+   	 width: 200px;
+   	 word-wrap: break-word;
+   	 -webkit-box-flex:1;
+   	 -moz-box-flex:1;
+   	 -ms-box-flex:1;
+   	 -o-box-flex:1;
+   	 box-flex:1;
+   }
+   .box-main{
+   	width: 200px;
+   	background: blue;
+   	-webkit-box-flex:1;
+   	 -moz-box-flex:1;
+   	 -ms-box-flex:1;
+   	 -o-box-flex:1;
+   	 box-flex:1;
+   }
+   .box-right{
+   	width: 200px;
+   	background: green;
+   	-webkit-box-flex:1;
+   	 -moz-box-flex:1;
+   	 -ms-box-flex:1;
+   	 -o-box-flex:1;
+   	 box-flex:1;
+   }
+
+  .table-d{
+  	background: #ccc;
+  	display: table;
+  }
+  .table-left{
+   	 background: red;
+   	 word-wrap: break-word;
+     display: table-cell;
+  }
+   .table-main{
+   	width: 200px;
+   	background: blue;
+   	display: table-cell;
+   }
+   .table-right{
+   	width: 200px;
+   	background: green;
+    display: table-cell;
+   }
+  .clearfix:after{
+     content: "";
+     display: table;
+     clear: both;
+  }
+
+  .pm-d{
+  	overflow: hidden;
+  	width: 960px;
+  }
+  .pm-left{
+	float: left;
+	width: 200px;
+	margin-right: 5px;
+	margin-bottom: -99999px;
+	padding-bottom: 99999px;
+	background: red;
+  }
+  .pm-main{
+    background: blue;
+  }
+  .pm-right{
+  	float: right;
+	margin-right: 0;
+	background: green;
+  }
+
+  #container {
+	margin: 0 auto;
+	overflow: hidden;
+	width: 960px;
+  }
+						
+.column {
+	background: red;
+	float: left;
+	width: 200px;
+	margin-right: 5px;
+	margin-bottom: -99999px;
+	padding-bottom: 99999px;
+	overflow: hidden;
+}
+
+#content {
+	background: #blue;
+}
+
+#right {
+	float: right;
+	background: green;
+	margin-right: 0;
+}
+
+</style>
+</head>
+<body>
+    <h3>使用正padding和负margin对冲实现多列布局方法</h3>
+    <div id="container">
+		<div id="left" class="column aside">
+		<p>dasdasdasdadasdasdasddasdasdadasdadadasdadadasdadasdasdadasdadasda<br>sdadadsadasdadadaddsadasdadadadadasdsaddsadadadadasdadasadasdadad<BR>adasdsadssdddddddddddddddddddddddddddddddddddd</p>
+		</div>
+		<div id="content" class="column section">
+			<p>Main content</p>
+		</div>
+		<div id="right" class="column aside">
+			<p>Sidebar</p>
+		</div>			
+	</div>
+
+    <h3>使用table实现 IE8及以上浏览器支持</h3>
+    <div class="table-d">
+		<div class="table-left">dasdasdasdadasdasdasddasdasdadasdadadasdadadasdadasdasdadasdadasda<br>sdadadsadasdadadaddsadasdadadadadasdsaddsadadadadasdadasadasdadad<BR>adasdsadssdddddddddddddddddddddddddddddddddddd</div>
+		<div class="table-main">main</div>
+		<div class="table-right">right</div>
+	</div>
+
+	<h3>使用box实现 IE10及以上浏览器支持，移动端支持</h3>
+    <div class="box-d">
+		<div class="box-left">dasdasdasdadasdasdasddasdasdadasdadadasdadadasdadasdasdadasdadasdasdadadsadasdadadaddsadasdadadadadasdsaddsadadadadasdadasadasdadadadasdsadssdddddddddddddddddddddddddddddddddddd</div>
+		<div class="box-main">main</div>
+		<div class="box-right">right</div>
+	</div>
+
+	<h3>使用flex实现 较新的浏览器支持</h3>
+	<div class="flex-d">
+		<div class="flex-left">dasdasdasdadasdasdasddasdasdadasdadadasdadadasdadasdasdadasdadasdasdadadsadasdadadaddsadasdadadadadasdsaddsadadadadasdadasadasdadadadasdsadssdddddddddddddddddddddddddddddddddddd</div>
+		<div class="flex-main">mainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmainmain</div>
+		<div class="flex-right">right</div>
+	</div>
+</body>
+</html>

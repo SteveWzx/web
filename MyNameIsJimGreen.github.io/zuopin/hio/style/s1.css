@@ -1,0 +1,43 @@
+tml,body,div,p,h1,h2,h3,h4,h5,h6,table,form,input,header,section,footer,nav,ul,li,ol,
+dt,dd,dl,fieldset,legend,img,span,a,menu{
+  -webkit-box-sizing:-webkit-border-box;
+  -moz-box-sizing:-moz-border-box;
+  -ms-box-sizing:-ms-border-box;
+  -o-box-sizing:-o-border-box;
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+  border:0 none;
+  background:none;
+  color:#000000;
+  text-decoration: none;
+}
+html {font-size: 20px; }
+html,body{width:100%;overflow:hidden; }
+a {-webkit-tap-highlight-color: transparent;}
+body {
+  font-family: "微软雅黑", Simsun, Arial, "STHeiti", "SimHei", Helvetica, sans-serif, "Microsoft Yahei","����",Tahoma !important;
+  margin:0; 
+}
+input[type="submit"], input[type="reset"], input[type="button"], button {
+  -webkit-appearance: none; 
+}
+ol, ul, li, dl {
+  list-style: none; 
+}
+a,a:hover, a:link {
+  text-decoration: none;}
+img {
+  display: block;
+  border:none;
+  font-size: 12px;
+  vertical-align: middle;;
+}
+
+.clear:after{
+	content:".";
+	display:block;
+	height:0;
+	visibility: hidden;
+	clear:both;
+}

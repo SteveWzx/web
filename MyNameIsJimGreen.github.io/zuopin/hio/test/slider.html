@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+<meta name="format-detection" content="telephone=no">
+<meta content="320" name="MobileOptimized">
+<meta content="yes" name="apple-mobile-web-app-capable">
+<meta content="black" name="apple-mobile-web-app-status-bar-style">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>transition运动</title>
+<script src="js/tool.js"></script>
+<style>
+  html,body,div{
+   margin: 0;
+   padding: 0;
+   width:100%;
+   height: 100%;
+   overflow: hidden;
+  }
+  .page-container{
+    background: red;
+    position:absolute;
+    width: 100%;
+    height: 100%;
+    transition:all 1s ease;
+    z-index:2;
+  }
+  
+  .page-container button{
+    position:absolute;
+    right: 0;
+  }
+  .page-slider{
+    background: yellow;
+    position: absolute;
+    transition:all 1s ease;  
+  }
+  .page-container-in{
+    left:-85%;
+    transform:perspective(200px) translateZ(-6px);
+    box-shadow:4px -4px 7px #ccc,
+               5px -5px 7px #ccc,
+               6px -6px 7px #ccc,
+               7px -7px 7px #ccc,
+               0 4px 7px #ccc,
+               0 5px 7px #ccc,
+               0 6px 7px #ccc,
+               0 7px 7px #ccc,
+               0 8px 7px #ccc,
+               0 9px 7px #ccc;
+  }
+  .page-slider-in{
+     left:15%;
+  }
+  .page-container-out{
+    left:0;
+  }
+  .page-slider-out{
+     left:100%;
+  }
+</style>
+<script>
+  window.onload = function(){
+	  var pageContainer = document.querySelector(".page-container"),
+	      button = pageContainer.querySelector("button"),
+	      pageSlider = document.querySelector(".page-slider");
+	  button.onclick = function(){
+		  if(hasClass(pageContainer, "page-container-in")){
+			  sliderIn();
+		  }else{
+			  sliderOut();
+		  }
+	  }
+	  function sliderIn(){
+		  removeClass(pageContainer, "page-container-in");
+		  addClass(pageContainer, "page-container-out");
+		  removeClass(pageSlider, "page-slider-in");
+		  addClass(pageSlider, "page-slider-out");
+		  
+	  }
+	  function sliderOut(){
+		  removeClass(pageContainer, "page-container-out");
+		  addClass(pageContainer, "page-container-in");
+		  removeClass(pageSlider, "page-slider-out");
+		  addClass(pageSlider, "page-slider-in");
+		  pageContainer.onclick = null;
+	  }
+	  
+	  /*console.log(requestAnimationFrame);
+	  var i = 2;
+	  requestAnimationFrame(function(){
+		  console.log(i++);
+	  },window)*/
+  }
+</script>
+</head>
+<body>
+ <div class="page-container page-container-out">
+   <button>点击出现侧边栏</button>
+ </div>
+ <div class="page-slider page-slider-out">
+ </div>
+</body>
+</html>

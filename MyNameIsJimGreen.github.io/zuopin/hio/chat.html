@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>websocket1.html</title>
+    <script type="text/javascript">
+        var wsuri = "ws://localhost:8080/hio/websocket";
+        var ws = new WebSocket(wsuri);
+        ws.onmessage = function(evt) {
+            console.log(evt.data);
+        };
+        ws.onclose = function(evt) {
+        	console.log("close");
+        };
+        ws.onopen = function(evt) {
+        	console.log("open");
+        };
+        function sendMsg() {
+            ws.send(document.getElementById('writeMsg').value);
+        }
+    </script>
+</head>
+<body>
+<input type="text" id="writeMsg"/>
+<input type="button" value="send" onclick="sendMsg()"/>
+</body>
+</html>

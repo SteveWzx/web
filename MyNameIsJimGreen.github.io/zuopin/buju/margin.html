@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<title>个人作品--margin</title>
+<meta name=description content="李彦峰">
+<meta name=keywords content="李彦峰,个人简历">
+<style>
+ body,h3,h4,p{margin:0;padding:0;}
+ body{font:18px/1.5 "方正兰亭细黑简体","微软雅黑",Verdana,Arial,Helvetica,sans-serif;}
+ .d{
+	background:red;
+	height: 30px;
+	margin-top: 20px;
+	margin-bottom: 10px;
+ }
+ h3{text-align: center;margin-bottom: 10px;}
+</style>
+</head>
+<body>
+<h3>margin的出现是为了能让元素之间可以有间隙。包括父子元素和兄弟元素。</h3>
+<h4>但是有一种情况是例外，下面的元素布局为子div的margin:10px 0;可以看到只在两个子div之间出现了间隙，但并没有在父元素顶部与底部出现间隙。div2的margin并不是消失了，而是越过父元素底部，对他的父元素的兄弟节点进行影响的。div1会越过父元素顶部，对父元素的上面的兄弟节点进行影响的。</h4>
+<div style="background:red;">
+	<div style="background:blue;margin:10px 0">div1</div>
+	<div style="background:green;margin:10px 0">div2</div>
+</div>
+<h4>上下元素的margin折叠问题（我并没有设置margin，我只是被div2影响了），下面的子div的margin:10px 0。但是div3与div4上下的间隔并不是20px，而是10px</h4>
+<div style="background:red;width:200px;">
+	<div style="background:blue;margin:10px 0">div3</div>
+	<div style="background:green;margin:10px 0">div4</div>
+</div>
+<h4>上下元素的margin折叠问题，div5的margin:20px 0。于是上下间隔就变成了20px。总结：兄弟元素的上下margin会折叠，谁大听谁的。</h4>
+<div style="background:red;width:200px;">
+	<div style="background:blue;margin:20px 0">div5</div>
+	<div style="background:green;margin:10px 0">div6</div>
+</div>
+<p>display:inline-block的注意事项：inline-block相邻的元素之间默认是有空白的。</p>
+<div style="background:red;">
+	<div style="background:blue;display:inline-block;">inline-block的空白</div>
+	<div style="background:green;display:inline-block;">inline-block的空白</div>
+</div>
+<h4>左右margin是叠加的。子div display:inline-block</h4>
+<div style="background:red;width:200px;">
+	<div style="background:blue;display:inline-block;margin-right:10px;">div7</div>
+	<div style="background:green;display:inline-block;margin-left:10px;">div8</div>
+</div>
+<h4>左右margin是叠加的。子div float:left</h4>
+<div style="background:red;width:200px;">
+	<div style="background:blue;float:left;margin-right:10px;">div7</div>
+	<div style="background:green;float:left;margin-left:10px;">div8</div>
+    <div style="clear:both;"></div>
+</div>
+<h4><a href="float.html#float-margin">float对margin的影响，可以看这里</a></h4>
+<h4>margin collapse</h4>
+<p>
+	margin collapse出现在上下块级元素中间。<em style="color:red">CSS及浏览器的设计者们希望我们在布局时，如果遇到上下两个并排内容块的安排，最好只设置其中每个块上或下margin的一处即可<em>
+</p>
+<p>margin collapse出现在第一个子元素和最后一个子元素。</p>
+<div style="background:red;">
+	<div style="background:blue;margin-top:10px;">div1</div>
+	<div style="background:green;margin-bottom:10px;">div2</div>
+</div>
+<p>父子元素的margin collapse的解决办法------加一堵墙，加border或padding</p>
+<div style="background:red;border:1px #000 solid;">
+	<div style="background:blue;margin-top:10px;">div1</div>
+	<div style="background:green;margin-bottom:10px;">div2</div>
+</div>
+<p>父子元素的margin collapse的解决办法------加一堵墙，加border或padding</p>
+<div style="background:red;padding:1px 0;">
+	<div style="background:blue;margin-top:10px;">div1</div>
+	<div style="background:green;margin-bottom:10px;">div2</div>
+</div>
+<p>如果不想让这堵墙（border）被看见，可以把颜色设置成透明啊！border:1px solid transparent。padding就没办法了。</p>
+<p style="margin-top:50px;">父子元素的margin collapse的解决办法------父元素inline-block化，激发父元素的BFC</p>
+<div style="background:red;display:inline-block;width:100%;">
+	<div style="background:blue;margin-top:10px;">div1</div>
+	<div style="background:green;margin-bottom:10px;">div2</div>
+</div>
+<p style="margin-top:50px;">
+一个inline-block是不能用margin:0 auto;来居中的。
+一个block可以用margin:0 auto;居中，但这个block必须有width，如果他的width为auto，那么默认的width计算是元素充满父级，所以也就没有左右居中的事儿了。
+<br>
+width:auto ---> margin:0 auto: ---> margin:0;
+</p>
+
+
+<p>内部元素margin-bottom能越过父元素。但不被裁切。下面的例子，父元素和子元素宽高100，子元素margin-bottom:10px，可以看到布局没有变化，且不会影响后面的元素。过大，会让body撑开（有滚动条）。</p>
+<div style="background:red;width:100px;height:100px;border-top:1px #000 solid;">
+	<div style="background:blue;height:100%;margin-left:50px;margin-top:0px;"></div>
+</div>
+
+<p>内部元素的margin-left和margin-top可以越过父元素，且不会被裁切</p>
+<p>红块200x200，蓝块50x50</p>
+<div style="background:red;width:200px;height:200px;margin:0 auto;">
+	<div style="background:blue;width:50px;height:50px;"></div>
+</div>
+<p>margin-left:180px</p>
+<div style="background:red;width:200px;height:200px;margin:0 auto;">
+	<div style="background:blue;width:50px;height:50px;margin-left:180px"></div>
+</div>
+<p>margin-left:-20px</p>
+<div style="background:red;width:200px;height:200px;margin:0 auto;">
+	<div style="background:blue;width:50px;height:50px;margin-left:-20px"></div>
+</div>
+<p>margin-top:180px</p>
+<div style="background:red;width:200px;height:200px;margin:0 auto;border-top:1px #000 solid;">
+	<div style="background:blue;width:50px;height:50px;margin-top:180px"></div>
+</div>
+
+<p style="margin:100px 0">为了防止margin collapse，需要加上上边框。margin-top:-20px</p>
+<div style="background:red;width:200px;height:200px;margin:0 auto;border-top:1px #000 solid;">
+	<div style="background:blue;width:50px;height:50px;margin-top:-20px"></div>
+</div>
+</body>
+</html>

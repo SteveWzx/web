@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<title>个人作品--css3 loading</title>
+<meta name=description content="李彦峰">
+<meta name=keywords content="李彦峰,个人简历">
+<style>
+body{
+	margin: 0;
+	padding:0;
+	background: #072256;
+}
+.loading{
+	width: 24px;
+	height: 24px;
+	-webkit-border-radius:100%;
+	-moz-border-radius: 100%;
+	-ms-border-radius: 100%;
+	-o-border-radius: 100%;
+	border-radius: 100%;
+	border:3px #8E8E8E solid;
+	border-left-color:#CCC;
+	position: fixed;
+    left: 50%;
+    top:30%;
+    -webkit-transform:translateX(-50%);
+    -moz-transform:translateX(-50%);
+    -ms-transform:translateX(-50%);
+    -o-transform:translateX(-50%);
+    transform:translateX(-50%);
+	-webkit-animation:loading .75s linear infinite;
+	-moz-animation:loading .75s linear infinite;
+	-ms-animation:loading .75s linear infinite;
+	-o-animation:loading .75s linear infinite;
+	animation:loading .75s linear infinite;
+}
+@keyframes loading{
+	from{
+       transform:rotate(0);
+	}
+	to{
+		transform:rotate(359deg);
+	}
+}
+@-webkit-keyframes loading{
+	from{-webkit-transform:rotate(0);}
+	to{-webkit-transform:rotate(359deg);}}
+@-moz-keyframes loading{
+	from{-moz-transform:rotate(0);}
+	to{-moz-transform:rotate(359deg);}}
+@-ms-keyframes loading{
+	from{-ms-transform:rotate(0);}
+	to{-ms-transform:rotate(359deg);}}
+@-o-keyframes loading{
+	from{-o-transform:rotate(0);}
+	to{-o-transform:rotate(359deg);}}
+@keyframes loading{
+	from{transform:rotate(0);}
+	to{transform:rotate(359deg);}}
+.loading2{
+	width: 90px;
+	height: 24px;
+	position: fixed;
+    left: 50%;
+    top:50%;
+    -webkit-transform:translate(-50%,-50%);
+    -moz-transform:translate(-50%,-50%);
+    -ms-transform:translate(-50%,-50%);
+    -o-transform:translate(-50%,-50%);
+    transform:translate(-50%,-50%);
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-box;
+    display: -o-box;
+    display: box;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+}
+.loading2 span{
+	-webkit-box-flex:1;
+	-moz-box-flex:1;
+	-ms-box-flex:1;
+	-o-box-flex:1;
+	box-flex:1;
+
+	-webkit-flex:1;
+	-moz-flex:1;
+	-ms-flex:1;
+	-o-flex:1;
+	flex:1;
+	background: #00b38a;
+	margin-left: 1px;
+	-webkit-animation:loading2 .75s ease-in infinite alternate;
+	-moz-animation:loading2 .75s ease-in infinite alternate;
+	-ms-animation:loading2 .75s ease-in infinite alternate;
+	-o-animation:loading2 .75s ease-in infinite alternate;
+	animation:loading2 .75s ease-in infinite alternate;
+}
+@-webkit-keyframes loading2{
+	from{-webkit-transform:scaleY(1);}
+	to{-webkit-transform:scaleY(2);}}
+@-moz-keyframes loading2{
+	from{-moz-transform:scaleY(1);}
+	to{-moz-transform:scaleY(2);}}
+@-ms-keyframes loading2{
+	from{-ms-transform:scaleY(1);}
+	to{-ms-transform:scaleY(2);}}
+@-o-keyframes loading2{
+	from{-o-transform:scaleY(1);}
+	to{-o-transform:scaleY(2);}}
+@keyframes loading2{
+	from{transform:scaleY(1);}
+	to{transform:scaleY(2);}}
+.loading2 span:nth-child(2){
+   -webkit-animation-delay:-0.15s ;
+   -moz-animation-delay:-0.15s ;
+   -ms-animation-delay:-0.15s ;
+   -o-animation-delay:-0.15s ;
+   animation-delay:-0.15s ;
+}
+.laoding2 span:nth-child(3){
+   -webkit-animation-delay:-0.3s;
+   -moz-animation-delay:-0.3s;
+   -ms-animation-delay:-0.3s;
+   -o-animation-delay:-0.3s;
+   animation-delay:-0.3s;
+}
+.loading2 span:nth-child(4){
+   -webkit-animation-delay:-0.45s;
+   -moz-animation-delay:-0.45s;
+   -ms-animation-delay:-0.45s;
+   -o-animation-delay:-0.45s;
+   animation-delay:-0.45s;
+}
+.loading2 span:nth-child(5){
+  -webkit-animation-delay:-0.6s;
+  -moz-animation-delay:-0.6s;
+  -ms-animation-delay:-0.6s;
+  -o-animation-delay:-0.6s;
+  animation-delay:-0.6s;
+}
+.loading2 span:nth-child(6){
+ -webkit-animation-delay:-0.75s;
+ -moz-animation-delay:-0.75s;
+ -ms-animation-delay:-0.75s;
+ -o-animation-delay:-0.75s;
+ animation-delay:-0.75s;
+}
+</style>
+</head>
+<body>
+<div class="loading"></div>
+<div class="loading2"><span></span><span></span><span></span><span></span><span></span><span></span></div>
+</body>
+</html>

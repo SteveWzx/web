@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+ .list-view{
+   cursor: pointer;
+   position: relative;
+ }
+ .item-tip-cantainer{
+   height: 100px;
+   width:200px;
+   position:absolute;
+   background: #f36;
+   position: relative;
+   border-radius:15px;
+       padding:10px;
+   
+ }
+ .item-tip{
+    width:100%;
+    height:100%;
+    color:#fff;
+    z-index:2;
+    position:absolute;
+    font-family: "微软雅黑";
+    font-weight: bold;
+    text-shadow: 0 0 3px blue;
+    word-break:break-all;
+ }
+ .item-tip:before{
+   content: "";
+   display:block;
+   z-index:1;
+   position:absolute;
+   top:	50%;
+   left:-10px;
+   width: 20px;
+   height: 20px;
+   background: #f36;
+   transform:rotate(45deg);
+ }
+</style>
+</head>
+<body>
+ <div class="list-view">
+   <ul class="list">
+     <li class="item">新闻一</li>
+     <li class="item">新闻二</li>
+     <li class="item">新闻三</li>
+     <li class="item">新闻四</li>
+     <li class="item">新闻五</li>
+     <li class="item">新闻六</li>
+   </ul>
+   <div class="item-tip-cantainer">
+     <div class="item-tip">
+               你好dsadadsadasx22ssss	sdasdadasdasdasdasdaasdasdsadasdasdsa
+     </div>
+   </div>
+   
+ </div>
+ <div style="background:yellow;width:200px;height:200px;word-break:break-all;">
+ dsadasdassdasdadasdasdsadasdaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa你好萨达四大 萨达阿萨德阿达萨达阿达大声道 
+ </div>
+</body>
+</html>
