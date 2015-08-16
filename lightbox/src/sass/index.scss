@@ -1,0 +1,23 @@
+/**
+ * variables
+ */
+@import 'variables';
+/**
+ * reset
+ */
+@import 'reset';
+/**
+ * header
+ */
+@import 'index/header';
+/**
+ * mobile header
+ */
+@media screen and (max-width:500px) {
+    @import 'index/mobileHeader';
+} 
+/**
+ * main index show pistures
+ */
+
+@import 'index/main';

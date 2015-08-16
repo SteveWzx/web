@@ -1,0 +1,42 @@
+.header{
+    position:relative;
+
+    ul{
+        width: 100%;
+        z-index: 1000;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: $banner-color  url(http://7xk9uj.com1.z0.glb.clouddn.com/menu.png) no-repeat 20px 20px ; 
+
+        li {
+            display: none;
+            margin: 0;
+            border-bottom: 1px solid #fff;
+            border-width: 80%;
+           
+        }
+        
+        .current{
+                display:block;
+
+                a{
+                    color:#fff;
+                }
+            }
+        
+        &:hover{
+            background-image: none; 
+
+            li{
+                display: block;
+                margin: 0 0 5px;
+            }
+
+            .current { 
+                background: #2D4F7B url(http://7xk9uj.com1.z0.glb.clouddn.com/check.png) no-repeat 20px 20px; 
+        }
+
+    }
+}
+}

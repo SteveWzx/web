@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>管理界面</title>
+        <link rel="stylesheet" href="http://apps.bdimg.com/libs/fontawesome/4.2.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="dist/css/manage.css">
+    </head>
+    <body>
+        <div class="outer-wrap">
+
+            <div class="sidebar">
+                <h1>照片管理器</h1>
+                <button class="new-album"><i class="fa fa-plus"></i>新建相册</button>
+                <ul class="cate-list">
+                    <li>全部（123）<i class="fa fa-pencil"></i><i class="fa fa-trash-o"></i></li>
+                    <li>人物（11）<i class="fa fa-pencil"></i><i class="fa fa-trash-o"></i></li>
+                    <li>风光（22）<i class="fa fa-pencil"></i><i class="fa fa-trash-o"></i></li>
+                    <li>摇滚（44）<i class="fa fa-pencil"></i><i class="fa fa-trash-o"></i></li>
+                    <li>微距（555）<i class="fa fa-pencil"></i><i class="fa fa-trash-o"></i></li>
+                </ul>
+            </div>
+
+            <div class="main">
+                <!-- 右键菜单 -->
+                <div class="click-right">
+                    <ul>
+                        <li><i class="fa fa-magic"></i>编辑</li>
+                        <li><i class="fa fa-arrows"></i>挪动</li>
+                        <li><i class="fa fa-trash-o"></i>删除</li>
+                    </ul>
+                </div>
+
+                <button class="add-pic">导入图片</button>
+<!--                 dom结构部分
+<div id="uploader-demo">
+    用来存放item
+    <div id="fileList" class="uploader-list"></div>
+    <div id="filePicker">选择图片</div>
+</div> -->
+
+                <div class="pics-area">
+                    <div class="block">
+                        <img src="http://upload.csxww.com/2014/0912/1410485134671.jpg" alt="">
+                        <div class="pic-title">
+                            <h3>xtx</h3>
+                            <div>•••</div>
+                        </div>
+                    </div>
+                    <div class="block">
+                        <img src="http://7q5cdt.com1.z0.glb.clouddn.com/Blog-blog.jpg" alt="">
+                        <div class="pic-title">
+                            <h3>xtx</h3>
+                            <div>•••</div>
+                        </div>
+                    </div>
+                    <div class="block">
+                        <img src="http://pic.baike.soso.com/p/20131120/20131120093322-1564898718.jpg" alt="">
+                        <div class="pic-title">
+                            <h3>xtx</h3>
+                            <div>•••</div>
+                        </div>
+                    </div>
+                    <div class="block">
+                        <img src="http://pic.baike.soso.com/p/20131120/20131120093322-1564898718.jpg" alt="">
+                        <div class="pic-title">
+                            <h3>xtx</h3>
+                            <div>•••</div>
+                        </div>
+                    </div>
+                    <div class="block">
+                        <img src="http://pic.baike.soso.com/p/20131120/20131120093322-1564898718.jpg" alt="">
+                        <div class="pic-title">
+                            <h3>xtx</h3>
+                            <div>•••</div>
+                        </div>
+                    </div>
+                    <div class="block">
+                        <img src="http://upload.csxww.com/2014/0912/1410485134671.jpg" alt="">
+                        <div class="pic-title">
+                            <h3>xtx</h3>
+                            <div>•••</div>
+                        </div>
+                    </div>
+                    <div class="block">
+                        <img src="http://7q5cdt.com1.z0.glb.clouddn.com/Blog-blog.jpg" alt="">
+                        <div class="pic-title">
+                            <h3>xtx</h3>
+                            <div>•••</div>
+                        </div>
+                    </div>
+                    <div class="block">
+                        <img src="http://pic.baike.soso.com/p/20131120/20131120093322-1564898718.jpg" alt="">
+                        <div class="pic-title">
+                            <h3>xtx</h3>
+                            <div>•••</div>
+                        </div>
+                    </div>
+                    <div class="block">
+                        <img src="http://pic.baike.soso.com/p/20131120/20131120093322-1564898718.jpg" alt="">
+                        <div class="pic-title">
+                            <h3>xtx</h3>
+                            <div>•••</div>
+                        </div>
+                    </div>
+                    <div class="block">
+                        <img src="http://pic.baike.soso.com/p/20131120/20131120093322-1564898718.jpg" alt="">
+                        <div class="pic-title">
+                            <h3>xtx</h3>
+                            <div>•••</div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+
+    <script src="dist/js/jquery.js"></script>
+    <!-- web uploader -->
+    <script src="http://cdn.staticfile.org/webuploader/0.1.0/webuploader.min.js"></script>
+    <script>
+        // 初始化Web Uploader
+var uploader = WebUploader.create({
+
+    // 选完文件后，是否自动上传。
+    auto: true,
+
+    // swf文件路径
+    swf: BASE_URL + '/js/Uploader.swf',
+
+    // 文件接收服务端。
+    server: 'http://webuploader.duapp.com/server/fileupload.php',
+
+    // 选择文件的按钮。可选。
+    // 内部根据当前运行是创建，可能是input元素，也可能是flash.
+    pick: '#filePicker',
+
+    // 只允许选择图片文件。
+    accept: {
+        title: 'Images',
+        extensions: 'gif,jpg,jpeg,bmp,png',
+        mimeTypes: 'image/*'
+    }
+});
+    </script>
+    </body>
+</html>

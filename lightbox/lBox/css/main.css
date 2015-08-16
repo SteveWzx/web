@@ -1,0 +1,263 @@
+@charset "utf-8";
+/* ---------- Reset Style ---------- */
+html {
+  color: #333;
+  background: #FFF;
+  font-family: "Microsoft YaHei", Arial, '宋体';
+}
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+code,
+form,
+fieldset,
+legend,
+input,
+button,
+textarea,
+p,
+blockquote,
+th,
+td,
+strong {
+  padding: 0;
+  margin: 0;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+fieldset,
+img {
+  border: 0;
+}
+a {
+  text-decoration: none;
+  color: #333;
+  outline: none;
+}
+/*此处待添加默认链接颜色*/
+var,
+em,
+strong {
+  font-style: normal;
+}
+address,
+caption,
+cite,
+code,
+dfn,
+em,
+strong,
+th,
+var,
+optgroup {
+  font-style: inherit;
+  font-weight: inherit;
+}
+del,
+ins {
+  text-decoration: none;
+}
+li {
+  list-style: none;
+}
+caption,
+th {
+  text-align: left;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 100%;
+  font-weight: normal;
+}
+q:before,
+q:after {
+  content: '';
+}
+abbr,
+acronym {
+  border: 0;
+  font-variant: normal;
+}
+sup,
+sub {
+  vertical-align: baseline;
+}
+legend {
+  color: #333;
+}
+input,
+button,
+textarea,
+select,
+optgroup,
+option {
+  font-family: inherit;
+  font-size: inherit;
+  font-style: inherit;
+  font-weight: inherit;
+}
+input,
+button,
+textarea,
+select {
+  *font-size: 100%;
+}
+body {
+  -webkit-text-size-adjust: none;
+}
+/* H5 Tag */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+summary {
+  display: block;
+}
+/* clear */
+* {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+.clearfix:after {
+  content: "\200B";
+  display: block;
+  height: 0;
+  clear: both;
+}
+.clearfix {
+  *zoom: 1;
+}
+html,
+body {
+  height: 100%;
+}
+/* ---------- ie hack ---------- */
+.ie7-inline-hack {
+  *display: inline;
+}
+.ie8-bg-hack {
+  background: #000\0;
+  opacity: 0.8\0;
+  filter: alpha(opacity=80)\0;
+}
+/* ---------- varible style ---------- */
+/* ---------- global style ---------- */
+.wordBreak {
+  overflow: hidden;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+.sanjiao {
+  border-width: 30px;
+  border-color: transparent transparent #cc00ff transparent;
+  border-style: dashed dashed solid dashed;
+  overflow: hidden;
+  width: 0;
+  height: 0;
+}
+/* ---------- CSS3 style ---------- */
+#G-lightbox-mask {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  opacity: 0.5;
+  filter: alpha(opacity=50);
+  z-index: 9998;
+  background: url(../images/icon/opacity.png) top left repeat;
+}
+#G-lightbox-popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 50%;
+  width: 300px;
+  height: 300px;
+  margin-left: -150px;
+  background: #fff;
+  z-index: 9999;
+  cursor: pointer;
+}
+.lightbox-pic-view {
+  overflow: hidden;
+  position: relative;
+  border: 5px solid #fff;
+  border-radius: 5px;
+  background: #ffffff url(../images/icon/loading.gif) center center no-repeat;
+}
+.lightbox-pic-view .lightbox-btn {
+  position: absolute;
+  top: 0;
+  width: 40%;
+  height: 100%;
+  z-index: 2;
+  background: url(../images/icon/transparent.png) top left repeat;
+}
+.lightbox-pic-view .lightbox-prev-btn {
+  left: 0;
+}
+.lightbox-pic-view .lightbox-prev-btn-show {
+  background: url(../images/icon/prev.png) left center no-repeat;
+}
+.lightbox-pic-view .lightbox-next-btn {
+  right: 0;
+}
+.lightbox-pic-view .lightbox-next-btn-show {
+  background: url(../images/icon/next.png) right center no-repeat;
+}
+.lightbox-pic-view .lightbox-image {
+  display: block;
+}
+.lightbox-pic-caption {
+  position: relative;
+  margin: 0 5px;
+  margin-top: -67px;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 10;
+  background: url(../images/icon/opacity.png) top left repeat;
+}
+.lightbox-pic-caption .lightbox-caption-area {
+  padding: 10px 5px;
+  color: #fff;
+}
+.lightbox-pic-caption .lightbox-of-index {
+  color: #999;
+}
+.lightbox-pic-caption .lightbox-close-btn {
+  position: absolute;
+  right: 10px;
+  top: 13px;
+  width: 27px;
+  height: 27px;
+  background: url(../images/icon/close.png) center center no-repeat;
+}
+.lightbox-pic-caption .disabled {
+  display: none;
+}

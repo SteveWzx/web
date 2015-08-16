@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>图片展示界面</title>
+    <link rel="stylesheet" href="http://apps.bdimg.com/libs/fontawesome/4.2.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="dist/css/index.css">
+    <link rel="stylesheet"  href="dist/css/lightbox.css">
+</head>
+<body>
+<div class="header">
+   
+        <ul>
+
+            <li ><a href="#">全部</a></li>
+            <li><a href="#">人物</a></li>
+            <li class="current"><a href="#">风光</a></li>
+            <li><a href="#">私房</a></li>
+            <li><a href="#">记实</a></li>
+            <li><a href="#">微距</a></li>
+            <li><a href="#">野生动物</a></li>
+        </ul>
+   
+</div>
+<div class="main">
+    <div class="pics-area">
+ 
+<!--    class="js-lightbox"          表示元素要启用lightbox
+        data-role="lightbox"         表示元素要启用lightbox
+        data-source="images/1-1.jpg" 原图地址
+        data-group="group1"          表示当前是否属于一个组别
+        data-id="img1"               图片的唯一标识
+        data-caption="风景1asdf"     当前图片的文字描述
+-->
+    <div class="pic-block">
+        <img class="js-lightbox" 
+            data-role="lightbox" 
+            data-source="http://7xk9uj.com1.z0.glb.clouddn.com/15-8-3/47367965.jpg" 
+            data-group="group1" 
+            data-id="img1"
+            data-caption="1组风景1 宇宙大爆炸"
+            src="http://7xk9uj.com1.z0.glb.clouddn.com/15-8-3/72649744.jpg"  alt="">
+    </div>
+    <div class="pic-block">
+        <img class="js-lightbox" 
+            data-role="lightbox" 
+            data-source="http://7xk9uj.com1.z0.glb.clouddn.com/15-8-3/5443268.jpg" 
+            data-group="group1" 
+            data-id="img2"
+            data-caption="1组风景2 山水"
+            src="http://7xk9uj.com1.z0.glb.clouddn.com/15-8-3/85514760.jpg"  alt="">
+    </div>
+    <div class="pic-block">
+        <img class="js-lightbox" 
+            data-role="lightbox" 
+            data-source="http://7xk9uj.com1.z0.glb.clouddn.com/15-8-3/43680586.jpg" 
+            data-group="group1" 
+            data-id="img3"
+            data-caption="1组风景3 美丽的太空"
+            src="http://7xk9uj.com1.z0.glb.clouddn.com/15-8-3/74926125.jpg"  alt="">
+    </div>
+
+    <div class="pic-block">
+        <img class="js-lightbox" 
+            data-role="lightbox" 
+            data-source="http://7xk9uj.com1.z0.glb.clouddn.com/15-8-3/41632481.jpg" 
+            data-group="group2" 
+            data-id="img4"
+            data-caption="2组风景4 宇宙大爆炸"
+            src="http://7xk9uj.com1.z0.glb.clouddn.com/15-8-3/4164012.jpg"  alt="">
+    </div>
+    <div class="pic-block">
+        <img class="js-lightbox" 
+            data-role="lightbox" 
+            data-source="http://7xk9uj.com1.z0.glb.clouddn.com/15-8-3/22780222.jpg" 
+            data-group="group2" 
+            data-id="img5"
+            data-caption="2组风景5 山水"
+            src="http://7xk9uj.com1.z0.glb.clouddn.com/15-8-3/85714738.jpg"  alt="">
+    </div>
+    <div class="pic-block">
+        <img class="js-lightbox" 
+            data-role="lightbox" 
+            data-source="http://7xk9uj.com1.z0.glb.clouddn.com/15-8-3/38936681.jpg" 
+            data-group="group2" 
+            data-id="img6"
+            data-caption="2组风景6 美丽的太空"
+            src="http://7xk9uj.com1.z0.glb.clouddn.com/15-8-3/39344685.jpg"  alt="">
+    </div>
+    <div class="pic-block">
+        <img class="js-lightbox" 
+            data-role="lightbox" 
+            data-source="http://7xk9uj.com1.z0.glb.clouddn.com/15-8-3/23950493.jpg" 
+            data-group="group2" 
+            data-id="img7"
+            data-caption="2组风景7 美丽的太空"
+            src="http://7xk9uj.com1.z0.glb.clouddn.com/15-8-3/17038585.jpg"  alt="">
+    </div>
+    <div class="pic-block">
+        <img class="js-lightbox" 
+            data-role="lightbox" 
+            data-source="http://7xk9uj.com1.z0.glb.clouddn.com/15-8-3/13113314.jpg" 
+            data-group="group2" 
+            data-id="img8"
+            data-caption="2组风景8 美丽的太空"
+            src="http://7xk9uj.com1.z0.glb.clouddn.com/15-8-3/26490896.jpg"  alt="">
+    </div>
+    <div class="pic-block">
+        <img class="js-lightbox" 
+            data-role="lightbox" 
+            data-source="http://7xk9uj.com1.z0.glb.clouddn.com/15-8-3/14168467.jpg" 
+            data-group="group2" 
+            data-id="img9"
+            data-caption="2组风景9 美丽的太空"
+            src="http://7xk9uj.com1.z0.glb.clouddn.com/15-8-3/34399472.jpg"  alt="">
+    </div>
+ </div>
+    
+</div>
+
+    <script src="dist/js/index.js"></script>
+    <script src="dist/js/jquery.js"></script>
+    <script src="dist/js/lightbox.js"></script>
+    <script>
+    $(function(){
+        var lightbox = new LightBox({
+            speed:"fast",
+            maxWidth:900,
+            maxHeight:600,
+            maskOpacity:0.6
+        });
+    });
+    </script>
+</body>
+</html>
