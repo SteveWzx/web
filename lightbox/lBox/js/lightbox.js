@@ -119,7 +119,6 @@
 		// 前后图切换
 		goto: function(dir) {
 			if(dir === 'next') {
-				var self = this;
 				this.index ++;
 
 				if(this.index >= this.groupData.length - 1) {
@@ -182,7 +181,6 @@
 			var groupDataLength = this.groupData.length;
 			if( groupDataLength > 1 ) {
 				if(this.index === 0) {
-					console.log("line:171" + this.index);
 					this.prevBtn.addClass('disabled');
 					this.nextBtn.removeClass('disabled');
 				} else if( this.index === groupDataLength - 1 ) {
