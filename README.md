@@ -36,3 +36,4 @@
 * twbspagination -> jquery pagination plugin
 * MyNameIsJimGreen.github.io -> [MyNameIsJimGreen](http://www.babyforlove.com/)
 * lightbox -> JavaScript component lightbox
+* hash -> window.location.hash
