@@ -1,0 +1,37 @@
+.header {
+    height: $headerHeight;
+    width: 100%;
+    line-height: $headerHeight;
+    background-color: $banner-color;
+    font-size: 1.4rem;
+    color: $word-color;
+    text-align: center;
+    position: relative;
+
+
+    ul{
+        zoom:1;
+        text-align: center;
+
+        li{
+            margin: 0 5px; 
+            display: inline-block;
+            .current{
+                color:$word-color-active;
+            }
+        }
+    }
+    a{
+        color: $word-color;
+        text-decoration: none;
+        height:48px;
+        line-height: 48px;
+        margin-bottom: 2px;
+        &:hover{
+            color:$word-color-active;
+        }
+    }
+
+
+
+}

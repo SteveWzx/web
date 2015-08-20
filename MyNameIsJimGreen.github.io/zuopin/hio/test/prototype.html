@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>prototype研究</title>
+<script>
+ window.onload = function(){
+	 function log(content){
+		 window.console && console.log(content);
+	 }
+	 function Person(name,age){
+		 this.name = name;
+		 this.age = age;
+	 }
+	 log(Person.__proto__);
+	 log(Person.prototype);
+	 
+ }
+ 
+ 
+ <script type="text/javascript">
+
+ var $demo = $(".scrolltopTd");
+ var $demo1 = [];  //$(".scrolltopTd table tr td:eq(0)");
+ $demo.each(function () {
+     var This = $(this).find("table tr td:eq(0)");
+     $demo1.push(This);
+     //alert( $(this).attr('id')+"---"+This.attr('id'));
+ });
+ //alert($demo1.length);
+ $demo1.each(function () {
+     //$(this).after("<td valign='top'></td>");
+     alert("5888");
+});
+
+
+
+//var $demo2 = $(".scrolltopTd table tr td:eq(0) + td");
+
+  //alert($demo.attr('id') + "--" + $demo1.attr('id') + "--" + $demo2.attr('id'));
+  //alert($demo.length + "--" + $demo1.length + "--" + $demo2.length);
+
+ $demo2.html($demo1.html());
+ function MarqueeImages() {
+     if ($demo2[0].offsetWidth - $demo[0].scrollLeft <= 0)
+     { $demo[0].scrollLeft -= $demo1[0].offsetWidth; }
+     else {
+         $demo[0].scrollLeft++;
+     }
+ }
+ var MyMarqueeIntervalId = setInterval(MarqueeImages, speed);
+ $demo[0].onmouseover = function () { clearInterval(MyMarqueeIntervalId) };
+ $demo[0].onmouseout = function () { MyMarqueeIntervalId = setInterval(MarqueeImages, speed) };
+
+</script>
+
+
+
+
+
+
+
+<script type="text/javascript">
+ var $demo = $(".scrolltopTd");
+ var $demo1 = [];
+ var $demo2 = [];
+ $demo.each(function () {
+     var This = $(this).find("table:eq(0) tr td:eq(0)");
+     $demo1.push(This);
+     // alert( $(this).attr('id')+"---"+This.attr('id'));
+ });
+
+ $.each($demo1, function () {
+     $(this).after("<td valign='top'></td>");
+     $demo2.push($(this).next('td'));
+ });
+
+
+ $.each($demo2, function (i) {
+     //alert($(this).attr('valign'));
+     // alert($demo1[i].attr("id"))
+     // i++;
+     $(this).html($demo1[i].html());
+     fly(i);
+ });
+
+ function fly(i)
+ {
+     var speed = 20;
+     $demo1[i][0].time = setInterval(MarqueeImages(i), speed);
+
+     //$demo[i][0].onmouseover = function () { clearInterval($demo1[i][0].time) };
+     //alert("ee");
+     //$demo[i][0].onmouseout = function () { $demo1[i][0].time = setInterval(MarqueeImages(i), speed) };
+    
+ }
+
+ function MarqueeImages(i) {
+     
+//     if ($demo2[i][0].offsetWidth - $demo[i][0].scrollLeft <= 0)
+//     { $demo[i][0].scrollLeft -= $demo1[i][0].offsetWidth; }
+//     else {
+//         $demo[i][0].scrollLeft++;
+     //          }
+   
+ }
+ 
+ //alert($demo2[i][0].offsetWidth);
+ //alert('bb');
+
+ 
+
+
+</script>
+ 
+ 
+</script>
+</head>
+<body>
+
+</body>
+</html>

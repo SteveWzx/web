@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<meta name="apple-mobile-web-app-status-bar-style" content="red">
+<meta name=”apple-mobile-web-app-capable” content=”yes”>
+<title>2列布局</title>
+<style>
+body,div{margin: 0;padding:0;}
+.main{margin: 0 auto;background: #ccc;width: 800px;height: 1500px;-webkit-overflow-scrolling:touch;}
+.left{height: 1500px;float: left;background: red;width:220px;}
+.right{height: 1500px;float: right;background: blue;width:580px;}
+</style>
+</head>
+<body>
+<div class="main">
+	<div class="left"></div>
+	<div class="right"></div>
+</div>
+<script>
+	
+	window.onscroll = function(){
+          
+          var scrollTop = document.documentElement.scrollTop||document.body.scrollTop;
+
+          alert(scrollTop);
+
+	}
+
+</script>
+</body>
+</html>

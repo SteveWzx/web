@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<title>个人作品--float</title>
+<meta name=description content="李彦峰">
+<meta name=keywords content="李彦峰,个人简历">
+<style>
+html,body,h3,div,p{margin: 0;padding-top: 0;}
+body{font:18px/1.5 "方正兰亭细黑简体","微软雅黑",Verdana,Arial,Helvetica,sans-serif;}
+/*body{font-family: "simsun";}*/
+img{vertical-align: middle;}
+.contain{
+	border:1px red solid;
+	margin-bottom: 20px;
+}
+h3{
+	text-align: center;
+   margin-bottom: 20px;
+}
+.img-float{
+	float: left;
+	margin-right: 10px;
+}
+.broken-contain{
+	border:1px red solid;
+	padding: 20px;
+}
+.broken{
+	background: red;
+	margin-bottom: 20px;
+}
+.f_l{
+	float: left;
+}
+.clearfix:after{
+  content: " ";
+  display: table;
+  clear: both;
+}
+.clear{
+	clear: left;	
+}
+
+.brokened{
+	background: red;
+	border: 1px red solid;
+	width: 300px;
+	clear: both;
+}
+.test{
+	height: 200px;
+	width: 200px;
+}
+.brokened div:nth-of-type(1){
+   background: yellow;
+   height: 100%;
+   width: 50%;
+}
+.brokened div:nth-of-type(2){
+   background: green;
+   height: 100%;
+   width: 50%;
+}
+.a{
+	border:1px #000 solid;
+}
+</style>
+</head>
+<body>
+	<div class="contain">
+    <h3>float的出现就是为了实现下面的图文环绕的效果</h3>
+	<img class="img-float" src="images/3.jpg" alt="">
+    <p>float不脱离文档流，如果脱离了文档流的话，就相当于他不存在一样，但是float之后呢，他后面的元素的内容并不会被float遮挡掉，所以他没有脱离文档流。只不过浮动之后呢，就不在占有原来的位置。但是其他元素的内容也别想占他的位置。</p>
+    <p>这个就是包裹性，也就是inline-block化，任何元素都可以浮动。浮动元素会生成一个块级框，而不论它本身是何种元素。</p>
+	<p>content area 是围绕文字的一个看不见的区域</p>
+	<p>inline boxes 内联盒子 不会让内容成块显示，而是排成一行，每个文字或每张图片都是一个inline boxes。分为两种，若文字由span、em、small、strong等行内元素包裹，那么这些文字就是 内联盒子，若是一个光秃秃的文字，那么就是匿名内联盒子</p>
+	<p>line boxes 行框盒子 每一行就是一个行框盒子，每个行框盒子又是由一个个的 内联盒子 组成</p>
+	<p>containing box p标签所在的包含盒子，次盒子有一行行 行框盒子 组成</p>
+	<p>关系是 包含盒子 包含 行框盒子、行框盒子 包含 内联盒子</p>
+	<p>
+	    行高决定内联盒子高度。<br>
+	    内容区域高度 + 行间距 = 行高。<br>
+	    内容区域大小只与字号和字体有关，行间距墙头草，可大可小，甚至负值，是用来调节行高的，使高度正好等于行高。<br>
+	    由于行高决定内联盒子高度<br>
+	    所以：<br>
+	    内容区域高度 + 行间距 = 内联盒子高度。<br>
+
+	    不设置高度的话：<br>
+	    高度 = 行高<br>
+	    故不设置高度<br>
+	    内联盒子高度 = 高度。<br>
+
+	</p>
+	<p>img标签与父元素底部出现空白的原因是：图片和文字基线要对齐，这是由inline boxes决定的</p>
+	<p>文字环绕分为两种：第一种是图片和文字在一个标签内，浮动破坏了 图片本身的 inline box 或者 说切除了本身的 inline box，导致图片文环绕</p>
+	<p>文字环绕分为两种：第二种是图片和文字部在一个标签内，浮动之后，后面的兄弟元素要向前靠，同时内容要显示出来</p>
+	</div>
+
+	<div class="broken-contain clearfix">
+		<h3>float的包裹性即inline-block性</h3>
+        <div class="broken">
+        	<img src="images/3.jpg" width="100" height="100">
+        </div>
+        <p>div使用了float:left之后，变成了下面这样，体现了float的包裹性。当然若是显式的指定父元素的宽高就不具有包裹性（设置谁，谁不包裹）</p>
+        <div class="broken f_l">
+        	<img src="images/3.jpg" width="100" height="100">
+        </div>  
+
+        <h3 class="clear">float的破坏性</h3>    
+
+        <div class="brokened">
+        	<img src="images/3.jpg" alt="" width="100" height="100">
+        </div>   
+        <p>图片使用了float:left之后。高度塌陷。当然，若是显式的指定父元素高度就不会塌陷。</p>
+        <div class="brokened">
+        	<img class="f_l" src="images/3.jpg" alt="" width="100" height="100">
+        </div> 
+        <p style="clear:both;">图片使用了float:left之后。显式指定父元素的高度为120px。高度不塌陷。</p>
+        <div class="brokened" style="height:120px;">
+        	<img class="f_l" src="images/3.jpg" alt="" width="100" height="100">
+        </div>
+        <p style="clear:both;">清除浮动的影响又变正常了</p>
+        <div class="brokened clearfix">
+        	<img src="images/3.jpg" alt="" width="100" height="100">
+        </div>
+        <h3 class="clear">float布局的注意事项</h3>  
+        <p style="clear:both;">浮动布局必须让子元素的宽度是一定的。（固定宽度或使用百分比）</p>
+        <div class="brokened clearfix test">
+        	<div class="f_l"></div>
+        	<div class="f_l"></div>
+        </div>
+        <p style="clear:both;">给内部元素加一个边框，就溢出了</p>
+        <div class="brokened clearfix test">
+        	<div class="f_l a"></div>
+        	<div class="f_l a"></div>
+        </div>
+
+        <p style="clear:both;">给内部元素加一个padding，就溢出了</p>
+        <div class="brokened clearfix test">
+        	<div class="f_l a" style="padding:10px;"></div>
+        	<div class="f_l a" style="padding:10px;"></div>
+        </div>
+
+        <p style="clear:both;">给内部元素加一个margin，就溢出了</p>
+        <div class="brokened clearfix test">
+        	<div class="f_l a" style="margin:10px;"></div>
+        	<div class="f_l a" style="margin:10px;"></div>
+        </div>
+
+        <p style="clear:both;">给外部元素加一个边框,无影响</p>
+        <div class="brokened clearfix test" style="border:1px #000 solid;">
+        	<div class="f_l"></div>
+        	<div class="f_l"></div>
+        </div>
+
+        <p style="clear:both;">给内部元素加一个padding，但从新计算内部的高度。内部的width和height减去20px的padding，减去2px的border，即共减去22px才能不乱</p>
+        <div class="brokened clearfix test">
+        	<div class="f_l a" style="padding:10px;width:78px;height:178px;"></div>
+        	<div class="f_l a" style="padding:10px;width:78px;height:178px;"></div>
+        </div>
+
+        <p style="clear:both;">给外部元素加一个padding,无影响</p>
+        <div class="brokened clearfix test" style="padding:10px;">
+        	<div class="f_l"></div>
+        	<div class="f_l"></div>
+        </div>
+         <p style="clear:both;">结论：更改外部元素的样式对布局无影响。但是更改内部元素的样式，
+          border、padding、margin一定要注意对布局的影响，因为可能会溢出。由此可见content的宽度等于盒子宽度才不会溢出。
+         </p>
+         <a name="float-margin"></a>
+         <h3 class="clear">float布局的注意事项之对margin的影响</h3> 
+         <p style="clear:both;">正常情况。上下margin折叠为20px。max(10px,20px)</p>
+		 <div style="height:50px;width:50px;background:red;margin-bottom:10px;"></div> 
+         <div style="height:50px;width:50px;background:red;margin-top:20px;"></div> 
+         
+         <p>display:inline-block的注意事项：inline-block相邻的元素之间默认是有空白的。所以两者之间的间距就是 30 + 默认空白。</p>
+         <p style="clear:both;">正常情况。左右margin叠加为30px。add(10px,20px)</p>
+         <div style="height:50px;width:50px;background:red;margin-right:10px;display:inline-block;"></div> 
+         <div style="height:50px;width:50px;background:red;margin-left:20px;display:inline-block;"></div>
+
+         <p style="clear:both;">float情况下。左右margin叠加为30px。add(10px,20px)</p>
+         <div style="height:50px;width:50px;background:red;margin-right:20px;" class="f_l"></div> 
+         <div style="height:50px;width:50px;background:red;margin-left:10px;" class="f_l"></div>
+
+         <p style="clear:both;">float情况下。上下margin叠加为30px。add(10px,20px)</p>
+         <div style="height:50px;width:50px;background:red;margin-bottom:10px;"  class="f_l"></div> 
+         <div style="height:50px;width:50px;background:red;margin-top:20px;clear:both" class="f_l"></div>
+         
+         <p style="clear:both;">上float，下不float。margin-top <= margin-bottom + 上height 时，由 margin-bottom决定，反之，下面才起作用，且大小为  margin-bottom + (margin-top - margin-bottom - 上height) ==> margin-top - 上height </p>
+         <div style="height:50px;width:50px;background:red;margin-bottom:10px;"  class="f_l"></div> 
+         <div style="height:50px;width:50px;background:red;margin-top:61px;clear:both"></div>
+
+         <h3 class="clear">float是否脱离文档流</h3>
+         <p>float脱离文档流？</p>
+         <div style="border:1px #000 solid;width:100px;height:100px;float:left"></div>
+         <div style="border:1px red solid;width:70px;height:70px;">红框</div>
+         <p class="clear" style="padding-top:50px;">如果红框内容是图片呢？</p>
+         <div style="border:1px #000 solid;width:100px;height:100px;float:left;clear:both;"></div>
+         <div style="border:1px red solid;width:70px;height:70px;">
+             <img src="images/3.jpg" height="50%" width="50%">
+         </div>
+
+         <p class="clear" style="padding-top:50px;">如果红框的子元素有内容呢？</p>
+         <div style="border:1px #000 solid;width:100px;height:100px;float:left;clear:both;"></div>
+         <div style="border:1px red solid;width:70px;height:70px;">
+             <div>haha</div>
+         </div>
+        
+          <p style="clear:both;padding-top:50px;">结论：float不脱离文档流，如果脱离了文档流的话，就相当于他不存在一样，但是float之后呢，他后面的元素的内容并不会被float遮挡掉，所以他没有脱离文档流。只不过浮动之后呢，就不在占有原来的位置。但是其他元素的内容也别想占他的位置。</p>
+       
+        
+	</div>
+<script>
+	
+	(function(){
+     
+     function getStyle (obj,attr) {
+		if(obj.currentStyle){
+			return obj.currentStyle[attr];
+		}else{
+			return getComputedStyle(obj,false)[attr];
+		}
+	 };
+	 window.getStyle = getStyle;
+	 // var query = document.querySelector; //错误
+	 // console.log(query(".broken"));
+	 // var splice = Array.prototype.splice; //正确
+	 // alert(splice.call([1,2,3],2));
+	})();
+    
+	console.log(getStyle(document.body,"lineHeight"));
+	console.log(getStyle(document.body,"fontSize"));
+	var span = document.querySelector(".span");
+
+	console.log(getStyle(span,"height"));
+	
+
+</script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+html{
+    font-size:62.5%;
+    height: 100%;
+}
+body{
+    height: 100%;
+    font-family: $base-ff;
+}
+header,footer,div, body, h1, h2, h3, ul, li {
+    margin: 0;
+    padding: 0;
+    font-weight:normal;
+}
+li {
+    list-style-type: none;
+}
+button{
+    border:none;
+    outline: none;
+    cursor: pointer;
+    font-family: $base-ff;
+}

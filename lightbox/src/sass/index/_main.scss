@@ -1,0 +1,27 @@
+.main{
+    min-height: 100%;
+    
+    background-color: $back-gray;
+    position:relative;
+    margin: 5px auto;
+    text-align: center;
+
+    .pics-area{
+        max-width: 920px;
+        min-height: 100%;
+        display:inline-block;
+
+        .pic-block{
+            float: left;
+            margin: 0 0 5px 5px;
+            border-radius: 5px;
+            
+            img{
+                display:block;
+                max-width: 300px;
+                height:200px;
+                overflow:hidden;
+            }
+        }
+    }
+}

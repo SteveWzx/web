@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>个人作品--containing block</title>
+<style>
+html,body,h3,div,p,ul{margin: 0;padding: 0;}
+body{font:18px/1.5 "方正兰亭细黑简体","微软雅黑",Verdana,Arial,Helvetica,sans-serif;background: #999;height: 100%;}
+a{text-decoration: none;display: block;}
+.d{
+	width:300px;
+	background: red;
+	border-left: 10px #ccc solid;
+	border-right: 20px #ccc solid;
+	padding-left: 150px;
+	padding-right:18px;
+	margin: 0 auto;
+}
+.d-inner{
+	width: 200px;
+	background: blue;
+	margin: 0 auto;
+	margin-bottom: 10px;
+	padding-left: 10px;
+
+}
+.d2{
+	width:300px;
+	background: red;
+	border-left: 10px #ccc solid;
+	border-right: 20px #ccc solid;
+	padding-left: 15px;
+	padding-right:18px;
+	margin: 0 auto;
+}
+.d2-inner{
+	width: 200px;
+	background: blue;
+	margin-left: -50px;
+	margin-right: auto;
+	margin-bottom: 
+}
+.d3{
+	width:300px;
+	background: red;
+	border-left: 10px #ccc solid;
+	border-right: 20px #ccc solid;
+	padding-left: 15px;
+	padding-right:18px;
+	margin: 0 auto;
+}
+.d3-inner{
+	width: 200px;
+	background: blue;
+	margin-left: -29px;
+	margin-right: auto;
+	margin-top: 10px;
+}
+</style>
+</head>
+<body>
+<div style="border:1px red solid;padding:40px">
+<h3>一个containing block就是一个元素的包含块</h3>
+<p>包含块的宽度计算规则是：充满父容器
+   高度计算规则是：撑开
+   <br>
+   containing block width = margin-left + border-left-width + padding-left-width + width + padding-right-width + border-right-width + margin+right
+   <br>
+   为什么一个宽度确定的block元素 margin:0 aut;能实现水平居中呢？
+   <br>
+   计算一：假设这个block的父元素是body，width为300，视口宽度为1360，border 和 padding 都为0；设ml、mr为x
+   <br>
+   首先确定这个block的父元素containing block是谁？是body！
+   <br>
+   此时有 x + 0 + 0 + 300 + 0 + 0 + x = 1360 --> 2x + 300 = 1360
+   <br>
+   求出 x = 530, 左右都为530，所以居中咯。。
+   <br>
+   计算二：假设一个宽度为600的div，其内部有一个div，他的宽度为300，border 和 padding 都为10；设ml、mr为x
+   <br>
+   此时有 x + 10 + 10 + 300 + 10 + 10 + x = 600 --> 2x + 340 = 600
+   <br>
+   求出 x = 130,左右都为130，所以也居中咯。。
+   <br>
+   包含块的宽度最终是能确定的，因为规则很简单，若包含块明确设置width，此时他的宽度就是content宽度。没有明确设定，他的宽度就是根元素(html)的宽度，即视口宽度。所以不管包含块设不设置width，包含块的宽度一定是可以计算的。
+   <br>
+   而高度的计算就不一样了，他的计算规则是：撑开，若没有设置，就不知道他的包含块的高度到底是多少。 
+</p>
+<p style="margin-top:50px">红块content width 为 300，蓝块 content width 为 200，padding-left为10，margin 0 auto，求真正的左右margin</p>
+<p>设ml和mr为x，此时有 2x + 10 + 200 = 300 --> x = 45</p>
+ <div class="d">
+ 	<div class="d-inner">我的包含块是红色div</div>
+ </div>
+
+ <p style="margin-top:50px">红块content width 为 300，蓝块 content width 为 200，margin-left:-50; margin-right:auto，求mr</p>
+<p>设mr为x，此时有 - 50 + 200 + x = 300 --> x = 150</p>
+ <div class="d2">
+ 	<div class="d2-inner" style="margin-right:0;">我的包含块是红色div</div>
+ </div>
+
+  <p style="margin-top:50px">红块content width 为 300，蓝块 content width 为 200，margin-left:-29; margin-right:auto，求mr</p>
+<p>设mr为x，此时有 - 29 + 200 + x = 300 --> x = 129</p>
+ <div class="d3">
+ 	<div class="d3-inner" style="margin-right:0;">我的包含块是红色div</div>
+ </div>
+ <p style="margin-top:50px">如果ml或mr其中一个是确定的，那么另外一个不管是auto或0，都不会对整体布局产生影响</p>
+ <p style="margin-top:50px">只有显式地设置ml和mr的值才会同时起作用，containing block 的width 少补</p>
+ <p style="margin-top:50px">蓝色div ml为10，mr为200，此时containing block就不等于红色div的content width了，而要大于它</p>
+ <div style="width:300px;margin:0 auto;background:red;">
+ 	<div style="background:blue;width:200px;margin-left:10px;margin-right:200px;">我的包含块是红色div</div>
+ </div>
+ <p>margin的默认值是0，margin:0 和 margin:auto 是不同的</p>
+ </div>
+
+ <div style="border:1px red solid;margin-top:10px;">
+ 	<h3 style="text-align:center;">containing block的确定方式</h3>
+ 	<p>
+ 	   containing block的确定方式是根据position的值来确定的
+       <ol>
+       	<li>static、relative此时他的containing block是由最近的块级或单元格或行内块级元素内容区创建</li>
+       	<li>fixed，此时他的containing block就是视口</li>
+       	<li>absolute，此时他的containing block就是他的有relative、fiexed、absolute的祖先元素</li>
+       </ol>
+ 	</p>
+ 	<p>absolute元素把祖先元素中的定位元素当成了直接父元素，他相对与“父元素”定位的方式是，right+margin-light,left + margin-left,top + margin-top,bottom + margin-bottom</p>
+ 	<p>absolute是一个可怜的孩子，没有爸爸，所以他爱找爸爸，只要跟他像的人他都认为是他爸爸，所以找到一个定位元素就认爸了，所有的一切都相对于爸爸来，比如宽高（若是百分比的话），然后爸爸让他去哪儿他就去哪儿（top，margin-top，left，margin-left，right，margin-right，bottom，margin-bottom）</p>
+ 	
+ </div>
+</body>
+</html>

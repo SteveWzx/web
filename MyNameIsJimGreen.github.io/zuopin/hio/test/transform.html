@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>测试transform</title>
+<style>
+/* 
+ margin:0 5px      上下为0，左右为5
+ margin:0 2px 5px; 上为0，左右为2，下为5
+  */
+ .menu ul{
+  border-top: 15px solid black;
+  padding: 0 10px;
+  list-style: none;
+ }
+ .menu ul li{
+   float: left;
+ } 
+ .menu ul li a{
+   color:#fff;
+   display:block;
+   margin:0 5px;
+   font-size: 14px;
+   height: 60px;
+   line-height: 60px;
+   text-align: center;
+   width: 80px;
+   padding: 10px 5px;
+   background: #151515;
+   border-radius:0 0 5px 5px;
+   box-shadow:0 0 10px #ccc ,inset 0 0 4px #fff;
+   text-shadow:0 2px #686868;
+   text-decoration: none;
+ }
+ .menu ul li:nth-child(1) a{
+   background: #2EC7D2;
+ }
+ .menu ul li:nth-child(2) a{
+   background:#8FDD21;
+ }
+ .menu ul li:nth-child(3) a{
+   background: #F45917;
+ }
+ .menu ul li:nth-child(4) a{
+   background:#D50E19;
+ }
+ .menu ul li:nth-child(5) a{
+   background:#cdddf2;
+ }
+ .menu ul li:nth-child(6) a{
+   background:#0fDD21;
+ }
+ .menu ul li:nth-child(7) a{
+   background:#cd5917;
+ }
+ .menu ul li:nth-child(8) a{
+   background:#519;
+ }
+ .menu ul li:nth-child(9) a{
+   background:#D50;
+ }
+ .menu ul li:nth-child(10) a{
+   background:#E19;
+ }
+ .menu ul li:nth-child(11) a{
+   background:#919;
+ }
+ .menu ul li:nth-child(1) a:hover{
+   -webkit-transform:-webkit-translateZ(200px);
+   transform:translateZ(200px);
+ }
+ .menu ul li:nth-child(2) a:hover{
+   transform:translateX(-10px);
+ }
+ .menu ul li:nth-of-type(3) a:hover{
+   transform:translateY(-10px);
+ }
+ .menu ul li:nth-of-type(4) a:hover{
+   transform:rotate(45deg);
+ }
+ .menu ul li:nth-of-type(5) a:hover{
+   transform:scale(-0.5);
+ } 
+ .menu ul li:nth-of-type(6) a:hover{
+   transform:scaleX(0.8);
+ }
+ .menu ul li:nth-child(7) a:hover{
+   transform:scaleY(0.8);
+ }
+ .menu ul li:nth-child(8) a:hover{
+   transform:skew(45deg,15deg);
+ }
+ .menu ul li:nth-child(9) a:hover{
+   transform:skewX(45deg);
+ }
+ .menu ul li:nth-child(10) a:hover{
+   transform:skewY(15deg);
+ }
+ .menu ul li:nth-child(11) a:hover{
+   transform:matrix(1,1,-1,0,0,0);
+ }
+
+</style>
+</head>
+<body><div class="menu"><ul class="clearfix">
+      <li class="translate"><a href="#">Translate</a></li>
+      <li class="translate-x"><a href="#">TranslateX</a></li>
+      <li class="translate-y"><a href="#">TranslateY</a></li>
+      <li class="rotate"><a href="#">Rotate</a></li>
+      <li class="scale"><a href="#">Scale</a></li>
+      <li class="scale-x"><a href="#">ScaleX</a></li>
+      <li class="scale-y"><a href="#">ScaleY</a></li>
+      <li class="skew"><a href="#">Skew</a></li>
+      <li class="skew-x"><a href="#">SkewX</a></li>
+      <li class="skew-y"><a href="#">SkewY</a></li>
+      <li class="matrix"><a href="#">Matrix</a></li>
+    </ul>
+  </div>
+</body>
+</html>

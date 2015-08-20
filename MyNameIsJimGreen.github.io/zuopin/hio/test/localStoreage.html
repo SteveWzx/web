@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>本地存储测试</title>
+<script>
+  if(window.localStorage){
+	  //alert(2432);
+	  localStorage.setItem("ni","李艳凤");
+	  var item = localStorage.getItem("ni");
+      alert(item);
+	  
+	  var obj = {data:['a','b','c']};
+	  var str = JSON.stringify(obj);
+	  //alert(str);
+	  console.log(str);
+	  
+	  var s = '{"data":["a","b","c"]}';
+	  var o = JSON.parse(s);
+	  console.log(o);
+  }
+</script>
+</head>
+<body>
+ 
+</body>
+</html>

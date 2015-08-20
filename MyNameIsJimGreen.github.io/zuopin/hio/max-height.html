@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>max-height测试</title>
+<style>
+  html,body,div,img{
+  	margin: 0;
+  	padding: 0;
+  	height: 100%;
+  }
+  img{
+    border: none;
+    vertical-align: middle;
+  }
+  div{
+   width: auto;
+   height:auto;
+   max-width:100px;
+   background: red;
+   margin: 0 auto; 
+  }
+  img{
+    height: 10px;
+    
+  }
+  .d{
+    background: red;
+    height: 100px;
+    width: 100px;
+    display: table-cell;
+  }
+  .d span{
+    display: inline-block;
+    vertical-align: middle;
+  }
+</style>
+</head>
+<body>
+  
+  
+  <div class="d">
+    <span>asdaasdaSDASDADSADADADADASDASD</span>
+  </div>
+  
+</body>
+</html>

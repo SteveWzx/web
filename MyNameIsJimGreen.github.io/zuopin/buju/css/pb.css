@@ -1,0 +1,76 @@
+@charset "utf-8";
+body,div,ul,li{margin:0;padding:0;}
+
+#container{
+	border:1px red solid;
+	margin:20px auto;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.loading{
+	border:3px #8E8E8E solid;
+	border-left-color: #eee;
+	height: 30px;
+	width: 30px;
+	border-radius: 100%;
+	margin: 0 auto;
+	position: fixed;
+	bottom: 0;
+	left: 50%;
+	-webkit-transform:translate(-50%,0);
+	-moz-transform:translate(-50%,0);
+	-ms-transform:translate(-50%,0);
+	-o-transform:translate(-50%,0);
+	transform:translate(-50%,0);--
+	-webkit-animation:loading .75s linear infinite;
+	-moz-animation:loading .75s linear infinite;
+	-ms-animation:loading .75s linear infinite;
+	-o-animation:loading .75s linear infinite;
+	animation:loading .75s linear infinite;
+}
+@-webkit-keyframes loading{from{-webkit-transform:rotate(0);transform:rotate(0);}to{-webkit-transform:rotate(359deg);transform:rotate(359deg);}}
+@-moz-keyframes loading{from{-moz-transform:rotate(0);transform:rotate(0);}to{-moz-transform:rotate(359deg);transform:rotate(359deg);}}
+@-ms-keyframes loading{from{-ms-transform:rotate(0);transform:rotate(0);}to{-ms-transform:rotate(359deg);transform:rotate(359deg);}}
+@-o-keyframes loading{from{-o-transform:rotate(0);transform:rotate(0);}to{-o-transform:rotate(359deg);transform:rotate(359deg);}}
+@keyframes loading{from{transform:rotate(0);transform:rotate(0);}to{transform:rotate(359deg);transform:rotate(359deg);}}

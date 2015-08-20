@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>正padding和负margin</title>
+<style>
+.d{
+  width: 200px;
+  height: 200px;
+  background: red;
+  border-top: 1px #000 solid;
+} 
+.d-inner{
+  height: 100%;
+  background: blue;
+  margin-left: -10px;
+} 
+</style>
+</head>
+<body>
+<h3>当内部元素不设置宽度时，宽度是自动计算的，计算规则就是 containing block的计算规则，所以内部元素的margin left发生变化时，内部元素的宽度一定变化</h3>	
+<div class="d">
+	<div class="d-inner"></div>
+</div>
+
+</body>
+</html>

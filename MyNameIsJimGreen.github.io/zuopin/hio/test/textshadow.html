@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>box-shadow</title>
+<style>
+  /*
+    box-shadow:偏移为0，模糊值，为辉光效果
+               N多个写在一起，偏移量为等差，模糊为0，为3D效果，
+               N多个写在一起，偏移量相等，模糊相等，为阴影颜色叠加增强
+               
+  */
+  
+  #d1{
+    background: #ccc;
+    height: 200px;
+    width: 200px;
+    color:#fff;
+    font-size:18px;
+    font-weight:bold;
+     
+   text-shadow: 3px 3px 0 #ccc, 
+        5px 5px 0 #eee; 
+   box-shadow:3px 3px 0px red;
+  }
+</style>
+</head>
+<body>
+<div id="d1">
+ that's extra
+</div>
+</body>
+</html>

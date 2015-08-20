@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<title>个人作品--inline-block</title>
+<meta name=description content="李彦峰">
+<meta name=keywords content="李彦峰,个人简历">
+<style>
+html,body,h3,div,p,ul{margin: 0;padding: 0;}
+body{font:18px/1.5 "方正兰亭细黑简体","微软雅黑",Verdana,Arial,Helvetica,sans-serif;}
+h3{text-align: center;}
+ul li {list-style: none;}
+</style>
+</head>
+<body>
+<h3>inline-block具有包裹性</h3>
+<div style="background:red;margin-bottom:10px;">block</div>
+<div style="background:red;display:inline-block">inline-block</div>
+<h3>inline-block左右具有空白</h3>
+<div style="background:red;display:inline-block">inline-block1</div>
+
+<div style="background:red;display:inline-block">inline-block2</div>
+<h3>inline-block空白的原因是：在inline-block标签出现的换行、空格等都会解析成一个宽度固定的空白，一个换行也是这么大，100个也是。删除空格或换行即可。显然删除空格或换行不是最佳的解决办法。</h3>
+<p>解决办法，用一个父元素包括出现的inline-blocks，然后这是父元素的font-size:0;在给inline-bolcks设置字体大小即可，这种解决方案会多出一个父元素</p>
+
+<div style="background:red;font-size:0;">
+	<div style="background:blue;display:inline-block;font-size:18px;">inline-block1</div>
+    <div style="background:green;display:inline-block;font-size:18px;">inline-block2</div>
+</div>
+<p>上下结构line-blocks出现空格的解决办法 给每个inline-blocks 加 vertical-align:top</p>
+<div style="background:red;width:100px;">
+	<div style="background:blue;display:inline-block;width:80px;">inline-block1</div>
+
+    <div style="background:green;display:inline-block;width:80px;">inline-block2</div>
+</div>
+<p>一个元素设置成inline-block之后，margin:0 auto;就不会再居中了，想要其居中可以给父元素设置text-align:center;</p>
+<p>inline-blocks上下结构的margin是不会折叠的，而是叠加的，跟float元素是一样的。</p>
+
+<p>浮动布局的替换方案</p>
+<p>题外话：ul元素有默认margin（上下10px）和padding（左40px）</p>
+<ul style="background:#ccc;width:404px;font-size:0;">
+	<li style="background:red;width:200px;display:inline-block;font-size:18px;margin-right:2px;margin-bottom:2px;">1</li>
+	<li style="background:red;width:200px;display:inline-block;font-size:18px;margin-right:2px;margin-bottom:2px;">2</li>
+	<li style="background:red;width:200px;display:inline-block;font-size:18px;margin-right:2px;margin-bottom:2px;">3</li>
+	<li style="background:red;width:200px;display:inline-block;font-size:18px;margin-right:2px;margin-bottom:2px;">4</li>
+</ul>
+<p>inline-block布局可以是被换行和空格，这可能就是inline-block布局普遍没有被采用的原因吧！</p>
+<p>任何元素都可以浮动。浮动元素会生成一个块级框，而不论它本身是何种元素。所以从某种意义上来说，float元素可以理解为带左右定位的inline-block元素。float的包裹性即来源于此</p>
+<p>可以使父元素inline-block话，来激发父元素的BFC，从而解决父子元素之间的margin collapse</p>
+</body>
+</html>

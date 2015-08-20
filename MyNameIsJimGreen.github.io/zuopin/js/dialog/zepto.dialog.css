@@ -1,0 +1,54 @@
+@charset "utf-8";
+html,body,button,dd,dt,dl,form,h1,h2,h3,h4,h5,h6,input,li,ol,p,select,table,td,textarea,ul{margin:0;padding:0;}
+html{font-size:100px;-ms-touch-action:none;}
+body,button,input,select,textarea{font-family:"方正兰亭细黑简体","微软雅黑",Verdana,Arial,Helvetica,sans-serif;line-height:1.5;}
+img{border:0;}
+html,body{overflow-x:hidden;width:100%;height:100%;}
+ol,ul,li{list-style:none;}
+a{color:#333;text-decoration:none;outline:none;}
+img{vertical-align:middle;}
+*{-webkit-tap-highlight-color:rgba(0,0,0,0);}
+.clearfix:after{visibility:hidden;display:block;font-size:0;content:" ";clear:both;height:0;} 
+input[type="button"],input[type="submit"],input[type="reset"]{-webkit-appearance:none;}
+.dialog a{text-decoration:none;}
+.dialog{
+	   height:110px;width:230px;
+	   background:rgba(0,0,0,0.7);
+	   border-radius:10px;
+	   color:#fff;
+	   /*弹性布局老写法*/
+	   display:-webkit-box;
+	   -webkit-box-orient:vertical;
+	   z-index:9999;
+	   position:absolute;left:50%;top:50%;margin-left:-115px;font-size:16px;font-family:"方正兰亭细黑简体" "微软雅黑";}
+.dialog-content{
+	/*弹性布局老写法*/
+	display:-webkit-box;
+	-webkit-box-flex:5;
+	-webkit-box-pack:center;
+	-webkit-box-align:center;
+	border-bottom:1px #343434 solid;
+	/*在ios上需加前缀*/
+	-webkit-box-sizing:border-box;
+	box-sizing:border-box;
+	padding: 0 10px;
+}
+.dialog-footer{
+	/*弹性布局老写法*/
+	display:-webkit-box;
+	-webkit-box-flex:2;
+	-webkit-box-pack:center;
+	-webkit-box-align:center;
+}
+.dialog-footer a{
+    display:-webkit-box;
+	-webkit-box-flex:1;
+	-webkit-box-pack:center;
+	-webkit-box-align:center;
+	font-size:18px;
+}
+.dialog-footer a:hover{cursor:pointer;}
+.dialog-ok{color:#59cbf6;}
+.dialog-cancel{border-left:1px #343434 solid;color:#ff9501;}
+.cover{position:fixed;z-index:9998;width:100%;height:100%;left: 0;
+  top: 0;}

@@ -1,0 +1,41 @@
+.click-right {
+    // display: none;
+    width: 130px;
+    height: 109px;
+    position: absolute;
+    top: 500px;
+    left: 300px;
+    z-index: 100;
+    overflow: hidden;
+    background-color: $banner-color;
+    border-radius: 5px;
+    color: $word-color;
+    font-size: 1.4rem;
+
+    -webkit-box-shadow: 0 0 10px 1px rgba(0, 0,0, 0.6);
+    -moz-box-shadow: 0 0 10px 1px rgba(0, 0,0, 0.6);
+    -o-box-shadow: 0 0 10px 1px rgba(0, 0,0, 0.6);
+    box-shadow: 0 0 10px 1px rgba(0, 0,0, 0.6);
+
+    li {
+        height: 35px;
+        line-height: 35px;
+        background-color: $cate-list-blue;
+        margin-bottom: 2px;
+        padding-left: 35px;
+        cursor: pointer;
+
+        &:last-of-type {
+            margin: 0;
+        }
+        i {
+            width: 25px;
+        }
+        &:hover {
+            color:$word-color-active;
+            background-color: $cate-list-blue-active;
+            border-left: 5px solid $btn-orange;
+            padding-left: 30px;
+        }
+    }
+}

@@ -1,0 +1,101 @@
+html,body,div,p,h1,h2,h3,h4,h5,h6,table,form,input,header,section,footer,nav,ul,li,ol,
+dt,dd,dl,fieldset,legend,img,span,a,menu{
+  -webkit-box-sizing:-webkit-border-box;
+  -moz-box-sizing:-moz-border-box;
+  -ms-box-sizing:-ms-border-box;
+  -o-box-sizing:-o-border-box;
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+  border:0 none;
+  background:none;
+  color:#000000;
+  text-decoration: none;
+}
+html {font-size: 20px; }
+html,body{width:100%;overflow:hidden; }
+a {-webkit-tap-highlight-color: transparent;}
+body {
+  font-family: "微软雅黑", Simsun, Arial, "STHeiti", "SimHei", Helvetica, sans-serif, "Microsoft Yahei","����",Tahoma !important;
+  margin:0; 
+}
+input[type="submit"], input[type="reset"], input[type="button"], button {
+  -webkit-appearance: none; 
+}
+ol, ul, li, dl {
+  list-style: none; 
+}
+a:hover, a:link {
+  text-decoration: none;}
+img {
+  display: block;
+  border:none;
+  font-size: 12px;
+  vertical-align: middle;;
+}
+
+.clear:after{
+	content:".";
+	display:block;
+	height:0;
+	visibility: hidden;
+	clear:both;
+}
+/******������ʽ����******/
+
+/***ҳ��ͷ��**/  
+header {
+  height:2.2rem;
+  line-height:2.2rem;
+  text-align: center;
+  background: #0088D1;
+  width:100%;
+  position: absolute;
+  z-index: 5;
+  top: 0;
+  padding: 0 1% 0 1%;
+} 
+/****ҳ��ײ�������**/
+footer{
+	height:2.2rem;
+	line-height:2.2rem;
+	background: #0088D1;
+	width: 100%;
+	position: absolute;
+	bottom: 0;
+	text-align: center;
+}
+nav a{
+	float:left;
+	font-size:0.6rem;
+	width:33%;
+	text-align: center;
+}
+/***ҳ�����ⲿ��**/
+.body{   
+  width:100%;
+  overflow: auto;
+  top: 2.2rem;
+  position: absolute;
+  z-index: 0.5rem;
+  bottom: 2.2rem; 
+  overflow-x: hidden;
+}
+
+/****ҳ��ײ�������**/
+footer{
+	height:2.2rem;
+	line-height:2.2rem;
+	background: #0088D1;
+	width: 100%;
+	position: absolute;
+	bottom: 0;
+	text-align: center;
+}
+nav a{
+	float:left;
+	font-size:0.6rem;
+	width:33%;
+	text-align: center;
+}
+

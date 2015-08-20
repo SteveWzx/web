@@ -1,0 +1,32 @@
+.tx{
+	height:40px;
+	width:20%;
+	float:left;
+	padding-left: 4px;
+	padding-top: 2px;
+}
+.tx img{
+	border-radius:50%;
+}
+.haoyou{
+	float:left;
+	width:60%;
+	text-align: center;
+	line-height: 30px;
+}
+.haoyou div{
+	background: red;
+	height: 32px;
+}
+
+.set{
+	height:30px;position:absolute;top:12px;right:10px;
+}
+.haoyou div:first-child{
+	border-top-left-radius:20px;
+	border-bottom-left-radius:20px;
+}
+.haoyou div:last-child{
+	border-top-right-radius:20px;
+	border-bottom-right-radius:20px;
+}

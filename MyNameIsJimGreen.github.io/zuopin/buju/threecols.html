@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="apple-mobile-web-app-capable" content="no">
+<title>3列布局</title>
+<style>
+body,div{margin: 0;padding:0;}
+body{-webkit-overflow-scrolling:touch;}
+.left{
+	width: 200px;
+	background: #ccc;
+    float: left;
+    height: 1500px;
+}
+.right{
+	width: 300px;
+	background: red;
+	float:right;
+	height: 1500px;
+}
+.center{
+	background: blue;
+	height: 1500px;
+	position: absolute;
+	left: 200px;
+	right: 300px;
+}
+</style>
+</head>
+<body>
+	<div class="left"></div>
+	<div class="center"></div>
+	<div class="right"></div>
+</body>
+</html>

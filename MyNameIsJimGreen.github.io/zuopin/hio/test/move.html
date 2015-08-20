@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<script src="js/tool.js"></script>
+<script>
+
+ window.onload = function(){
+	 var obj = document.getElementById("d");
+	 obj.onclick = function(){
+		 move(this,{height:400,width:400},function(){alert(22);})
+	 }
+ }
+</script>
+<style>
+  .on{
+    height:200px;
+    text-shadow:2px 2px #eee;
+  }
+</style>
+</head>
+<body>
+  <div id="d" class="on off test" style="width:200px;background:red;">
+   text-shadow
+  </div>
+</body>
+</html>

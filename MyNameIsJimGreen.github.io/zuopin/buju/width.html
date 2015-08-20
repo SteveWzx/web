@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<title>个人作品--width</title>
+<meta name=description content="李彦峰">
+<meta name=keywords content="李彦峰,个人简历">
+<style>
+html,body,h3,div,p{margin: 0;padding-top: 0;}
+body{font:18px/1.5 "方正兰亭细黑简体","微软雅黑",Verdana,Arial,Helvetica,sans-serif;}
+h3{text-align: center;}
+span{background:red;}
+</style>
+</head>
+<body>
+
+<div class="d1" style="background:red;margin-bottom:10px;">一个块级元素默认占据父元素的宽度，width默认为100%，height为auto（当然该块级元素若没有任何内容height经过计算就是0）</div>
+<div class="d" style="background:red;width:400px;height:100px;margin-bottom:10px;"><div style="background:blue;">外部div的宽度为300px</div></div>
+<p>高度没有设置的话：由line-height（内部为文本情况下）决定 或 正好包含子元素的高度</p>
+<p>第二种情况：子元素的高度的累加 + margin-top(除去第一个元素) + margin-bottom(除去最后一个元素)</p>
+<div class="d3" style="background:red;width:400px;height:auto">
+	<div style="background:blue;margin-top:10px;">我margin-top为10px但没有多撑开父元素10px的高度，只是顶开了我父元素的上一个兄弟元素</div>
+	<div style="background:yellow;margin:10px 0;">我上下margin为10px，导致父元素的高度多了20px</div>
+	<div style="background:green;margin-bottom:10px;">我margin-bottom为10px，但没有多撑开父元素10px的高度，只是顶开了我父元素的下一个兄弟元素</div>
+</div>
+<div style="background:red;display:inline-block;">兄弟元素(其实这是一个div，我设置成了inline-block，让他包裹住文本，所以并不占body的100%)
+</div>
+
+<div style="background:red;line-height:100px;margin-top:10px;">我没有给这个div设置高度，只用line-height设置了行高为100px，那么此时他的height就是100px*行数（containing box height）</div>
+
+<div style="background:red;margin-top:10px;height:100px;line-height:218px;">height:100px;line-light:218px;</div>
+
+<div class="dd"></div>
+<script>
+	
+	window.onload = function(){
+		var dd = document.querySelector("dd");
+		var width = getComputedStyle(document.querySelector(".dd"),false).width
+		var height = getComputedStyle(document.querySelector(".dd"),false).height
+		console.log("width:"+width+" , height:"+height);
+	}
+
+</script>
+</body>
+</html>

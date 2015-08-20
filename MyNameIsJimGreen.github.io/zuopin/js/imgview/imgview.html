@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=UTF-8>
+<meta content="IE=edge,chrome=1" http-equiv=X-UA-Compatible>
+<meta content=320 name=MobileOptimized>
+<meta content=yes name=apple-mobile-web-app-capable>
+<meta content=black name=apple-mobile-web-app-status-bar-style>
+<meta name=format-detection content="telephone=no">
+<meta name=viewport content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+<meta name=description content="李彦峰">
+<meta name=keywords content="李彦峰,个人作品">
+<title>个人作品--imgview</title>
+<style>
+body,button,dd,dt,dl,form,h1,h2,h3,h4,h5,h6,input,li,ol,p,select,table,td,textarea,ul{margin:0;padding:0;}
+html{font-size:12px;line-height:1.5;-ms-touch-action:none;}
+body,button,input,select,textarea{font-family:"方正兰亭细黑简体","微软雅黑",Verdana,Arial,Helvetica,sans-serif;line-height:1.5;}
+img{border:0;}
+html,body{overflow-x:hidden;width:100%;height:100%;}
+ol,ul,li{list-style:none;}
+a{color:#333;text-decoration:none;outline:none;}
+img{vertical-align:middle;}
+*{-webkit-tap-highlight-color:rgba(0,0,0,0);}
+.clearfix:after{visibility:hidden;display:block;font-size:0;content:" ";clear:both;height:0;} 
+input[type="button"],input[type="submit"],input[type="reset"]{-webkit-appearance:none;}
+* html .clearfix{height:1%;}
+
+html,body{
+  height: 100%;
+  width: 100%;
+  background: rgba(36,72,115,.8);
+}
+
+.contain{
+	width: 480px;
+	height:480px;
+	position: fixed;
+	left: 50%;
+	top: 50%;
+	margin-left: -225px;
+	margin-top: -225px;
+}
+.img-item{
+	float: left;
+	border: 5px #fff solid;
+	border-radius: 10px;
+	background: url(images/loading.gif) center center no-repeat;
+	background-size:40px 40px;
+}
+.biji{
+	color:#fff;
+	margin:0 auto;
+	font:18px/2 "微软雅黑"; 
+	margin-top: 20px;
+}
+.biji p{
+	text-align: center;
+}
+.img-list{
+	position: relative;
+}
+</style>
+</head>
+<body>
+<div class="biji">
+    	<p>
+    		支持除了IE6、7、8以外的所有浏览器。<br>
+    		关键点是：float转position，并且先设置left和top，然后在另一个循环设置position
+    	</p>
+    </div>
+<div class="contain">
+	<ul id="img-list" class="img-list clearfix">
+		<li class="img-item"><img src="images/1.jpg" alt="" width="150" height="150"></li>
+		<li class="img-item"><img src="images/2.jpg" alt="" width="150" height="150"></li>
+		<li class="img-item"><img src="images/3.jpg" alt="" width="150" height="150"></li>
+		<li class="img-item"><img src="images/4.jpg" alt="" width="150" height="150"></li>
+		<li class="img-item"><img src="images/5.jpg" alt="" width="150" height="150"></li>
+		<li class="img-item"><img src="images/6.jpg" alt="" width="150" height="150"></li>
+		<li class="img-item"><img src="images/7.jpg" alt="" width="150" height="150"></li>
+		<li class="img-item"><img src="images/8.jpg" alt="" width="150" height="150"></li>
+		<li class="img-item"><img src="images/9.jpg" alt="" width="150" height="150"></li>
+	</ul>
+</div>
+
+
+<script>
+(function(){
+
+  
+  var ul = document.getElementById("img-list");
+  var aLi = ul.getElementsByTagName("li");
+  
+  for(var i = 0;i<aLi.length;i++){
+  	var li = aLi[i];
+  	li.style.left = li.offsetLeft+"px";
+  	li.style.top = li.offsetTop+"px";
+  }
+  var zIndex = 0;
+  for(var i = 0;i<aLi.length;i++){
+  	var li = aLi[i];
+  	li.style.position = "absolute"
+  	li.onmouseover = function(){
+  		 this.style.zIndex = zIndex++;
+  		 move(this,{width:300,height:300,marginLeft:-75,marginTop:-75});
+  		 move(this.getElementsByTagName("img")[0],{width:300,height:300});
+  	}
+  	li.onmouseout = function(){
+  		move(this,{width:150,height:150,marginLeft:0,marginTop:0});
+  		move(this.getElementsByTagName("img")[0],{width:150,height:150});
+  	}
+  }
+  
+function move(obj,json,fnEnd){
+          clearInterval(obj.timer);
+          obj.timer = setInterval(function(){
+              var bStop = true;
+              for(var attr in json){
+                  var cur = 0;
+                  if(attr == "opacity"){
+                      cur = Math.round(parseFloat(getStyle(obj,attr))*100);
+                  }else {
+                      cur = parseInt(getStyle(obj,attr));
+                  }
+
+                  var speed = (json[attr]-cur)/6;
+                  speed = speed>0?Math.ceil(speed):Math.floor(speed);
+
+                  if(cur!=json[attr]) bStop = false;
+
+                  if(attr=="opacity"){
+                      cur+=speed;
+                      obj.style.filter = "alpha(opacity:"+cur+")";
+                      obj.style.opacity = cur/100;
+                  }else{
+                      obj.style[attr] = cur+speed+"px";
+                  }
+              }
+              if(bStop){
+                  clearInterval(obj.timer);
+                  if(fnEnd)fnEnd();
+              }
+          },30);
+      }
+function getStyle(obj,name){
+  if(obj.currentStyle){
+     return obj.currentStyle[name];   
+  }else{
+     return getComputedStyle(obj,false)[name];
+  }
+}
+})();
+</script>
+</body>
+</html>

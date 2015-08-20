@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta content="IE=edge,chrome=1" http-equiv=X-UA-Compatible>
+<meta content=320 name=MobileOptimized>
+<meta content=yes name=apple-mobile-web-app-capable>
+<meta content=black name=apple-mobile-web-app-status-bar-style>
+<meta name=format-detection content="telephone=no">
+<meta name=viewport content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+<meta name=description content="李彦峰">
+<meta name=keywords content="李彦峰,个人作品">
+<meta charset="UTF-8">
+<title>各种居中</title>
+<style>
+html,body,h3,div,p{margin: 0;padding-top: 0;}
+body{font:18px/1.5 "方正兰亭细黑简体","微软雅黑",Verdana,Arial,Helvetica,sans-serif;}
+.center{
+	height: 100px;
+	width: 100px;
+	background:  rgba(36,72,115,.8);
+	margin-left: 20px;
+	margin-bottom: 10px;
+}
+.type1{
+	background: #999;
+	width:50px;
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+}
+.box{
+	display: -webkit-box;
+	display: box;
+	-webkit-box-pack:center;
+	-webkit-box-align:center;
+	box-pack:center;
+	box-align:center;
+}
+.flex{
+	display: -webkit-flex;
+	display: flex;
+	-webkit-align-items:center;
+	-webkit-justify-content:center;
+	align-items:center;
+	justify-content:center;
+}
+.transform{
+	position: relative;
+}
+.transform div{
+   position: absolute;
+   left: 50%;
+   top: 50%;
+   transform:translate(-50%,-50%);
+   -webkit-transform:translate(-50%,-50%);
+}
+.margin{
+	position: relative;
+}
+.margin div{
+	position: absolute;
+	left: 50%;
+   top: 50%;
+   margin-left: -25px;
+   margin-top: -25px;
+}
+.margin-auto .type1{
+	margin: 0 auto;
+}
+.type2{
+	background: #999;
+	text-align: center;
+}
+
+.type2-box{
+	display: -webkit-box;
+	-webkit-box-pack:center;
+	-webkit-box-align:center;
+}
+
+.type2-flex{
+	display: -webkit-flex;
+	-webkit-align-items:center;
+	-webkit-justify-content:center;
+}
+.type2-transform{
+	position: relative;
+}
+.type2-transform .type2{
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	-webkit-transform:translate(-50%,-50%);
+}
+.type2-inline-block{
+  text-align: center;
+}
+.type2-inline-block .type2{
+	display: inline-block;
+}
+
+.type2-table{
+	display: table;
+	overflow:hidden;
+	text-align: center;
+}
+.type2-table .type2{
+	display: table-cell;
+	vertical-align: middle;
+}
+.type2-table-f{
+	padding-top: 1px;
+	box-sizing:border-box;
+}
+.f{
+	margin-top: 50%;
+	transform:translateY(-50%);
+}
+</style>
+</head>
+<body>
+	
+<h3>1、固定高度居中。外部宽高100px。请在webkit内核浏览器下查看</h3>
+
+<p>a、使用display:box。内部宽高50px</p>
+<div class="center box"><div class="type1">居中</div></div>
+
+<p>b、使用display:flex。内部宽高50px</p>
+<div class="center flex"><div class="type1">居中</div></div>
+
+<p>c、使用transform。内部宽高50px</p>
+<div class="center transform"><div class="type1">居中</div></div>
+
+<p>d、使用margin。内部宽高50px</p>
+<div class="center margin"><div class="type1">居中</div></div>
+
+<p>e、使用margin:0 auto。内部宽高50px。只能实现水平居中</p>
+<div class="center margin-auto"><div class="type1">居中</div></div>
+
+<h3 style="margin-top:30px;">2、内部宽高不固定居中。外部宽高100px</h3>
+<p>a、使用display:box。</p>
+<div class="center type2-box"><div class="type2">居中</div></div>
+
+<p>b、使用display:flex。</p>
+<div class="center type2-flex"><div class="type2">居中啊啊</div></div>
+
+<p>c、使用transform</p>
+<div class="center type2-transform"><div class="type2">居中啊啊</div></div>
+
+<p>d、使用display:inline-block。只能实现水平居中。其实还可以用display:inline，但是由于行高的原因，若使用inline，可能会导致高度变小。所以最安全的办法就是inline-block</p>
+<div class="center type2-inline-block"><div class="type2">居中啊撒阿</div></div>
+
+<p>e、使用display:table。可以实现水平垂直居中，但是有一个小问题，就是内部的背景会充满整个父容器。
+  内部容器是用padding挤的，所以会充满。	
+</p>
+<div class="center type2-table"><div class="type2">居中啊啊打扫打扫萨达</div></div>
+
+<p>f、内部含有2个子元素。
+</p>
+<div class="center type2-table-f" style="text-align:center;">
+	<div class="f">
+		<h3>你好</h3>
+	    <p>我要居中</p>
+	</div>
+</div>
+
+
+</body>
+</html>
