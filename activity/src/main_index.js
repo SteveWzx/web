@@ -7,3 +7,6 @@ require.config({
 });
 
 require(['src/index_mod01']);
+require(['jquery','src/index_calendar'],function($,calendar){
+    $('#idCalendar').calendar();
+});

@@ -37,3 +37,4 @@
 * lightbox -> JavaScript component lightbox
 * hash -> window.location.hash
 * city_cookie -> jump city cookie
+* activity -> Custom Calendar Component
