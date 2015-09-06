@@ -110,7 +110,7 @@ define(['jquery'],function($){
                 //data: {'year':year, 'month':month},
                 dataType:"json",
                 success: function(data){
-                    self.data = $.parseJSON(data.salonDays);
+                    self.data = data.salonDays;
                     self.Draw();
                 }
             });
