@@ -37,8 +37,5 @@
 * lightbox -> JavaScript component lightbox
 * hash -> window.location.hash
 * city_cookie -> jump city cookie
-<<<<<<< HEAD
 * mxc -> In fact, a lot of time to understand are from some garbage code to the inspiration, the perfect is often too high.
-=======
 * activity -> Custom Calendar Component
->>>>>>> 154834423644ffc0743aba63e120fa3fe3525905
