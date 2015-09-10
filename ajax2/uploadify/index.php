@@ -1,8 +1,3 @@
-<?php
-/*
-*油灯网www.yauld.cn 2013-05-01 九霄云仙
-*/
-?>
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -18,7 +13,7 @@
 		<!-- 声明一个普通的html文件上传控件，并指定id -->
 		<input id="file_upload" name="file_upload" type="file" multiple="true">
 		<!-- 上传按钮 -->
-		<a href="javascript:$('#file_upload').uploadify('upload','*')" id="uploadButton"></a>
+		<a href="javascript:;" id="uploadButton"></a>
 	</form>
 
 	<ul id="url"></ul><!-- 上传成功后，文件地址显示在这里 -->
@@ -48,8 +43,10 @@
 		            $('#url').append("<li>"+data+"</li>");
 		        }
 			});
+			$('#uploadButton').click(function(){
+				$('#file_upload').uploadify('upload','*')
+			});
 		});
 	</script>
-
 </body>
 </html>

@@ -1,5 +1,4 @@
 /*
-外观样式表
 Uploadify
 Copyright (c) 2012 Reactive Apps, Ronnie Garcia
 Released under the MIT License <http://www.opensource.org/licenses/mit-license.php> 
@@ -72,7 +71,7 @@ Released under the MIT License <http://www.opensource.org/licenses/mit-license.p
 	background-color: #FDE5DD !important;
 }
 .uploadify-queue-item .cancel a {
-	background: url('uploadify-cancel.png') 0 0 no-repeat;
+	background: url('../img/uploadify-cancel.png') 0 0 no-repeat;
 	float: right;
 	height:	16px;
 	text-indent: -9999px;
@@ -90,10 +89,4 @@ Released under the MIT License <http://www.opensource.org/licenses/mit-license.p
 	background-color: #0099FF;
 	height: 3px;
 	width: 1px;
-}
-#uploadButton{
-	width:108px; 
-	height:28px; 
-	background-image:url(uploadify-upload.png); 
-	display:block;
 }
