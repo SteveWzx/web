@@ -1,0 +1,140 @@
+ .grayback{
+	background-color: #F2F2F2;
+	background-image: url(../../../images/bg-v3.png);
+ }
+.box-pic{
+		vertical-align:middle;
+		/*设置水平居中*/
+		text-align:center;
+		/* 针对IE的Hack */
+		*display: block;
+		*font-size: 175px;/*约为高度的0.873，200*0.873 约为175*/
+		*font-family:Arial;/*防止非utf-8引起的hack失效问题，如gbk编码*/
+}
+	
+	.box-pic img{
+		vertical-align:middle;
+	}
+
+.pagination .active a{
+	background: #D9534F !important;
+	border-color: #D9534F !important;
+}
+
+.thumbnail{
+	position: relative;	
+}
+
+.shopbox{
+	position:relative;
+	border: #e6e6e6 3px solid;
+	
+}
+.shopbox:hover{
+	border:3px #D9534F solid;
+}
+
+.nav>li>a:hover,.nav>li>a:focus {
+	text-decoration: none;
+	background: #fff;
+}
+
+.btn-pfwm {
+	color: #ffffff;
+	background-color: #00A2CA;
+	border: none;
+}
+
+.btn-pfwm:hover,.btn-pfwm:focus,.btn-pfwm:active,.btn-pfwm.active,.open .dropdown-toggle.btn-pfwm
+	{
+	color: #ffffff;
+	background-color: #33B5D4;
+}
+
+.btn-buy {
+  color: #ffffff;
+  background-color: #D2322D;  
+  border:none;
+}
+
+.btn-buy:hover,
+.btn-buy:focus,
+.btn-buy:active,
+.btn-buy.active,
+.open .dropdown-toggle.btn-buy {
+  color: #ffffff;
+  background-color: #D9534F;
+}
+
+.btn-def {
+  color: #333333;
+  background-color: #ebebeb;
+  border:none;
+}
+
+.btn-def:hover,
+.btn-def:focus,
+.btn-def:active,
+.btn-def.active,
+.open .dropdown-toggle.btn-def {
+  color: #333333;
+  background-color: #ebebec;
+}
+
+
+.btn-pfwm-yellow {
+	color: #ffffff;
+	background-color: #E67C00;
+	border: none;
+}
+
+.btn-pfwm-yellow:hover,.btn-pfwm-yellow:focus,.btn-pfwm-yellow:active,.btn-pfwm-yellow.active,.open .dropdown-toggle.btn-pfwm-yellow
+	{
+	color: #ffffff;
+	background-color: #E06F00;
+}
+
+.form-group .noempty {
+	margin-right: 4px;
+	color: #F00;
+}
+
+.nav-tabs li a{
+	color:#000;
+}
+.nav-tabs .active a{
+	color:#D9534F !important;
+	font-weight: bold;
+}
+
+.pic {
+	height: 258px;
+	width: 350px;
+	display: table-cell;
+	vertical-align: middle;
+	/*设置水平居中*/
+	text-align: center;
+	/* 针对IE的Hack */
+	*display: block;
+	*font-size: 175px; /*约为高度的0.873，200*0.873 约为175*/
+	*font-family: Arial; /*防止非utf-8引起的hack失效问题，如gbk编码*/
+	vertical-align: middle;
+}
+
+ #goodAttribute,#attributes,.goods-message-content,.attributes-list {
+	overflow:hidden;
+	list-style: none;
+}
+
+#goodAttribute li,#attributes li,.goods-message-content li, .attributes-list li {
+	display: inline;
+	float: left;
+	height: 24px;
+	width:33%;
+	text-indent: 5px;
+	line-height: 24px;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow:hidden;
+	font-size:12px;
+}

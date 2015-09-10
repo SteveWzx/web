@@ -1,0 +1,933 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>http://www.dpdmc.com/</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="bootstrap.css" type="text/css" charset="utf-8"/>
+    <link rel="stylesheet" href="bootstrap-extends.css" type="text/css" charset="utf-8"/>
+    <link rel="stylesheet" href="wei.css" type="text/css" charset="utf-8"/>
+    <script src="jquery1.9.1.js"></script>
+    <script src="bootstrap.js"></script>
+    <script src="jquery.scrollLoading.min.js"></script>
+    <script src="jquery.pager.js"></script>
+    <script src="wei.js"></script>
+    <script src="validation.js"></script>
+</head>
+<body>
+</body>
+</html>
+
+<head>
+    <style>
+        #category_id,#brands_id{
+            margin-top: 20px;
+        }
+
+        #category_id  dt,
+        #category_id dd,
+        #brands_id dt,
+        #brands_id dd{
+            float: left;
+            height:16px;
+            margin-top:10px;
+        }
+
+        #category_id  dt,
+        #brands_id dt{
+            line-height:20px;
+            margin-right:10px;
+            font-weight: bold;
+            font-size:17px;
+        }
+
+        #category_id a,
+        #brands_id a{
+            color:#666;
+            font-size:15px;
+            line-height: 17px;
+            margin-right:10px;
+            display: block;
+            padding:2px 2px;
+            text-decoration: none;
+        }
+        #category_id .current,
+        #brands_id .current{
+            background-color: #D9534F;
+            color:#fff;
+        }
+
+        .filter {
+            color:#806F66;
+        }
+        .filter:hover{
+            color:#B10000;
+        }
+
+        .filter:focus{
+            color:#B10000;
+        }
+
+        filter-cur{
+            color:#B10000;
+        }
+    </style>
+</head>
+
+<body>
+
+
+
+<style>
+    body {
+        overflow-y: scroll;
+    }
+
+    .navbar {
+        background: #D51938;
+        margin-bottom:0px;
+        padding-top:1px;
+        border:none;
+    }
+
+    .navbar-right li a{
+        font-size:13px !important;
+    }
+    .menu a{
+        color:#FFF;
+        font-size:16px;
+        font-family: 微软雅黑, 'Microsoft Yahei', 'Hiragino Sans GB', tahoma, arial, 宋体;
+    }
+    .menu a:hover,.menu a:focus{
+        background-color:#FFF !important;
+        color:#C7223D !important;
+        border-radius:1px;
+    }
+
+    .navbar .current a{
+        background-color:#FFF;
+        color:#C7223D;
+        font-weight: bold;
+        border-radius:1px;
+    }
+    #logo a:hover{
+        background: #FE7402;
+    }
+
+    .shop-widget{
+        list-style: none;
+        position: fixed;
+        top: 200px;
+        right:0px;
+        padding:2px;
+        border: 1px solid #DFDFDF;
+        z-index: 999;
+    }
+
+    .cart-box{
+        background: #fff;
+        padding:9px 2px;
+        border-bottom: 1px dashed #DFDFDF;
+    }
+
+    .online-css{
+        overflow: hidden;
+        position: fixed;
+        right: 0px;
+        top: 150px;
+        z-index: 999;
+    }
+
+    .online-css a{
+        display: block;
+        height: 35px;
+        width: 40px;
+        text-indent: -999px;
+        margin-top:1px;
+    }
+    .qq-css{
+        background: url("/images/default_right_float_bg.png") no-repeat 0 0;
+    }
+
+    .qq-css:hover{
+        background: url("/images/default_right_float_bg.png") no-repeat 0 -143px;
+    }
+    .ww-css{
+        background: url("/images/default_right_float_bg.png") no-repeat 0 -36px;
+    }
+
+    .ww-css:hover{
+        background: url("/images/default_right_float_bg.png") no-repeat 0 -179px;
+    }
+
+    .tel-css{
+        background: url("/images/default_right_float_bg.png") no-repeat 0 -72px;
+    }
+
+    .tel-css:hover{
+        background: url("/images/default_right_float_bg.png") no-repeat 0 -215px;
+    }
+
+    .weixin-css{
+        background: url("/images/weixin.jpg") 40px 35px ;
+    }
+
+    .top-css{
+        background: url("/images/default_right_float_bg.png") no-repeat 0 -108px;
+    }
+
+    .top-css:hover{
+        background: url("/images/default_right_float_bg.png") no-repeat 0 -251px;
+    }
+
+</style>
+<a name="top"></a>
+<header class="navbar" style="border-radius:0px;" role="banner">
+    <div class="container">
+        <div class="navbar-header">
+            <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+                <span class="sr-only"></span>
+                <span class="icon-bar" style="background-color: #fff;"></span>
+                <span class="icon-bar" style="background-color: #fff;"></span>
+                <span class="icon-bar" style="background-color: #fff;"></span>
+            </button>
+            <a href="/" class="navbar-brand"><span style="color:#fff;font-weight: bold;">名鞋城官网</span><span style="color:#fff;font-size:13px;"></span></a>
+        </div>
+        <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+            <ul class="nav navbar-nav">
+                <li class="home menu current" data-url="#今日团购"><a href="/#今日团购">今日团购</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+
+
+
+
+                <li class="menu">
+                    <a href="#" id="login_btn_id">登录</a>
+                </li>
+                <li class="menu" data-url="#注册">
+                    <a href="#" id="register_btn_id">注册</a>
+                </li>
+
+
+
+
+
+                <li class="menu">
+                    <a href="/cart">购物车<span class="badge topcart"></span></a>
+                </li>
+            </ul>
+
+            <form class="navbar-form navbar-right" role="search" id="search_form_id" style="display: none;">
+                <div class="form-group" style="margin-right:-5px;">
+                    <input type="text" class="form-control search-input" style="border-radius:0px;" placeholder="请输入商品名称搜索">
+                </div>
+                <button type="button" class="btn btn-default wg_btn_search" style="border-radius:0px;">搜索</button>
+            </form>
+        </nav>
+    </div>
+</header>
+
+<div id="kefu_id" style="display: none;">
+    <div class="online-css">
+        <a href="tencent://message/?uin=2784518681" rel="nofollow" title="QQ客服" class="qq-css">QQ客服</a>
+        <!--
+        <a target="_blank" class="ww-css" href="http://amos.im.alisoft.com/msg.aw?v=2&uid=%E5%90%8D%E9%9E%8B%E5%9F%8E%E5%B0%8F%E4%B9%96&site=cntaobao&s=1&charset=utf-8" alt="旺旺客服" />旺旺客服</a>
+        -->
+        <a href="#top" rel="nofollow" title="返回顶部" class="top-css">返回顶部</a>
+    </div>
+</div>
+
+<!--  login popup Modal -->
+<div class="modal fade" id="login_popup_id" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content" style="margin-top:100px;">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="myModalLabel">登录</h4>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal" id="login_form" role="form">
+                    <div class="form-group">
+                        <label for="email" class="col-sm-2 control-label"><span class="noempty">*</span>邮箱</label>
+                        <div class="col-sm-7">
+                            <input type="text" class="form-control required useTitle validate-email" validate-email-title="请输入有效的邮箱" required-title="邮箱不能为空" name="email" id="email"/>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password" class="col-sm-2 control-label"><span class="noempty">*</span>密码</label>
+                        <div class="col-sm-7">
+                            <input type="password" name="password" maxlength="16"  class="form-control required useTitle min-length-6 max-length-16 ajax" required-title="密码不能为空" min-length-title="密码由6到16位的字符组成" max-length-title="密码由6到16位的字符组成" id="password"/>
+                        </div>
+                    </div>
+
+
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-7">
+                            <button type="button" id="login_btn" class="btn btn-lg btn-buy btn-block">登录</button>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label"></label>
+                        <div class="col-sm-10">
+                            <p class="form-control-static" style="font-size:12px;">还没有账号，<a style="color:#D9534F;" href="/register">立即注册</a></p>
+                        </div>
+                    </div>
+
+                </form>
+
+            </div>
+
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div>
+<!-- /login popup Modal .modal -->
+
+<!--  register popup Modal -->
+<div class="modal fade" id="register_popup_id" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content" style="margin-top:100px;">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="myModalLabel">注册</h4>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal" id="register_form" role="form">
+                    <div class="form-group">
+                        <label for="email" class="col-sm-3 control-label"><span class="noempty">*</span>邮箱</label>
+                        <div class="col-sm-7">
+                            <input type="text" class="form-control required useTitle validate-email ajax" validate-email-title="请输入有效的邮箱" required-title="邮箱不能为空" name="email" id="email"/>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="mobile" class="col-sm-3 control-label">手机号码</label>
+                        <div class="col-sm-7">
+                            <input type="text" class="form-control useTitle validate-mobile-phone" validate-mobile-phone-title="请输入有效的手机号码" required-title="手机号码不能为空"   name="mobile" id="mobile"/>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password" class="col-sm-3 control-label"><span class="noempty">*</span>密码</label>
+                        <div class="col-sm-7">
+                            <input type="password" name="password" maxlength="16"  class="form-control required useTitle min-length-6 max-length-16" required-title="密码不能为空" min-length-title="密码由6到16位的字符组成" max-length-title="密码由6到16位的字符组成" id="password_reg"/>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="confirmPassword" class="col-sm-3 control-label"><span class="noempty">*</span>确认密码</label>
+                        <div class="col-sm-7">
+                            <input type="password" class="form-control required useTitle equals-password_reg" equals-title="确认密码必须与密码保持一致" required-title="确认密码不能为空" id="confirmPassword"/>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-sm-offset-3 col-sm-9">
+                            <div class="checkbox">
+                                <label style="font-size:12px;">
+                                    <input type="checkbox" id="agree_ment_id"> 我已阅读并同意《<a style="color:#D9534F;" href="/agreement" target="_blank">名鞋城用户注册协议</a>》
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="form-group">
+                        <div class="col-sm-offset-3 col-sm-7">
+                            <button type="button" id="register_btn" class="btn btn-lg btn-buy btn-block disabled" disabled="disabled">立即注册</button>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label"></label>
+                        <div class="col-sm-10">
+                            <p class="form-control-static" style="font-size:12px;">我已经拥有账号，<a style="color:#D9534F;" href="/login">立即登录</a></p>
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div>
+<!--end  register popup Modal -->
+
+<script>
+    //切换菜单样式
+    $(".menu").each(function(){
+        if($(this).data("url") == location.hash){
+            $(this).addClass("current");
+        }else{
+            $(this).removeClass("current");
+        }
+        if(!location.hash){
+            $(".home").addClass("current");
+        }
+    });
+
+
+    if(navigator.userAgent.match(/Android/i)) {
+        $("#kefu_id").hide();
+    }
+    //判断是否是iphone或者ipad
+    else if((navigator.userAgent.indexOf('iPhone') != -1) || (navigator.userAgent.indexOf('iPod') != -1) || (navigator.userAgent.indexOf('iPad') != -1)) {
+        $("#kefu_id").hide();
+    }else{
+        $("#kefu_id").show();
+    }
+
+    $("#logout_a").click(function(){
+        $.get("/customer/logout.do",function(data){
+            window.location.reload();
+        });
+    });
+
+    $("#login_btn_id").click(function(){
+
+        $('#login_popup_id').modal();
+    });
+
+
+    $("#register_btn_id").click(function(){
+        $('#register_popup_id').modal();
+    });
+
+    var valid = new jValidation.Validation('login_form', {
+        immediate : true,
+        onElementValidateForAjax : function(elm) {
+            if ($(elm).attr("id") == 'password') {
+                var password = $("#password").val();
+                var username = $("#email").val();
+                return validateUser(username,password);
+            }
+        }
+
+    });
+
+    function validateUser(username,password) {
+        var result = new jValidation.ajax.Result();
+        jQuery.ajax({
+            type : 'Get',
+            contentType : 'application/json',
+            url : '/customer/validate.do',
+            dataType : 'json',
+            async : false,
+            data : {
+                username : username,
+                password:password
+            },
+            success : function(data) {
+                if (!data.result) {
+                    result.setResult(false);
+                    result.setErrorMsg(data.errorMsg);
+                } else {
+                    result.setResult(true);
+                }
+            },
+            error : function(data) {
+                result.setResult(false);
+                result.setErrorMsg("服务器繁忙，请您稍后再试！");
+            }
+        });
+        return result;
+
+    }
+
+    $('#email,#password').bind('keypress',function(event){
+        if(event.keyCode == "13")
+        {
+            $("#login_btn").trigger("click");
+            return false;
+        }
+    });
+
+    $("#login_btn").click(function(){
+        if(!valid.validate()){
+            return false;
+        }
+        window.location.href = "/";
+    });
+
+    //同意协议复选框绑定事件
+    $("#agree_ment_id").click(function(){
+
+        if($(this).prop("checked")){
+            $("#register_btn").removeClass("disabled").prop("disabled",false);
+        }else{
+            $("#register_btn").addClass("disabled").prop("disabled",true);
+        }
+    });
+
+    var validRegTop = new jValidation.Validation('register_form', {
+        immediate : true,
+        onElementValidateForAjax : function(elm) {
+            if ($(elm).attr("id") == 'email') {
+                var username = $(elm).val();
+                return validateUsername(username);
+            }
+        }
+    });
+
+    function validateUsername(username) {
+        var result = new jValidation.ajax.Result();
+        jQuery.ajax({
+            type : 'Get',
+            contentType : 'application/json',
+            url : '/customer/validateUsername.do',
+            dataType : 'json',
+            async : false,
+            data : {
+                username : username
+            },
+            success : function(data) {
+                if (!data.result) {
+                    result.setResult(false);
+                    result.setErrorMsg(data.errorMsg);
+                } else {
+                    result.setResult(true);
+                }
+            },
+            error : function(data) {
+                result.setResult(false);
+                result.setErrorMsg("服务器繁忙，请您稍后再试！");
+            }
+        });
+        return result;
+
+    }
+
+    $("#register_btn").click(function(){
+        if(!validRegTop.validate()){
+            return false;
+        }
+        var postData = $("#register_form").serialize();
+
+        $.ajax({
+            type : "POST",
+            url : "./customer/add.do",
+            data : postData,
+            dataType : "json",
+            success : function(data) {
+                if (data.result) {
+                    window.location.replace("./registerActive");
+                } else {
+                    alert("系统繁忙，请您稍后再试！");
+                }
+            },
+            error : function(data) {
+                alert("系统繁忙，请您稍后再试！");
+            }
+        });
+    });
+
+</script>
+
+<!-- <div style="margin-top:92px;"></div> -->
+
+
+<div class="container">
+
+    <div class="thumbnail" style="border:none;margin-bottom:0px;display: none;" id="safe_desc">
+        <img src="/images/safe_kx.jpg" alt="名鞋城承诺"/>
+    </div>
+    <div><marquee scrollamount="2" scrolldelay="50" direction="left"><span style="color:#D9534F;font-size:20px;font-weight: bold;height: 31px;line-height: 31px;">名鞋城开学季特惠活动：凡活动期间,购买并签收一双，并在名鞋城微信回复"返现"，即可返还现金20元！</span></marquee></div>
+
+    <!-- begin category -->
+    <div class="clearfix" style="margin-bottom:20px; ">
+
+
+        <dl id="category_id" class="clearfix" ;">
+        <dt >类目</dt>
+        <dd><a href="#" id="no_limit"  class="current " data-categoryId="0">不限</a></dd>
+        </dl>
+
+        <dl id="brands_id">
+            <dt >品牌</dt>
+            <dd><a href="#" id="no_brands_limit"  class="current" data-brandsId="0">不限</a></dd>
+        </dl>
+
+    </div>
+    <!-- end category -->
+
+    <div style="margin-bottom:5px;" class="clearfix row">
+        <div class="btn-group col-md-8" style="float:left;margin-top:20px;">
+            <button type="button" class="btn btn-default filter date-sort" data-sort-type="date" data-states="desc">最新  </button>
+            <button type="button" class="btn btn-default filter sale-sort" data-sort-type="sale" data-type="2" data-states="desc">销量 </button>
+            <button type="button" class="btn btn-default filter price-sort" data-sort-type="price" data-states="desc">价格 </button>
+            <button type="button" class="btn btn-default  search-man" >男款 </button>
+            <button type="button" class="btn btn-default  search-feman" >女款 </button>
+            <button type="button" class="btn btn-default  search-bothman" >情侣款 </button>
+            <button type="button" class="btn btn-default  search-bothkuan" >全部 </button>
+        </div>
+
+        <div id="pager" style="display: none;" class="col-md-4" align="right"></div>
+    </div>
+
+    <div class="row" id="goods_new_div">
+        <!-- col1 -->
+        <div class="col-sm-4 col-md-3" id="col_id0">
+
+        </div>
+
+        <!-- col2 -->
+        <div class="col-sm-4 col-md-3" id="col_id1">
+
+        </div>
+
+        <!-- col3 -->
+        <div class="col-sm-4 col-md-3" id="col_id2">
+
+        </div>
+
+        <!-- col3 -->
+        <div class="col-sm-4 col-md-3" id="col_id3">
+
+        </div>
+
+    </div>
+
+    <div id="pagebottom" align="right"></div>
+</div>
+
+<!-- begin model -->
+<div class="thumbnail shopbox" id="goods_new_model" style="display: none;">
+    <a href="#" class="img-a" target="_blank"><img alt="" src="/images/loading.gif"></a>
+
+    <div class="caption">
+        <a href="#" target="_blank" class="title-a" style="text-decoration: none;"><h6 class="title ellipsis" style="color:#666;"></h6></a>
+
+        <p class="content" style="margin:0px;">
+            <strong class="nowprice" style="color:#D9534F;font-size:20px;font-weight: bold;height: 31px;line-height: 31px;"></strong>
+            <span class="oldprice" style="color:#9F9F9F;font-size:14px;text-decoration:line-through;"></span>
+            <span style="background: #D9534F;color:#FFF;font-size:14px;">全国包邮&nbsp;货到付款</span>
+        <div align="" style="margin-bottom:5px;">
+            <span style="font-size:12px;color:#666;"><span class="buy-num" style="padding-right:5px;">99</span>人已经购买</span>
+        </div>
+        </p>
+
+        <!--         <div align="" style="margin-bottom:5px;"> -->
+        <!--         	<span style="font-size:12px;color:#666;"><span class="buy-num" style="padding-right:5px;"></span>人已经购买</span> -->
+        <!--         </div> -->
+        <p align="" style="margin-top:5px;"><a href="#" target="_blank" class="btn btn-buy btn-block" role="button">立即抢购</a></p>
+    </div>
+
+</div>
+<!-- end model -->
+
+
+
+
+
+<div style="border:1px solid #ccc;margin-top:40px;padding-top:24px;background-color: #fff;">
+    <div class="container" style="margin-top:40px;">
+        <div class="row">
+            <div class="thumbnail" style="border:none;">
+
+
+                <img src="/images/index_promise.jpg" style="height: 30px;">
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="copyright" style="margin-top:20px;margin-bottom:0px;margin-left:auto;margin-right:auto; text-align: center;color:#666;font-size:12px;padding-bottom:20px;">
+    <!--
+    <p>
+
+        网站地图：<a href="/nikejs.html" target="_blank" style="color:#666;">耐克品牌介绍</a>&nbsp;|&nbsp;<a href="/nikenewjs.html" target="_blank" style="color:#666;">耐克赞助巴西世界杯</a>
+                            |&nbsp;<a href="/ydxpp.html" target="_blank" style="color:#666;">运动鞋品牌</a>&nbsp;|&nbsp;<a href="/ydxtx.html" target="_blank" style="color:#666;">运动鞋挑选</a>
+              |&nbsp;<a href="/newshoesdeal.html" target="_blank" style="color:#666;">解决新鞋子磨脚方法</a>&nbsp;|&nbsp;<a href="/newbalance574.html" target="_blank" style="color:#666;">新百伦574搭配建议</a>
+                            |&nbsp;<a href="/newbalance574and996.html" target="_blank" style="color:#666;">新百伦574与996区别</a>&nbsp;
+    </p>
+    -->
+</div>
+
+
+<div class="copyright" style="margin-top:20px;margin-bottom:0px;margin-left:auto;margin-right:auto; text-align: center;color:#666;font-size:12px;padding-bottom:20px;">
+    <p>
+        名鞋城欢迎您的光临，商品详情可咨询客服QQ：2784518681,欢迎咨询选购!
+        <!-- <a href="/about" style="color:#666;">关于我们</a> -->
+        <a href="/contract" style="color:#666;">联系我们</a>
+    </p>
+
+    <p>
+
+        ©&nbsp;<span>2009-2016</span>&nbsp;无锡小牛网络科技有限公司旗下名鞋城&nbsp;版权所有&nbsp;地址:锡市南长区清扬新村117号116室&nbsp;&nbsp;电话：0510-88693124&nbsp;&nbsp;<a href="/about" style="color:#666;">关于我们</a>&nbsp;&nbsp;<a href="/about" style="color:#666;">公司简介</a>
+
+        <a href="http://www.miibeian.gov.cn/" target="_blank" style="color:#666;"></a>
+        &nbsp;
+
+        <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_5874192'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s22.cnzz.com/stat.php%3Fid%3D5874192%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));</script>
+
+    </p>
+
+</div>
+
+<script>
+    $(function(){
+
+        $.get("/cart/getCartNum.do",function(data){
+            $(".topcart").html(data);
+        });
+    });
+</script>
+
+
+<script>
+    $(function(){
+
+        $("#search_form_id").show();
+        var col = 4;
+        if(!jWei.util.isMobile()){
+            $("#safe_desc").show();
+            $("#pager").show();
+        }
+
+        //排序类型
+        window.sortType = "";
+        //升序还是降序
+        window.sortStates = "";
+
+        //默认分类为不限
+        window.categoryId = 0;
+
+        //默认品牌为不限
+        window.brandsId = 0;
+
+        //回调函数
+        var PageClick = function(pageclickednumber) {
+            init(pageclickednumber);
+        };
+
+        var init = function(currPage){
+            //分页清空数据
+            for(var z =0;z<4;z++){
+                $("#col_id"+z).html("");
+            }
+
+            //获取商品信息
+            jQuery.ajax({
+                type : 'Get',
+                contentType : 'application/json',
+                url : "/goods/goodsListByGrade.do?pageSize=48&currPage="+currPage+"&categoryId="+window.categoryId+"&brandsId="+window.brandsId,
+                cache:true,
+                async:false,
+                data : {
+                    title:$(".search-input").val(),
+                    sortType:sortType,
+                    sortStates:sortStates
+                },
+                dataType : 'json',
+                success:function(dataObj){
+                    $("#pager").pager({
+                        pagenumber : currPage,
+                        pagecount : dataObj.obj.totalPage,
+                        buttonClickCallback : PageClick
+                    });
+
+                    var list = dataObj.obj.goodsList;
+
+                    for(var i = 0 ;i<list.length;i++){
+                        var model = $("#goods_new_model").clone();
+                        model.attr("id","");
+                        var goods = list[i];
+                        var price = goods.price;
+                        var discount = goods.discount;
+                        var now_price = Math.floor(price * discount / 100);
+                        $("#col_id"+i%col).append(model);
+                        model.find("img").attr("data-url","/upload/download.do?fileName="+goods.picName).attr("title",goods.title).attr("alt",goods.title);
+                        model.find(".img-a").attr("href","/detailGoods/"+goods.id);
+                        model.find(".title-a").attr("href","/detailGoods/"+goods.id);
+                        model.find(".title").html(goods.title);
+                        model.find(".btn").attr("href","/detailGoods/"+goods.id);
+                        model.find(".buy-num").html(goods.buyNum);
+                        model.find(".nowprice").html("￥"+now_price);
+                        model.find(".oldprice").html("￥"+price);
+                        model.show();
+                    }
+                    $(".thumbnail img").scrollLoading();
+
+                    $("#pagebottom").html($("#pager").clone(true)).find("#pager").removeClass("col-md-4");
+                }
+            });
+        };
+
+        init(1);
+
+        //获取上架分类
+        jQuery.ajax({
+            type : 'Get',
+            contentType : 'application/json',
+            url : '/category/getAlllAddOn.do',
+            cache:true,
+            async:false,
+            data : {
+            },
+            dataType : 'json',
+            success : function(data) {
+                if (data.result) {
+                    var categoryList = data.obj;
+                    if(categoryList){
+                        var html = "";
+                        for(var i = 0 ;i<categoryList.length;i++){
+                            var category = categoryList[i];
+                            if(category)
+                                var dd = '<dd><a href="#" data-categoryId="'+category.id+'" id="a_id">'+category.name+'</a></dd>';
+                            html = html+dd;
+                        }
+                        $("#category_id").append(html);
+                        $("#category_id").find("[id='a_id']").click(function(){
+                            window.categoryId = $(this).attr("data-categoryId");
+                            init(1);
+                            $("#category_id").find(".current").each(function(){
+                                $(this).removeClass("current");
+                            });
+                            $(this).addClass("current");
+                            return false;
+                        });
+                    }
+
+                } else {
+                    //alert('数据库异常,查询数据失败');
+                }
+            },
+            error : function(data) {
+            }
+        });
+
+        //获取上架品牌
+        jQuery.ajax({
+            type : 'Get',
+            contentType : 'application/json',
+            url : '/brands/getAlllAddOn.do',
+            cache:true,
+            async:false,
+            data : {
+            },
+            dataType : 'json',
+            success : function(data) {
+                if (data.result) {
+                    var brandsList = data.obj;
+                    if(brandsList){
+                        var html = "";
+                        for(var i = 0 ;i<brandsList.length;i++){
+                            var brands = brandsList[i];
+                            if(brands)
+                                var dd = '<dd><a href="#" data-brandsId="'+brands.id+'"  id="a_brands_id">'+brands.name+'</a></dd>';
+                            html = html+dd;
+                        }
+                        $("#brands_id").append(html);
+                        $("#brands_id").find("[id='a_brands_id']").click(function(){
+                            window.brandsId = $(this).attr("data-brandsId");
+                            init(1);
+                            $("#brands_id").find(".current").each(function(){
+                                $(this).removeClass("current");
+                            });
+                            $(this).addClass("current");
+                            return false;
+                        });
+                    }
+
+                } else {
+                    //alert('数据库异常,查询数据失败');
+                }
+            },
+            error : function(data) {
+            }
+        });
+
+        //绑定分类不限按钮
+        $("#no_limit").click(function(){
+            window.categoryId = 0;
+            init(1);
+            $("#category_id").find(".current").each(function(){
+                $(this).removeClass("current");
+            });
+            $(this).addClass("current");
+            return false;
+        });
+
+        //绑定品牌不限按钮
+        $("#no_brands_limit").click(function(){
+            window.brandsId = 0;
+            init(1);
+            $("#brands_id").find(".current").each(function(){
+                $(this).removeClass("current");
+            });
+            $(this).addClass("current");
+            return false;
+        });
+
+        //绑定搜索按钮
+        $(".wg_btn_search").click(function(){
+
+            window.categoryId = 0;
+            window.brandsId = 0;
+            init(1);
+        });
+        //绑定搜索按钮man
+        $(".search-man").click(function(){
+
+            $(".search-input").val("男");
+            $(".wg_btn_search").trigger("click");
+            // $(".search-input").val("");
+            return false;
+        });
+        //绑定搜索按钮feman
+        $(".search-feman").click(function(){
+
+            $(".search-input").val("女");
+            $(".wg_btn_search").trigger("click");
+            // $(".search-input").val("");
+            return false;
+        });
+        //绑定搜索按钮bothman
+        $(".search-bothman").click(function(){
+
+            $(".search-input").val("情侣");
+            $(".wg_btn_search").trigger("click");
+            //$(".search-input").val("");
+            return false;
+        });
+
+        //绑定搜索按钮bothkuan
+        $(".search-bothkuan").click(function(){
+
+            $(".search-input").val("");
+            $(".wg_btn_search").trigger("click");
+            //$(".search-input").val("");
+            return false;
+        });
+
+        //绑定搜索回车事件
+        $(".search-input").bind('keypress',function(event){
+            if(event.keyCode == "13")
+            {
+                $(".wg_btn_search").trigger("click");
+                return false;
+            }
+        });
+
+        //绑定排序事件
+        $(".filter").each(function(){
+            $(this).click(function(){
+                window.sortType = $(this).data("sortType");
+                window.sortStates = $(this).data("states");
+                $(".search-input").val("");
+                init(1);
+                //改变排序状态
+                if(window.sortStates == "desc"){
+                    $(this).data("states","asc");
+                }else{
+                    $(this).data("states","desc");
+                }
+                return false;
+            });
+        });
+
+    });
+</script>
+</body>
