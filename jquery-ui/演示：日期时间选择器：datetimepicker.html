@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<!-- saved from url=(0041)http://www.helloweba.com/demo/timepicker/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<title>演示：日期时间选择器：datetimepicker</title>
+<meta name="keywords" content="datetimepicker, jquery插件">
+<meta name="description" content="Helloweba演示平台，演示XHTML、CSS、jquery、PHP案例和示例">
+<link rel="stylesheet" type="text/css" href="./演示：日期时间选择器：datetimepicker_files/main.css">
+<link rel="stylesheet" type="text/css" href="./演示：日期时间选择器：datetimepicker_files/jquery-ui.css">
+<style type="text/css">
+a{color:#007bc4/*#424242*/; text-decoration:none;}
+a:hover{text-decoration:underline}
+ol,ul{list-style:none}
+body{height:100%; font:12px/18px Tahoma, Helvetica, Arial, Verdana, "\5b8b\4f53", sans-serif; color:#51555C;}
+img{border:none}
+.demo{width:500px; margin:20px auto}
+.demo h4{height:32px; line-height:32px; font-size:14px}
+.demo h4 span{font-weight:500; font-size:12px}
+.demo p{line-height:28px;}
+input{width:200px; height:20px; line-height:20px; padding:2px; border:1px solid #d3d3d3}
+pre{padding:6px 0 0 0; color:#666; line-height:20px; background:#f7f7f7}
+
+.ui-timepicker-div .ui-widget-header { margin-bottom: 8px;}
+.ui-timepicker-div dl { text-align: left; }
+.ui-timepicker-div dl dt { height: 25px; margin-bottom: -25px; }
+.ui-timepicker-div dl dd { margin: 0 10px 10px 65px; }
+.ui-timepicker-div td { font-size: 90%; }
+.ui-tpicker-grid-label { background: none; border: none; margin: 0; padding: 0; }
+.ui_tpicker_hour_label,.ui_tpicker_minute_label,.ui_tpicker_second_label,.ui_tpicker_millisec_label,.ui_tpicker_time_label{padding-left:20px}
+</style>
+<script async="" type="text/javascript" src="./演示：日期时间选择器：datetimepicker_files/ca-pub-7515443544894528.js"></script><script type="text/javascript" src="./演示：日期时间选择器：datetimepicker_files/my.js"></script><script type="text/javascript" src="./演示：日期时间选择器：datetimepicker_files/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="./演示：日期时间选择器：datetimepicker_files/jquery-ui.js"></script>
+<script type="text/javascript" src="./演示：日期时间选择器：datetimepicker_files/jquery-ui-slide.min.js"></script>
+<script type="text/javascript" src="./演示：日期时间选择器：datetimepicker_files/jquery-ui-timepicker-addon.js"></script>
+<script type="text/javascript">
+$(function(){
+	$('#example_1').datetimepicker();
+	$('#example_2').timepicker({});
+	$('#example_3').datetimepicker({
+	    showSecond: true,
+	    showMillisec: true,
+	    timeFormat: 'hh:mm:ss:l'
+    });
+	$('#example_4').timepicker({
+	    ampm: true,
+	    hourMin: 8,
+	    hourMax: 16
+    });
+	$('#example_5').datetimepicker({
+	   hour: 13,
+	   minute: 15
+    });
+	$('#example_6').datetimepicker({
+	   numberOfMonths: 2,
+	   minDate: 0,
+	   maxDate: 30
+    });
+	$('#example_7').timepicker({
+	   hourGrid: 4,
+	   minuteGrid: 10
+    });
+
+	
+	var ex8 = $('#example_8');
+
+      ex8.datetimepicker();
+
+      $('#example_8_set_btn').click(function(){
+	      ex8.datetimepicker('setDate', (new Date()) );
+      });
+
+      $('#example_8_get_btn').click(function(){
+	       alert(ex8.datetimepicker('getDate'));
+      });
+});
+</script>
+</head>
+
+<body>
+<div id="header">
+   <div id="logo"><h1><a href="http://www.helloweba.com/" title="返回helloweba首页">helloweba</a></h1></div>
+   <div class="demo_topad"><script src="./演示：日期时间选择器：datetimepicker_files/demo_topad.js" type="text/javascript"></script><script type="text/javascript">google_ad_client = "ca-pub-7515443544894528";google_ad_slot = "3076591508";google_ad_width = 468;google_ad_height = 60;</script><script type="text/javascript" src="./演示：日期时间选择器：datetimepicker_files/show_ads.js"></script><ins id="aswift_0_expand" style="display:inline-table;border:none;height:60px;margin:0;padding:0;position:relative;visibility:visible;width:468px;background-color:transparent"><ins id="aswift_0_anchor" style="display:block;border:none;height:60px;margin:0;padding:0;position:relative;visibility:visible;width:468px;background-color:transparent"><iframe width="468" height="60" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_0" name="aswift_0" style="left:0;position:absolute;top:0;"></iframe></ins></ins></div>
+</div>
+<div id="main">
+   <h2 class="top_title"><a href="http://www.helloweba.com/view-blog-169.html">日期时间选择器：datetimepicker</a></h2>
+   <div class="demo">
+      <h4>1、默认：</h4>
+      <p><input type="text" id="example_1" class="hasDatepicker"></p>
+      <pre>   $('#example_1').datetimepicker();
+      </pre>
+   </div>
+   <div class="demo">
+      <h4>2、只选择时间：</h4>
+      <p><input type="text" id="example_2" class="hasDatepicker"></p>
+      <pre>   $('#example_2').timepicker();
+      </pre>
+   </div>
+   <div class="demo">
+      <h4>3、显示时分秒毫秒格式：</h4>
+      <p><input type="text" id="example_3" class="hasDatepicker"></p>
+      <pre>   $('#example_3').datetimepicker({
+	   showSecond: true,
+	   showMillisec: true,
+	   timeFormat: 'hh:mm:ss:l'
+   });
+      </pre>
+   </div>
+   <div class="demo">
+      <h4>4、设置时间可选范围：</h4>
+      <p><input type="text" id="example_4" class="hasDatepicker"></p>
+      <pre>   $('#example_4').timepicker({
+	   ampm: true,
+	   hourMin: 8,
+	   hourMax: 16
+   });
+      </pre>
+   </div>
+   <div class="demo">
+      <h4>5、默认时间：</h4>
+      <p><input type="text" id="example_5" class="hasDatepicker"></p>
+      <pre>   $('#example_5').datetimepicker({
+	   hour: 13,
+	   minute: 15
+   });
+      </pre>
+   </div>
+   <div class="demo">
+      <h4>6、显示多月并设置可选日期范围：</h4>
+      <p><input type="text" id="example_6" class="hasDatepicker"></p>
+      <pre>   $('#example_6').datetimepicker({
+	   numberOfMonths: 2,
+	   minDate: 0,
+	   maxDate: 30
+   });
+      </pre>
+   </div>
+   <div class="demo">
+      <h4>7、显示时间标尺：</h4>
+      <p><input type="text" id="example_7" class="hasDatepicker"></p>
+      <pre>   $('#example_7').timepicker({
+	   hourGrid: 4,
+	   minuteGrid: 10
+   });
+      </pre>
+   </div>
+   <div class="demo">
+      <h4>8、获取和设置时间：</h4>
+      <p><input type="text" id="example_8" class="hasDatepicker"> 
+      <button id="example_8_set_btn">Set Datetime</button>
+      <button id="example_8_get_btn">Get Datetime</button>
+      </p><pre>      var ex8 = $('#example_8');
+
+      ex8.datetimepicker();
+
+      $('#example_8_set_btn').click(function(){
+	      ex8.datetimepicker('setDate', (new Date()) );
+      });
+
+      $('#example_8_get_btn').click(function(){
+	       alert(ex8.datetimepicker('getDate'));
+      });
+      </pre>
+   </div>
+   <div class="ad_demo"><script src="./演示：日期时间选择器：datetimepicker_files/ad_demo.js" type="text/javascript"></script><script type="text/javascript">google_ad_client = "ca-pub-7515443544894528";google_ad_slot = "3438097725";google_ad_width = 728;google_ad_height = 90;</script><script type="text/javascript" src="./演示：日期时间选择器：datetimepicker_files/show_ads.js"></script><ins id="aswift_1_expand" style="display:inline-table;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent"><ins id="aswift_1_anchor" style="display:block;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent"><iframe width="728" height="90" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_1" name="aswift_1" style="left:0;position:absolute;top:0;"></iframe></ins></ins></div>
+   <br>
+</div>
+
+<div id="footer">
+    <p>Powered by helloweba.com  允许转载、修改和使用本站的DEMO，但请注明出处：<a href="http://www.helloweba.com/">www.helloweba.com</a></p>
+</div>
+<p id="stat"><script type="text/javascript" src="./演示：日期时间选择器：datetimepicker_files/tongji.js"></script><script type="text/javascript" src="./演示：日期时间选择器：datetimepicker_files/tongji(1).js"></script><img src="./演示：日期时间选择器：datetimepicker_files/tongji.do" border="0" width="1" height="1"><script src="./演示：日期时间选择器：datetimepicker_files/stat.php" language="javaScript"></script><script src="./演示：日期时间选择器：datetimepicker_files/core.php" charset="utf-8" type="text/javascript"></script><a href="http://www.cnzz.com/stat/website.php?web_id=4524941" target="_blank" title="站长统计">站长统计</a></p>
+
+
+<div id="ui-datepicker-div" class="ui-datepicker ui-widget ui-widget-content ui-helper-clearfix ui-corner-all"></div></body></html>
