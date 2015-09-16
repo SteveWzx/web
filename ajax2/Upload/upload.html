@@ -22,14 +22,10 @@ background: green;
 <script>
     $(function () {
         $('#fileupload').fileupload({
-
-            //autoUpload: true,//是否自动上传
-
+            autoUpload: true,
             dataType: 'json',
             done: function (e, data) {
-                console.log(data)
                 $.each(data.result.files, function (index, file) {
-                    console.log(file)
                     $('<p></p>').text(file.name).appendTo(document.body);
                 });
             },

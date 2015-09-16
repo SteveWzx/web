@@ -1,0 +1,2 @@
+document.write("<script type=\"text/javascript\" src=\"http://js.tongji.linezing.com/1870888/tongji.js\"></script>");
+document.write("<script src=\"http://s13.cnzz.com/stat.php?id=4524941&amp;web_id=4524941\" language=\"javaScript\"></script>");
