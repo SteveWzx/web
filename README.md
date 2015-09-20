@@ -39,3 +39,5 @@
 * city_cookie -> jump city cookie
 * mxc -> In fact, a lot of time to understand are from some garbage code to the inspiration, the perfect is often too high.
 * activity -> Custom Calendar Component
+* jQuery Validation -> jQuery plugin form validate
+* share -> Web Shared components
