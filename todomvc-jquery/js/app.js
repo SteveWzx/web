@@ -99,6 +99,11 @@ jQuery(function ($) {
 				filter: this.filter
 			});
 
+			/*if (todos.length > 0) {
+			 this.$footer.show();
+			 } else {
+			 this.$footer.hide();
+			 }*/
 			this.$footer.toggle(todoCount > 0).html(template);
 		},
 		toggleAll: function (e) {
@@ -111,11 +116,14 @@ jQuery(function ($) {
 			this.render();
 		},
 		getActiveTodos: function () {
+			//filter方法依次对所有数组成员调用一个测试函数，返回结果为true的成员组成一个新数组返回
+			//!false 表示返回未完成
 			return this.todos.filter(function (todo) {
 				return !todo.completed;
 			});
 		},
 		getCompletedTodos: function () {
+			//ture 表示返回已完成
 			return this.todos.filter(function (todo) {
 				return todo.completed;
 			});
