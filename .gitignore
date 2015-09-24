@@ -1,3 +1,4 @@
+/node_modules
 *.class
 *.idea
 .DS_Store

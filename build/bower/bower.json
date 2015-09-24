@@ -1,0 +1,23 @@
+{
+  "name": "bower",
+  "version": "0.0.0",
+  "authors": [
+    "steve <421320649@qq.com>"
+  ],
+  "description": "learn",
+  "keywords": [
+    "bower"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.5",
+    "jquery": "~2.1.4"
+  }
+}
