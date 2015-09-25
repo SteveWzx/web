@@ -39,9 +39,6 @@
 * city_cookie -> jump city cookie
 * mxc -> In fact, a lot of time to understand are from some garbage code to the inspiration, the perfect is often too high.
 * activity -> Custom Calendar Component
-<<<<<<< HEAD
 * build -> learn bower yeoman grunt gulp
-=======
 * jQuery Validation -> jQuery plugin form validate
 * share -> Web Shared components
->>>>>>> be071c843c2747973b32dfde3a2b7ea03f57bb4f
