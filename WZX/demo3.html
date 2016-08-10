@@ -1,0 +1,130 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>无标题文档</title>
+<style>
+*{ margin:0; padding:0;}
+li{ list-style:none;}
+.writeText{ width:300px; min-height:30px; border:1px solid #333; border-radius:5%; float:left; cursor:no-drop;}
+.writeText span{ float:left; position:relative; line-height:30px; padding:0 10px; cursor:default;}
+.writeText em{ width:13px; height:13px; background:url(delete.png) no-repeat; position:absolute; right:0; top:0; cursor:pointer;}
+label{ float:left; line-height:30px;}
+.btn{ width:30px; height:30px; cursor:pointer;}
+.set{ margin-bottom:20px; position:relative;}
+.popupMenu{ width:200px; max-height:400px; border:1px #000 solid; position:absolute; left:370px; top:0; background:white; z-index:100; overflow-x:auto; overflow-x:hidden; display:none;}
+.popupMenu ul{ width:200px;}
+.popupMenu ul li{ padding:5px; cursor:pointer;}
+.popupMenu ul span.cur{ background:#06F; color:white;}
+.popupMenu ul span:hover{ background:#06F; color:white;}
+
+#div1{ width:500px; margin:0 auto; padding:300px 0;}
+</style>
+<script src="jquery-1.11.1.js"></script>
+<script>
+
+//尽量去做成一个个功能模块(封装函数,单一的职能)
+
+//相同的功能 : 封装相同的操作函数(一个)
+
+//不相同的功能 : 差异性(封装两个操作函数) 缺失性(一数个函)
+
+(function ($, window, WZX, undefined) {
+	var Popup = function (opts) {
+		if (!(this instanceof Popup)) {
+			return new Popup(opts);
+		}
+		this.config = $.extend(Popup.default, opts);
+		opts.autoinit && this.init();
+	};
+	Popup.default = {
+		autoinit: false,
+		id: null,
+		type: 'check',
+		data: null
+	};
+	Popup.prototype = {
+		init: function () {
+			console.log(this.config);
+		}
+	};
+	WZX.Popup = Popup;
+})(jQuery, window, window.WZX = window.WZX||{});
+
+var pop01 = WZX.Popup({
+	autoinit: true,
+	id: '1000',
+	type: 'radio',
+	data: [
+		{name : '办公室'},
+		{name : '会议室'},
+		{name : '室外'},
+		{name : '咖啡厅'}
+	]
+});
+</script>
+</head>
+
+<body>
+<div id="div1">
+    <div id="custom_1000" class="set">
+        <label>地点:</label>
+		<div id="main_1000" class="writeText">
+            <!--<span>公安局<em></em></span>
+            <span>公安局123<em></em></span>
+            <span>公安局333333<em></em></span>
+            <span>公安局<em></em></span>-->
+        </div>
+        <input id="add_1000" class="btn" type="button" value="+">
+        <input id="remove_1000" class="btn" type="button" value="-">
+        <div id="popup_1000" class="popupMenu">
+        	<!--<ul>
+            	<li><span>公安局</span></li>
+                <li><span>公安局</span></li>
+                <li><span class="cur">公安局</span></li>
+                <li><span>公安局</span></li>
+                <li><span>公安局</span></li>
+                <li><span>公安局</span></li>
+                <li><span>公安局</span></li>
+                <li><span class="cur">公安局</span></li>
+                <li><span>公安局</span></li>
+                <li><span>公安局</span></li>
+                <li><span>公安局</span></li>
+                <li><span>公安局</span></li>
+                <li><span class="cur">公安局</span></li>
+                <li><span>公安局</span></li>
+                <li><span>公安局</span></li>
+            </ul>-->
+        </div>
+        <br clear="all"/>
+    </div>
+    <div id="custom_2000" class="set">
+        <label>时间:</label>
+		<div id="main_2000" class="writeText">
+        </div>
+        <input id="add_2000" class="btn" type="button" value="+">
+        <input id="remove_2000" class="btn" type="button" value="-">
+        <div id="popup_2000" class="popupMenu"></div>
+        <br clear="all"/>
+    </div>
+    <div id="custom_3000" class="set">
+        <label>领导:</label>
+		<div id="main_3000" class="writeText">
+        </div>
+        <input id="add_3000" class="btn" type="button" value="+">
+        <input id="remove_3000" class="btn" type="button" value="-">
+        <div id="popup_3000" class="popupMenu"></div>
+        <br clear="all"/>
+    </div>
+    <div id="custom_4000" class="set">
+        <label>部门:</label>
+		<div id="main_4000" class="writeText">
+        </div>
+        <input id="add_4000" class="btn" type="button" value="+">
+        <input id="remove_4000" class="btn" type="button" value="-">
+        <div id="popup_4000" class="popupMenu"></div>
+        <br clear="all"/>
+    </div>
+</div>
+</body>
+</html>

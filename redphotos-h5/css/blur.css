@@ -1,0 +1,130 @@
+*{
+	margin: 0 0;
+	padding: 0 0;
+}
+
+#blur-div{
+	margin: 0 auto;
+	position: relative;
+	overflow: hidden; 
+}
+
+#blur-image{
+	display: block;
+	margin: 0 auto;
+	
+	filter: blur(20px);
+	-webkit-filter: blur(20px);
+	-moz-filter:blur(20px);
+	-ms-filter: blur(20px);
+	-o-filter:blur(20px);
+	
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	
+	z-index: 0;
+	
+	/*filter: invert(1);
+	-webkit-filter: invert(1);
+	-moz-filter:invert(1);
+	-ms-filter: invert(1);
+	-o-filter:invert(1);*/
+	
+	/*filter: opacity(0.2);
+	-webkit-filter: opacity(0.2);
+	-moz-filter:opacity(0.2);
+	-ms-filter: opacity(0.2);
+	-o-filter:opacity(0.2);*/
+	
+	/*filter: brightness(0.5);
+	-webkit-filter: brightness(0.5);
+	-moz-filter:brightness(0.5);
+	-ms-filter: brightness(0.5);
+	-o-filter:brightness(0.5);*/
+	
+	/*filter: grayscale(0.5);
+	-webkit-filter: grayscale(0.5);
+	-moz-filter:grayscale(0.5);
+	-ms-filter: grayscale(0.5);
+	-o-filter:grayscale(0.5);*/
+	
+	/*filter: sepia(1);
+	-webkit-filter: sepia(1);
+	-moz-filter:sepia(1);
+	-ms-filter: sepia(1);
+	-o-filter:sepia(1);*/
+	
+	/*filter: contrast(2);
+	-webkit-filter: contrast(2);
+	-moz-filter:contrast(2);
+	-ms-filter: contrast(2);
+	-o-filter:contrast(2);*/
+	
+	/*filter: drop-shadow(10px 10px 2px #aaa);
+	-webkit-filter: drop-shadow(10px 10px 2px #aaa);
+	-moz-filter: drop-shadow(10px 10px 2px #aaa);
+	-ms-filter: drop-shadow(10px 10px 2px #aaa);
+	-o-filter: drop-shadow(10px 10px 2px #aaa);*/
+	
+	/*filter: hue-rotate(90deg);
+	-webkit-filter: hue-rotate(90deg);
+	-moz-filter:hue-rotate(90deg);
+	-ms-filter: hue-rotate(90deg);
+	-o-filter:hue-rotate(90deg);*/
+	
+	/*filter: saturate(3);
+	-webkit-filter: saturate(3);
+	-moz-filter:saturate(3);
+	-ms-filter: saturate(3);
+	-o-filter:saturate(3);*/
+}
+
+#blur-canvas{
+	display: block;
+	margin: 0 auto;
+	
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	
+	z-index: 100;
+	
+	/*background-color: red;*/
+}
+
+.button{
+	display: block;
+	position: absolute;
+	z-index: 200;
+	
+	width: 100px;
+	height: 30px;
+	
+	color: white;
+	text-decoration: none;
+	text-align: center;
+	line-height: 30px;
+	
+	border-radius: 5px;
+}
+
+#reset-button{
+	left: 50px;
+	bottom: 20px;
+	background-color: #058;
+}
+
+#reset-button:hover{
+	background-color: #047;
+}
+
+#show-button{
+	right: 50px;
+	bottom: 20px;
+	background-color: #085;
+}
+
+#show-button:hover{
+	background-color: #074;
+}
