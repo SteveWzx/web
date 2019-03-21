@@ -1,5 +1,6 @@
 # Web FE Folder
 
+
 ####Folder independent access
 * script -> javascript load order
 * mod -> modular prototype
